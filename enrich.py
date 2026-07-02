@@ -9,7 +9,7 @@
 Usage:
     python enrich.py [--db paper_radar.db] [--config config.yaml] [--limit N] [--redo]
 """
-import argparse, html, json, re, sqlite3, time, urllib.parse
+import argparse, html, json, os, re, sqlite3, time, urllib.parse
 from datetime import date, datetime
 from pathlib import Path
 import requests
@@ -125,13 +125,22 @@ def main():
     args = ap.parse_args()
 
     cfg = yaml.safe_load(open(args.config, encoding="utf-8"))
-    email = cfg["enrich"]["unpaywall"]["email"]
+    # email 優先取環境變數（CI 用 GitHub Actions secret UNPAYWALL_EMAIL 注入，不進 repo），
+    # 退回 config。都沒有 → 跳過 OA 加值（網站照常，只是沒有 🟢 免費全文徽章）。
+    email = os.environ.get("UNPAYWALL_EMAIL") or cfg["enrich"]["unpaywall"].get("email") or ""
 
     con = sqlite3.connect(args.db)
     # 舊 DB 補欄位（idempotent）
     if not any(c[1] == "oa_first_date" for c in con.execute("PRAGMA table_info(papers)")):
         con.execute("ALTER TABLE papers ADD COLUMN oa_first_date TEXT")
         con.commit()
+
+    if not email:
+        print("⚠ 未提供 UNPAYWALL_EMAIL（env 或 config）→ 跳過 OA 加值，僅重新匯出 papers.json")
+        n = export_json(con, cfg, args.out)
+        print(f"重新匯出: {n} 篇 → {args.out}")
+        con.close()
+        return
 
     if args.recheck:
         # 機械重抓：只挑「目前無 OA PDF」且夠新的論文（太老不太可能再開放，省請求）

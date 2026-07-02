@@ -32,10 +32,13 @@ GitHub Pages（公開靜態站）
 1. 把這個資料夾推到你自己的 GitHub repo（public）。
 2. Repo → **Settings → Pages → Source** 選 **GitHub Actions**。
 3. Repo → **Settings → Actions → General → Workflow permissions** 選 **Read and write permissions**。
-4. Repo → **Actions** 頁，手動跑一次 `update-radar`（或等隔天 cron）。
-5. 完成後你的站在 `https://<帳號>.github.io/<repo>/`。
+4. （選用，想要 🟢 免費全文徽章才需要）Repo → **Settings → Secrets and variables → Actions → New repository secret**，
+   名稱 `UNPAYWALL_EMAIL`，值填一個可用 email（Unpaywall API 只拿來識別，不寄信；**不會出現在 repo 裡**）。
+5. Repo → **Actions** 頁，手動跑一次 `update-radar`（或等隔天 cron）。
+6. 完成後你的站在 `https://<帳號>.github.io/<repo>/`。
 
 > 之後每天早上自動更新，你什麼都不用做。
+> 沒設 `UNPAYWALL_EMAIL` 也完全能跑，只是少了免費全文徽章。
 
 ## 怎麼客製
 
@@ -44,7 +47,7 @@ GitHub Pages（公開靜態站）
 | 追哪些期刊 / 主題 | `config.yaml` 的 `feeds`（`[ta]` 換期刊、`term` 換主題 query） |
 | 主題分組開關 | `config.yaml` 的 `topic_groups` |
 | 評分權重 / 關鍵字 | `interest_model.json`（`positive` / `negative` / `design_bonus`） |
-| Unpaywall 用的 email | `config.yaml` 的 `enrich.unpaywall.email`（API 必填，會出現在 commit 裡） |
+| Unpaywall 用的 email | 環境變數 `UNPAYWALL_EMAIL`（本地 `export`；CI 設成 secret，不進 repo） |
 | 網站標題 / 頁尾 | `site/index.html` |
 
 改完 push 即可，下次 Actions 會套用。
@@ -54,7 +57,7 @@ GitHub Pages（公開靜態站）
 ```bash
 python3 -m venv venv && ./venv/bin/pip install -r requirements.txt
 ./venv/bin/python fetch_and_score.py          # 抓 + 評分 → papers.json
-./venv/bin/python enrich.py --workers 8       # 補免費全文徽章
+UNPAYWALL_EMAIL=you@example.com ./venv/bin/python enrich.py --workers 8   # 補免費全文徽章（可省略）
 cp papers.json site/papers.json
 ./venv/bin/python -m http.server 8791 --directory site   # 開 http://localhost:8791
 ```

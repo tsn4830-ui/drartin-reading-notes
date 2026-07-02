@@ -13,7 +13,11 @@ site:
 enrich:
   unpaywall:
     enabled: true
-    email: tsn4830@gmail.com     # Unpaywall API 必填（改成你要用的 email 即可）
+    # email 不放在這裡（避免進公開 repo）。改由環境變數 UNPAYWALL_EMAIL 提供：
+    #   本地：export UNPAYWALL_EMAIL=you@example.com
+    #   CI  ：設成 GitHub Actions secret UNPAYWALL_EMAIL
+    # 沒設也能跑，只是不會有 🟢 免費全文徽章。
+    email: ""
   inst_sfx:
     enabled: false              # 公開站不做機構訂閱判定
     base: ""

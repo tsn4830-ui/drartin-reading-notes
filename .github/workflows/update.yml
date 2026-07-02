@@ -35,9 +35,13 @@ jobs:
         run: python fetch_and_score.py
 
       - name: Enrich (Unpaywall OA)
+        env:
+          UNPAYWALL_EMAIL: ${{ secrets.UNPAYWALL_EMAIL }}
         run: python enrich.py --workers 8
 
       - name: Recheck 近 60 天太新當時抓不到的 OA
+        env:
+          UNPAYWALL_EMAIL: ${{ secrets.UNPAYWALL_EMAIL }}
         run: python enrich.py --recheck 60 --workers 8 || true
 
       - name: Copy data into site

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02 07:08",
+  "updated": "2026-07-03 00:22",
   "topic_groups": {
     "geriatrics": {
       "label": "老人醫學 / 衰弱 / 肌少",
@@ -199,7 +199,7 @@
         "肥胖治療"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -587,7 +587,7 @@
         "肥胖治療"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -617,7 +617,7 @@
         "肥胖治療"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -646,16 +646,16 @@
         "肥胖治療"
       ],
       "category": "recommended",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1001/jamanetworkopen.2026.21305",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1001/jamanetworkopen.2026.21305",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1016/s2213-8587(26)00100-2",
@@ -735,16 +735,16 @@
         "骨鬆一般"
       ],
       "category": "recommended",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.34067/kid.0000001303",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.34067/KID.0000001303",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1007/s40618-026-02882-8",
@@ -1058,16 +1058,16 @@
         "糖尿病照護"
       ],
       "category": "recommended",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1161/jaha.125.045664",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1161/JAHA.125.045664",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1371/journal.pone.0352861",
@@ -1087,16 +1087,16 @@
         "血脂/代謝"
       ],
       "category": "recommended",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1371/journal.pone.0352861",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1371/journal.pone.0352861",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.47895/amp.v60i10.11674",
@@ -1438,16 +1438,16 @@
         "骨鬆一般"
       ],
       "category": "recommended",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1111/acel.70617",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/acel.70617",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1007/s00423-026-04123-1",
@@ -1467,16 +1467,16 @@
         "骨鬆一般"
       ],
       "category": "recommended",
-      "oa_status": "closed",
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1007/s00423-026-04123-1",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00423-026-04123-1",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1093/gerona/glag155",
@@ -1639,16 +1639,16 @@
         "糖尿病照護"
       ],
       "category": "recommended",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1111/jdi.70371",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jdi.70371",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1016/j.jcte.2026.100447",
@@ -1779,7 +1779,7 @@
         "肥胖治療"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -2065,7 +2065,7 @@
         "骨鬆一般"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -2527,7 +2527,7 @@
         "衰弱"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -2669,16 +2669,16 @@
         "肥胖治療"
       ],
       "category": "recommended",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1001/jamanetworkopen.2026.21032",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1001/jamanetworkopen.2026.21032",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1007/s00210-026-05635-9",
@@ -2697,7 +2697,7 @@
         "認知/失智"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -2725,7 +2725,7 @@
         "design:randomized controlled"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -2838,7 +2838,7 @@
         "衰弱"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -3260,7 +3260,7 @@
         "骨鬆一般"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -3458,7 +3458,7 @@
         "衰弱"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -3683,7 +3683,7 @@
         "骨鬆一般"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -3880,7 +3880,7 @@
         "血脂/代謝"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -3992,16 +3992,16 @@
         "糖尿病照護"
       ],
       "category": "recommended",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "gold",
+      "oa_pdf_url": "https://link.springer.com/content/pdf/10.1186/s40635-026-00940-2.pdf",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s40635-026-00940-2",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1001/jamadermatol.2026.1907",
@@ -4019,7 +4019,7 @@
         "GLP-1/incretin"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -4549,7 +4549,7 @@
         "脆弱性骨折"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -4577,7 +4577,7 @@
         "骨鬆一般"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -5074,16 +5074,16 @@
         "衰弱"
       ],
       "category": "recommended",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1093/ageing/afag192",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag192",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1111/jgs.70532",
@@ -5482,7 +5482,7 @@
         "腎上腺/垂體"
       ],
       "category": "candidate",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -5536,16 +5536,16 @@
         "腎上腺/垂體"
       ],
       "category": "candidate",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1007/s11102-026-01715-4",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s11102-026-01715-4",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1111/dom.71022",
@@ -5563,7 +5563,7 @@
         "腎上腺/垂體"
       ],
       "category": "candidate",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -5753,16 +5753,16 @@
         "甲狀腺"
       ],
       "category": "candidate",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1177/03000605261463986",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/03000605261463986",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1007/s00259-026-08031-w",
@@ -5780,7 +5780,7 @@
         "甲狀腺"
       ],
       "category": "candidate",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -5807,7 +5807,7 @@
         "甲狀腺"
       ],
       "category": "candidate",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -6785,7 +6785,7 @@
         "糖尿病照護"
       ],
       "category": "candidate",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -6812,7 +6812,7 @@
         "糖尿病照護"
       ],
       "category": "candidate",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -7761,16 +7761,16 @@
         "衰弱"
       ],
       "category": "candidate",
-      "oa_status": "closed",
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "bronze",
+      "oa_pdf_url": "https://link.springer.com/content/pdf/10.1007/s00134-026-08523-1.pdf",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00134-026-08523-1",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1007/s00068-026-03252-y",
@@ -8086,7 +8086,7 @@
         "衰弱"
       ],
       "category": "candidate",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -8113,16 +8113,16 @@
         "衰弱"
       ],
       "category": "candidate",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "gold",
+      "oa_pdf_url": "https://link.springer.com/content/pdf/10.1186/s40635-026-00930-4.pdf",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s40635-026-00930-4",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1093/gerona/glag148",
@@ -8414,16 +8414,16 @@
         "衰弱"
       ],
       "category": "candidate",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1093/ageing/afag191",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag191",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1111/jgs.70544",
@@ -8524,16 +8524,16 @@
         "老年評估"
       ],
       "category": "candidate",
-      "oa_status": "closed",
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1111/jgs.70548",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70548",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1111/jgs.70570",
@@ -8822,7 +8822,7 @@
         "design:guideline"
       ],
       "category": "candidate",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -8849,7 +8849,7 @@
         "design:guideline"
       ],
       "category": "candidate",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
@@ -8930,16 +8930,16 @@
         "design:consensus"
       ],
       "category": "candidate",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1177/03000605261463178",
+      "oa_first_date": "2026-07-03",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/03000605261463178",
       "first_seen": "2026-07-02",
       "last_seen": "2026-07-02",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1016/s2213-8587(26)00102-6",
