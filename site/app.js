@@ -174,6 +174,11 @@ function card(p){
   if(p.isNew) badges += `<span class="badge b-new">✨ NEW</span>`;
   if(p.oa_pdf_url)
     badges += `<a class="badge ${p.oaNew?'b-oanew':'b-oa'}" href="${p.oa_pdf_url}" target="_blank" rel="noopener">${p.oaNew?'🆕🟢 新開放':'🟢 免費全文'}</a>`;
+  // 文獻連結：PubMed 摘要頁 + DOI 出版社原文
+  if(p.url)
+    badges += `<a class="badge b-link" href="${p.url}" target="_blank" rel="noopener">🔗 PubMed</a>`;
+  if(p.doi)
+    badges += `<a class="badge b-link" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">🔗 DOI</a>`;
   for(const t of (p.tags||[]).filter(t=>!/^(neg|penalty|design|author):/.test(t)).slice(0,4))
     badges += `<span class="badge b-tag">${esc(t)}</span>`;
 

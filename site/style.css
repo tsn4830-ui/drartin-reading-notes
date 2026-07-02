@@ -78,6 +78,8 @@ a.c-title:hover{color:var(--accent);text-decoration:underline}
 .b-tz{background:#3a2e0c;color:#e3b54a;border:1px solid #6a5418}
 .b-new{background:#3a300c;color:#e3c64a;border:1px solid #6a5a18}
 .b-tag{background:#222b38;color:#8fb0c4;border:1px solid #34465a}
+.b-link{background:#1c2c3a;color:#7fbef0;border:1px solid #315a86}
+.b-link:hover{background:#24384c;color:#a8d4ff}
 .abs{font-size:.82rem;color:var(--dim);margin-top:7px;display:none}
 .abs.show{display:block}
 
