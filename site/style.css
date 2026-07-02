@@ -8,8 +8,8 @@ body{margin:0;background:var(--bg);color:var(--fg);
   font-family:-apple-system,"Segoe UI","Noto Sans TC",sans-serif;font-size:15px;line-height:1.5}
 header{position:sticky;top:0;z-index:10;background:var(--bg);
   padding:10px 12px 8px;border-bottom:1px solid var(--line)}
-.head-top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
-h1{font-size:1.15rem;margin:0}
+.head-top{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap}
+h1{font-size:1.15rem;margin:0;white-space:nowrap}
 .meta{font-size:.72rem;color:var(--dim);white-space:nowrap}
 .hidden{display:none!important}
 .head-right{display:flex;align-items:center;gap:8px;flex:none}
