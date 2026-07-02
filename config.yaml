@@ -1,0 +1,104 @@
+# ============================================================================
+# reading-radar config — 老人醫學 / 骨質疏鬆 / 內分泌新陳代謝 文獻雷達
+# 來源：全部走 PubMed E-utilities（[ta] 期刊 + 主題式 query），headless CI 最穩，
+#       不依賴任一期刊的 RSS（RSS 常壞、常被 CDN 擋）。
+# 網站：GitHub Pages（公開、可分享）；無後端，投票/已看存在各訪客瀏覽器 localStorage。
+# ============================================================================
+
+site:
+  title: 文獻雷達 · 老醫 / 骨鬆 / 內分泌
+  private: false                # 公開站，可分享
+
+# --- 全文加值層（每篇 DOI 跑 Unpaywall，標開放取用；只需 email，無需金鑰）--------
+enrich:
+  unpaywall:
+    enabled: true
+    email: tsn4830@gmail.com     # Unpaywall API 必填（改成你要用的 email 即可）
+  inst_sfx:
+    enabled: false              # 公開站不做機構訂閱判定
+    base: ""
+    sid: Claude
+
+fulltext_tiers:
+  oa:          { badge: "🟢 OA",   fetch: host_auto }
+  paywalled:   { badge: "🔒 需訂閱", fetch: manual }
+
+defaults:
+  limit: 25                     # 每 feed 每次抓最新 N 篇
+  new_days: 7                   # NEW 標籤 / 「上次造訪後」視窗
+
+# --- 主題訂閱開關（前端頂部勾選；對應 interest_model 分組）-------------------
+topic_groups:
+  geriatrics:   { label: "老人醫學 / 衰弱 / 肌少",  default_on: true }
+  osteoporosis: { label: "骨質疏鬆 / 骨代謝",       default_on: true }
+  endocrine:    { label: "內分泌 / 新陳代謝",        default_on: true }
+  guideline:    { label: "指引 / 共識",             default_on: true }
+
+# ============================================================================
+# FEEDS  (type: pubmed_search → E-utilities esearch+efetch)
+#   [ta] = 期刊 abbreviation；主題型用同義詞 + MeSH 擴充
+# ============================================================================
+feeds:
+
+  # ---- 老人醫學 / 衰弱 / 肌少 ----
+  - { key: jags,         group: geriatrics, type: pubmed_search, name: "J Am Geriatrics Soc",        term: '"J Am Geriatr Soc"[ta]' }
+  - { key: age_ageing,   group: geriatrics, type: pubmed_search, name: "Age and Ageing",             term: '"Age Ageing"[ta]' }
+  - { key: jgs_bio,      group: geriatrics, type: pubmed_search, name: "J Gerontol A Med Sci",       term: '"J Gerontol A Biol Sci Med Sci"[ta]' }
+  - key: sarcopenia
+    group: geriatrics
+    type: pubmed_search
+    name: "Sarcopenia / 肌少症"
+    term: '("Sarcopenia"[Mesh] OR sarcopenia OR "muscle wasting" OR "muscle mass loss") AND (older OR elderly OR aging OR aged)'
+  - key: frailty
+    group: geriatrics
+    type: pubmed_search
+    name: "Frailty / 衰弱"
+    term: '("Frailty"[Mesh] OR "Frail Elderly"[Mesh] OR frailty OR "frail older") AND (assessment OR intervention OR outcome OR management)'
+  - key: falls
+    group: geriatrics
+    type: pubmed_search
+    name: "Falls prevention / 跌倒"
+    term: '("Accidental Falls"[Mesh] OR "fall prevention" OR "falls in older") AND (randomized OR intervention OR exercise OR guideline)'
+
+  # ---- 骨質疏鬆 / 骨代謝 ----
+  - { key: osteoporos_int, group: osteoporosis, type: pubmed_search, name: "Osteoporosis International",  term: '"Osteoporos Int"[ta]' }
+  - { key: jbmr,          group: osteoporosis, type: pubmed_search, name: "J Bone Mineral Research",     term: '"J Bone Miner Res"[ta]' }
+  - { key: bone_journal,  group: osteoporosis, type: pubmed_search, name: "Bone",                        term: '"Bone"[ta]' }
+  - key: osteo_drugs
+    group: osteoporosis
+    type: pubmed_search
+    name: "抗骨鬆藥物 (denosumab/romo/teriparatide)"
+    term: '(romosozumab OR denosumab OR teriparatide OR abaloparatide OR bisphosphonate OR zoledronic OR alendronic OR "anabolic therapy") AND (osteoporosis OR fracture OR "bone mineral density" OR BMD)'
+  - key: fragility_fx
+    group: osteoporosis
+    type: pubmed_search
+    name: "脆弱性骨折 / FRAX / DXA"
+    term: '("fragility fracture" OR "hip fracture" OR "vertebral fracture" OR FRAX OR "fracture risk" OR "bone mineral density") AND (older OR elderly OR postmenopausal OR treatment OR prevention)'
+
+  # ---- 內分泌 / 新陳代謝 ----
+  - { key: jcem,          group: endocrine, type: pubmed_search, name: "J Clin Endocrinol Metab",     term: '"J Clin Endocrinol Metab"[ta]' }
+  - { key: diabetes_care, group: endocrine, type: pubmed_search, name: "Diabetes Care",               term: '"Diabetes Care"[ta]' }
+  - { key: lancet_de,     group: endocrine, type: pubmed_search, name: "Lancet Diabetes Endocrinol",  term: '"Lancet Diabetes Endocrinol"[ta]' }
+  - { key: thyroid_j,     group: endocrine, type: pubmed_search, name: "Thyroid",                     term: '"Thyroid"[ta]' }
+  - key: incretin
+    group: endocrine
+    type: pubmed_search
+    name: "GLP-1 / SGLT2 / 減重藥"
+    term: '(semaglutide OR tirzepatide OR "GLP-1" OR "GLP-1 receptor agonist" OR SGLT2 OR "SGLT-2 inhibitor" OR empagliflozin OR dapagliflozin OR retatrutide) AND (diabetes OR obesity OR weight OR cardiovascular OR renal OR outcome)'
+  - key: thyroid_topic
+    group: endocrine
+    type: pubmed_search
+    name: "甲狀腺結節 / 癌 / 功能異常"
+    term: '("thyroid nodule" OR "thyroid cancer" OR "thyroid carcinoma" OR hypothyroidism OR hyperthyroidism OR "Graves disease" OR thyroiditis) AND (management OR treatment OR guideline OR diagnosis)'
+  - key: adrenal_pituitary
+    group: endocrine
+    type: pubmed_search
+    name: "腎上腺 / 腦下垂體"
+    term: '("Cushing" OR "primary aldosteronism" OR pheochromocytoma OR "adrenal insufficiency" OR "adrenal incidentaloma" OR acromegaly OR prolactinoma OR hypopituitarism)'
+
+  # ---- 指引 / 共識 ----
+  - key: endo_guideline
+    group: guideline
+    type: pubmed_search
+    name: "內分泌/骨鬆/老醫 指引"
+    term: '(guideline[pt] OR "practice guideline"[pt] OR "consensus statement" OR "clinical practice guideline") AND (diabetes OR endocrine OR osteoporosis OR thyroid OR obesity OR geriatric OR frailty OR "bone health")'

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文獻雷達 · 老醫 / 骨鬆 / 內分泌</title>
+<meta name="description" content="老人醫學、骨質疏鬆、內分泌新陳代謝的每日文獻雷達 — 依研究興趣自動評分排序。">
+<link rel="stylesheet" href="style.css?v=20260702c">
+</head>
+<body>
+<header>
+  <div class="head-top">
+    <h1>📡 文獻雷達</h1>
+    <div class="head-right">
+      <span class="meta" id="meta">載入中…</span>
+      <button id="headToggle" class="head-toggle" aria-label="展開/收合設定" title="展開/收合">▶</button>
+    </div>
+  </div>
+
+  <div id="visitBanner" class="visit-banner hidden"></div>
+
+  <!-- 可折疊：搜尋 + 訂閱 + 篩選 -->
+  <div id="headExtra" class="head-extra">
+    <input type="search" id="search" placeholder="🔍 搜尋標題 / 作者 / 期刊…">
+
+    <!-- 主題訂閱開關 -->
+    <div class="topics" id="topics"></div>
+
+    <!-- 篩選列 -->
+    <div class="filter-row">
+      <select id="sort">
+        <option value="score">分數高→低</option>
+        <option value="date">最新優先</option>
+      </select>
+      <div class="chips" id="badgeFilter">
+        <button class="chip" data-badge="all" data-on="1">全部</button>
+        <button class="chip" data-badge="oa">🟢 免費全文</button>
+        <button class="chip" data-badge="new">✨ NEW</button>
+      </div>
+      <label class="seen-toggle"><input type="checkbox" id="showSeen"> 顯示已看過</label>
+    </div>
+  </div>
+</header>
+
+<main id="list"></main>
+<footer><span id="count"></span> · 老醫 / 骨鬆 / 內分泌文獻雷達</footer>
+
+<script src="app.js?v=20260702c"></script>
+</body>
+</html>

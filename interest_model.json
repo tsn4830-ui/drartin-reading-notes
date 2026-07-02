@@ -1,0 +1,136 @@
+{
+  "version": "1.0",
+  "updated": "2026-07-02",
+  "thresholds": {
+    "recommend": 3,
+    "candidate": 1
+  },
+  "positive": [
+    {
+      "weight": 3,
+      "tag": "抗骨鬆藥",
+      "keywords": ["romosozumab", "denosumab", "teriparatide", "abaloparatide", "zoledronic", "bisphosphonate", "anabolic therapy", "sequential therapy"]
+    },
+    {
+      "weight": 3,
+      "tag": "GLP-1/incretin",
+      "keywords": ["semaglutide", "tirzepatide", "retatrutide", "GLP-1", "GLP-1 receptor", "incretin", "dual agonist", "GIP"]
+    },
+    {
+      "weight": 3,
+      "tag": "SGLT2",
+      "keywords": ["SGLT2", "SGLT-2", "empagliflozin", "dapagliflozin", "canagliflozin", "sodium-glucose cotransporter"]
+    },
+    {
+      "weight": 3,
+      "tag": "肌少症",
+      "keywords": ["sarcopenia", "sarcopenic", "muscle wasting", "low muscle mass", "muscle strength decline"]
+    },
+    {
+      "weight": 2,
+      "tag": "衰弱",
+      "keywords": ["frailty", "frail older", "frail elderly", "frailty index", "prefrail"]
+    },
+    {
+      "weight": 2,
+      "tag": "脆弱性骨折",
+      "keywords": ["fragility fracture", "hip fracture", "vertebral fracture", "osteoporotic fracture", "fracture risk", "refracture"]
+    },
+    {
+      "weight": 2,
+      "tag": "骨密度/FRAX",
+      "keywords": ["bone mineral density", "BMD", "DXA", "FRAX", "trabecular bone score", "T-score"]
+    },
+    {
+      "weight": 2,
+      "tag": "糖尿病照護",
+      "keywords": ["continuous glucose monitoring", "CGM", "time in range", "insulin therapy", "type 2 diabetes", "type 1 diabetes", "diabetic kidney", "diabetic nephropathy"]
+    },
+    {
+      "weight": 2,
+      "tag": "肥胖治療",
+      "keywords": ["obesity", "weight loss", "weight management", "anti-obesity", "bariatric", "metabolic surgery"]
+    },
+    {
+      "weight": 2,
+      "tag": "甲狀腺",
+      "keywords": ["thyroid nodule", "thyroid cancer", "thyroid carcinoma", "hypothyroidism", "hyperthyroidism", "Graves", "thyroiditis", "levothyroxine"]
+    },
+    {
+      "weight": 2,
+      "tag": "腎上腺/垂體",
+      "keywords": ["cushing", "primary aldosteronism", "pheochromocytoma", "adrenal insufficiency", "adrenal incidentaloma", "acromegaly", "prolactinoma", "hypopituitarism"]
+    },
+    {
+      "weight": 2,
+      "tag": "跌倒預防",
+      "keywords": ["fall prevention", "falls in older", "fall risk", "recurrent falls"]
+    },
+    {
+      "weight": 1,
+      "tag": "骨鬆一般",
+      "keywords": ["osteoporosis", "osteopenia", "bone health", "bone turnover", "postmenopausal bone"]
+    },
+    {
+      "weight": 1,
+      "tag": "老年評估",
+      "keywords": ["comprehensive geriatric assessment", "geriatric syndrome", "polypharmacy", "deprescribing", "multimorbidity", "delirium", "functional decline"]
+    },
+    {
+      "weight": 1,
+      "tag": "血脂/代謝",
+      "keywords": ["dyslipidemia", "LDL cholesterol", "PCSK9", "statin", "metabolic syndrome", "MASLD", "NAFLD", "fatty liver"]
+    },
+    {
+      "weight": 1,
+      "tag": "維生素D/鈣",
+      "keywords": ["vitamin D", "calcium supplementation", "hypercalcemia", "hyperparathyroidism", "parathyroid"]
+    },
+    {
+      "weight": 1,
+      "tag": "認知/失智",
+      "keywords": ["cognitive impairment", "dementia", "alzheimer", "mild cognitive"]
+    }
+  ],
+  "negative": [
+    {
+      "weight": -3,
+      "tag": "basic science",
+      "keywords": ["animal model", "rat model", "mouse model", "in vitro", "cell culture", "knockout mice", "signaling pathway", "molecular mechanism", "cell line", "zebrafish"]
+    },
+    {
+      "weight": -1,
+      "tag": "genetics",
+      "keywords": ["genome-wide association", "GWAS", "gene expression profiling", "single-cell RNA", "transcriptomic", "gene polymorphism"]
+    },
+    {
+      "weight": -1,
+      "tag": "prediction model",
+      "keywords": ["machine learning prediction", "deep learning model", "radiomics", "nomogram development"]
+    },
+    {
+      "weight": -1,
+      "tag": "protocol/scale",
+      "keywords": ["study protocol", "protocol for a", "questionnaire validation", "scale development", "psychometric properties"]
+    }
+  ],
+  "negative_exceptions": {
+    "prediction model": ["clinical decision", "treatment selection", "external validation"],
+    "genetics": ["gene therapy", "first-in-human", "novel treatment"]
+  },
+  "design_bonus": {
+    "randomized controlled": 1,
+    "RCT": 1,
+    "systematic review": 1,
+    "meta-analysis": 1,
+    "guideline": 1,
+    "consensus": 1,
+    "practice guideline": 1
+  },
+  "design_penalty_context": {
+    "applies_to_tags": [],
+    "patterns": [],
+    "penalty": 0
+  },
+  "bonus_authors": []
+}
