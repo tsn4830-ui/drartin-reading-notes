@@ -9,6 +9,7 @@ let actions = load(LS_ACT, {});
 let topics = load(LS_TOPIC, null);
 let filt = load(LS_FILT, {badge:'all', sort:'score', search:'', showSeen:false});
 let visit = resolveVisit();
+let collectUrl = '';                 // 按讚匯入 Zotero 的中繼網址（來自 collect.config.json）
 const seenAtLoad = new Set();        // 只隱藏「載入前就已看」的；本 session 新點的留著
 let headCollapsed = false;           // 於 init() 依螢幕寬度 / localStorage 決定
 
@@ -28,6 +29,7 @@ function resolveVisit(){
 async function init(){
   const r = await fetch('papers.json?_=' + Date.now());
   DATA = await r.json();
+  try{ const c = await (await fetch('collect.config.json?_=' + Date.now())).json(); collectUrl = (c.url||'').trim(); }catch{}
   if(topics===null){ // 首次：用 config default_on
     topics = {};
     for(const [k,v] of Object.entries(DATA.topic_groups)) topics[k] = v.default_on;
@@ -214,9 +216,32 @@ function actBtn(label, cls, on, fn){
 
 function setVote(p, v){
   const a = actions[p.item_id] || (actions[p.item_id]={});
+  const was = a.vote;
   a.vote = (a.vote===v) ? null : v;
   markSeen(p);
   save(LS_ACT, actions);
+  if(a.vote==='up' && was!=='up') sendToCollector(p);   // 剛按讚 → 送去 Zotero
+}
+
+// 送一篇到 Apps Script 中繼（→ Zotero + Sheet）。fire-and-forget，失敗只提示。
+function sendToCollector(p){
+  if(!collectUrl){ toast('👍 已收藏（本機）'); return; }
+  const payload = { item_id:p.item_id, doi:p.doi||'', title:p.title||'',
+    authors:p.authors||'', journal:p.source_name||'', year:p.pub_date||'',
+    url:p.url||('https://doi.org/'+(p.doi||'')), vote:'up' };
+  // text/plain 避免 CORS preflight；no-cors fire-and-forget（Apps Script 不回 CORS 標頭）
+  fetch(collectUrl, {method:'POST', mode:'no-cors',
+    headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload)})
+    .then(()=>toast('👍 已送進 Zotero'))
+    .catch(()=>toast('⚠ 匯入失敗，已存本機'));
+}
+
+let _toastT=null;
+function toast(msg){
+  let el=document.getElementById('toast');
+  if(!el){ el=document.createElement('div'); el.id='toast'; document.body.appendChild(el); }
+  el.textContent=msg; el.classList.add('show');
+  clearTimeout(_toastT); _toastT=setTimeout(()=>el.classList.remove('show'), 1800);
 }
 function toggleSeen(p){
   const a = actions[p.item_id] || (actions[p.item_id]={});
