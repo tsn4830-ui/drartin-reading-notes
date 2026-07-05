@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04 23:01",
+  "updated": "2026-07-05 23:04",
   "topic_groups": {
     "geriatrics": {
       "label": "老人醫學 / 衰弱 / 肌少",
@@ -19,8 +19,8 @@
     }
   },
   "counts": {
-    "total_db": 738,
-    "exported": 582
+    "total_db": 776,
+    "exported": 615
   },
   "papers": [
     {
@@ -149,7 +149,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00330-026-12677-3",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -210,7 +210,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900125-7",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -271,7 +271,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ndt/gfag154",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -303,7 +303,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12891-026-10160-0",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -368,6 +368,65 @@
       "oaNew": true
     },
     {
+      "item_id": "doi:10.1007/s00262-026-04488-8",
+      "title": "GLP-1 receptor agonists at immune checkpoint inhibitor initiation with immune-related and supportive-care outcomes in patients with cancer and overweight or obesity without diabetes: a target trial emulation.",
+      "source": "incretin",
+      "source_name": "GLP-1 / SGLT2 / 減重藥",
+      "group": "endocrine",
+      "authors": "Lin Y, Li P, Chen S, Meyerowitz-Katz G, Huang Y, Su P",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42400648/",
+      "doi": "10.1007/s00262-026-04488-8",
+      "abstract": "Sarcopenia, cachexia, and malnutrition are common in patients on immune checkpoint inhibitors (ICIs). GLP-1 receptor agonists (GLP-1 RAs) are increasingly used for weight management in patients with obesity, including those with cancer. Whether GLP-1 RA use at ICI initiation relates to wasting-related outcomes in patients without diabetes is unknown. We examined whether GLP-1 RA supply at ICI start was linked to wasting-related diagnoses and acute-care use. We used target-trial emulation with TriNetX US data. Adults with cancer and obesity/overweight starting an ICI were included. Baseline diabetes in the prior 12 months were excluded, with a 90-day GLP-1 RA washout. Exposure was a GLP-1 RA prescription or administration within a prespecified 30-day peri-initiation window before or after ICI initiation, versus none. Cohorts were 1:1 propensity score matched and followed up to 36 months; associations were estimated with intention-to-treat Cox models. After matching, 1974 patients were analyzed (987 per group). Over 36 months, GLP-1 RA overlap was associated with fewer immune-related adverse events (HR 0.63, 95% CI 0.50-0.79); hospitalization (HR 0.67, 0.51-0.89), ICU (HR 0.69, 0.53-0.90), and emergency department visits (HR 0.68, 0.53-0.89) were also lower. GLP-1 RA add-on at ICI initiation was associated with fewer recorded wasting-related diagnoses and less acute-care use. The all-cause mortality reduction is exploratory, likely reflecting channeling bias rather than causation. These findings support prospective evaluation of GLP-1 RAs as supportive-care add-on therapy in ICI-treated patients with obesity.",
+      "pub_date": "2026-Jul-04",
+      "score": 8,
+      "tags": [
+        "GLP-1/incretin",
+        "肌少症",
+        "肥胖治療"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1007/s00262-026-04488-8",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1007/s00262-026-04488-8",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1016/j.phrs.2026.108333",
+      "title": "GLP-1 Receptor Agonist Therapy in Children and Adolescents with Obesity: A Network Meta-Analysis of Differential Cardiometabolic Efficacy and Safety Profiles.",
+      "source": "incretin",
+      "source_name": "GLP-1 / SGLT2 / 減重藥",
+      "group": "endocrine",
+      "authors": "Li Y, Xu X, Tuersun A, Fan X, Qin M, Zhao X, Abuduaini S, Xing H, Chen H",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401410/",
+      "doi": "10.1016/j.phrs.2026.108333",
+      "abstract": "Glucagon-like peptide-1 receptor agonists (GLP-1RAs) are increasingly used in adolescents with overweight or obesity, but their comparative effects on cardiometabolic outcomes across different agents remain uncertain. We aimed to compare the efficacy and safety of different GLP-1RAs on key cardiometabolic parameters in adolescents with overweight or obesity, with or without type 2 diabetes. We searched PubMed, Embase, Web of Science, the Cochrane Library, and ClinicalTrials.gov from inception to May 1, 2026. Randomised clinical trials comparing GLP-1RAs with placebo or another active agent in eligible adolescents were included. Two reviewers independently extracted data and assessed risk of bias following PRISMA guidelines for network meta-analysis. We used a Bayesian random-effects model for data synthesis. 17 RCTs with 1230 participants were included. Semaglutide 2.4mg SC was associated with the largest reductions in body weight (mean difference -18.00kg; 95% credible interval -24.34 to -11.69, high confidence), BMI (-5.9kg/m^2, -10.5 to -1.3, high confidence), and waist circumference (-12.2cm, -21.67 to -2.67). For glycaemic control, dulaglutide 1.5mg SC showed the largest reduction in HbA1c (-1.50%, -1.84 to -1.15, high confidence), and lixisenatide 20 ug SC showed the largest reduction in fasting plasma glucose (-3.98mmol/L, -7.46 to -0.60); however, these rankings derive from networks with sparse head-to-head evidence and wide credible intervals for indirect comparisons. Exenatide 20 ug SC was associated with a reduction in systolic blood pressure (-6.64mmHg, -13.22 to -0.17) based on limited indirect evidence from early-phase trials. No agent improved lipid profiles in a statistically significant manner. In this network meta-analysis of adolescents with overweight or obesity, GLP-1RAs showed differential cardiometabolic profiles. Semaglutide 2.4mg produced the largest point estimates for weight-related outcomes, dulaglutide 1.5mg and lixisenatide 20 ug for glycaemic endpoints, and exenatide 20 ug for systolic blood pressure. These findings are hypothesis-generating: most active-treatment comparisons were indirect, many nodes were informed by single trials, and SUCRA rankings should not be interpreted as evidence of definitive clinical superiority.",
+      "pub_date": "2026-Jul-04",
+      "score": 8,
+      "tags": [
+        "GLP-1/incretin",
+        "design:RCT",
+        "糖尿病照護",
+        "肥胖治療"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1016/j.phrs.2026.108333",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.phrs.2026.108333",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
       "item_id": "doi:10.1016/j.bone.2026.118003",
       "title": "Baseline β-CTX and BMI predict suitability for deferred zoledronic acid redosing beyond 12 months in postmenopausal Indian women with osteoporosis.",
       "source": "bone_journal",
@@ -393,7 +452,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.118003",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -452,7 +511,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1002/epi.70369",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -483,7 +542,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.7507/1002-1892.202603096",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -632,7 +691,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag084",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -662,7 +721,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag103",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -692,7 +751,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08086-3",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -812,7 +871,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.47895/amp.v60i10.10951",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -842,7 +901,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1002/oby.70256",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -902,7 +961,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s10557-026-07897-0",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -931,7 +990,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s12072-026-11122-3",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -961,7 +1020,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s13256-026-06296-1",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -990,7 +1049,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jamda.2026.106320",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -1341,7 +1400,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900030-6",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -1432,7 +1491,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s13730-026-01142-1",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -1462,7 +1521,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag088",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -1491,7 +1550,122 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag152",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1016/j.cardfail.2026.06.025",
+      "title": "Time to benefit of incretin-based therapies in adiposity-related heart failure with mildly reduced or preserved ejection fraction: a systematic review and meta-analysis.",
+      "source": "incretin",
+      "source_name": "GLP-1 / SGLT2 / 減重藥",
+      "group": "endocrine",
+      "authors": "Spiazzi B, Zingano C, Vest A",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401228/",
+      "doi": "10.1016/j.cardfail.2026.06.025",
+      "abstract": "Obesity is a major risk factor for heart failure with preserved ejection fraction (HFpEF). Incretin-based therapies are associated with a reduction in worsening heart failure (HF) events for patients with HF with mildly reduced or preserved ejection fraction (HFmrEF/HFpEF), although the time to clinical benefit from these therapies is unknown. PubMed, Embase, and CENTRAL were searched until July 12, 2025 for randomized controlled trials studying incretin-based therapies (semaglutide, tirzepatide) in adults with overweight/obesity and HF with ejection fraction >40%, and ≥52-week follow-up. We extracted study-level data, from which individual participant data (IPD) was reconstructed. To estimate the time to benefit, we iteratively calculated hazard ratios (HR) and 95% confidence intervals (CI) with the dataset truncated for each day of follow-up. We pooled overall results with reconstructed IPD and study-level random-effects meta-analyses. Risk of bias was assessed with RoB 2, and certainty of evidence with GRADE. Four trials, encompassing 4149 participants and a weighted average median follow-up of 2.47 years, were included. Risk of bias was low. Compared to placebo, incretin-based therapies reduced worsening HF or cardiovascular death (HR 0.59, 95% CI 0.45-0.78; moderate certainty). The nominal time to first statistical significance was 126 days (4.1 months), and statistical significance was sustained after day 162 (5.3 months). Incretin-based therapies reduced worsening HF events (HR 0.33, 95% CI 0.20-0.54; high certainty), with sustained significance after day 183 (6.0 months). Incretin-based therapies are associated with reduced HF events in patients with overweight/obesity and HFmrEF/HFpEF, with sustained statistically significant outcome benefits observed from approximately 6 months onwards.",
+      "pub_date": "2026-Jul-04",
+      "score": 6,
+      "tags": [
+        "GLP-1/incretin",
+        "design:randomized controlled",
+        "肥胖治療"
+      ],
+      "category": "recommended",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.cardfail.2026.06.025",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1186/s12933-026-03267-0",
+      "title": "Synergistic SGLT2 and GLP-1R targeting alleviates systemic inflammation-induced and M1 monocyte-driven endothelial dysfunction in coronary artery disease.",
+      "source": "incretin",
+      "source_name": "GLP-1 / SGLT2 / 減重藥",
+      "group": "endocrine",
+      "authors": "Mroueh A, Fakih W, Kerth S, Kikuchi S, Aboueddahab C, Gong D, Choi M, Nicolas A, Fass S, Trimaille A, Granier A, Carmona A, Amissi S, Pompach P, Oak M, Jesel L, Görlach A, Morel O, Schini-Kerth V",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401896/",
+      "doi": "10.1186/s12933-026-03267-0",
+      "abstract": "Systemic residual inflammation plays a pivotal role in the pathophysiology of coronary artery disease (CAD). Cardiovascular protection by SGLT2 inhibitors (SGLT2i) and GLP-1 receptor agonists (GLP-1Ra) is associated with reduced inflammatory burden but underlying cellular mechanisms remain incompletely defined. We investigated whether SGLT2i and GLP-1Ra synergistically suppress monocyte activation and prevent both systemic inflammatory mediator-induced and monocyte-driven endothelial dysfunction in CAD. Plasma and circulating monocytes were analyzed in healthy individuals (n = 20), patients with cardiovascular disease without CAD (n = 20), and patients with stable CAD (n = 55), and their effects on endothelial cell responses were assessed. CAD plasma showed increased IL-1β, IL-6, TNF-α, MCP-1, soluble ICAM-1, and VCAM-1, and a proteomic profile enriched in complement, innate immune, and extracellular matrix remodeling pathways. CAD plasma induced oxidative stress in endothelial cells, reduced nitric oxide, increased leukocyte and platelet adhesion, and enhanced procoagulant activity, correlating with circulating TNF-α and sICAM-1. CAD monocytes exhibited a metabolically activated phenotype with increased oxidative stress, mitochondrial activity, glucose and cholesterol uptake, calcium signaling, procoagulant activity, and adhesion to endothelial cells. These changes correlated with circulating TNF-α, sICAM-1, and plasma-induced endothelial dysfunction. CAD monocytes showed increased NF-κB, NOX2, and NLRP3 signaling with reduced CREB/NRF2 pathways, produced elevated levels of pro-inflammatory cytokines, while CAD monocytes-conditioned medium induced endothelial oxidative stress and blunted nitric oxide production. GLP-1Ra or SGLT2i attenuated these effects, while combined treatment provided synergistic protection, reducing CAD plasma-induced endothelial oxidative stress (~ 80%) and restoring endothelial function, reducing CAD monocytes oxidative stress (~ 82%), metabolic activation and pro-thrombotic activity, reprogramming monocytes toward anti-inflammatory phenotype and preventing CAD monocytes-induced endothelial dysfunction. CAD features systemic inflammation that drives monocyte activation and endothelial dysfunction. Combined SGLT2i and GLP-1Ra synergistically suppress monocyte pro-inflammatory and pro-thrombotic activity and subsequently driven endothelial dysfunction.",
+      "pub_date": "2026-Jul-04",
+      "score": 6,
+      "tags": [
+        "GLP-1/incretin",
+        "SGLT2"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1186/s12933-026-03267-0",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1186/s12933-026-03267-0",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1186/s12880-026-02556-0",
+      "title": "Association between 3 D CT-based volumetric fat infiltration of lumbar paraspinal muscles and bone mineral density: a clinical study.",
+      "source": "fragility_fx",
+      "source_name": "脆弱性骨折 / FRAX / DXA",
+      "group": "osteoporosis",
+      "authors": "Feng R, Pan B, Ye L, Yin B, Pan G, Chen J, Wang D",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401813/",
+      "doi": "10.1186/s12880-026-02556-0",
+      "abstract": "This study investigated the association between the fat infiltration rate (FIR) of lumbar paraspinal muscles-specifically the multifidus, erector spinae, and psoas major-and bone mineral density (BMD) in postmenopausal women. By examining muscular and segmental (L2-L4) adiposity variations, we aimed to identify imaging biomarkers for early osteoporosis detection and to inform integrated \"bone-muscle\" therapeutic strategies. A retrospective analysis was performed on 120 postmenopausal women who underwent dual-energy X-ray absorptiometry (DXA) and lumbar computed tomography (CT) between 2024 and 2025. Participants were categorized into three cohorts-normal bone mass, osteopenia, and osteoporosis-based on DXA T-scores. Demographic data, including BMI, were recorded and subsequently utilized as a covariate in the regression models to ensure robust statistical adjustment. The L2-L4 paraspinal musculature was automatically segmented in 3D using 3D Slicer software with the MuscleMap plug-in to determine the FIR for each muscle group. Data normality was assessed using Shapiro-Wilk tests, while inter-group differences were compared via one-way ANOVA or Kruskal-Wallis H tests. Correlations were quantified using Pearson or Spearman analyses. Age was comparable across groups ( P = 0. 160 ), but BMI and average BMD differed significantly. Multifidus FIR showed a significant inverse correlation with BMD ( P < 0. 001 ). After adjusting for BMI, multifidus fat infiltration remained an independent predictor of BMD. At the segmental level, the L3 multifidus displayed the greatest inter-group variance and the strongest negative correlation with BMD ( r = -0. 689, P < 0. 001 ). Lumbar paraspinal muscle adiposity, particularly in the L3 multifidus, is inversely associated with BMD in postmenopausal women. Consequently, L3 multifidus FIR is a statistically significant auxiliary imaging metric for proactive osteoporosis screening and the assessment of osteosarcopenia risk.",
+      "pub_date": "2026-Jul-04",
+      "score": 6,
+      "tags": [
+        "肌少症",
+        "骨密度/FRAX",
+        "骨鬆一般"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1186/s12880-026-02556-0",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1186/s12880-026-02556-0",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1186/s12877-026-07963-0",
+      "title": "Association of stress hyperglycemia ratio with malnutrition, sarcopenia, and frailty in older adults: a cross-sectional study.",
+      "source": "sarcopenia",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Kocaaslan T, Balaban U, Turhan O, Kelleci Cakir B, Esme M, Dogu B, Halil M, Cankurtaran M, Balci C",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401789/",
+      "doi": "10.1186/s12877-026-07963-0",
+      "abstract": "Stress hyperglycemia ratio (SHR), calculated using admission glucose and glycated hemoglobin (HbA1c), has emerged as a marker of acute metabolic stress and adverse outcomes. However, its relationship with major geriatric syndromes remains unclear. This study investigated the association between SHR and malnutrition, sarcopenia, and frailty in older adults attending a geriatric outpatient clinic. This retrospective cross-sectional study included patients aged ≥ 65 years who underwent comprehensive geriatric assessment between January 2022 and January 2026. SHR was calculated as admission glucose divided by estimated average glucose derived from HbA1c and categorized into quartiles. Malnutrition was assessed using the Mini Nutritional Assessment-Short Form (MNA-SF), probable sarcopenia risk using the SARC-F questionnaire, and frailty using the Clinical Frailty Scale (CFS). Restricted cubic spline analyses and multivariable logistic regression models were performed to evaluate associations between SHR quartiles and geriatric outcomes. A total of 1,401 older adults were included (median age: 73 years [IQR: 69-78]; 66% female). The median SHR was 0.80 (IQR: 0.73-0.89). Restricted cubic spline analyses demonstrated significant nonlinear associations between SHR and geriatric outcomes, with lower SHR values associated with higher odds of malnutrition, probable sarcopenia, and frailty. In fully adjusted analyses, low SHR remained independently associated with probable sarcopenia (OR: 1.51, 95% CI: 1.02-2.25; p = 0.040) and frailty (OR: 1.62, 95% CI: 1.05-2.50; p = 0.031), whereas the association with malnutrition was no longer significant. Associations were more pronounced among participants without diabetes, particularly for probable sarcopenia (p for interaction = 0.038). Lower SHR values were associated with increased vulnerability to geriatric syndromes, particularly probable sarcopenia and frailty, in older adults. These findings suggest that SHR may reflect impaired metabolic adaptation and reduced physiological reserve in aging populations. Further prospective studies are needed to establish the clinical utility of SHR as a marker of geriatric vulnerability.",
+      "pub_date": "2026-Jul-04",
+      "score": 6,
+      "tags": [
+        "老年評估",
+        "肌少症",
+        "衰弱"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1186/s12877-026-07963-0",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1186/s12877-026-07963-0",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -1520,7 +1694,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1038/s41366-026-02141-z",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -1578,7 +1752,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jhsa.2026.05.008",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -1607,7 +1781,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00108-026-02145-x",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -1636,7 +1810,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.7759/cureus.110111",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -1666,7 +1840,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00402-026-06401-5",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -1697,7 +1871,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.64898/2026.06.18.26355909",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -1784,7 +1958,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3389/fendo.2026.1858266",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -1843,7 +2017,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.57187/5415",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2047,7 +2221,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.47895/amp.v60i10.11674",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2105,7 +2279,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.ero.2025.05.008",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2134,7 +2308,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117979",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2163,7 +2337,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117978",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -2193,7 +2367,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117985",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -2222,7 +2396,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag096",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -2251,7 +2425,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08081-8",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -2280,7 +2454,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08103-5",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -2309,7 +2483,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08113-3",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2339,7 +2513,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag257",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2426,7 +2600,91 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag155",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1016/j.dld.2026.06.010",
+      "title": "GLP-1 receptor agonists in pediatric obesity.",
+      "source": "incretin",
+      "source_name": "GLP-1 / SGLT2 / 減重藥",
+      "group": "endocrine",
+      "authors": "Abodi M, Agostoni C, Mazzocchi A",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401514/",
+      "doi": "10.1016/j.dld.2026.06.010",
+      "abstract": "Glucagon-like peptide-1 receptor agonists (GLP-1RAs) have transformed the management of obesity in adults and are now gaining attention in pediatric populations facing a dramatic rise of obesity prevalence and related comorbidities. In addition to weight loss, their role extends to cardiometabolic effects and improvements of kidney function. Liraglutide and semaglutide have demonstrated clinically meaningful efficacy in adolescents, leading to FDA and EMA approvals for patients ≥12 years. Ongoing trials are being conducted to combine GLP-1 analogues with other effective molecules or with bariatric surgery. Current evidence on safety most frequently highlights gastrointestinal adverse events, with no consistent impact on growth or pubertal development reported to date. Psychosocial dimensions, including stigma, mental health risks, and potential disordered eating, together with economic barriers and disparities in access, require careful consideration and efforts to be overcome. Implementing intensive lifestyle interventions is mandatory, including nutritional education, physical activity promotion, and family-based behavioral strategies, to support long-term weight management and address the broader determinants of health. Preliminary studies suggest complementary roles for GLP-1RAs alongside metabolic bariatric surgery in selected high-risk patients. Long-term data on safety and multidisciplinary approaches are required to define the optimal integration of pharmacotherapy into comprehensive, family-centered pediatric obesity care models.",
+      "pub_date": "2026-Jul-04",
+      "score": 5,
+      "tags": [
+        "GLP-1/incretin",
+        "肥胖治療"
+      ],
+      "category": "recommended",
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1016/j.dld.2026.06.010",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.dld.2026.06.010",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1186/s12890-026-04469-8",
+      "title": "Effect of GLP-1RA on blood eosinophil levels in adults: a real-world study.",
+      "source": "incretin",
+      "source_name": "GLP-1 / SGLT2 / 減重藥",
+      "group": "endocrine",
+      "authors": "Wu Y, Lin Y, Wu J, Zhao L, Lin Y, Chen W, Zhu Y, Wang Y, Zhang M, Bao W",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401898/",
+      "doi": "10.1186/s12890-026-04469-8",
+      "abstract": "Glucagon-like peptide-1 receptor agonists (GLP-1RAs) are widely used for glycemic control and weight management, especially semaglutide. Potential benefits of GLP-1RAs in asthma, especially in eosinophilic phenotypes, prompt growing scientific interest. To investigate the impact of semaglutide on eosinophilic inflammation and to identify clinical and metabolic determinants of eosinophil reduction after treatment. We conducted a retrospective, single-center study in Shanghai, China. Eligible subjects were those first prescribed semaglutide in our outpatient clinic. Demographic characteristics, complete blood counts, and lipid profiles before and after semaglutide treatment were collected from electronic medical records. Subgroup analyses were stratified using a blood eosinophil count (BEC) cut-off of 150/µL and a BMI threshold of 28 kg/m². Multiple linear regression analysis was employed to identify factors influencing the reduction in eosinophil counts. Among 371 participants included in the final analysis, BEC decreased significantly from 160(150)/µL at baseline to 110(100)/µL after semaglutide treatment (P < 0.001), and eosinophil percentage declined from 2.20(1.80)% to 1.60(1.40)% (P < 0.001). The proportion of individuals with eosinophil counts < 150/µL increased from 44.20% to 65.79%. Eosinophil reduction occurred in both baseline eosinophil < 150/µL and eosinophil ≥ 150/µL groups. The percentage reduction in eosinophil count was greater in the BMI-low group than in the BMI-high group (- 31.58% vs. -21.04%, P = 0.037). Multiple linear regression identified baseline eosinophil count as the only independent predictor of eosinophil reduction after treatment. GLP-1RA, semaglutide treatment significantly reduced BECs regardless of baseline levels, with a more pronounced effect observed in non-obese individuals. Higher baseline eosinophil levels independently predicted greater treatment-induced reductions after adjustment for BMI and lipid parameters. ChiCTR2500110394, www.chictr.org.cn. Registration Date, June 20th, 2025.",
+      "pub_date": "2026-Jul-04",
+      "score": 5,
+      "tags": [
+        "GLP-1/incretin",
+        "肥胖治療"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1186/s12890-026-04469-8",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1186/s12890-026-04469-8",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1002/hed.70379",
+      "title": "Exploring the Effects of Frailty and Sarcopenia on Dysphagia in Head and Neck Cancer: A Scoping Review.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Perera R, Ward E, O'Donnell N, Yates P, Packer R",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42400432/",
+      "doi": "10.1002/hed.70379",
+      "abstract": "Frailty and sarcopenia may influence head and neck cancer (HNC) treatment outcomes, including dysphagia. Current understanding of this relationship, however, remains limited. This scoping review aimed to synthesize existing evidence on the relationship between frailty and/or sarcopenia and dysphagia in adults with HNC. A scoping review of PubMed, MEDLINE, EMBASE, and CINAHL was conducted for original research published to December 2025. Eligible studies included adults (18+ years), diagnosed with HNC, examining frailty or sarcopenia and dysphagia. Of 5462 studies screened, 16 were included. Five examined frailty and dysphagia, and 11 examined sarcopenia and dysphagia. Most studies reported a positive association with dysphagia. Considerable heterogeneity was observed across study aims, participant demographics, and nature and timing of assessment of frailty, sarcopenia, and dysphagia. Emerging evidence suggests frailty and sarcopenia are important risk factors for dysphagia in HNC. Further systematic research is needed to inform prognostic and management decisions.",
+      "pub_date": "2026-Jul-04",
+      "score": 5,
+      "tags": [
+        "肌少症",
+        "衰弱"
+      ],
+      "category": "recommended",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1002/hed.70379",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -2454,7 +2712,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jmgm.2026.109505",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -2482,7 +2740,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.trsl.2026.07.001",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2510,7 +2768,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s13098-026-02233-w",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2539,7 +2797,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1055/s-0046-1824431",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2569,7 +2827,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1136/fmch-2025-003802",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2597,7 +2855,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.ccl.2026.05.001",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -2627,7 +2885,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s13741-026-00716-y",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2655,7 +2913,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.avsg.2026.06.007",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -2685,7 +2943,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1002/edm2.70259",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2714,7 +2972,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/dom.71019",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2912,7 +3170,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1097/BSD.0000000000002113",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -2941,7 +3199,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s11102-026-01724-3",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2970,7 +3228,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s11657-026-01732-7",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -2999,7 +3257,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12903-026-08984-2",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -3402,7 +3660,7 @@
       "item_id": "doi:10.1007/s00198-026-07872-3",
       "title": "Association between myosteatosis and bone mineral density in postmenopausal women.",
       "source": "osteoporos_int",
-      "source_name": "脆弱性骨折 / FRAX / DXA",
+      "source_name": "Osteoporosis International",
       "group": "osteoporosis",
       "authors": "Bae S, Lee S, Lee M, Kim E, Kim H, Choe J, Kim H, Koh J",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42390558/",
@@ -3423,7 +3681,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-07872-3",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -3480,7 +3738,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.12968/bjcn.2026.0023",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -3509,7 +3767,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.47895/amp.v60i10.12061",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -3792,7 +4050,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261454145",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -3848,7 +4106,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900129-4",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -3876,7 +4134,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900126-9",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -4079,7 +4337,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3390/biomedicines14061315",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4108,7 +4366,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3390/biom16060821",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4137,7 +4395,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bonr.2026.101933",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4166,7 +4424,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117995",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -4195,7 +4453,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117991",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -4224,7 +4482,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag095",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -4253,7 +4511,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08109-z",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4282,7 +4540,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08100-8",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -4311,7 +4569,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08119-x",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -4339,7 +4597,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08055-w",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -4367,7 +4625,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08115-1",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4425,7 +4683,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12877-026-07714-1",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4545,6 +4803,120 @@
       "oaNew": true
     },
     {
+      "item_id": "doi:10.1016/j.eprac.2026.06.010",
+      "title": "Early Metabolic Risk in Childhood Brain Cancer Survivors with Childhood-Onset Growth Hormone Deficiency.",
+      "source": "fragility_fx",
+      "source_name": "脆弱性骨折 / FRAX / DXA",
+      "group": "osteoporosis",
+      "authors": "Casiraghi A, Pollé O, Bailly C, Briceno L, Doz F, Fresneau B, Bourdeaut F, Abbou S, Dufour C, Bouchoucha Y, Grill J, Pinto G, Samara-Boustani D, Thalassinos C, Viaud M, Nguyen-Quoc A, Rovani S, Stoupa A, Beccaria K, Blauwblomme T, Persani L, Bachelot A, Courtillot C, Touraine P, Polak M, Kariyawasam D",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401204/",
+      "doi": "10.1016/j.eprac.2026.06.010",
+      "abstract": "Growth hormone deficiency (GHD) is the earliest and most common pituitary-hormone deficiency in childhood brain cancer (CBC) survivors. To evaluate metabolic and endocrine outcomes in survivors of childhood brain cancer (CBC) (excluding craniopharyngiomas) who received growth hormone (GH) therapy during childhood, following their transition into adulthood. Observational, multicentric study across 1 paediatric endocrinology, 2 paediatric oncology departments and 1 adult endocrinology department. Ninety-one CBC survivors with childhood-onset GHD, aged ≥18 years in January 2025, with follow-up data available through April 30, 2025, were included. Assessments included lipid profile, HbA1c, bone mineral density (BMD), body mass index (BMI), and pituitary hormone status. Subgroup analyses compared patients with suprasellar (SS) versus non-suprasellar (nSS) tumours and those with persistent adulthood GHD with or without continued GH therapy versus transient GHD. Multivariate analyses were performed. Median age at last evaluation was 21 years (IQR 19-26). At transition, 71/91 patients (78%) remained GHD. Dyslipidaemia affected 54/91 (59.4%) individuals, prediabetes 9/91 (10%), and reduced BMD (osteopenia or osteoporosis) 62/90 (68.6%). BMI and HbA1C were significantly higher in the SS sub-group than the nSS sub-group. Dyslipidemia was not associated with tumour location. No significant differences among patients with persistent GHD on GH therapy, persistent GHD without therapy, or transient GHD. Among CBC survivors with childhood-onset GHD, dyslipidaemia, impaired glucose metabolism, and reduced BMD are highly prevalent in very early adulthood. Suprasellar tumours show a distinct metabolic vulnerability.",
+      "pub_date": "2026-Jul-04",
+      "score": 4,
+      "tags": [
+        "血脂/代謝",
+        "骨密度/FRAX",
+        "骨鬆一般"
+      ],
+      "category": "recommended",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.eprac.2026.06.010",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1016/j.jamda.2026.106370",
+      "title": "Frailty Trajectories in Men Aged 71 Years or Older Living in Western Australia: Results From the Health in Men Study.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Trevenen M, Almeida O, Yeap B, Hankey G, Etherton-Beer C, Robinson S, Golledge J, Flicker L",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42400980/",
+      "doi": "10.1016/j.jamda.2026.106370",
+      "abstract": "To identify trajectories of frailty as older men age and to assess the associations between sociodemographic, lifestyle, and health factors with those trajectories. Community-based cohort study. Data from 1319 men aged 71 years or older, residing in Western Australia and participating in the Health in Men Study. Frailty was assessed on at least 2 occasions between 2001 and 2019 using the five-point FRAIL scale that measures fatigue, resistance, ambulation, illnesses, and weight loss. Latent frailty trajectories over age were identified using a group-based trajectory model with an extension to allow for participant attrition because of death. Multinomial logistic regression was used to assess differences in sociodemographic, lifestyle, and health factors between the frailty trajectory groups. Sensitivity analyses were performed to assess the impact of including/excluding participants who dropped out. During follow-up, 999 (66.9%) participants died. Four distinct frailty trajectories were identified: prefrail to frail (11.7%), steady decline (39.2%), slower decline (37.2%), and sustained nonfrailty (11.9%). Smokers, those with less than 150 minutes of physical activity per week, or those having a diagnosis of cardiovascular disease or diabetes by age 70, were all more likely to be in the prefrail to frail trajectory than the sustained nonfrailty group. Sensitivity analyses showed similar results when those who were lost to follow-up were included in the analysis; however, when limiting the data set to only those who continued to participate throughout the study period, the most severe frailty trajectory was no longer detected. We identified heterogeneity in frailty progression as men age. Frailty interventions may need to focus on lifestyle modifications and addressing or preventing underlying medical conditions prior to the age of 70. Adjustment for nonrandom attrition of participants is required to determine the long-term impact of frailty.",
+      "pub_date": "2026-Jul-04",
+      "score": 4,
+      "tags": [
+        "肥胖治療",
+        "衰弱"
+      ],
+      "category": "recommended",
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1016/j.jamda.2026.106370",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.jamda.2026.106370",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1016/j.ejim.2026.107055",
+      "title": "Diagnosis, treatment and outcomes of euvolemic hyponatremia among geriatric hospitalised patients.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Astolfi D, Dash J, Leidi A, Trombert V, Graf C, De Breucker S",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401491/",
+      "doi": "10.1016/j.ejim.2026.107055",
+      "abstract": "Hyponatremia is the most common electrolytic disturbance among inpatients. It is associated with poor outcomes in frail older patients, even for mild disturbances. Prevalence increases with age, and the commonest cause is the Syndrome of Inappropriate Antidiuresis. We assessed observationally the practice patterns toward diagnosis and treatment of euvolemic hyponatremia according to severity in a geriatric setting. All euvolemic hyponatremic patients admitted to acute geriatric wards in 2023 were retrospectively included. Demographic, biological and clinical characteristics, geriatric syndromes and outcomes were extracted from medical records. Mild (134-130mmol/L), moderate (129-125 mmol/L) and profound (<125 mmol/L) groups were compared. Regression analyses between hyponatremia and clinical outcomes (delirium or falls incidence, 6-month and 1-year mortality and readmission) were realised. The 130 euvolemic hyponatremic patients included had a mean age of 87 years, a mean Cumulative Illness Rating Scale of 17 points and 96.5% had low physical performance. Hyponatremia was mentioned in 32.3% of medical files. Forty-two percent had urine spot tests performed in the first 48h. Fluid restriction was the commonest treatment but was implemented in 26.2% of cases. Significant differences were found across severity groups (p<0.001). One third of patients remained hyponatremic at discharge, especially profound cases (77.8%, p<0.05). We found no independent association between hyponatremia severity and outcomes. Hyponatremia is poorly considered and investigated in acute geriatric wards. Mild and moderate hyponatremia are unfrequently treated despite existing guideline-recommended therapies. Clinicians are encouraged to exhaustively investigate hyponatremia in geriatric patients, even in mild cases.",
+      "pub_date": "2026-Jul-04",
+      "score": 4,
+      "tags": [
+        "design:guideline",
+        "老年評估",
+        "衰弱"
+      ],
+      "category": "recommended",
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1016/j.ejim.2026.107055",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.ejim.2026.107055",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1038/s43856-026-01756-7",
+      "title": "Bayesian multistate modelling of prefrailty and frailty using microsimulation with weight management interventions for prevention in Asian settings.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Zhang X, Jin S, Song H, Yeo J, Dickens B",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401669/",
+      "doi": "10.1038/s43856-026-01756-7",
+      "abstract": "The prevalence of pre-frailty and frailty is increasing in Asia, resulting in substantial morbidity and mortality in older populations. Modelling frameworks are required to estimate the prevalence of frailty and potential impacts of ongoing population-level nutritional interventions. Using a microsimulation sociodemographic model of 3,353,032 individuals from 2011 to 2050, and published estimates from the Singapore Longitudinal Ageing Study 2 of 3270 participants, we developed a Bayesian multistate model of robust, pre-frail, and frail stages with estimated transition probabilities by age, ethnicity, gender, and body mass index category. We then explored four scenarios where weight management interventions are applied that modify the annual distribution of underweight, normal weight, overweight, obese I and obese II individuals. Here we show that, between 2011 and 2050, the projected overall prevalence of pre-frailty and frailty increases from 44.2% to 49.57% (95% credible interval: 47.60-51.00%), and from 3.2% to 11.97% (7.34-15.60%), respectively. Reductions range from 22,045 (18,430-23,487) to 3,599 (2554-4621) pre-frail individuals and from 62,847 (40,165-91,517) to 15,802 (13,238-17,133) frail individuals when 100% to 5% of both underweight individuals shift to normal weight and obese II individuals move to obese I, respectively. Total healthcare utilisation decreases by 7.1% (3.9-9.4%) to 0.3% (0.2-0.5%) under 100% to 5% intervention coverage. Frailty prevalence in Singapore is projected to substantially increase by 2050, while population-level weight management interventions could avert cases of both pre-frailty and frailty in older individuals, even at modest real-world effectiveness.",
+      "pub_date": "2026-Jul-04",
+      "score": 4,
+      "tags": [
+        "肥胖治療",
+        "衰弱"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1038/s43856-026-01756-7",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1038/s43856-026-01756-7",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
       "item_id": "doi:10.1016/j.ajp.2026.105077",
       "title": "Rapid clinical improvement after intravenous ketamine in an adolescent with treatment-resistant depression, severe obesity, and pseudo-Cushing syndrome: A case report.",
       "source": "adrenal_pituitary",
@@ -4568,7 +4940,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.ajp.2026.105077",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -4596,7 +4968,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1038/s41467-026-72148-7",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4625,7 +4997,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.recot.2026.07.007",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4653,7 +5025,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00109-026-02697-3",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4682,7 +5054,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.carrev.2026.06.016",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -4710,7 +5082,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jamda.2026.106312",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4738,7 +5110,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1136/rmdopen-2026-006945",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4794,7 +5166,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ejhf/xuag215",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -4822,7 +5194,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1155/cro/6766372",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4850,7 +5222,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.23736/S1973-9087.26.09224-5",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4934,7 +5306,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jamda.2026.106351",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -4964,7 +5336,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1136/bmjopen-2026-120059",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -4992,7 +5364,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1038/s12276-026-01762-8",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -5020,7 +5392,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1507/endocrj.EJ26-0212",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -5274,7 +5646,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/ggi.70620",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -5302,7 +5674,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.21873/cdp.10575",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -5331,7 +5703,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.47895/amp.v60i10.13228",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -5471,7 +5843,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261460201",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -5499,7 +5871,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0425",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -5584,7 +5956,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3390/biology15120952",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -5612,7 +5984,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3390/jfmk11020239",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -5640,7 +6012,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s13256-026-06289-0",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -5668,7 +6040,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3390/jcm15124694",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -5696,7 +6068,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3390/jcm15124697",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -5724,7 +6096,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117993",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -5780,7 +6152,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag097",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -5808,7 +6180,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag100",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -5836,7 +6208,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08074-7",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -5864,7 +6236,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08092-5",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -5893,7 +6265,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08094-3",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -5921,7 +6293,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08114-2",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -5950,7 +6322,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08120-4",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -5978,7 +6350,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08125-z",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -6034,7 +6406,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.5152/j.aott.2026.25673",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -6062,7 +6434,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.26444/aaem/218354",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -6091,7 +6463,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/02692155261464597",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -6434,6 +6806,316 @@
       "oaNew": false
     },
     {
+      "item_id": "doi:10.1016/j.eprac.2026.06.009",
+      "title": "North American Society for Interventional Thyroidology (NASIT) Statement on Directed Ablative Therapy for the Management of Cervical Recurrence of Papillary Thyroid Cancer.",
+      "source": "thyroid_topic",
+      "source_name": "內分泌/骨鬆/老醫 指引",
+      "group": "guideline",
+      "authors": "Duenas J, Buitrago-Gomez N, Goldenberg D, Abraham D, Park B, Lim J, Spiezia S, Rangel L, Cunnane M",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401202/",
+      "doi": "10.1016/j.eprac.2026.06.009",
+      "abstract": "To provide a consensus framework from the North American Society for Interventional Thyroidology (NASIT) for the safe and effective implementation of directed ablative therapy (DAT) as a therapeutic option for managing cervical regional nodal recurrence of differentiated thyroid cancer, specifically papillary thyroid cancer (PTC). A multidisciplinary task force comprising endocrine surgeons, endocrinologists, interventional radiologists, otolaryngologists-head and neck surgeons, and diagnostic radiologists conducted virtual meetings to review available evidence on DAT modalities, including radiofrequency ablation, microwave ablation, laser ablation, percutaneous ethanol injection, and cryoablation. Recommendations were grounded in available scientific evidence and expert consensus. The statement addresses three main topics: patient case selection, technical considerations for DAT modalities, and outcomes in terms of effectiveness and safety. The evidence base comprises approximately 36 original studies with substantial overlap across nine meta-analyses, predominantly from Asia and Europe, with limited North American representation. DAT is recommended for patients who refuse surgery, are at high surgical risk, exhibit RAI-refractoriness, or have small-volume nodal disease where the risk-benefit balance of RAI is unfavorable. For curative intent, DAT may be considered for recurrent papillary thyroid cancer with a limited number (≤3) of small-volume (≤2 cm) nodes without high-risk molecular features. No included study systematically stratified outcomes by PTC histological subtype; applicability to higher-risk subtypes should be approached with caution. A pre-procedural checklist and structured follow-up are essential to ensure safety and effectiveness.",
+      "pub_date": "2026-Jul-04",
+      "score": 3,
+      "tags": [
+        "design:consensus",
+        "甲狀腺"
+      ],
+      "category": "recommended",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.eprac.2026.06.009",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1016/j.eprac.2026.05.039",
+      "title": "The Use of Directed Ablative Techniques for Autonomously Functioning Thyroid Nodules: A Statement from the North American Society for Interventional Thyroidology.",
+      "source": "thyroid_topic",
+      "source_name": "甲狀腺結節 / 癌 / 功能異常",
+      "group": "endocrine",
+      "authors": "McManus C, Douek M, Dream S, Graves C, Schmeltz L, Sinclair C, Stan M, Papaleontiou M",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401203/",
+      "doi": "10.1016/j.eprac.2026.05.039",
+      "abstract": "The use of percutaneous ablative techniques as an alternative therapy in the treatment of thyroid nodules continues to expand. The purpose of this statement by the North American Society for Interventional Thyroidology (NASIT) is to provide a comprehensive summary of the consensus recommendations for thermal ablation for autonomously functioning thyroid nodules (AFTNs). A selected group of experts on the use of ablative therapies to treat AFTNs was assembled and approved by NASIT's executive council. Contributing authors collected available evidence and best practices for the treatment of AFTNs using ablation, which were compiled and reviewed by the AFTN statement writing group. This NASIT statement for ablation of AFTNs summarizes the current evidence to provide clinical guidance regarding the appropriate workup and pre-procedure testing for AFTNs, pre-procedural considerations regarding ideal patient and nodule selection, proper patient counseling on expected outcomes and potential complications, ablation techniques to increase the likelihood of achieving a euthyroid state with adequate volume reduction, and appropriate follow-up. This statement summarizes current evidence to guide clinical decision-making regarding the role of thermal ablation in the treatment of AFTNs. Ultimately, thermal ablation may serve as a safe and effective therapy for AFTNs among appropriately selected patients.",
+      "pub_date": "2026-Jul-04",
+      "score": 3,
+      "tags": [
+        "design:consensus",
+        "甲狀腺"
+      ],
+      "category": "recommended",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.eprac.2026.05.039",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1016/j.biopha.2026.119726",
+      "title": "Protective effects of ACF210, a dual GLP-1/APJ receptor agonist, against cardiovascular-kidney-metabolic syndrome induced by T2D.",
+      "source": "incretin",
+      "source_name": "GLP-1 / SGLT2 / 減重藥",
+      "group": "endocrine",
+      "authors": "Wu Q, Wei H, Zhou H, Du Y, Zhao Q",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401045/",
+      "doi": "10.1016/j.biopha.2026.119726",
+      "abstract": "Current therapies cannot simultaneously address the interconnected metabolic, cardiac, and renal damage in Cardiovascular-Kidney-Metabolic (CKM) syndrome. This study investigated ACF210, a novel long-acting dual agonist targeting both GLP-1 and APJ receptors, as a potential treatment for type 2 diabetes (T2D)-induced CKM syndrome. ACF210 was synthesized by fusing the human IgG4 Fc fragment to the C-terminus of GLP-1 and the N-terminus of Elabela-21 (ELA). In vitro receptor activation assays confirmed that ACF210 effectively activated the GLP-1 and APJ receptor signaling simultaneously. db/db leptin receptor-deficient mice and high-fat diet/streptozotocin-induced T2D were treated with dulaglutide, Fc-ELA, or ACF210 for 12 weeks. We assessed tissue morphology, organ function, and serum biomarkers. Compared to the diabetic control mice, ACF210 significantly improved blood glucose control and pancreatic β-cell function. Crucially, ACF210 demonstrated superior multi-organ protective effects over other treatments. Specifically, ACF210 reduced hepatic steatosis and provided comprehensive cardiac protection by lessening mitochondrial damage and fibrosis, enhancing diastolic function, reducing heart failure biomarkers such as NT-proBNP, and promoting microangiogenesis. In the kidneys, ACF210 alleviated podocyte damage and thickening of the glomerular basement membrane, while improving renal function as indicated by reduced levels of urinary albumin-to-creatinine ratio (UACR) and serum cystatin C. In conclusion, ACF210 not only effectively alleviates dysglycemia by potentially enhancing β-cell function but also significantly protects against diabetes-associated hepatic, cardiac, and renal damage, supporting its further exploration for the clinical management of CKM syndrome.",
+      "pub_date": "2026-Jul-04",
+      "score": 3,
+      "tags": [
+        "GLP-1/incretin",
+        "neg:basic science",
+        "糖尿病照護",
+        "血脂/代謝"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1016/j.biopha.2026.119726",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.biopha.2026.119726",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1007/s00586-026-10151-8",
+      "title": "Osteoporosis-related knowledge in a German adult population: determinants and translational implications for fragility fracture prevention.",
+      "source": "fragility_fx",
+      "source_name": "脆弱性骨折 / FRAX / DXA",
+      "group": "osteoporosis",
+      "authors": "Hauser A, Noriega Urena J, Lange T, Gerstmeyer J, von Glinski A, Schulte T",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42400632/",
+      "doi": "10.1007/s00586-026-10151-8",
+      "abstract": "Osteoporosis is highly prevalent and a major cause of fragility fractures, particularly of the spine. Adequate patient knowledge is essential for prevention, early diagnosis, and treatment adherence. This study aimed to assess osteoporosis-related knowledge in an adult population and to identify demographic and clinical factors associated with knowledge levels. A cross-sectional online survey was conducted within a German patient panel. Adults (≥ 18 years) who provided electronic consent were included. Osteoporosis knowledge was assessed using the validated Osteoporosis Knowledge Assessment Tool (OKAT) and Facts on Osteoporosis Quiz (FOOQ). Osteoporosis risk was descriptively evaluated using the IOF One-Minute Osteoporosis Risk Test. Participants were stratified into three age groups ( 65 years). Group comparisons were performed using Mann-Whitney U tests; associations were analyzed using Spearman correlations. Additionally, multivariable linear regression analyses were performed. A total of 315 participants were included (mean age 61.6 ± 12.0 years; 74.3% female). IOF risk scores increased significantly with age. Bivariate analyses demonstrated significantly higher knowledge in participants < 50 years compared to older groups, but this age association was no longer observed after multivariable adjustment. Women scored higher than men on the FOOQ but not on the OKAT. Higher educational attainment and employment in the medical field were significantly associated with higher knowledge scores. Neither personal diagnosis nor family history of osteoporosis was associated with increased knowledge. IOF risk scores showed a weak negative correlation with FOOQ scores. Educational level emerged as an important correlate of osteoporosis knowledge in this exploratory analysis, whereas personal or familial disease experience did not improve understanding. These findings highlight a relevant gap in osteoporosis education and support the need for future targeted educational interventions, including in patient populations at risk for vertebral fragility fractures.",
+      "pub_date": "2026-Jul-04",
+      "score": 3,
+      "tags": [
+        "脆弱性骨折",
+        "骨鬆一般"
+      ],
+      "category": "recommended",
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://link.springer.com/content/pdf/10.1007/s00586-026-10151-8.pdf",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1007/s00586-026-10151-8",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1016/j.eprac.2026.06.012",
+      "title": "Insights from secular trend of major osteoporotic fractures in people with and without diabetes: 15-year population-based study (2009 - 2023).",
+      "source": "fragility_fx",
+      "source_name": "脆弱性骨折 / FRAX / DXA",
+      "group": "osteoporosis",
+      "authors": "Lui D, Zou X, Lee C, Chow W, Fong C, Cheung M, Cheung K, Ho A, Au Yeung B, Wong T, Chau S, Tsang C, Yeung C, Xiong X, Wong C, Ip T, Tan K, Woo Y, Lam K, Chandran M",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401205/",
+      "doi": "10.1016/j.eprac.2026.06.012",
+      "abstract": "This study aims to evaluate changes in the epidemiology of major osteoporotic fractures(MOF) stratified by diabetes status over 15years in a population-based cohort. Individuals aged≥50years who sustained MOF between 2009 and 2023 identified from territory-wide electronic health database, stratified by diabetes status. Records of HbA1c, hypoglycemic episodes, and osteoporosis screening and treatments were retrieved. Ratios of rates of MOF, osteoporosis screening and treatments between the diabetes and non-diabetes groups were calculated to reflect the disparity between two groups. Secular trends were reported in average annual percentage change(AAPC) using joinpoint regression. All rates were age-standardized to the 2021 Hong Kong Census mid-year population. 86263 hip fractures and 124268 non-hip fractures were recorded during the study period. Although annual age-standardized incidence of hip fractures decreased, rate ratios between diabetes and non-diabetes remained static at 4.1 for women(AAPC -0.16%,95%CI -0.65 to +0.35,p=0.54) and 2.5 for men(AAPC +0.07%,95%CI -0.58 to 0.71,p=0.83), suggesting persistent gap of diabetes-specific excess fracture risk. This gap was similarly observed for non-hip fractures. Over the years, age-standardized mean HbA1c improved from 59 mmol/mol(7.5%) to 53 mmol/mol(7%), along with fewer severe hypoglycemic episodes. Prevalence of individuals with screening dual-energy x-ray absorptiometry performed increased, more so in women with diabetes. Anti-osteoporosis medication prescriptions increased in both diabetes and non-diabetes, but increased to a lesser extent in the diabetes population. Diabetes-specific excess fracture risk persisted despite improved glycemic control. Despite increasing efforts of osteoporosis screening in diabetes, this has not translated into more aggressive treatment of bone fragility in diabetes.",
+      "pub_date": "2026-Jul-04",
+      "score": 3,
+      "tags": [
+        "脆弱性骨折",
+        "骨鬆一般"
+      ],
+      "category": "recommended",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.eprac.2026.06.012",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1016/j.jep.2026.122157",
+      "title": "Parinari curatellifolia aqueous leaf-bark extract mitigates chronic Plasmodium berghei-induced bone loss in Wistar rats through anti-inflammatory and osteoregenerative mechanisms.",
+      "source": "fragility_fx",
+      "source_name": "脆弱性骨折 / FRAX / DXA",
+      "group": "osteoporosis",
+      "authors": "Jouonzo J, Tsofack F, Gounoue Kamkumo R, Nankap Tsakem J, Fifen R, Tcheutchoua Y, Simo-Manefeng A, Ambamba B, Ngondi J, Ndjakou B, Sewald N, Dimo T",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401245/",
+      "doi": "10.1016/j.jep.2026.122157",
+      "abstract": "Chronic Plasmodium infections can promote parasite sequestration in bone tissue, leading to progressive skeletal damage and increased fracture risk. In Cameroon, Parinari curatellifolia is traditionally used to treat both malaria and bone fractures. Previous studies demonstrated protective effects of an aqueous leaves and stem bark mixture extract of this plant (PCM) against acute malaria-induced bone damage. This study investigated the osteoregenerative potential of PCM extract in a chronic Plasmodium berghei ANKA-induced bone loss model in Wistar rats using in vivo and in silico approaches. Female Wistar rats were alternately inoculated intraperitoneally with P. berghei ANKA for 28 days. They received distilled water, chloroquine sulfate (10 mg/kg), or PCM (75, 150, or 300 mg/kg) daily for 14 days. Parasitemia was monitored throughout treatment. Blood was collected for hematological evaluation, while femurs were excised for biochemical, immunological, oxidative stress, histopathological, and morphometric analyses. Drug-likeness properties and molecular docking of previously identified compounds were evaluated against NLRP3 and Plasmodium falciparum falcipain-2, using Molecular Operating Environment 14. Chronic Plasmodium berghei was characterized by an increase (p < 0.001) in parasitemia and femoral levels of CRP, TNF-α, IL-1β, and IL-6, with a decrease (p < 0.001) of IL-4, IL-10, and IFN-γ levels. Histological analysis revealed femoral head alterations characterized by porous cartilage and significant reductions (p < 0.001) in cartilage thickness and trabecular parameters in infected rats. PCM administration reduced (p < 0.001) parasitemia, restored bone abnormalities by increasing (p < 0.001) alkaline phosphatase activity, calcium, and phosphorus levels. PCM also reduced (p < 0.001) femoral levels of proinflammatory markers, while increasing (p < 0.001) the levels of anti-inflammatory parameters. The extract restored femoral microarchitecture compared with untreated control. Most identified compounds complied with Lipinski's rule of five and exhibited favorable predicted binding affinity toward NLRP3 receptor and falcipain-2. P. curatellifolia aqueous extract promoted bone regeneration in a model of chronic Plasmodium-induced osteoporosis. Molecular docking analyses suggested potential interactions between its phytoconstituents and NLRP3 as well as falcipain-2, providing mechanistic hypotheses that warrant further experimental validation. The extract could act through antiplasmodial, osteogenic and anti-inflammatory mechanisms, thus providing a rationale for its traditional use in the management of malaria and bone defects.",
+      "pub_date": "2026-Jul-04",
+      "score": 3,
+      "tags": [
+        "脆弱性骨折",
+        "骨鬆一般"
+      ],
+      "category": "recommended",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.jep.2026.122157",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1177/10732748261466382",
+      "title": "Validation of the Taiwan Cancer Frailty Tool for Screening and Prognosis in Non-older Patients With Cancer: A Prospective Multicenter Study.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Hung C, Hung Y, Chou W",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42400532/",
+      "doi": "10.1177/10732748261466382",
+      "abstract": "IntroductionFrailty is a known predictor of poor outcomes in older patients with cancer; however, its recognition in non-older populations remains limited. In this prospective multicenter observational study, we compared the Taiwan Cancer Frailty Tool (TCFT) with the Flemish version of the Triage Risk Screening Tool (fTRST) and comprehensive geriatric assessment (CGA) in screening for frailty among non-older Taiwanese patients with cancer.MethodsWe prospectively enrolled 1,162 patients with cancer aged 0 and >1). Diagnostic performance metrics and Kaplan-Meier survival analyses were performed.ResultsThe median patient age was 54 years (range, 20-64 years), and 74.6% were male. The predominant cancer types were head and neck, esophageal, and gastric/small bowel cancers. The prevalence of frailty was 44.0% (CGA), 65.0% (TCFT >0), and 73.4% (fTRST >0). TCFT >0 demonstrated a higher sensitivity (88.8%) and negative predictive value (86.0%) than fTRST >0 (88.5% and 80.9%, respectively). TCFT >1 provided superior specificity (93.1%) and positive predictive value (83.5%). The area under the curve for TCFT was significantly higher than that for fTRST (0.788 vs. 0.748; p = 0.012). All tools predicted poor survival, with TCFT exhibiting a more consistent prognostic performance across thresholds than fTRST.ConclusionFrailty is prevalent and prognostically significant in non-older patients with cancer. TCFT demonstrated superior diagnostic and prognostic utility compared with fTRST, supporting its integration into routine frailty screening for this population.",
+      "pub_date": "2026",
+      "score": 3,
+      "tags": [
+        "老年評估",
+        "衰弱"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1177/10732748261466382",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1177/10732748261466382",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1007/s11357-026-02397-3",
+      "title": "Associations of IL-17 and TGF-β1 with physical frailty in older adults.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Ceolin C, De Rui M, Musso G, Sturani S, Ravelli A, Simonato C, Villanova F, Pigozzo S, Busetto L, Antonini A, Fiorenzato E, Montagnana M, Coin A, Devita M, Sergi G",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42400822/",
+      "doi": "10.1007/s11357-026-02397-3",
+      "abstract": "Physical frailty is a prevalent geriatric syndrome associated with reduced physiological resilience and adverse outcomes. Beyond classical inflammaging, age-related changes in immune regulation and tissue repair may contribute to frailty pathophysiology. Biomarkers involved in adaptive immune responses and remodeling pathways, such as IL-17 and TGF-β1, may help characterize the inflammatory-regenerative milieu associated with frailty. We therefore investigated the association between circulating immune biomarkers and physical frailty severity in older adults. In this cross-sectional analysis, 167 community-dwelling outpatients aged ≥ 65 years (mean age 75.2 ± 6.4 years; 54.5% women) were classified as robust, pre-frail, or frail according to a phenotype-based frailty score. Circulating levels of TGF-β1, IL-17, IL-6, TNF-α, IL-10, and IFN-γ were measured. Associations with frailty were assessed using ordinal logistic regression, quantile regression, and component-specific logistic models. IL-17 concentrations progressively declined with increasing frailty severity (median 9.24 ng/L in robust vs. 4.91 ng/L in frail participants; p = 0.004). In adjusted ordinal models, higher IL-17 levels were independently associated with lower frailty severity (OR = 0.62, 95% CI 0.46-0.84; p = 0.002), with each doubling of IL-17 corresponding to a 28% reduction in frailty odds. Conversely, higher TGF-β1 levels were independently associated with greater frailty severity (OR = 2.33, 95% CI 1.05-5.13; p = 0.036). IL-17 showed consistent associations with physical frailty domains, including slowness (adjusted OR = 0.57), and low physical performance (adjusted OR = 0.68). Similar associations were observed in exploratory analyses restricted to cognitively intact participants. However, formal interaction analyses did not support significant effect modification by cognitive status. In contrast, classical inflammatory markers (IL-6, TNF-α), as well as IFN-γ and IL-10, were not significantly associated with frailty across any of the models. Physical frailty was associated with lower IL-17 and higher TGF-β1 levels, suggesting that immune-related pathways beyond classical systemic inflammation may be associated with physical frailty. Rather than reflecting overt systemic inflammation, these findings suggest that biological pathways involved in immune regulation and tissue remodeling may be associated with physical frailty. IL-17 and TGF-β1 may therefore represent potentially informative biomarkers for future investigations of the biological mechanisms underlying resilience and functional decline in aging. Not applicable.",
+      "pub_date": "2026-Jul-04",
+      "score": 3,
+      "tags": [
+        "老年評估",
+        "衰弱"
+      ],
+      "category": "recommended",
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://link.springer.com/content/pdf/10.1007/s11357-026-02397-3.pdf",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1007/s11357-026-02397-3",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1016/j.identj.2026.109710",
+      "title": "Dentition Status and Denture Use in Relation to Later-Life Health Transitions in Older Chinese Adults.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Wang J, Su X, Yang Z, Pei Y, Lu W, Mao Y, Xu K, Yuan Y",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42400988/",
+      "doi": "10.1016/j.identj.2026.109710",
+      "abstract": "We examined whether baseline dentition status was associated with transitions to activities of daily living (ADL) disability, dementia, both ADL disability and dementia, and death in older Chinese adults, and whether denture use further distinguished risk within low-dentition groups. We analysed Chinese Longitudinal Healthy Longevity Survey data from 2008 to 2018. Participants were aged 65 years or older, had baseline natural tooth count data, and had no observed ADL disability or reported dementia at baseline. Dentition status was classified as at least 20 teeth, 1-19 teeth, and 0 teeth. Transition-specific discrete-time complementary log-log models were fitted within a cumulative five-state framework comprising Healthy, ADL disability only, dementia only, both ADL disability and dementia, and death. A total of 10,186 participants contributed 18,688 interval-level observations. The most frequent transitions were to death (n = 5,063) and ADL disability only (n = 2,048). Compared with participants with at least 20 teeth, those with 0 teeth had higher hazards of ADL disability only (HR: 1.20, 95% CI, 1.04-1.39) and death (HR: 1.18, 95% CI, 1.06-1.31). In joint analyses, those with 0 teeth and dentures had the highest hazard of ADL disability only (HR: 1.30, 95% CI, 1.10-1.53), whereas those with 0 teeth and no dentures had the highest hazard of death (HR: 1.33, 95% CI, 1.18-1.49). Dementia-related transitions were sparse. Among older Chinese adults without observed ADL disability or reported dementia at baseline, edentulism was associated with less favourable later-life transitions, most consistently to ADL disability and death. Baseline dentition status may serve as a simple marker of oral functional reserve and broader later-life vulnerability. Baseline dentition and denture status may help identify older adults who warrant broader assessment of function, nutrition, frailty, and oral rehabilitation needs.",
+      "pub_date": "2026-Jul-04",
+      "score": 3,
+      "tags": [
+        "衰弱",
+        "認知/失智"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1016/j.identj.2026.109710",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.identj.2026.109710",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1038/s41598-026-58954-5",
+      "title": "Development and external validation of a dual-stage predictive model for self-reported physician-diagnosed chronic lung disease, asthma, and lung cancer in Chinese adults.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Cui X, Sun X",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401586/",
+      "doi": "10.1038/s41598-026-58954-5",
+      "abstract": "Chronic respiratory diseases represent a leading cause of global mortality, yet robust prediction tools integrating onset risk and long-term prognosis for aging populations remain scarce. Here, we present a dual-stage predictive framework for self-reported physician-diagnosed chronic lung disease, asthma, and lung cancer using two nationally representative Chinese cohorts. By systematically evaluating 96 fully linear models, we identified distinct pathophysiological drivers for disease onset versus mortality. While disease susceptibility was primarily driven by non-pulmonary comorbidities and systemic inflammation, survival outcomes were predominantly determined by functional exhaustion and frailty indicators. The two models achieved decent external validation in an oldest-old cohort. These findings elucidate a critical shift from disease accumulation to functional decline in respiratory pathology, providing an interpretable, evidence-based tool for early risk stratification and precise clinical intervention in elderly patients.",
+      "pub_date": "2026-Jul-04",
+      "score": 3,
+      "tags": [
+        "老年評估",
+        "衰弱"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1038/s41598-026-58954-5",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1038/s41598-026-58954-5",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1038/s41598-026-60968-y",
+      "title": "Physical performance and DEXA-derived body composition in adults with Parkinson's disease participating in a community-based exercise program and community-dwelling older adults: a cross-sectional study.",
+      "source": "sarcopenia",
+      "source_name": "脆弱性骨折 / FRAX / DXA",
+      "group": "osteoporosis",
+      "authors": "Fritz-Silva N, Gallegos-Vega G, Mansilla-Antilef C, Ule-Marín C, Bittner-Hoffman C",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401686/",
+      "doi": "10.1038/s41598-026-60968-y",
+      "abstract": "Parkinson's disease (PD) is a progressive neurodegenerative disorder strongly associated with ageing that directly affects mobility and physical function. Although regular exercise is widely recognized as an important strategy to attenuate functional decline, limited evidence has simultaneously examined physical performance and body composition assessed by dual-energy X-ray absorptiometry (DEXA) in adults with Parkinson's disease participating in community-based exercise programs, particularly in Latin American settings. A cross-sectional observational study was conducted. Adults with PD participating in a community-based exercise program and community-dwelling older adults were evaluated. Physical performance was assessed using gait speed, handgrip strength, the five-times chair stand test, the single-leg balance test (SLBT), the Timed Up and Go (TUG) test, the 2-minute step test, and the Short Physical Performance Battery (SPPB). Body composition and bone mineral density (BMD) were assessed using DEXA. Propensity score matching was applied using body mass index (BMI) and sex. Descriptive statistics, Spearman correlations, and multiple linear regression models were used for data analysis. Adults with PD showed significantly lower physical performance than community-dwelling older adults, with gait speed exhibiting the largest between-group difference. In the present model, Parkinson's disease status was the strongest negative predictor of gait speed, whereas muscle strength and functional endurance were positively associated with locomotor performance. DEXA-derived lean mass was not independently associated with gait speed. Within the present sample, adults with PD participating in a community-based exercise program exhibited lower physical performance than community-dwelling older adults. Parkinson's disease status emerged as the strongest predictor of gait speed, whereas muscle strength and functional endurance were positively associated with mobility performance.",
+      "pub_date": "2026-Jul-04",
+      "score": 3,
+      "tags": [
+        "老年評估",
+        "骨密度/FRAX"
+      ],
+      "category": "recommended",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://www.nature.com/articles/s41598-026-60968-y_reference.pdf",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1038/s41598-026-60968-y",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
       "item_id": "doi:10.1210/clinem/dgag266",
       "title": "Parathyroid Carcinoma: From Molecular Pathogenesis to Multidisciplinary Management.",
       "source": "jcem",
@@ -6450,14 +7132,14 @@
         "維生素D/鈣"
       ],
       "category": "recommended",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag266",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -6485,7 +7167,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12917-026-05558-w",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -6513,7 +7195,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s13287-026-05135-w",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -6540,7 +7222,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12891-026-10167-7",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -6568,7 +7250,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.64898/2026.06.16.26355773",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -6596,7 +7278,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12893-026-04015-7",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -6624,7 +7306,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1053/j.akdh.2026.04.002",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -6706,7 +7388,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jamda.2026.106349",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -6733,7 +7415,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s11011-026-01918-5",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -6789,7 +7471,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12891-026-10007-8",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -6817,7 +7499,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bonr.2026.101931",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -6845,7 +7527,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.cyto.2026.157186",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -6872,7 +7554,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1051/sicotj/2026038",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -6983,7 +7665,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1155/prm/7121728",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -7010,7 +7692,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jnha.2026.100910",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -7038,7 +7720,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70559",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -7094,7 +7776,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jamda.2026.106316",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -7122,7 +7804,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jamda.2026.106315",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -7149,7 +7831,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.clnesp.2026.103446",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -7370,7 +8052,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.14309/ajg.0000000000004047",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -7453,7 +8135,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12877-026-07852-6",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -7480,7 +8162,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1002/ncp.70144",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -7507,7 +8189,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1017/S1368980026102973",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -7534,7 +8216,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3389/fmed.2026.1854649",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -7561,7 +8243,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jnha.2026.100919",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -7589,7 +8271,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag198",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -7617,7 +8299,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s40337-026-01667-x",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -7646,7 +8328,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.7507/1002-1892.202603051",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -7674,7 +8356,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s11906-026-01375-6",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -7702,7 +8384,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.pathol.2026.04.003",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -7758,7 +8440,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s11102-026-01714-5",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -7918,16 +8600,16 @@
         "甲狀腺"
       ],
       "category": "recommended",
-      "oa_status": "closed",
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "green",
+      "oa_pdf_url": "https://pure.eur.nl/en/publications/b4b4616d-0c75-4887-91bf-ea628aa72256",
+      "oa_first_date": "2026-07-05",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261445624",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1016/s2213-8587(26)00002-1",
@@ -7980,7 +8662,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900104-X",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8007,7 +8689,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900105-1",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -8035,7 +8717,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900119-1",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8063,7 +8745,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0526",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8091,7 +8773,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-er09a",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8119,7 +8801,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag241",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -8147,7 +8829,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag244",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8175,7 +8857,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag243",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8203,7 +8885,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag254",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -8231,7 +8913,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag255",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8259,7 +8941,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag259",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8287,7 +8969,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag261",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8482,7 +9164,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1055/a-2846-5029",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8510,7 +9192,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117974",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -8538,7 +9220,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag090",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -8565,7 +9247,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag101",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8620,7 +9302,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08123-1",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8648,7 +9330,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1136/bmjgh-2025-018999",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -8676,7 +9358,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/13872877261462930",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8897,7 +9579,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag154",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8924,7 +9606,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag160",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -8952,7 +9634,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag192",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -8985,6 +9667,195 @@
       "oaNew": true
     },
     {
+      "item_id": "doi:10.1016/j.eprac.2026.06.014",
+      "title": "Etomidate in Severe Cushing Syndrome: An Underutilized Bridge in Endocrine Emergency Care.",
+      "source": "adrenal_pituitary",
+      "source_name": "腎上腺 / 腦下垂體",
+      "group": "endocrine",
+      "authors": "Jha V, Bhadada T, Walia R, Bhadada S",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401206/",
+      "doi": "10.1016/j.eprac.2026.06.014",
+      "abstract": "",
+      "pub_date": "2026-Jul-04",
+      "score": 2,
+      "tags": [
+        "腎上腺/垂體"
+      ],
+      "category": "candidate",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.eprac.2026.06.014",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1016/j.rxeng.2026.501699",
+      "title": "Adrenal venous sampling: Indications and technical challenges.",
+      "source": "adrenal_pituitary",
+      "source_name": "腎上腺 / 腦下垂體",
+      "group": "endocrine",
+      "authors": "Cortés Lopera R, Herrera Carrión D, Rodríguez Piñero A",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401434/",
+      "doi": "10.1016/j.rxeng.2026.501699",
+      "abstract": "Adrenal venous catheterisation is a procedure used in the aetiological diagnosis of primary aldosteronism (PA). Its purpose is to measure aldosterone and cortisol levels in blood samples obtained from both adrenal veins and compare them with peripheral levels, allowing for the identification of potential lateralisation in hormone secretion. Owing to its high sensitivity and specificity, it is a key-though technically demanding-technique that should be performed in specialised centres. Accurate diagnosis leads to better clinical outcomes by avoiding unnecessary surgical interventions. The aim of this article is to review the anatomy and anatomical variants of the adrenal glands and their venous drainage, with a focus on describing the catheterisation technique. This procedure involves multiple technical challenges that can affect the accurate collection of samples and interpretation of results. These difficulties justify the need for a detailed review to help optimise the procedure and improve its success rate.",
+      "pub_date": "2026",
+      "score": 2,
+      "tags": [
+        "腎上腺/垂體"
+      ],
+      "category": "candidate",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.rxeng.2026.501699",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1249/mss.0000000000004074",
+      "title": "Lower-Body Strength, Lean Mass, and Bone Mineral Density Across the Adult Lifespan: Age- and Sex-Related Associations.",
+      "source": "fragility_fx",
+      "source_name": "脆弱性骨折 / FRAX / DXA",
+      "group": "osteoporosis",
+      "authors": "Kraemer W, Amadon G, Graham J, Kackley M, Sapper T, Volek J, Hayes J, Hayes S",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42400938/",
+      "doi": "10.1249/MSS.0000000000004074",
+      "abstract": "Aging is associated with declines in muscle strength, lean mass, and bone mineral density (BMD), yet sex-specific lower-body trajectories and their interrelationships across the adult lifespan remain incompletely characterized. The purpose of this study was to determine whether lower-body strength and regional lean mass are differentially associated with hip and lumbar spine BMD across adulthood and whether these relationships vary by age and sex. In this cross-sectional study (n = 251; 149 females, 102 males; 18-85 yr), maximal dynamic strength was assessed using a one-repetition maximum (1RM) leg press. Dual-energy x-ray absorptiometry quantified lumbar spine and hip BMD, lower-body lean mass, and visceral adipose tissue volume. Hierarchical regression models evaluated the effects of age, sex, and age × sex interactions on BMD, with additional models used to test associations between strength, lean mass, and BMD while controlling for adiposity. Hip BMD was lower with increasing age in both sexes, with higher values in males. Leg-press strength and lower-body lean mass were lower with increasing age but were positively associated with hip BMD (β = 0.32-0.45, p < 0.001) independent of age, sex, and adiposity. The strength-hip BMD association was stronger in younger relative to older adults (interaction p = 0.051). Spine BMD demonstrated a significant age × sex interaction, with age-related declines evident in females but not males. Maximal lower-body strength is strongly associated with hip BMD across adulthood and may serve as a functional marker of skeletal integrity. These findings highlight the need for caution when interpreting lumbar spine DXA measures in aging males and reinforce the importance of preserving neuromuscular quality for skeletal health across adulthood.",
+      "pub_date": "2026-Jul-07",
+      "score": 2,
+      "tags": [
+        "骨密度/FRAX"
+      ],
+      "category": "candidate",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1249/MSS.0000000000004074",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1177/03915603261461658",
+      "title": "Cutaneous ureterostomy versus ileal conduit as urinary diversion in patients with muscle-invasive bladder cancer undergoing radical cystectomy: A comparative analysis of high-risk cases.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Shirani F, Lashay A",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42400567/",
+      "doi": "10.1177/03915603261461658",
+      "abstract": "Radical cystectomy followed by urinary diversion is the standard of care for patients with muscle-invasive bladder cancer (MIBC). Cutaneous ureterostomy has emerged as an alternative to ileal conduit diversion, particularly in high-risk patients. The present study aimed to evaluate the outcomes and complications of cutaneous ureterostomy versus ileal conduit in patients with MIBC. This was a retrospective, descriptive cross-sectional study performed at Shahid Modarres Hospital in Tehran between 2018 and 2021. The study population consisted of patients who underwent radical cystectomy with either ileal conduit or cutaneous ureterostomy. Baseline characteristics, operative data, and postoperative complications were compared between the two groups. The results showed that cutaneous ureterostomy was significantly utilized in patients with high creatinine levels, renal failure, and metastatic disease (p < 0.05). Analysis revealed that 30-day, 90-day, and 6-month survival rates, as well as surgical complications, were not significantly different between the two groups. Multivariable regression analysis was performed to adjust for baseline imbalances, indicating that the choice of diversion was not an independent predictor of early mortality, though it was heavily influenced by preoperative frailty. One-year survival, the number of preoperative transfusions, length of hospitalization, and operation duration were significantly higher in the ileal conduit group. Cutaneous ureterostomy appears to be a viable and \"hypothesis-generating\" alternative for elderly and frail patients. It is associated with shorter surgery duration, less blood loss, lower transfusion rates, and shorter hospital stays. Although early mortality rates are comparable, cutaneous ureterostomy may offer a safer profile for high-risk individuals, though long-term comparative studies with multivariable adjustment are warranted.",
+      "pub_date": "2026-Jul-04",
+      "score": 2,
+      "tags": [
+        "衰弱"
+      ],
+      "category": "candidate",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1177/03915603261461658",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1038/s41514-026-00441-2",
+      "title": "Biological aging increases risk of postoperative morbidity and mortality: an international, multi-cohort study.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Scarpa J, Reid M, Elemento O, Krumsiek J",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401606/",
+      "doi": "10.1038/s41514-026-00441-2",
+      "abstract": "Biological age often diverges from chronological age, yet its independent impact on surgical outcomes remains poorly defined. We evaluated PhenoAge, a validated biological age metric, in an international multi-cohort study comprising over 430,000 surgical patients across the UK, USA, and South Korea. In the UK Biobank (N = 291,845), PhenoAge was a robust, independent predictor of 1-year mortality (OR 1.043; p < 0.001), major adverse cardiovascular events (OR 1.041; p < 0.001), and 30-day readmission (OR 1.02; p < 0.001), even after adjusting for chronological age, Fried Frailty Index, Charlson comorbidity score, American Society of Anesthesiologists (ASA) physical status, surgical complexity, and other common surgical risk factors. \"Fast Agers\" faced a 49% higher risk of mortality than \"Normal Agers\". The main findings were replicated across three independent international cohorts (MOVER OR 1.03; Weill Cornell OR 1.036; INSPIRE OR: 1.05; all p < 0.001), and validated prospectively at a large academic medical center, where PhenoAge predicted acute 3-day complications (OR 1.20; p = 0.015). As a scalable tool leveraging routine laboratory data, PhenoAge facilitates precision gerisurgery by identifying high-risk individuals for prehabilitation and biologically resilient candidates for complex procedures regardless of chronological age.",
+      "pub_date": "2026-Jul-04",
+      "score": 2,
+      "tags": [
+        "衰弱"
+      ],
+      "category": "candidate",
+      "oa_status": "closed",
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1038/s41514-026-00441-2",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1186/s12877-026-07952-3",
+      "title": "Frailty and social support in older orthopedic surgical patients: a cross-sectional analysis.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Koraş Sözen K, Güngör S, Karter B",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401801/",
+      "doi": "10.1186/s12877-026-07952-3",
+      "abstract": "Frailty is a common and clinically significant condition among older adults undergoing surgical procedures and is associated with adverse postoperative outcomes. In addition to biological vulnerability, psychosocial factors such as social support may influence recovery processes. However, studies examining the relationship between frailty and perceived social support in older orthopedic surgical patients remain limited. This study aimed to examine the relationship between frailty and perceived social support in older orthopedic surgical patients and to determine how these variables differ according to sociodemographic and clinical characteristics. This cross-sectional study was conducted with 241 older orthopedic surgical patients aged 65 years and older who underwent orthopedic surgical procedures. Data were collected using the Descriptive Characteristics Form, the Edmonton Frail Scale, and the Multidimensional Scale of Perceived Social Support. Descriptive statistics, independent samples t-tests, one-way ANOVA, and Spearman correlation analysis were used. A p value of < 0.05 was considered statistically significant. Participants showed clinically relevant levels of frailty, with many classified as mildly, moderately, or severely frail, and reported moderate to high levels of perceived social support. Social support was highest from family and lowest from a significant other. A substantial proportion of patients were identified as having mild, moderate, or severe frailty. No significant relationship was found between total perceived social support and frailty; however, family support was significantly and inversely associated with frailty (p < 0.05). Frailty levels were significantly higher among female participants and those with lower educational levels (p < 0.05). Frailty remains a prevalent condition among older orthopedic surgical patients, even in the presence of relatively high levels of perceived social support. Family-based support was significantly and inversely associated with frailty; however, this finding should be interpreted as an association rather than evidence of a protective or causal effect. Integrating frailty screening with the assessment of social support in perioperative care may support the development of individualized and patient-centered nursing interventions. Future studies should explore causal relationships using longitudinal designs and include detailed clinical variables such as surgical type.",
+      "pub_date": "2026-Jul-04",
+      "score": 2,
+      "tags": [
+        "衰弱"
+      ],
+      "category": "candidate",
+      "oa_status": "gold",
+      "oa_pdf_url": "https://doi.org/10.1186/s12877-026-07952-3",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1186/s12877-026-07952-3",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1093/jnci/djag218",
+      "title": "Worsening frailty and declining quality of life in older survivors of non-metastatic breast cancer.",
+      "source": "frailty",
+      "source_name": "Frailty / 衰弱",
+      "group": "geriatrics",
+      "authors": "Minami C, Jager L, Lorentzen E, Shadyab A, Krok-Schoen J, Nazmus Saquib A, King J, Anderson G, King T, Mittendorf E",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42402217/",
+      "doi": "10.1093/jnci/djag218",
+      "abstract": "Breast cancer treatment can worsen frailty, but the impact of this decline on long-term quality of life (QoL) remains uncertain. We identified women ≥65 years old with non-metastatic breast cancer from the Life and Longevity after Cancer survivorship cohort of the Women's Health Initiative. We examined the association between clinically-significant worsening of frailty, measured by a validated claims-based index one year post-diagnosis, and long-term decline in QoL, assessed on a ten-point scale 4 to 6 years post-diagnosis. Among 1,061 eligible patients, 692 (65.2%) were robust (not living with frailty), 343 (32.3%) were living with pre-frailty, and 26 (2.5%) were living with frailty at cancer diagnosis. Clinically-significant worsening of frailty occurred in 19.5% of patients. In fully adjusted models, worsening frailty was significantly associated with long-term QoL declines (Odds Ratio 1.48; 95% Confidence Interval [1.07 to 2.04]). These findings highlight the need for interventions to prevent worsening frailty during breast cancer treatment.",
+      "pub_date": "2026-Jul-03",
+      "score": 2,
+      "tags": [
+        "衰弱"
+      ],
+      "category": "candidate",
+      "oa_status": null,
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1093/jnci/djag218",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
       "item_id": "doi:10.1186/s12894-026-02242-x",
       "title": "Information quality and reliability of pheochromocytoma-related videos on tiktok and Kwai: a cross-sectional study.",
       "source": "adrenal_pituitary",
@@ -9007,7 +9878,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12894-026-02242-x",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9027,16 +9898,16 @@
         "甲狀腺"
       ],
       "category": "candidate",
-      "oa_status": "closed",
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "bronze",
+      "oa_pdf_url": "https://casereports.bmj.com/content/bmjcr/19/7/e269352.full.pdf",
+      "oa_first_date": "2026-07-05",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1136/bcr-2025-269352",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1186/s12903-026-09087-8",
@@ -9061,7 +9932,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12903-026-09087-8",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9088,7 +9959,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s13256-026-06260-z",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9108,16 +9979,16 @@
         "糖尿病照護"
       ],
       "category": "candidate",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1210/clinem/dgag268",
+      "oa_first_date": "2026-07-05",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag268",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1016/j.jamda.2026.106310",
@@ -9142,7 +10013,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jamda.2026.106310",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -9169,7 +10040,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.recot.2026.07.005",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9196,7 +10067,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s13023-026-04479-z",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9223,7 +10094,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.clnesp.2026.103436",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9250,7 +10121,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1038/s41598-026-59306-z",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9277,7 +10148,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12877-026-07930-9",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9304,7 +10175,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12877-026-07772-5",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9324,14 +10195,14 @@
         "衰弱"
       ],
       "category": "candidate",
-      "oa_status": null,
+      "oa_status": "closed",
       "oa_pdf_url": null,
       "oa_first_date": null,
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1002/lary.70713",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -9351,16 +10222,16 @@
         "衰弱"
       ],
       "category": "candidate",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1111/den.70222",
+      "oa_first_date": "2026-07-05",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/den.70222",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1210/jcemcr/luag063",
@@ -9385,7 +10256,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/jcemcr/luag063",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9412,7 +10283,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.igie.2025.10.008",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9439,7 +10310,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3389/fendo.2026.1786504",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9466,7 +10337,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1530/EC-26-0267",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9493,7 +10364,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1053/j.akdh.2026.04.001",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -9655,7 +10526,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1080/17470919.2026.2696565",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -9682,7 +10553,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/dom.71039",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9709,7 +10580,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.7759/cureus.110121",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9864,16 +10735,16 @@
         "衰弱"
       ],
       "category": "candidate",
-      "oa_status": "closed",
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "bronze",
+      "oa_pdf_url": "https://link.springer.com/content/pdf/10.1007/s41999-026-01540-9.pdf",
+      "oa_first_date": "2026-07-05",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s41999-026-01540-9",
       "first_seen": "2026-07-03",
       "last_seen": "2026-07-04",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1007/s00345-026-06539-2",
@@ -9927,7 +10798,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2196/85437",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -9935,7 +10806,7 @@
       "item_id": "doi:10.1093/gerona/glag174",
       "title": "Adolescent Dietary Restriction Improves Cognition and Frailty in Aged Female Wistar Rats.",
       "source": "jgs_bio",
-      "source_name": "Frailty / 衰弱",
+      "source_name": "J Gerontol A Med Sci",
       "group": "geriatrics",
       "authors": "Simeunovic V, Mladenovic A, Prvulovic M, Jovic M, Pracer S, Sokanovic S",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42398023/",
@@ -9954,7 +10825,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag174",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -9982,7 +10853,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70576",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -10092,7 +10963,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900156-7",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -10119,7 +10990,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/jcemcr/luag131",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -10663,7 +11534,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900163-4",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -10798,7 +11669,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2486/indhealth.2026-0063",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -11153,7 +12024,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag169",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -11181,7 +12052,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3290/j.cjdr.b7044041",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -11209,7 +12080,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.47895/amp.v60i10.11314",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -11560,7 +12431,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3389/fmed.2026.1783352",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -11587,7 +12458,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s11102-026-01715-4",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -11614,7 +12485,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/dom.71022",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -11914,7 +12785,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261448706",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -11941,7 +12812,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261450089",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -11968,7 +12839,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261449452",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -11995,7 +12866,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261448724",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12022,7 +12893,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261450430",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12049,7 +12920,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261454209",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12077,7 +12948,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261442596",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12104,7 +12975,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261443630",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12131,7 +13002,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261457010",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12158,7 +13029,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261457026",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12185,7 +13056,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261456988",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -12212,7 +13083,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261454211",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -12239,7 +13110,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261460759",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12266,7 +13137,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261462468",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12296,7 +13167,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261463218",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12323,7 +13194,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261454542",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -12350,7 +13221,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1177/10507256261462523",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12377,7 +13248,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900132-4",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12404,7 +13275,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900124-5",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12431,7 +13302,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900153-1",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12458,7 +13329,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900120-8",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -12485,7 +13356,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900130-0",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12512,7 +13383,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0284",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12539,7 +13410,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0586",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12566,7 +13437,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc25-3154",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12593,7 +13464,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0778",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12620,7 +13491,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dci26-0069",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -12647,7 +13518,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0850",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -12674,7 +13545,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dci26-0049",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12701,7 +13572,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dci26-0051",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12728,7 +13599,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0164",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12755,7 +13626,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0404",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12782,7 +13653,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0464",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12809,7 +13680,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0300",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12836,7 +13707,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0700",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12863,7 +13734,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.2337/dc26-0659",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12944,7 +13815,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag247",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12971,7 +13842,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag252",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -12999,7 +13870,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag258",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -13216,7 +14087,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.afos.2026.03.002",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13270,7 +14141,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117984",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13297,7 +14168,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117988",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -13324,7 +14195,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117989",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13351,7 +14222,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117992",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -13378,7 +14249,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.bone.2026.117999",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -13432,7 +14303,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08087-2",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -13460,7 +14331,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08097-0",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13488,7 +14359,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08096-1",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13569,7 +14440,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3389/fmed.2026.1851395",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13596,7 +14467,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1136/ip-2025-045982",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13623,7 +14494,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12877-026-07807-x",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13650,7 +14521,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1186/s12877-026-07895-9",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13677,7 +14548,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3389/fspor.2026.1858245",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13704,7 +14575,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s41999-026-01538-3",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13731,7 +14602,7 @@
       "inst_platforms": null,
       "sfx_url": null,
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -13758,7 +14629,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1038/s41598-026-59184-5",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -13785,7 +14656,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.ssci.2026.107167",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -14191,7 +15062,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag148",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -14218,7 +15089,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag156",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -14245,7 +15116,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag158",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -14300,7 +15171,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag175",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -14328,7 +15199,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag174",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -14355,7 +15226,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag184",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -14383,7 +15254,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag182",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -14410,7 +15281,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag186",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -14438,7 +15309,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag190",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -14465,7 +15336,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag191",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -14492,7 +15363,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70544",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -14520,7 +15391,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70561",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -14547,7 +15418,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70568",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -14575,7 +15446,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70548",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -14603,7 +15474,62 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70570",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": false
+    },
+    {
+      "item_id": "doi:10.1016/j.fertnstert.2026.06.034",
+      "title": "Hormonal and metabolic effects of the administration of oral low-dose 17-β-estradiol (0.2 mg) in patients with Functional Hypothalamic Amenorrhea (FHA): A Retrospective Pilot Study.",
+      "source": "thyroid_topic",
+      "source_name": "甲狀腺結節 / 癌 / 功能異常",
+      "group": "endocrine",
+      "authors": "Genazzani A, Rusce M, Foschi M, Genazzani F, Chedraui P, Genazzani A, Battipaglia C",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401392/",
+      "doi": "10.1016/j.fertnstert.2026.06.034",
+      "abstract": "To evaluate the endocrine and metabolic effects of very low-dose oral 17β-estradiol (0.2 mg daily) in women with functional hypothalamic amenorrhea. Retrospective, single-center, observation nal pilot study. 55 women with a mean age of 22.5 ± 1.7 years (mean ± SEM) who fulfilled diagnostic criteria for functional hypothalamic amenorrhea and completed at least 16 weeks of follow-up after initiation of treatment. Daily administration of 0.2 mg oral 17β-estradiol for 16 weeks. Changes in reproductive, metabolic, adrenal, and bone-related hormonal parameters before and after treatment were evaluated including luteinizing hormone (LH), follicle-stimulating hormone, thyroid hormones, insulin, cortisol, anti-Müllerian hormone, allopregnanolone, and bone turnover markers. Pre- and post-treatment biomarker shifts were analyzed across the entire cohort using paired Student's t-tests and stratified by baseline LH concentrations (≤3 vs >3 mIU/mL). After 16 weeks of treatment, significant increases in LH, free triiodothyronine, and insulin levels were observed, together with significant reductions in cortisol and allopregnanolone concentrations. Patients with baseline LH ≤3 mIU/mL exhibited more pronounced endocrine and metabolic changes compared with those with LH >3 mIU/mL. Approximately 52.7% of patients reported at least one episode of menstrual-like bleeding during follow-up. Very low-dose oral estradiol administered according to pubertal induction protocols was associated with neuroendocrine and metabolic adaptations in women with FHA, particularly in those with greater baseline hypothalamic suppression. This pilot study supports the hypothesis that very low-dose oral estradiol may represent a useful strategy to facilitate functional recovery of the reproductive axis in women with functional hypothalamic amenorrhea. Prospective controlled studies are needed to confirm the se findings and evaluate long-term reproductive outcomes.",
+      "pub_date": "2026-Jul-04",
+      "score": 1,
+      "tags": [
+        "骨鬆一般"
+      ],
+      "category": "candidate",
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1016/j.fertnstert.2026.06.034",
+      "oa_first_date": "2026-07-05",
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1016/j.fertnstert.2026.06.034",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
+      "isNew": true,
+      "oaNew": true
+    },
+    {
+      "item_id": "doi:10.1556/650.2026.33526",
+      "title": "[The Hungarian short version and psychometric properties of the Activities-specific Balance Confidence Scale for assessing fall risk].",
+      "source": "falls",
+      "source_name": "Falls prevention / 跌倒",
+      "group": "geriatrics",
+      "authors": "Ruszin-Perecz B, Pozsgai M, Csávás-Selmeci R, Makai A, Görög P, Győrbíró Z, Lovadi E, Nusser N, Janszky J, Pál E, Sebők Á",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42402136/",
+      "doi": "10.1556/650.2026.33526",
+      "abstract": "Assessing fall risk is essential for older adults as well as for specific patient populations, including those with neurological or musculoskeletal disorders. The Activities-specific Balance Confidence Scale is a widely used instrument for evaluating perceived balance confidence, and its Hungarian version has already been validated. However, administering the original 16-item scale can be time-consuming. The aim of this study was to develop and validate the 6-item short version of the Hungarian Activities-specific Balance Confidence Scale among individuals with neurological and musculoskeletal conditions. Our investigation was conducted in two phases. In the first phase, 167 participants completed the full 16-item version of the Hungarian Activities-specific Balance Confidence Scale, data for the 6 selected items were extracted and analyzed. Convergent validity was tested against the Berg Balance Scale here. In the second phase, 63 participants completed the 6-item Hungarian short version of the scale along with other patient-reported surveys. Data on falls in the previous year and perceived pain levels were also collected. Internal consistency was evaluated using Cronbach's alpha and McDonald's omega, while test-retest reliability was assessed via the intraclass correlation coefficient. We also calculated floor and ceiling effects and minimal detectable change. Convergent validity was evaluated using the Hungarian version of the Falls Efficacy Scale - International. Discriminative validity was examined comparing the scores of patients with or without falls. The effect of perceived pain on scale results was also evaluated. The 6-item Hungarian short version of the Activities-specific Balance Confidence Scale demonstrated high reliability with no floor or ceiling effect. Strong to moderate correlations were found with the physical test and the Falls Efficacy Scale - International. The scale effectively discriminated between individuals with and without a history of falls. Perceived pain did not significantly influence the scores. The average completion time was under 4 minutes. The 6-item Hungarian version of the Activities-specific Balance Confidence Scale is a brief, reliable, and valid instrument for assessing balance confidence in patients with neurological and musculoskeletal conditions. Due to its sensitivity and short completion time, it is highly suitable for both clinical practice and research. Orv Hetil. 2026; 167(27): 1068-1078.",
+      "pub_date": "2026-Jul-05",
+      "score": 1,
+      "tags": [
+        "neg:protocol/scale",
+        "跌倒預防"
+      ],
+      "category": "candidate",
+      "oa_status": null,
+      "oa_pdf_url": null,
+      "oa_first_date": null,
+      "inst_subscribed": null,
+      "inst_platforms": "",
+      "sfx_url": "?sid=Claude&id=doi:10.1556/650.2026.33526",
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -14623,16 +15549,16 @@
         "design:guideline"
       ],
       "category": "candidate",
-      "oa_status": null,
-      "oa_pdf_url": null,
-      "oa_first_date": null,
+      "oa_status": "hybrid",
+      "oa_pdf_url": "https://doi.org/10.1210/clinem/dgag263",
+      "oa_first_date": "2026-07-05",
       "inst_subscribed": null,
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag263",
       "first_seen": "2026-07-04",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
-      "oaNew": false
+      "oaNew": true
     },
     {
       "item_id": "doi:10.1111/jop.70164",
@@ -14765,7 +15691,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70574",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -14821,7 +15747,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3393/ac.2025.01179.0168",
       "first_seen": "2026-07-03",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -14903,7 +15829,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-08006-5",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -14930,7 +15856,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70560",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -14984,7 +15910,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1002/cns.70866",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15011,7 +15937,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3760/cma.j.cn112152-20251113-00569",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15038,7 +15964,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.avsg.2026.06.010",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15065,7 +15991,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/j.jacr.2026.05.002",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15092,7 +16018,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jebm.70148",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15119,7 +16045,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1080/09513590.2026.2695512",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15146,7 +16072,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.3760/cma.j.cn501225-20250717-00311",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15173,7 +16099,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jne.70220",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15200,7 +16126,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ecco-jcc/jjag072",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15227,7 +16153,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jalm/jfag071",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15335,7 +16261,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1016/S2213-8587%2826%2900102-6",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15389,7 +16315,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag234",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15416,7 +16342,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag249",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15443,7 +16369,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1210/clinem/dgag239",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15526,7 +16452,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag072",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15553,7 +16479,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag093",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15582,7 +16508,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag099",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15609,7 +16535,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag092",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15636,7 +16562,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/jbmr/zjag102",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15663,7 +16589,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1007/s00198-026-07855-4",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15717,7 +16643,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag143",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15744,7 +16670,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag157",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15771,7 +16697,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag166",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15798,7 +16724,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/gerona/glag161",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15825,7 +16751,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag170",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15852,7 +16778,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag176",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15879,7 +16805,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag178",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -15906,7 +16832,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag181",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15933,7 +16859,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag183",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15960,7 +16886,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag185",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -15987,7 +16913,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag188",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -16014,7 +16940,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag180",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -16041,7 +16967,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag196",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -16068,7 +16994,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1093/ageing/afag189",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -16149,7 +17075,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70546",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -16176,7 +17102,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70551",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -16203,7 +17129,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70557",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     },
@@ -16230,7 +17156,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70565",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": true
     },
@@ -16257,7 +17183,7 @@
       "inst_platforms": "",
       "sfx_url": "?sid=Claude&id=doi:10.1111/jgs.70575",
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-04",
+      "last_seen": "2026-07-05",
       "isNew": true,
       "oaNew": false
     }
