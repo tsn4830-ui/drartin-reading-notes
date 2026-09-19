@@ -1,0 +1,1305 @@
+<title>代謝共病態勢儀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* ── 代謝共病態勢儀 ─────────────────────────────────────────────
+   單一視覺世界：暗色臨床遙測主控台。刻意單主題，所有顏色顯式指定。
+   嚴重度色階 = KDIGO 四帶慣例，重新分級為明度單調遞減，
+   使紅綠色覺異常仍可辨（CVD ΔE 12.8 / 一般色覺 15.8，已驗證）。
+   ───────────────────────────────────────────────────────────── */
+:root{
+  --ground:#0A1013;
+  --panel:#121A1F;
+  --panel-2:#18232A;
+  --panel-3:#22303A;
+  --line:#26363F;
+  --line-soft:#1B262D;
+  --ink:#E6EFF3;
+  --ink-2:#A0B4BF;
+  --ink-3:#6C8390;
+  --chrome:#56C2E0;
+  --chrome-dim:#2C6C81;
+  /* 嚴重度（KDIGO 四帶） */
+  --s0:#93F2C8; --s1:#E8C64E; --s2:#E08536; --s3:#BE3B44;
+  --s0-bg:rgba(147,242,200,.13);
+  --s1-bg:rgba(232,198,78,.14);
+  --s2-bg:rgba(224,133,54,.16);
+  --s3-bg:rgba(190,59,68,.20);
+  --mono:"JetBrains Mono","SFMono-Regular",Menlo,Consolas,monospace;
+  --cond:"Barlow Semi Condensed","Noto Sans TC",system-ui,sans-serif;
+  --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --r:3px;
+}
+*{box-sizing:border-box}
+html,body{background:var(--ground)}
+body{
+  margin:0; color:var(--ink); font-family:var(--body);
+  font-size:14px; line-height:1.6;
+  padding-inline:16px; padding-block:0 48px;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(1100px 620px at 50% -12%, rgba(86,194,224,.075), transparent 70%),
+    repeating-linear-gradient(0deg, rgba(86,194,224,.022) 0 1px, transparent 1px 4px);
+  background-attachment:fixed;
+}
+.wrap{max-width:1420px;margin:0 auto}
+
+/* ── 排印 ── */
+.eyebrow{
+  font-family:var(--cond); font-weight:600; font-size:11px;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3);
+}
+h1{font-family:var(--cond);font-weight:600;font-size:clamp(26px,4.4vw,40px);
+   letter-spacing:.015em;margin:2px 0 0;text-wrap:balance;color:var(--ink)}
+h2{font-family:var(--cond);font-weight:600;font-size:15px;letter-spacing:.11em;
+   text-transform:uppercase;color:var(--ink-2);margin:0}
+h3{font-size:14px;font-weight:700;margin:0;color:var(--ink)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* ── 頁首 ── */
+header.top{
+  display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;
+  justify-content:space-between;
+  padding-block:22px 16px;border-bottom:1px solid var(--line);
+}
+.brandline{display:flex;align-items:center;gap:10px}
+.pulse{width:9px;height:9px;border-radius:50%;background:var(--chrome);
+  box-shadow:0 0 0 0 rgba(86,194,224,.55);animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 11px rgba(86,194,224,0)}100%{box-shadow:0 0 0 0 rgba(86,194,224,0)}}
+.caselist{display:flex;gap:6px;flex-wrap:wrap}
+.casebtn{
+  font-family:var(--cond);font-size:13px;letter-spacing:.06em;font-weight:500;
+  background:var(--panel);color:var(--ink-2);border:1px solid var(--line);
+  border-radius:var(--r);padding:7px 12px;cursor:pointer;transition:.15s;
+}
+.casebtn:hover{border-color:var(--chrome-dim);color:var(--ink)}
+.casebtn[aria-pressed="true"]{
+  background:var(--panel-3);color:var(--chrome);border-color:var(--chrome-dim);
+  box-shadow:inset 0 0 0 1px rgba(86,194,224,.18);
+}
+.ghost{
+  font-family:var(--cond);font-size:13px;letter-spacing:.06em;
+  background:transparent;color:var(--chrome);border:1px solid var(--chrome-dim);
+  border-radius:var(--r);padding:7px 12px;cursor:pointer;transition:.15s;
+}
+.ghost:hover{background:rgba(86,194,224,.09)}
+:focus-visible{outline:2px solid var(--chrome);outline-offset:2px}
+
+/* ── 遙測列 ── */
+.telemetry{
+  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:1px;background:var(--line-soft);border:1px solid var(--line);
+  margin-top:18px;border-radius:var(--r);overflow:hidden;
+}
+.tile{background:var(--panel);padding:11px 12px 9px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.tile .k{font-family:var(--cond);font-size:11px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-3);display:flex;justify-content:space-between;gap:6px}
+.tile .v{font-family:var(--mono);font-size:24px;font-weight:700;line-height:1.05;
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tile .u{font-size:11px;font-weight:400;color:var(--ink-3);margin-left:3px;font-family:var(--body)}
+.tile .t{font-size:11px;color:var(--ink-3);display:flex;align-items:center;gap:5px;min-height:17px}
+.tile svg.spark{display:block;width:100%;height:24px}
+.dot{width:7px;height:7px;border-radius:2px;flex:none}
+
+/* ── 主要三欄 ── */
+.main{display:grid;grid-template-columns:212px minmax(0,1fr) 352px;gap:14px;margin-top:14px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r)}
+.card > .hd{
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+  padding:10px 13px;border-bottom:1px solid var(--line-soft);
+}
+.card > .bd{padding:13px}
+
+/* 圖層軌 */
+.layer{display:flex;gap:9px;align-items:flex-start;padding:8px 9px;border-radius:var(--r);
+  cursor:pointer;border:1px solid transparent;transition:.14s;background:transparent;width:100%;text-align:left;color:inherit;font:inherit}
+.layer:hover{background:var(--panel-2)}
+.layer[aria-pressed="true"]{background:var(--panel-3);border-color:var(--chrome-dim)}
+.layer .sw{width:3px;align-self:stretch;border-radius:2px;background:var(--line);flex:none;min-height:30px}
+.layer[aria-pressed="true"] .sw{background:var(--chrome)}
+.layer .nm{font-size:13px;font-weight:500;line-height:1.35}
+.layer .ds{font-size:11px;color:var(--ink-3);line-height:1.4}
+
+/* 人體 */
+.bodywrap{position:relative;padding:6px 0 0}
+svg.body{display:block;width:100%;max-width:100%;height:auto}
+.organ{cursor:pointer}
+.organ .hit{fill:transparent}
+.organ:focus-visible{outline:none}
+.organ:focus-visible .ring{stroke:var(--chrome);stroke-width:2}
+.organ .lbl{font-family:var(--cond);font-size:11.5px;letter-spacing:.07em;fill:var(--ink-2)}
+.organ .val{font-family:var(--mono);font-size:10.5px;fill:var(--ink-3)}
+.organ:hover .lbl,.organ.sel .lbl{fill:var(--ink)}
+.organ.dim{opacity:.26}
+.sweep{animation:sweep 7.5s linear infinite}
+@keyframes sweep{0%{transform:translateY(0);opacity:0}6%{opacity:.75}94%{opacity:.75}100%{transform:translateY(600px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.sweep{display:none}.pulse{animation:none}}
+
+/* 檔案面板 */
+.dossier .bd{display:flex;flex-direction:column;gap:12px}
+.verdict{border-left:3px solid var(--line);padding:8px 0 8px 11px;display:flex;flex-direction:column;gap:3px}
+.verdict .q{font-family:var(--cond);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.verdict .a{font-size:14.5px;font-weight:700;line-height:1.35}
+.verdict .n{font-size:11.5px;color:var(--ink-3);line-height:1.5}
+.rows{display:flex;flex-direction:column;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:var(--r);overflow:hidden}
+.row{display:grid;grid-template-columns:1fr auto auto;gap:9px;align-items:baseline;
+  background:var(--panel);padding:7px 10px;font-size:12.5px}
+.row .lab{color:var(--ink-2);min-width:0}
+.row .now{font-family:var(--mono);font-weight:700;font-variant-numeric:tabular-nums}
+.row .tgt{font-family:var(--mono);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.acts{display:flex;flex-direction:column;gap:6px}
+.act{display:flex;gap:8px;font-size:12.5px;line-height:1.55;color:var(--ink-2)}
+.act b{color:var(--ink);font-weight:700}
+.act .m{color:var(--chrome);font-family:var(--cond);font-size:11px;letter-spacing:.08em;
+  border:1px solid var(--chrome-dim);border-radius:2px;padding:0 5px;flex:none;height:18px;
+  display:inline-flex;align-items:center;margin-top:3px}
+
+/* 帶狀標籤（永遠帶文字 → 不靠顏色單獨傳達） */
+.band{display:inline-flex;align-items:center;gap:6px;font-family:var(--cond);
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  border:1px solid;border-radius:2px;padding:1px 7px;white-space:nowrap}
+
+/* 時間軸 */
+.timeline{margin-top:14px}
+.tl-track{display:flex;gap:1px;background:var(--line-soft);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.tl-stop{flex:1;background:var(--panel);border:0;color:var(--ink-3);cursor:pointer;
+  padding:9px 4px 8px;font-family:var(--mono);font-size:11px;display:flex;flex-direction:column;
+  gap:5px;align-items:center;transition:.14s;min-width:0}
+.tl-stop:hover{background:var(--panel-2);color:var(--ink-2)}
+.tl-stop[aria-pressed="true"]{background:var(--panel-3);color:var(--ink)}
+.tl-stop .pip{width:100%;height:3px;border-radius:2px;background:var(--line)}
+.tl-stop[aria-pressed="true"] .pip{background:var(--chrome)}
+
+/* KDIGO 熱區 */
+.kgrid{border-collapse:separate;border-spacing:2px;width:100%;font-size:11.5px}
+.kgrid th{font-family:var(--cond);font-weight:500;font-size:10.5px;letter-spacing:.08em;
+  color:var(--ink-3);text-align:left;padding:3px 5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.kgrid td{padding:7px 6px;border-radius:2px;text-align:center;font-family:var(--cond);
+  font-size:10.5px;letter-spacing:.06em;border:1px solid transparent}
+.kgrid td.here{outline:2px solid var(--ink);outline-offset:1px;font-weight:600}
+.kgrid td .me{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:0;margin-top:1px}
+
+/* 情境推演 */
+.sim-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:1px;
+  background:var(--line-soft);border:1px solid var(--line-soft);border-radius:var(--r);overflow:hidden}
+.opt{display:flex;gap:9px;align-items:flex-start;background:var(--panel);padding:9px 11px;cursor:pointer;transition:.14s}
+.opt:hover{background:var(--panel-2)}
+.opt input{margin:3px 0 0;accent-color:var(--chrome);flex:none;width:14px;height:14px}
+.opt .nm{font-size:12.5px;font-weight:500;line-height:1.35}
+.opt .src{font-size:10.5px;color:var(--ink-3);line-height:1.4;font-family:var(--mono)}
+.simbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  padding:10px 13px;border-top:1px solid var(--line-soft);background:var(--panel-2)}
+.delta{font-family:var(--mono);font-size:11px;font-weight:700}
+.tile.proj{box-shadow:inset 0 0 0 1px rgba(86,194,224,.30)}
+
+/* 輸入抽屜 */
+dialog{background:var(--panel);color:var(--ink);border:1px solid var(--line);
+  border-radius:var(--r);padding:0;max-width:760px;width:calc(100% - 32px);max-height:86vh}
+dialog::backdrop{background:rgba(5,9,11,.78)}
+.form{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px;padding:14px}
+.f{display:flex;flex-direction:column;gap:3px}
+.f label{font-family:var(--cond);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.f input,.f select{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
+  border-radius:var(--r);padding:6px 8px;font-family:var(--mono);font-size:13px;width:100%}
+.f.chk{flex-direction:row;align-items:center;gap:7px}
+.f.chk input{width:15px;height:15px;accent-color:var(--chrome);flex:none}
+.f.chk label{text-transform:none;letter-spacing:.02em;font-size:12px;font-family:var(--body);color:var(--ink-2)}
+
+/* 註腳 */
+.notes{margin-top:26px;border-top:1px solid var(--line);padding-top:18px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:22px}
+.notes h2{margin-bottom:9px}
+.notes p,.notes li{font-size:12px;color:var(--ink-3);line-height:1.65}
+.notes ol,.notes ul{margin:0;padding-left:17px}
+.notes b{color:var(--ink-2);font-weight:500}
+.warnbox{border:1px solid var(--s2);background:var(--s2-bg);border-radius:var(--r);
+  padding:11px 13px;font-size:12px;color:var(--ink-2);line-height:1.6}
+.warnbox b{color:var(--s2)}
+.roadmap{display:flex;flex-direction:column;gap:9px}
+.stage{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+.stage .n{font-family:var(--cond);font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:2px;padding:1px 6px;white-space:nowrap;margin-top:2px}
+.stage.on .n{color:var(--chrome);border-color:var(--chrome-dim)}
+
+@media (max-width:1180px){
+  .main{grid-template-columns:minmax(0,1fr) 330px}
+  .railcard{grid-column:1/-1}
+  .rail{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:4px}
+}
+@media (max-width:860px){
+  .main{grid-template-columns:minmax(0,1fr)}
+  .telemetry{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:520px){
+  .telemetry{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile .v{font-size:21px}
+}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <div>
+    <div class="brandline"><span class="pulse"></span><span class="eyebrow">代謝共病 · 病人層級態勢圖 · 階段一</span></div>
+    <h1>代謝共病態勢儀</h1>
+    <p style="margin:6px 0 0;color:var(--ink-2);font-size:13px;max-width:60ch">
+      一位病人的糖尿病、肥胖、高血壓、高血脂與慢性腎臟病，攤在同一個器官地圖上。
+      點器官鎖定、拉時間軸回放病程、勾選藥物推演未來。
+    </p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:9px;align-items:flex-start">
+    <span class="eyebrow">載入案例</span>
+    <div class="caselist" id="caselist"></div>
+    <button class="ghost" id="openForm">輸入我的病人數值 →</button>
+  </div>
+</header>
+
+<p id="whoStrip" style="margin:14px 0 0;font-size:12.5px;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:3px 14px"></p>
+
+<section class="telemetry" id="telemetry" aria-label="主要遙測讀數"></section>
+
+<div class="main">
+
+  <div class="card railcard">
+    <div class="hd"><h2>圖層</h2><span class="eyebrow" id="layerhint">全部</span></div>
+    <div class="bd rail" id="layers" style="display:flex;flex-direction:column;gap:3px;padding:8px"></div>
+    <div style="border-top:1px solid var(--line-soft);padding:11px 13px 13px">
+      <span class="eyebrow">嚴重度</span>
+      <div id="legend" style="display:flex;flex-direction:column;gap:6px;margin-top:8px"></div>
+      <p style="margin:10px 0 0;font-size:11px;color:var(--ink-3);line-height:1.5">
+        四帶沿用 KDIGO 慣例，並以明度與節點外圈刻點數量重複編碼，紅綠色覺異常者仍可分辨。
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="hd">
+      <h2>器官風險地圖</h2>
+      <span class="eyebrow" id="bodydate">—</span>
+    </div>
+    <div class="bd bodywrap" id="bodywrap"></div>
+  </div>
+
+  <div class="card dossier">
+    <div class="hd"><h2 id="dosstitle">整體判定</h2>
+      <button class="ghost" id="backAll" hidden style="padding:3px 8px;font-size:11px">回總覽</button></div>
+    <div class="bd" id="dossier"></div>
+  </div>
+
+</div>
+
+<section class="timeline card" style="padding:0">
+  <div class="hd"><h2>病程時間軸</h2><span class="eyebrow">點任一次就診回放</span></div>
+  <div style="padding:11px 13px 13px"><div class="tl-track" id="timeline"></div></div>
+</section>
+
+<div class="main" style="grid-template-columns:minmax(0,1fr) minmax(0,1.32fr)">
+
+  <section class="card">
+    <div class="hd"><h2>KDIGO 風險熱區</h2><span class="eyebrow">eGFR × 白蛋白尿</span></div>
+    <div class="bd"><div style="overflow-x:auto"><table class="kgrid" id="kdigo"></table></div>
+      <p style="margin:11px 0 0;font-size:11.5px;color:var(--ink-3);line-height:1.6" id="kfre"></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="hd"><h2>情境推演</h2><span class="eyebrow">若加上這些介入</span></div>
+    <div class="sim-opts" id="simopts"></div>
+    <div class="simbar">
+      <span style="font-size:11.5px;color:var(--ink-3);line-height:1.5" id="simsummary">尚未選取任何介入。</span>
+      <button class="ghost" id="simreset">清除推演</button>
+    </div>
+  </section>
+
+</div>
+
+<section class="notes">
+  <div>
+    <h2>路線圖</h2>
+    <div class="roadmap">
+      <div class="stage on"><span class="n">階段一 · 現行</span><div><b style="color:var(--ink)">病人身體儀表板</b>
+        ── 單一病人的器官風險地圖、病程回放、介入推演。就是你現在看的這頁。</div></div>
+      <div class="stage"><span class="n">階段二</span><div><b style="color:var(--ink)">流行病學地球儀</b>
+        ── 同一套圖層引擎換掉資料來源：台灣各縣市與全球的糖尿病、CKD、肥胖、高血壓盛行率與透析發生率，
+        時間軸從「這位病人的六次就診」改成「二十年趨勢」。</div></div>
+      <div class="stage"><span class="n">階段三</span><div><b style="color:var(--ink)">病理機轉教學模型</b>
+        ── 器官節點之間畫上共病網絡的因果邊：胰島素阻抗 → 內臟脂肪 → 高血壓／高血脂 → 腎絲球高壓 → CKD，
+        每條邊掛上可介入藥物與其證據等級，逐步展開當講課動畫。</div></div>
+    </div>
+  </div>
+
+  <div>
+    <h2>臨床依據</h2>
+    <ul>
+      <li><b>ADA Standards of Care 2026</b> ── 糖尿病診斷切點、HbA1c 目標 &lt;7%（合併症多或餘命有限放寬至 &lt;8%）、血壓 &lt;130/80、CGM 指標（TIR &gt;70%、TBR&lt;70 &lt;4%、CV ≤36%）、心腎保護用藥不受 HbA1c 是否達標限制。</li>
+      <li><b>KDIGO CKD 指引</b> ── G1–G5 × A1–A3 分期與四帶風險熱區、白蛋白尿年度篩檢、RAS 阻斷劑與 SGLT2 抑制劑定位。</li>
+      <li><b>KFRE（Tangri 四變數）</b> ── 年齡、性別、eGFR、UACR 推估 2 年與 5 年腎衰竭風險；<b>僅在 eGFR &lt;60 時顯示</b>，因為該模型是在 CKD G3–G5 族群開發與驗證。</li>
+      <li><b>ESC 心血管風險分類</b> ── 極高／高／中／低風險判定與對應 LDL-C 目標（&lt;55、&lt;70、&lt;100、&lt;116 mg/dL），非-HDL-C 目標 = LDL 目標 + 30。</li>
+      <li><b>台灣本土</b> ── 台灣成人肥胖臨床實證指引的 BMI 分級（過重 24、輕度肥胖 27、中度 30、重度 35）與腰圍切點（男 ≥90、女 ≥80 公分）；國民健康署代謝症候群五項取三；台灣高血壓指引的居家血壓 &lt;130/80 與 722 量測原則。</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>刻意沒做的事</h2>
+    <div class="warnbox">
+      <b>沒有實作 SCORE2 迴歸式。</b>
+      SCORE2 與 SCORE2-Diabetes 的風險係數是按歐洲四個風險區校正的，台灣不在任何一區內，
+      直接套用會系統性偏差。這頁改用 ESC 的<b>規則式風險分類</b>（確診 ASCVD、標的器官損傷、
+      糖尿病病程、eGFR 分層、單一極端危險因子），這部分是指引明文規定、可稽核、不需外插。
+      要接台灣本土的心血管風險方程式或你指定的 SCORE2 區域，跟我說即可。
+    </div>
+    <div class="warnbox" style="margin-top:11px;border-color:var(--s3);background:var(--s3-bg)">
+      <b style="color:var(--s3)">健保給付條件目前是提示性質。</b>
+      SGLT2 抑制劑、GLP-1 受體促效劑、finerenone 的給付規定逐年修訂，
+      這頁只標出「值得去查」而不宣稱符合。實際開立請以最新公告為準。
+    </div>
+    <p style="margin-top:11px">
+      <b>隱私：</b>你輸入的病人數值只存在這個瀏覽器分頁的記憶體中，不上傳、不寫入瀏覽器儲存空間、關掉即消失。
+    </p>
+    <p><b>用途：</b>臨床教學與醫病溝通輔助。非醫療器材，不取代臨床判斷，不可作為處方依據。</p>
+  </div>
+</section>
+
+</div>
+
+<dialog id="formDlg">
+  <div class="hd" style="padding:12px 14px;border-bottom:1px solid var(--line)">
+    <h2>輸入病人數值</h2>
+    <button class="ghost" id="closeForm" style="padding:3px 9px">關閉</button>
+  </div>
+  <form method="dialog" id="patientForm">
+    <div class="form" id="formFields"></div>
+    <div class="simbar" style="border-top:1px solid var(--line)">
+      <span style="font-size:11.5px;color:var(--ink-3)">留空的欄位會沿用目前案例的數值。資料不會離開這個分頁。</span>
+      <button class="ghost" value="apply" id="applyForm">套用</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+"use strict";
+/* ═══════════════════════════════════════════════════════════════
+   1. 臨床常數
+   ═══════════════════════════════════════════════════════════════ */
+const BANDS = [
+  { key:0, name:"低風險",   color:"var(--s0)", bg:"var(--s0-bg)" },
+  { key:1, name:"中度增加", color:"var(--s1)", bg:"var(--s1-bg)" },
+  { key:2, name:"高風險",   color:"var(--s2)", bg:"var(--s2-bg)" },
+  { key:3, name:"極高風險", color:"var(--s3)", bg:"var(--s3-bg)" },
+];
+const band = l => BANDS[Math.max(0, Math.min(3, l|0))];
+
+/* KDIGO 熱區：列 G1,G2,G3a,G3b,G4,G5 × 欄 A1,A2,A3 */
+const KDIGO = [[0,1,2],[0,1,2],[1,2,3],[2,3,3],[3,3,3],[3,3,3]];
+const GCAT = [
+  {k:"G1", lo:90,  hi:Infinity, d:"正常或偏高"},
+  {k:"G2", lo:60,  hi:89.999,   d:"輕度下降"},
+  {k:"G3a",lo:45,  hi:59.999,   d:"輕至中度下降"},
+  {k:"G3b",lo:30,  hi:44.999,   d:"中至重度下降"},
+  {k:"G4", lo:15,  hi:29.999,   d:"重度下降"},
+  {k:"G5", lo:0,   hi:14.999,   d:"腎衰竭"},
+];
+const ACAT = [
+  {k:"A1", lo:0,   hi:29.999, d:"正常至輕度增加"},
+  {k:"A2", lo:30,  hi:299.999,d:"中度增加"},
+  {k:"A3", lo:300, hi:Infinity,d:"重度增加"},
+];
+
+/* 台灣成人肥胖臨床實證指引 BMI 分級 */
+const BMICAT = [
+  {lo:0,    hi:18.5, k:"過輕",     lvl:1},
+  {lo:18.5, hi:24,   k:"健康體位", lvl:0},
+  {lo:24,   hi:27,   k:"過重",     lvl:1},
+  {lo:27,   hi:30,   k:"輕度肥胖", lvl:2},
+  {lo:30,   hi:35,   k:"中度肥胖", lvl:3},
+  {lo:35,   hi:999,  k:"重度肥胖", lvl:3},
+];
+
+const MEDS = {
+  metformin:"Metformin", su:"Sulfonylurea", dpp4:"DPP-4 抑制劑",
+  sglt2:"SGLT2 抑制劑", glp1:"GLP-1 受體促效劑", insulin:"胰島素",
+  statinMod:"中強度 statin", statinHigh:"高強度 statin", eze:"Ezetimibe",
+  acearb:"ACEi／ARB", ccb:"鈣離子阻斷劑", thiazide:"Thiazide 利尿劑",
+  finerenone:"Finerenone", mra:"傳統 MRA",
+};
+
+/* ═══════════════════════════════════════════════════════════════
+   2. 案例（每個案例含多次就診 → 時間軸可回放）
+   ═══════════════════════════════════════════════════════════════ */
+const CASES = [
+  {
+    id:"A", label:"新診斷 T2DM", who:"林先生 · 男 · 身高 175 cm",
+    sex:"M", ht:175, smoker:true, ascvd:false, hf:false, retinopathy:false, neuropathy:false, familyHx:true,
+    story:"代謝症候群起手式：體重與腰圍先走，血糖三年後才破表，白蛋白尿悄悄從 12 爬到 112。",
+    visits:[
+      {date:"2021-03", age:50, dmYears:0, wt:92, wc:102, sbp:142, dbp:88, a1c:6.1, fpg:112, cr:0.95, uacr:12,  ldl:158, hdl:38, tg:220, tc:232, meds:[]},
+      {date:"2022-04", age:51, dmYears:0, wt:95, wc:104, sbp:145, dbp:90, a1c:6.6, fpg:121, cr:0.98, uacr:24,  ldl:162, hdl:37, tg:245, tc:240, meds:[]},
+      {date:"2023-05", age:52, dmYears:1, wt:97, wc:106, sbp:148, dbp:92, a1c:7.4, fpg:148, cr:1.02, uacr:45,  ldl:155, hdl:36, tg:268, tc:236, meds:["metformin"]},
+      {date:"2024-06", age:53, dmYears:2, wt:96, wc:105, sbp:138, dbp:86, a1c:7.8, fpg:156, cr:1.06, uacr:78,  ldl:118, hdl:38, tg:210, tc:190, meds:["metformin","acearb","statinMod"]},
+      {date:"2025-07", age:54, dmYears:3, wt:94, wc:103, sbp:132, dbp:82, a1c:7.5, fpg:148, cr:1.10, uacr:96,  ldl:102, hdl:40, tg:188, tc:176, meds:["metformin","acearb","statinMod"]},
+      {date:"2026-08", age:55, dmYears:4, wt:93, wc:102, sbp:130, dbp:80, a1c:7.3, fpg:142, cr:1.14, uacr:112, ldl:96,  hdl:41, tg:176, tc:168, meds:["metformin","acearb","statinMod"]},
+    ],
+  },
+  {
+    id:"B", label:"共病全開 · CKD G3b", who:"陳女士 · 女 · 身高 158 cm",
+    sex:"F", ht:158, smoker:false, ascvd:true, hf:false, retinopathy:true, neuropathy:true, familyHx:false,
+    story:"糖尿病十八年、2023 年心肌梗塞。2024 年加上 SGLT2 抑制劑後，肌酸酐斜率明顯轉平、UACR 從 780 掉到 430。",
+    visits:[
+      {date:"2021-09", age:63, dmYears:13, wt:68, wc:92, sbp:152, dbp:84, a1c:8.9, fpg:178, cr:1.32, uacr:420, ldl:128, hdl:42, tg:198, tc:210, meds:["metformin","su","statinMod","acearb"]},
+      {date:"2022-09", age:64, dmYears:14, wt:67, wc:91, sbp:148, dbp:82, a1c:8.6, fpg:170, cr:1.45, uacr:560, ldl:118, hdl:43, tg:190, tc:199, meds:["metformin","su","statinMod","acearb"]},
+      {date:"2023-10", age:65, dmYears:15, wt:66, wc:90, sbp:145, dbp:80, a1c:8.4, fpg:166, cr:1.58, uacr:690, ldl:110, hdl:43, tg:184, tc:190, meds:["metformin","su","statinMod","acearb"], event:"急性心肌梗塞"},
+      {date:"2024-10", age:66, dmYears:16, wt:65, wc:89, sbp:138, dbp:78, a1c:7.9, fpg:154, cr:1.66, uacr:780, ldl:78,  hdl:44, tg:172, tc:156, meds:["metformin","sglt2","statinHigh","acearb"]},
+      {date:"2025-10", age:67, dmYears:17, wt:63, wc:88, sbp:134, dbp:76, a1c:7.4, fpg:144, cr:1.70, uacr:520, ldl:70,  hdl:45, tg:160, tc:147, meds:["metformin","sglt2","statinHigh","acearb","glp1"]},
+      {date:"2026-09", age:68, dmYears:18, wt:62, wc:88, sbp:130, dbp:74, a1c:7.1, fpg:138, cr:1.72, uacr:430, ldl:66,  hdl:46, tg:150, tc:142, meds:["metformin","sglt2","statinHigh","acearb","glp1"]},
+    ],
+  },
+  {
+    id:"C", label:"重度肥胖 · 糖尿病前期", who:"王先生 · 男 · 身高 178 cm",
+    sex:"M", ht:178, smoker:false, ascvd:false, hf:false, retinopathy:false, neuropathy:false, familyHx:true,
+    story:"還沒踏進糖尿病，但四年裡體重 +9 公斤、腰圍 +7 公分、三酸甘油酯衝到 385。用來示範介入推演能拉回多少。",
+    visits:[
+      {date:"2023-02", age:39, dmYears:0, wt:112, wc:118, sbp:138, dbp:88, a1c:5.9, fpg:108, cr:0.92, uacr:18, ldl:148, hdl:33, tg:320, tc:236, meds:[]},
+      {date:"2024-02", age:40, dmYears:0, wt:116, wc:121, sbp:142, dbp:90, a1c:6.1, fpg:114, cr:0.94, uacr:22, ldl:152, hdl:32, tg:345, tc:242, meds:[]},
+      {date:"2025-03", age:41, dmYears:0, wt:119, wc:123, sbp:145, dbp:92, a1c:6.3, fpg:118, cr:0.96, uacr:28, ldl:156, hdl:31, tg:368, tc:246, meds:["acearb"]},
+      {date:"2026-03", age:42, dmYears:0, wt:121, wc:125, sbp:148, dbp:94, a1c:6.4, fpg:121, cr:0.98, uacr:33, ldl:158, hdl:30, tg:385, tc:248, meds:["acearb"]},
+    ],
+  },
+];
+
+/* ═══════════════════════════════════════════════════════════════
+   3. 計算引擎
+   ═══════════════════════════════════════════════════════════════ */
+const clamp = (x,a,b) => Math.max(a, Math.min(b, x));
+const fx = (n,d=0) => (n==null || !isFinite(n)) ? "—" : Number(n).toFixed(d);
+
+/* CKD-EPI 2021（不含種族係數） */
+function egfrCKDEPI(cr, age, sex){
+  const f = sex === "F";
+  const k = f ? 0.7 : 0.9;
+  const a = f ? -0.241 : -0.302;
+  const r = cr / k;
+  const p = r <= 1 ? a : -1.200;
+  return 142 * Math.pow(r, p) * Math.pow(0.9938, age) * (f ? 1.012 : 1);
+}
+const catOf = (arr, v) => arr.find(c => v >= c.lo && v <= c.hi) || arr[arr.length-1];
+
+/* KFRE 四變數（Tangri）。僅對 eGFR <60 有效。 */
+function kfre(age, sex, egfr, uacr){
+  if (egfr >= 60 || !(uacr > 0)) return null;
+  const x = -0.2201*(age/10 - 7.036)
+          + 0.2467*((sex === "M" ? 1 : 0) - 0.5642)
+          - 0.5567*(egfr/5 - 7.222)
+          + 0.4510*(Math.log(uacr) - 5.137);
+  const e = Math.exp(x);
+  return { y2: (1 - Math.pow(0.9750, e)) * 100, y5: (1 - Math.pow(0.9240, e)) * 100 };
+}
+
+/* 國民健康署代謝症候群：五項取三 */
+function metS(p, v){
+  const items = [
+    { k:"腰圍",       hit: p.sex === "M" ? v.wc >= 90 : v.wc >= 80,
+      now: v.wc + " cm", cut: p.sex === "M" ? "≥90" : "≥80" },
+    { k:"血壓",       hit: v.sbp >= 130 || v.dbp >= 85,
+      now: v.sbp + "/" + v.dbp, cut:"≥130/85" },
+    { k:"空腹血糖",   hit: v.fpg >= 100, now: v.fpg + " mg/dL", cut:"≥100" },
+    { k:"三酸甘油酯", hit: v.tg >= 150,  now: v.tg + " mg/dL",  cut:"≥150" },
+    { k:"HDL-C",      hit: p.sex === "M" ? v.hdl < 40 : v.hdl < 50,
+      now: v.hdl + " mg/dL", cut: p.sex === "M" ? "<40" : "<50" },
+  ];
+  return { items, n: items.filter(i => i.hit).length, met: items.filter(i => i.hit).length >= 3 };
+}
+
+/* ESC 規則式心血管風險分類（非 SCORE2 迴歸） */
+function escRisk(p, v, d){
+  const dm = v.a1c >= 6.5 || v.dmYears > 0;
+  const tod = p.retinopathy || p.neuropathy || d.acat.k !== "A1" || d.egfr < 60;
+  const rf = [p.smoker, v.sbp >= 140 || v.dbp >= 90, v.ldl >= 130, d.bmi >= 27, p.familyHx].filter(Boolean).length;
+  if (p.ascvd)   return { k:"極高風險", ldl:55, lvl:3, why:"已確診動脈粥狀硬化性心血管疾病" };
+  if (d.egfr < 30) return { k:"極高風險", ldl:55, lvl:3, why:"重度腎功能下降（eGFR <30）" };
+  if (dm && (tod || rf >= 3))
+    return { k:"極高風險", ldl:55, lvl:3, why: tod ? "糖尿病合併標的器官損傷" : "糖尿病合併 ≥3 項主要危險因子" };
+  if (v.ldl > 190 || v.tc > 310 || v.sbp >= 180 || v.dbp >= 110)
+    return { k:"高風險", ldl:70, lvl:2, why:"單一危險因子顯著升高" };
+  if (d.egfr >= 30 && d.egfr < 60) return { k:"高風險", ldl:70, lvl:2, why:"中度腎功能下降（eGFR 30–59）" };
+  if (dm && (v.dmYears >= 10 || rf >= 1))
+    return { k:"高風險", ldl:70, lvl:2, why: v.dmYears >= 10 ? "糖尿病病程 ≥10 年" : "糖尿病合併其他危險因子" };
+  if (dm) return { k:"中度風險", ldl:100, lvl:1, why:"糖尿病病程 <10 年、無標的器官損傷" };
+  if (rf >= 2) return { k:"中度風險", ldl:100, lvl:1, why:"多項危險因子並存" };
+  return { k:"低風險", ldl:116, lvl:0, why:"無主要危險因子" };
+}
+
+function derive(p, v){
+  const d = {};
+  d.bmi   = v.wt / Math.pow(p.ht/100, 2);
+  d.bmiCat= catOf(BMICAT, d.bmi);
+  d.egfr  = egfrCKDEPI(v.cr, v.age, p.sex);
+  d.gcat  = catOf(GCAT, d.egfr);
+  d.acat  = catOf(ACAT, v.uacr);
+  d.gIdx  = GCAT.indexOf(d.gcat);
+  d.aIdx  = ACAT.indexOf(d.acat);
+  d.kdigo = KDIGO[d.gIdx][d.aIdx];
+  d.kfre  = kfre(v.age, p.sex, d.egfr, v.uacr);
+  d.eag   = 28.7 * v.a1c - 46.7;
+  d.nonHDL= v.tc - v.hdl;
+  d.metS  = metS(p, v);
+  d.abdo  = p.sex === "M" ? v.wc >= 90 : v.wc >= 80;
+  d.dm    = v.a1c >= 6.5 || v.dmYears > 0;
+  d.preDm = !d.dm && v.a1c >= 5.7;
+  d.esc   = escRisk(p, v, d);
+  d.nonHDLTarget = d.esc.ldl + 30;
+  d.onMed = k => (v.meds || []).includes(k);
+  return d;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   4. 圖層與器官
+   ═══════════════════════════════════════════════════════════════ */
+const LAYERS = [
+  { id:"all",    nm:"全部圖層",   ds:"六個系統合成的器官風險" },
+  { id:"gly",    nm:"血糖",       ds:"HbA1c、空腹血糖、推估平均血糖" },
+  { id:"bp",     nm:"血壓",       ds:"居家收縮壓／舒張壓" },
+  { id:"lipid",  nm:"血脂",       ds:"LDL-C、非-HDL-C、三酸甘油酯" },
+  { id:"renal",  nm:"腎臟",       ds:"eGFR、UACR、KDIGO 分期" },
+  { id:"adipo",  nm:"體位與脂肪", ds:"BMI、腰圍、代謝症候群" },
+  { id:"tod",    nm:"標的器官損傷",ds:"視網膜、神經、心血管事件" },
+];
+
+/* 每個器官：位置、標籤側、涵蓋圖層、評分函式 */
+const ORGANS = [
+  {
+    id:"brain", nm:"腦血管", x:150, y:44, side:"L", layers:["all","bp","lipid","gly","tod"],
+    score:(p,v,d) => {
+      let l = 0;
+      if (v.sbp >= 130 || v.dbp >= 80) l = 1;
+      if (v.sbp >= 140 || v.dbp >= 90) l = 2;
+      if (v.sbp >= 160 || v.dbp >= 100) l = 3;
+      if (d.dm && l >= 1 && (v.a1c >= 8 || v.dmYears >= 10)) l++;
+      if (p.ascvd) l = Math.max(l, 2);
+      return clamp(l, 0, 3);
+    },
+    rows:(p,v,d) => [
+      ["居家收縮壓", v.sbp + " mmHg", "<130"],
+      ["居家舒張壓", v.dbp + " mmHg", "<80"],
+      ["LDL-C", v.ldl + " mg/dL", "<" + d.esc.ldl],
+      ["吸菸", p.smoker ? "是" : "否", "戒菸"],
+    ],
+    acts:(p,v,d) => {
+      const a = [];
+      if (v.sbp >= 130 || v.dbp >= 80) a.push(["血壓未達標","降壓目標 <130/80 mmHg（ADA 2026 與台灣高血壓指引一致）。台灣指引建議以 722 原則測居家血壓作為調整依據。","血壓"]);
+      if (p.smoker) a.push(["吸菸","戒菸是本表上單一效益最大的介入，對腦中風與周邊動脈疾病的風險下降幅度超過任何一種藥物。","生活"]);
+      if (v.ldl > d.esc.ldl) a.push(["LDL 未達標","腦梗塞與冠心症共用同一條降脂路徑；目標見下方血脂欄。","血脂"]);
+      if (!a.length) a.push(["目前無紅旗","維持現有血壓與血脂控制，年度追蹤。","維持"]);
+      return a;
+    },
+  },
+  {
+    id:"eye", nm:"視網膜", x:150, y:78, side:"R", layers:["all","gly","bp","tod"],
+    score:(p,v,d) => {
+      let l = p.retinopathy ? 3 : 0;
+      if (!p.retinopathy){
+        if (d.dm) l = 1;
+        if (v.a1c >= 8) l = 2;
+        if (v.a1c >= 9 || (d.dm && v.dmYears >= 10)) l = 2;
+        if (v.a1c >= 9 && v.dmYears >= 10) l = 3;
+      }
+      return clamp(l, 0, 3);
+    },
+    rows:(p,v,d) => [
+      ["HbA1c", fx(v.a1c,1) + " %", "<7.0"],
+      ["糖尿病病程", v.dmYears + " 年", "—"],
+      ["已知視網膜病變", p.retinopathy ? "是" : "否", "—"],
+      ["收縮壓", v.sbp + " mmHg", "<130"],
+    ],
+    acts:(p,v,d) => {
+      const a = [];
+      if (d.dm) a.push(["眼底檢查","第 2 型糖尿病確診當下即應做第一次散瞳眼底檢查，之後至少每年一次；已有病變或血糖控制不良者縮短間隔。","ADA"]);
+      if (v.a1c >= 8) a.push(["血糖顯著未達標","HbA1c " + fx(v.a1c,1) + "%（推估平均血糖 " + fx(d.eag,0) + " mg/dL）。微血管併發症風險與 HbA1c 呈連續關係。","血糖"]);
+      if (p.retinopathy) a.push(["已有視網膜病變","降血壓與降血糖速度都要避免過快；短期內 HbA1c 急遽下降可能使既有視網膜病變短暫惡化。","注意"]);
+      if (!a.length) a.push(["目前無紅旗","非糖尿病且血糖正常，依一般成人眼科建議追蹤即可。","維持"]);
+      return a;
+    },
+  },
+  {
+    id:"heart", nm:"心臟", x:132, y:154, side:"L", layers:["all","bp","lipid","gly","tod"],
+    score:(p,v,d) => {
+      if (p.ascvd || p.hf) return 3;
+      return clamp(d.esc.lvl, 0, 3);
+    },
+    rows:(p,v,d) => [
+      ["ESC 風險分類", d.esc.k, "—"],
+      ["LDL-C", v.ldl + " mg/dL", "<" + d.esc.ldl],
+      ["非-HDL-C", fx(d.nonHDL,0) + " mg/dL", "<" + d.nonHDLTarget],
+      ["血壓", v.sbp + "/" + v.dbp, "<130/80"],
+      ["已知 ASCVD", p.ascvd ? "是" : "否", "—"],
+    ],
+    acts:(p,v,d) => {
+      const a = [];
+      a.push([d.esc.k, d.esc.why + "。對應 LDL-C 目標 <" + d.esc.ldl + " mg/dL" + (d.esc.lvl >= 2 ? "，且較基礎值下降 ≥50%" : "") + "。","ESC"]);
+      if (v.ldl > d.esc.ldl){
+        const gap = v.ldl - d.esc.ldl;
+        a.push(["距離目標 " + fx(gap,0) + " mg/dL","高強度 statin 約降 50%；加 ezetimibe 再降 ~20%；仍未達標可評估 PCSK9 抑制劑。","血脂"]);
+      }
+      if (d.dm && (p.ascvd || p.hf || d.egfr < 60))
+        a.push(["心腎保護用藥","糖尿病合併 ASCVD、心衰竭或 CKD 時，SGLT2 抑制劑與具心血管實證的 GLP-1 受體促效劑的使用不以 HbA1c 是否達標為前提。","ADA"]);
+      if (!d.onMed("statinHigh") && !d.onMed("statinMod") && v.ldl > d.esc.ldl)
+        a.push(["尚未使用 statin","目前用藥清單中沒有任何 statin。","缺口"]);
+      return a;
+    },
+  },
+  {
+    id:"liver", nm:"肝臟 · MASLD", x:110, y:226, side:"L", layers:["all","adipo","lipid","gly"],
+    score:(p,v,d) => {
+      let l = 0;
+      if (d.bmi >= 24 || d.abdo) l = 1;
+      if (d.metS.met) l = 2;
+      if (d.metS.met && (d.dm || d.bmi >= 30)) l = 3;
+      return clamp(l, 0, 3);
+    },
+    rows:(p,v,d) => [
+      ["BMI", fx(d.bmi,1), "18.5–23.9"],
+      ["腰圍", v.wc + " cm", p.sex === "M" ? "<90" : "<80"],
+      ["三酸甘油酯", v.tg + " mg/dL", "<150"],
+      ["代謝症候群", d.metS.n + " / 5 項", "<3"],
+    ],
+    acts:(p,v,d) => {
+      const a = [];
+      if (d.metS.met || d.bmi >= 27)
+        a.push(["代謝功能障礙相關脂肪肝（MASLD）","符合心代謝危險因子且體位超標，屬 MASLD 高度可能族群；建議肝功能、腹部超音波與纖維化風險分層（FIB-4）。","篩檢"]);
+      if (v.tg >= 500) a.push(["三酸甘油酯 ≥500","急性胰臟炎風險，優先降 TG 而非降 LDL。","急"]);
+      else if (v.tg >= 150) a.push(["三酸甘油酯升高","減重、限酒、控糖是第一線；TG " + v.tg + " mg/dL。","生活"]);
+      a.push(["體重每降 5–10%","對脂肪肝、血糖、血壓、三酸甘油酯同時有效，是本圖上少數一次影響多個器官的介入。","槓桿"]);
+      return a;
+    },
+  },
+  {
+    id:"pancreas", nm:"胰島", x:178, y:232, side:"R", layers:["all","gly","adipo"],
+    score:(p,v,d) => {
+      if (!d.dm && !d.preDm) return 0;
+      if (d.preDm) return 1;
+      if (v.a1c < 7) return 1;
+      if (v.a1c < 8.5) return 2;
+      return 3;
+    },
+    rows:(p,v,d) => [
+      ["HbA1c", fx(v.a1c,1) + " %", "<7.0"],
+      ["推估平均血糖", fx(d.eag,0) + " mg/dL", "<154"],
+      ["空腹血糖", v.fpg + " mg/dL", d.dm ? "80–130" : "<100"],
+      ["病程", d.dm ? v.dmYears + " 年" : (d.preDm ? "糖尿病前期" : "無"), "—"],
+    ],
+    acts:(p,v,d) => {
+      const a = [];
+      if (d.preDm)
+        a.push(["糖尿病前期","HbA1c " + fx(v.a1c,1) + "%（5.7–6.4%）。強化生活型態介入可使進展為糖尿病的風險大幅下降；BMI ≥27 且合併危險因子者可考慮藥物預防。","ADA"]);
+      if (d.dm && v.a1c >= 7)
+        a.push(["HbA1c 未達標","一般成人目標 <7%；合併症多、低血糖風險高或餘命有限者可放寬至 <8%。","ADA"]);
+      if (d.dm && !d.onMed("sglt2") && !d.onMed("glp1") && (d.egfr < 60 || d.acat.k !== "A1" || p.ascvd))
+        a.push(["心腎適應症未涵蓋","已有 CKD 或 ASCVD 但未使用 SGLT2 抑制劑或 GLP-1 受體促效劑，這是目前最明顯的用藥缺口。","缺口"]);
+      if (d.dm && d.bmi >= 27)
+        a.push(["以體重為導向選藥","BMI " + fx(d.bmi,1) + "。優先選擇具減重效果的降糖藥（GLP-1 受體促效劑、GIP／GLP-1 雙重促效劑、SGLT2 抑制劑），避免加重體重的藥物。","策略"]);
+      if (!a.length) a.push(["血糖目前無紅旗","維持現有控制，依指引頻率追蹤 HbA1c。","維持"]);
+      return a;
+    },
+  },
+  {
+    id:"kidney", nm:"腎臟", x:150, y:270, side:"R", layers:["all","renal","bp","gly","tod"],
+    score:(p,v,d) => d.kdigo,
+    rows:(p,v,d) => [
+      ["eGFR", fx(d.egfr,0) + " mL/min/1.73m²", "≥60"],
+      ["CKD-EPI 分期", d.gcat.k + " · " + d.gcat.d, "G1–G2"],
+      ["UACR", fx(v.uacr,0) + " mg/g", "<30"],
+      ["白蛋白尿分級", d.acat.k + " · " + d.acat.d, "A1"],
+      ["血清肌酸酐", fx(v.cr,2) + " mg/dL", "—"],
+    ],
+    acts:(p,v,d) => {
+      const a = [];
+      a.push(["KDIGO " + d.gcat.k + d.acat.k + " · " + band(d.kdigo).name,
+        "以 eGFR " + fx(d.egfr,0) + " 與 UACR " + fx(v.uacr,0) + " mg/g 落點判定。" +
+        (d.kdigo >= 2 ? "此帶建議轉介腎臟科並縮短追蹤間隔。" : "依 KDIGO 建議頻率追蹤 eGFR 與 UACR。"), "KDIGO"]);
+      if (d.acat.k !== "A1" && !d.onMed("acearb"))
+        a.push(["白蛋白尿但未用 RAS 阻斷劑","有白蛋白尿的 CKD 應以可耐受的最大劑量 ACEi 或 ARB 作為基礎。","缺口"]);
+      if (!d.onMed("sglt2") && d.egfr >= 20 && (d.acat.k !== "A1" || d.egfr < 60))
+        a.push(["未使用 SGLT2 抑制劑","對 CKD 進展與心衰竭住院的保護在糖尿病與非糖尿病 CKD 都成立。健保給付條件請以最新公告為準。","缺口"]);
+      if (d.dm && d.acat.k !== "A1" && d.onMed("acearb") && !d.onMed("finerenone"))
+        a.push(["可評估 finerenone","第 2 型糖尿病合併白蛋白尿性 CKD，在 RAS 阻斷劑基礎上加用非類固醇型 MRA 可進一步降低 UACR 與腎臟複合終點；需監測血鉀。","加成"]);
+      if (d.kfre && d.kfre.y5 >= 5)
+        a.push(["腎臟替代療法準備","KFRE 五年風險 " + fx(d.kfre.y5,1) + "%，已達多數指引建議開始討論透析／移植與血管通路評估的門檻。","規劃"]);
+      return a;
+    },
+  },
+  {
+    id:"adipose", nm:"內臟脂肪", x:150, y:312, side:"L", layers:["all","adipo"],
+    score:(p,v,d) => {
+      let l = d.bmiCat.lvl;
+      if (d.abdo) l = Math.max(l, 2);
+      if (d.metS.met) l = Math.max(l, 2);
+      if (d.bmi >= 35 && d.metS.met) l = 3;
+      return clamp(l, 0, 3);
+    },
+    rows:(p,v,d) => [
+      ["BMI", fx(d.bmi,1) + " kg/m²", "18.5–23.9"],
+      ["體位分級（台灣）", d.bmiCat.k, "健康體位"],
+      ["腰圍", v.wc + " cm", (p.sex === "M" ? "<90" : "<80")],
+      ["體重", fx(v.wt,1) + " kg", "—"],
+      ["代謝症候群", d.metS.n + " / 5 項" + (d.metS.met ? "（符合）" : ""), "<3 項"],
+    ],
+    acts:(p,v,d) => {
+      const a = [];
+      a.push(["台灣體位分級","BMI " + fx(d.bmi,1) + " → " + d.bmiCat.k +
+        "（過重 24、輕度肥胖 27、中度 30、重度 35）。腰圍 " + v.wc + " cm" +
+        (d.abdo ? "，已達腹部肥胖切點。" : "，未達腹部肥胖切點。"), "台灣"]);
+      if (d.metS.met)
+        a.push(["符合代謝症候群","五項中符合 " + d.metS.n + " 項：" +
+          d.metS.items.filter(i => i.hit).map(i => i.k).join("、") + "。", "國健署"]);
+      if (d.bmi >= 27)
+        a.push(["減重目標","初期以減去現體重 5–10%（" + fx(v.wt*0.05,1) + "–" + fx(v.wt*0.10,1) +
+          " 公斤）為目標即可帶來明確代謝改善；BMI ≥27 合併共病者可討論藥物治療，≥35 合併共病可討論代謝手術。","台灣"]);
+      if (!a.length) a.push(["體位在健康範圍","維持目前體重與腰圍。","維持"]);
+      return a;
+    },
+  },
+  {
+    id:"foot", nm:"下肢與足部", x:150, y:520, side:"R", layers:["all","tod","gly","lipid"],
+    score:(p,v,d) => {
+      let l = 0;
+      if (d.dm) l = 1;
+      if (p.neuropathy) l = 2;
+      if (p.smoker && d.dm) l = Math.max(l, 2);
+      if (p.neuropathy && (p.ascvd || p.smoker)) l = 3;
+      return clamp(l, 0, 3);
+    },
+    rows:(p,v,d) => [
+      ["已知周邊神經病變", p.neuropathy ? "是" : "否", "—"],
+      ["吸菸", p.smoker ? "是" : "否", "戒菸"],
+      ["HbA1c", fx(v.a1c,1) + " %", "<7.0"],
+      ["糖尿病病程", v.dmYears + " 年", "—"],
+    ],
+    acts:(p,v,d) => {
+      const a = [];
+      if (d.dm) a.push(["年度足部檢查","確診時起每年做一次完整足部評估，含 10 克單股纖維觸覺與足背動脈搏動；高風險者每次回診視診。","ADA"]);
+      if (p.neuropathy) a.push(["已有周邊神經病變","足部潰瘍風險族群，需衛教每日自我檢查、合適鞋具，並降低截肢風險相關的周邊動脈疾病篩檢門檻。","高風險"]);
+      if (p.smoker) a.push(["吸菸合併糖尿病","周邊動脈疾病與足部潰瘍風險顯著上升。","生活"]);
+      if (!a.length) a.push(["目前無紅旗","非糖尿病族群，依一般健康檢查即可。","維持"]);
+      return a;
+    },
+  },
+];
+
+/* ═══════════════════════════════════════════════════════════════
+   5. 情境推演
+   ═══════════════════════════════════════════════════════════════ */
+const SIMS = [
+  { id:"sglt2", nm:"加上 SGLT2 抑制劑", src:"DAPA-CKD / EMPA-KIDNEY / EMPA-REG",
+    apply:(v,p)=>{ v.a1c-=0.7; v.sbp-=4; v.wt-=2.5; v.uacr*=0.68; v.meds.push("sglt2"); },
+    note:"急性期 eGFR 可見 3–5 的暫時性下降，之後長期斜率轉平；此處未模擬該 dip。" },
+  { id:"glp1", nm:"加上 GLP-1 受體促效劑", src:"SUSTAIN / LEADER / FLOW",
+    apply:(v,p)=>{ v.a1c-=1.2; v.wt*=0.92; v.sbp-=4; v.ldl*=0.95; v.uacr*=0.80; v.meds.push("glp1"); } },
+  { id:"tzp", nm:"換 GIP／GLP-1 雙重促效劑", src:"SURPASS / SURMOUNT",
+    apply:(v,p)=>{ v.a1c-=2.0; v.wt*=0.83; v.sbp-=6; v.tg*=0.78; v.meds.push("glp1"); } },
+  { id:"statinHigh", nm:"高強度 statin", src:"CTT meta-analysis",
+    apply:(v,p)=>{ const drop = v.ldl*0.50; v.ldl -= drop; v.tc -= drop; v.tg *= 0.85; v.meds.push("statinHigh"); } },
+  { id:"eze", nm:"再加 ezetimibe", src:"IMPROVE-IT",
+    apply:(v,p)=>{ const drop = v.ldl*0.20; v.ldl -= drop; v.tc -= drop; v.meds.push("eze"); } },
+  { id:"pcsk9", nm:"再加 PCSK9 抑制劑", src:"FOURIER / ODYSSEY",
+    apply:(v,p)=>{ const drop = v.ldl*0.58; v.ldl -= drop; v.tc -= drop; } },
+  { id:"finerenone", nm:"加上 finerenone", src:"FIDELIO-DKD / FIGARO-DKD",
+    apply:(v,p)=>{ v.uacr*=0.69; v.sbp-=3; v.meds.push("finerenone"); },
+    note:"需監測血鉀；eGFR <25 不建議起始。" },
+  { id:"acearb", nm:"RAS 阻斷劑最佳化", src:"RENAAL / IDNT",
+    apply:(v,p)=>{ v.sbp-=8; v.dbp-=4; v.uacr*=0.70; v.meds.push("acearb"); } },
+  { id:"wl5", nm:"減重 5%", src:"Look AHEAD / DPP",
+    apply:(v,p)=>{ v.wt*=0.95; v.wc-=4; v.a1c-=0.5; v.sbp-=4; v.tg*=0.85; v.hdl+=2; } },
+  { id:"wl10", nm:"減重 10%", src:"DiRECT / Look AHEAD",
+    apply:(v,p)=>{ v.wt*=0.90; v.wc-=8; v.a1c-=1.0; v.sbp-=7; v.tg*=0.75; v.hdl+=4; } },
+  { id:"quit", nm:"戒菸", src:"ESC 2021 預防指引",
+    apply:(v,p)=>{ p.smoker=false; } },
+];
+
+/* ═══════════════════════════════════════════════════════════════
+   6. 狀態與渲染
+   ═══════════════════════════════════════════════════════════════ */
+const S = { caseIdx:0, visitIdx:0, layer:"all", organ:null, sims:new Set(), custom:null };
+const $ = s => document.querySelector(s);
+const el = (t, c, h) => { const n = document.createElement(t); if(c) n.className = c; if(h!=null) n.innerHTML = h; return n; };
+const esc = s => String(s).replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+
+function basePatient(){
+  const c = S.custom || CASES[S.caseIdx];
+  return JSON.parse(JSON.stringify(c));
+}
+function currentView(){
+  const p = basePatient();
+  const v = JSON.parse(JSON.stringify(p.visits[Math.min(S.visitIdx, p.visits.length-1)]));
+  v.meds = v.meds || [];
+  const real = { p:JSON.parse(JSON.stringify(p)), v:JSON.parse(JSON.stringify(v)) };
+  real.d = derive(real.p, real.v);
+  let proj = null;
+  if (S.sims.size){
+    const pp = JSON.parse(JSON.stringify(p)), vv = JSON.parse(JSON.stringify(v));
+    SIMS.filter(s => S.sims.has(s.id)).forEach(s => s.apply(vv, pp));
+    vv.a1c = clamp(vv.a1c, 4.8, 20); vv.sbp = clamp(vv.sbp, 95, 250); vv.dbp = clamp(vv.dbp, 55, 150);
+    vv.ldl = clamp(vv.ldl, 15, 400); vv.uacr = Math.max(vv.uacr, 2); vv.wt = Math.max(vv.wt, 35);
+    vv.tg = Math.max(vv.tg, 40); vv.wc = Math.max(vv.wc, 55);
+    vv.tc = Math.max(vv.tc, vv.hdl + vv.ldl);
+    vv.fpg = clamp(vv.fpg - (v.a1c - vv.a1c) * 25, 65, 400);
+    vv.meds = [...new Set(vv.meds)];
+    proj = { p:pp, v:vv, d:derive(pp, vv) };
+  }
+  return { real, proj, shown: proj || real, p, name:p.who, story:p.story };
+}
+
+/* ── 遙測列 ── */
+const TILES = [
+  { k:"HbA1c", u:"%", get:(p,v,d)=>v.a1c, dec:1, tgt:d=>"<7.0",
+    lvl:(p,v,d)=> v.a1c<5.7?0 : v.a1c<6.5?1 : v.a1c<8?2 : 3, hist:v=>v.a1c },
+  { k:"居家血壓", u:"mmHg", get:(p,v,d)=>v.sbp, dec:0, tgt:d=>"<130/80", show:(p,v)=>v.sbp+"/"+v.dbp,
+    lvl:(p,v,d)=> (v.sbp<120&&v.dbp<80)?0 : (v.sbp<130&&v.dbp<80)?1 : (v.sbp<140&&v.dbp<90)?2 : 3, hist:v=>v.sbp },
+  { k:"LDL-C", u:"mg/dL", get:(p,v,d)=>v.ldl, dec:0, tgt:d=>"<"+d.esc.ldl,
+    lvl:(p,v,d)=> v.ldl<d.esc.ldl?0 : v.ldl<d.esc.ldl*1.3?1 : v.ldl<d.esc.ldl*1.8?2 : 3, hist:v=>v.ldl },
+  { k:"eGFR", u:"mL/min", get:(p,v,d)=>d.egfr, dec:0, tgt:d=>"≥60",
+    lvl:(p,v,d)=> d.egfr>=90?0 : d.egfr>=60?1 : d.egfr>=30?2 : 3, hist:(v,p)=>egfrCKDEPI(v.cr,v.age,p.sex) },
+  { k:"UACR", u:"mg/g", get:(p,v,d)=>v.uacr, dec:0, tgt:d=>"<30",
+    lvl:(p,v,d)=> v.uacr<30?0 : v.uacr<100?1 : v.uacr<300?2 : 3, hist:v=>v.uacr },
+  { k:"BMI", u:"kg/m²", get:(p,v,d)=>d.bmi, dec:1, tgt:d=>"18.5–23.9",
+    lvl:(p,v,d)=> d.bmiCat.lvl, hist:(v,p)=>v.wt/Math.pow(p.ht/100,2) },
+];
+
+function sparkline(values, color){
+  if (values.length < 2) return "";
+  const w = 100, h = 24, pad = 2;
+  const mn = Math.min(...values), mx = Math.max(...values), rng = (mx - mn) || 1;
+  const pts = values.map((y,i) => [
+    pad + i*(w-2*pad)/(values.length-1),
+    h - pad - ((y-mn)/rng)*(h-2*pad)
+  ]);
+  const line = pts.map(pt => pt[0].toFixed(1)+","+pt[1].toFixed(1)).join(" ");
+  const area = "0,"+h+" " + line + " "+w+","+h;
+  const last = pts[pts.length-1];
+  return '<svg class="spark" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" aria-hidden="true">'
+    + '<polygon points="'+area+'" fill="'+color+'" opacity=".12"></polygon>'
+    + '<polyline points="'+line+'" fill="none" stroke="'+color+'" stroke-width="1.6" '
+    + 'stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></polyline>'
+    + '<circle cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="2.6" fill="'+color+'" '
+    + 'stroke="var(--panel)" stroke-width="1.4"></circle></svg>';
+}
+
+function renderTelemetry(ctx){
+  const { real, proj, shown } = ctx;
+  const host = $("#telemetry"); host.innerHTML = "";
+  const p = ctx.p;
+  const upto = p.visits.slice(0, S.visitIdx + 1);
+  TILES.forEach(t => {
+    const lvl = t.lvl(shown.p, shown.v, shown.d);
+    const b = band(lvl);
+    const val = t.show ? t.show(shown.p, shown.v, shown.d) : fx(t.get(shown.p, shown.v, shown.d), t.dec);
+    const node = el("div", "tile" + (proj ? " proj" : ""));
+    let deltaHTML = "";
+    if (proj){
+      const a = t.get(real.p, real.v, real.d), b2 = t.get(proj.p, proj.v, proj.d);
+      const diff = b2 - a;
+      if (Math.abs(diff) > (t.dec ? 0.05 : 0.5)){
+        const good = (t.k === "eGFR") ? diff > 0 : diff < 0;
+        deltaHTML = '<span class="delta" style="color:'+(good ? "var(--s0)" : "var(--s2)")+'">'
+          + (diff > 0 ? "+" : "−") + fx(Math.abs(diff), t.dec) + "</span>";
+      }
+    }
+    node.innerHTML =
+      '<span class="k"><span>'+esc(t.k)+'</span>'+deltaHTML+'</span>'
+      + '<span class="v" style="color:'+b.color+'">'+esc(val)+'<span class="u">'+esc(t.u)+'</span></span>'
+      + sparkline(upto.map(vv => t.hist(vv, p)), b.color)
+      + '<span class="t"><span class="dot" style="background:'+b.color+'"></span>'
+      + esc(b.name)+' · 目標 '+esc(t.tgt(shown.d))+'</span>';
+    host.appendChild(node);
+  });
+}
+
+/* ── 人體 SVG ── */
+const BODY_PATHS = {
+  head:  "M150,10 C171,10 184,26 184,50 C184,74 171,94 150,94 C129,94 116,74 116,50 C116,26 129,10 150,10 Z",
+  torso: "M150,96 C140,96 134,100 128,104 L74,120 C62,124 56,134 55,146 L48,214 C47,224 54,230 63,229 L70,228 L76,300 C78,330 82,342 86,352 L214,352 C218,342 222,330 224,300 L230,228 L237,229 C246,230 253,224 252,214 L245,146 C244,134 238,124 226,120 L172,104 C166,100 160,96 150,96 Z",
+  armL:  "M55,146 C46,152 42,166 40,182 L30,252 C28,268 26,290 26,308 L34,398 C35,410 44,414 50,410 C56,406 58,398 57,390 L54,306 L62,232 L70,180 Z",
+  armR:  "M245,146 C254,152 258,166 260,182 L270,252 C272,268 274,290 274,308 L266,398 C265,410 256,414 250,410 C244,406 242,398 243,390 L246,306 L238,232 L230,180 Z",
+  legL:  "M86,352 L92,452 C94,486 98,522 102,556 L106,596 C107,606 116,610 123,607 C130,604 132,596 131,588 L130,552 C131,510 134,470 138,438 L146,358 Z",
+  legR:  "M214,352 L208,452 C206,486 202,522 198,556 L194,596 C193,606 184,610 177,607 C170,604 168,596 169,588 L170,552 C169,510 166,470 162,438 L154,358 Z",
+};
+
+function renderBody(ctx){
+  const { shown } = ctx;
+  const host = $("#bodywrap"); host.innerHTML = "";
+  const W = 560, H = 620;
+  const active = LAYERS.find(l => l.id === S.layer);
+
+  let s = '<svg class="body" viewBox="0 0 '+W+' '+H+'" role="img" '
+    + 'aria-label="人體器官風險地圖，依目前檢驗值著色">';
+
+  /* 背景格線 */
+  s += '<defs>'
+    + '<linearGradient id="gSil" x1="0" y1="0" x2="0" y2="1">'
+    +   '<stop offset="0" stop-color="#1B2A33"></stop><stop offset="1" stop-color="#141F26"></stop>'
+    + '</linearGradient>'
+    + '<linearGradient id="gSweep" x1="0" y1="0" x2="1" y2="0">'
+    +   '<stop offset="0" stop-color="#56C2E0" stop-opacity="0"></stop>'
+    +   '<stop offset=".5" stop-color="#56C2E0" stop-opacity=".9"></stop>'
+    +   '<stop offset="1" stop-color="#56C2E0" stop-opacity="0"></stop>'
+    + '</linearGradient>'
+    + '<filter id="glow" x="-120%" y="-120%" width="340%" height="340%">'
+    +   '<feGaussianBlur stdDeviation="7" result="b"></feGaussianBlur>'
+    +   '<feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>'
+    + '</filter></defs>';
+
+  for (let gx = 20; gx < W; gx += 40)
+    s += '<line x1="'+gx+'" y1="8" x2="'+gx+'" y2="'+(H-8)+'" stroke="#18242B" stroke-width="1"></line>';
+  for (let gy = 20; gy < H; gy += 40)
+    s += '<line x1="8" y1="'+gy+'" x2="'+(W-8)+'" y2="'+gy+'" stroke="#18242B" stroke-width="1"></line>';
+
+  /* 人形（置中於 viewBox） */
+  s += '<g transform="translate(130,0)">';
+  Object.values(BODY_PATHS).forEach(d => {
+    s += '<path d="'+d+'" fill="url(#gSil)" stroke="#2E434F" stroke-width="1.2"></path>';
+  });
+  s += '<g class="sweep"><rect x="-120" y="0" width="540" height="2" fill="url(#gSweep)"></rect></g>';
+  s += '</g>';
+
+  /* 器官節點 */
+  ORGANS.forEach(o => {
+    const inLayer = o.layers.includes(S.layer);
+    const lvl = o.score(shown.p, shown.v, shown.d);
+    const b = band(lvl);
+    const cx = o.x + 130, cy = o.y;
+    const left = o.side === "L";
+    const lx = left ? cx - 30 : cx + 30;
+    const tx = left ? lx - 8 : lx + 8;
+    const anchor = left ? "end" : "start";
+    const r = 9 + lvl * 2.6;
+    const sel = S.organ === o.id;
+
+    s += '<g class="organ'+(inLayer ? "" : " dim")+(sel ? " sel" : "")+'" data-organ="'+o.id+'" '
+      + 'tabindex="0" role="button" aria-label="'+esc(o.nm)+'，'+esc(b.name)+'">';
+    s += '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+b.color+'" opacity=".22" filter="url(#glow)"></circle>';
+    s += '<circle class="ring" cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="'+b.color+'" '
+      + 'stroke-width="'+(sel ? 2.4 : 1.5)+'" opacity="'+(sel ? 1 : .85)+'"></circle>';
+    s += '<circle cx="'+cx+'" cy="'+cy+'" r="3.2" fill="'+b.color+'"></circle>';
+    /* 嚴重度同時用刻度標記編碼，不只靠顏色 */
+    for (let i = 0; i <= lvl; i++){
+      const ang = -Math.PI/2 + i * 0.42 - lvl * 0.21;
+      s += '<circle cx="'+(cx + Math.cos(ang)*(r+6)).toFixed(1)+'" cy="'+(cy + Math.sin(ang)*(r+6)).toFixed(1)
+        + '" r="1.7" fill="'+b.color+'"></circle>';
+    }
+    s += '<line x1="'+(left ? cx-r-2 : cx+r+2)+'" y1="'+cy+'" x2="'+lx+'" y2="'+cy+'" '
+      + 'stroke="'+b.color+'" stroke-width="1" opacity=".5"></line>';
+    s += '<text class="lbl" x="'+tx+'" y="'+(cy-1)+'" text-anchor="'+anchor+'">'+esc(o.nm)+'</text>';
+    s += '<text class="val" x="'+tx+'" y="'+(cy+13)+'" text-anchor="'+anchor+'">'+esc(b.name)+'</text>';
+    s += '<circle class="hit" cx="'+cx+'" cy="'+cy+'" r="'+(r+12)+'"></circle>';
+    s += '</g>';
+  });
+
+  s += '</svg>';
+  host.innerHTML = s;
+
+  host.querySelectorAll(".organ").forEach(g => {
+    const pick = () => { S.organ = g.dataset.organ; render(); };
+    g.addEventListener("click", pick);
+    g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " "){ e.preventDefault(); pick(); }});
+  });
+
+  $("#bodydate").textContent = ctx.p.visits[S.visitIdx].date
+    + (ctx.proj ? " · 推演中" : "") + " · " + (active ? active.nm : "");
+}
+
+/* ── 檔案面板 ── */
+function bandChip(lvl){
+  const b = band(lvl);
+  return '<span class="band" style="color:'+b.color+';border-color:'+b.color+';background:'+b.bg+'">'
+    + esc(b.name) + '</span>';
+}
+function rowsHTML(rows){
+  return '<div class="rows">' + rows.map(r =>
+    '<div class="row"><span class="lab">'+esc(r[0])+'</span>'
+    + '<span class="now">'+esc(r[1])+'</span>'
+    + '<span class="tgt">'+esc(r[2])+'</span></div>').join("") + '</div>';
+}
+function actsHTML(acts){
+  return '<div class="acts">' + acts.map(a =>
+    '<div class="act"><span class="m">'+esc(a[2])+'</span><span><b>'+esc(a[0])+'</b> ── '+esc(a[1])+'</span></div>'
+  ).join("") + '</div>';
+}
+
+function renderDossier(ctx){
+  const { shown } = ctx;
+  const { p, v, d } = shown;
+  const host = $("#dossier"); host.innerHTML = "";
+  const backBtn = $("#backAll");
+
+  if (S.organ){
+    const o = ORGANS.find(x => x.id === S.organ);
+    const lvl = o.score(p, v, d);
+    $("#dosstitle").textContent = o.nm;
+    backBtn.hidden = false;
+    host.innerHTML =
+      '<div class="verdict" style="border-color:'+band(lvl).color+'">'
+      + '<span class="q">此器官目前風險</span>'
+      + '<span class="a" style="color:'+band(lvl).color+'">'+esc(band(lvl).name)+'</span>'
+      + '<span class="n">'+esc(ctx.p.visits[S.visitIdx].date)+' 就診資料'
+      + (ctx.proj ? '，已套用 '+S.sims.size+' 項介入推演' : '') + '</span></div>'
+      + rowsHTML(o.rows(p, v, d))
+      + actsHTML(o.acts(p, v, d));
+    return;
+  }
+
+  $("#dosstitle").textContent = "整體判定";
+  backBtn.hidden = true;
+  const ver = [];
+
+  ver.push(["體位（台灣指引）", d.bmiCat.k,
+    "BMI " + fx(d.bmi,1) + " · 腰圍 " + v.wc + " cm" + (d.abdo ? "（達腹部肥胖）" : ""), d.bmiCat.lvl]);
+
+  ver.push(["血糖狀態",
+    d.dm ? "糖尿病 · 病程 " + v.dmYears + " 年" : (d.preDm ? "糖尿病前期" : "血糖正常"),
+    "HbA1c " + fx(v.a1c,1) + "% · 推估平均血糖 " + fx(d.eag,0) + " mg/dL",
+    d.dm ? (v.a1c < 7 ? 1 : v.a1c < 8.5 ? 2 : 3) : (d.preDm ? 1 : 0)]);
+
+  ver.push(["代謝症候群", d.metS.met ? "符合（" + d.metS.n + "/5 項）" : "不符合（" + d.metS.n + "/5 項）",
+    d.metS.items.map(i => (i.hit ? "▮ " : "▯ ") + i.k).join("　"), d.metS.met ? 2 : (d.metS.n === 2 ? 1 : 0)]);
+
+  ver.push(["慢性腎臟病（KDIGO）", d.gcat.k + d.acat.k + " · " + band(d.kdigo).name,
+    "eGFR " + fx(d.egfr,0) + " mL/min/1.73m²（" + d.gcat.d + "） · UACR " + fx(v.uacr,0) + " mg/g（" + d.acat.d + "）",
+    d.kdigo]);
+
+  ver.push(["心血管風險（ESC 規則式）", d.esc.k,
+    d.esc.why + " → LDL-C 目標 <" + d.esc.ldl + "、非-HDL-C 目標 <" + d.nonHDLTarget + " mg/dL",
+    d.esc.lvl]);
+
+  ver.push(["血壓", (v.sbp < 130 && v.dbp < 80) ? "達標" : "未達標",
+    v.sbp + "/" + v.dbp + " mmHg · 目標 <130/80（ADA 2026、台灣高血壓指引）",
+    (v.sbp < 130 && v.dbp < 80) ? 0 : (v.sbp < 140 && v.dbp < 90) ? 2 : 3]);
+
+  host.innerHTML = ver.map(x =>
+    '<div class="verdict" style="border-color:'+band(x[3]).color+'">'
+    + '<span class="q">'+esc(x[0])+'</span>'
+    + '<span class="a" style="color:'+band(x[3]).color+'">'+esc(x[1])+'</span>'
+    + '<span class="n">'+esc(x[2])+'</span></div>').join("");
+
+  const meds = (v.meds || []).map(m => MEDS[m] || m);
+  host.appendChild(el("div", "verdict",
+    '<span class="q">目前用藥</span>'
+    + '<span class="a" style="font-size:13px;font-weight:500;color:var(--ink-2)">'
+    + (meds.length ? esc(meds.join("、")) : "無紀錄") + '</span>'
+    + '<span class="n">' + esc(ctx.story) + '</span>'));
+}
+
+/* ── KDIGO 熱區 ── */
+function renderKdigo(ctx){
+  const d = ctx.shown.d, v = ctx.shown.v;
+  const t = $("#kdigo");
+  let s = '<caption style="caption-side:top;text-align:left;font-size:11px;color:var(--ink-3);padding-bottom:6px">'
+    + 'eGFR 分期（列）× 白蛋白尿分級（欄）。每格同時以文字標示風險帶，不只靠顏色。</caption>';
+  s += '<tr><th></th>' + ACAT.map(a =>
+    '<th>'+a.k+'<br><span style="color:var(--ink-3);font-weight:400">'
+    + (a.k==="A1"?"&lt;30":a.k==="A2"?"30–299":"≥300") + ' mg/g</span></th>').join("") + '</tr>';
+  GCAT.forEach((g, gi) => {
+    s += '<tr><th>'+g.k+'<br><span style="color:var(--ink-3);font-weight:400">'
+      + (g.k==="G1"?"≥90":g.k==="G2"?"60–89":g.k==="G3a"?"45–59":g.k==="G3b"?"30–44":g.k==="G4"?"15–29":"&lt;15")
+      + '</span></th>';
+    ACAT.forEach((a, ai) => {
+      const lvl = KDIGO[gi][ai], b = band(lvl);
+      const here = gi === d.gIdx && ai === d.aIdx;
+      s += '<td class="'+(here ? "here" : "")+'" style="background:'+b.bg+';color:'+b.color
+        + ';border-color:'+b.color+'">'+b.name
+        + (here ? '<span class="me">eGFR '+fx(d.egfr,0)+' · UACR '+fx(v.uacr,0)+'</span>' : '')+'</td>';
+    });
+    s += '</tr>';
+  });
+  t.innerHTML = s;
+
+  const k = d.kfre;
+  $("#kfre").innerHTML = k
+    ? '<b style="color:var(--ink-2)">KFRE 四變數腎衰竭風險</b>　2 年 <span class="num" style="color:'
+      + band(k.y2 >= 10 ? 3 : k.y2 >= 3 ? 2 : 1).color + '">' + fx(k.y2,1)
+      + '%</span>　5 年 <span class="num" style="color:'
+      + band(k.y5 >= 15 ? 3 : k.y5 >= 5 ? 2 : 1).color + '">' + fx(k.y5,1) + '%</span>'
+      + '　<span style="color:var(--ink-3)">（Tangri 四變數式：年齡、性別、eGFR、UACR）</span>'
+    : '<b style="color:var(--ink-2)">KFRE 未顯示。</b> 該模型在 CKD G3–G5 族群開發與驗證，eGFR ≥60 時外插無意義，因此本頁刻意不計算。目前 eGFR '
+      + fx(d.egfr,0) + ' mL/min/1.73m²。';
+}
+
+/* ── 情境推演 ── */
+function renderSim(ctx){
+  const host = $("#simopts");
+  if (!host.childElementCount){
+    SIMS.forEach(s => {
+      const lab = el("label", "opt");
+      lab.innerHTML = '<input type="checkbox" id="sim-'+s.id+'" data-sim="'+s.id+'">'
+        + '<span><span class="nm">'+esc(s.nm)+'</span><br><span class="src">'+esc(s.src)+'</span></span>';
+      host.appendChild(lab);
+    });
+    host.addEventListener("change", e => {
+      const id = e.target.dataset.sim; if (!id) return;
+      e.target.checked ? S.sims.add(id) : S.sims.delete(id);
+      render();
+    });
+  }
+  SIMS.forEach(s => { const i = document.getElementById("sim-"+s.id); if (i) i.checked = S.sims.has(s.id); });
+
+  const sum = $("#simsummary");
+  if (!ctx.proj){ sum.textContent = "尚未選取任何介入。勾選後上方讀數與器官顏色會即時改為推演值。"; return; }
+  const a = ctx.real.d, b = ctx.proj.d, va = ctx.real.v, vb = ctx.proj.v;
+  const bits = [];
+  if (Math.abs(vb.a1c - va.a1c) > .05) bits.push("HbA1c " + fx(va.a1c,1) + " → " + fx(vb.a1c,1) + "%");
+  if (Math.abs(vb.sbp - va.sbp) > .5)  bits.push("收縮壓 " + fx(va.sbp,0) + " → " + fx(vb.sbp,0));
+  if (Math.abs(vb.ldl - va.ldl) > .5)  bits.push("LDL " + fx(va.ldl,0) + " → " + fx(vb.ldl,0));
+  if (Math.abs(vb.uacr - va.uacr) > 1) bits.push("UACR " + fx(va.uacr,0) + " → " + fx(vb.uacr,0));
+  if (Math.abs(b.bmi - a.bmi) > .05)   bits.push("BMI " + fx(a.bmi,1) + " → " + fx(b.bmi,1));
+  const notes = SIMS.filter(s => S.sims.has(s.id) && s.note).map(s => s.note);
+  sum.innerHTML = '<b style="color:var(--chrome)">推演中（' + S.sims.size + ' 項）</b>　'
+    + esc(bits.join("　·　")) + (notes.length ? '<br><span style="color:var(--s1)">' + esc(notes.join(" ")) + '</span>' : '')
+    + '<br><span style="color:var(--ink-3)">族群平均效果推估，非個人化預測，不可作為處方依據。</span>';
+}
+
+/* ── 時間軸 · 圖層 · 案例 ── */
+function renderTimeline(ctx){
+  const host = $("#timeline"); host.innerHTML = "";
+  ctx.p.visits.forEach((v, i) => {
+    const b = el("button", "tl-stop");
+    b.type = "button";
+    b.setAttribute("aria-pressed", String(i === S.visitIdx));
+    b.innerHTML = '<span class="pip"></span>' + esc(v.date)
+      + (v.event ? '<span style="color:var(--s3);font-size:10px">'+esc(v.event)+'</span>' : '');
+    b.addEventListener("click", () => { S.visitIdx = i; render(); });
+    host.appendChild(b);
+  });
+}
+function renderLayers(){
+  const host = $("#layers");
+  if (host.childElementCount) {
+    host.querySelectorAll(".layer").forEach(b =>
+      b.setAttribute("aria-pressed", String(b.dataset.layer === S.layer)));
+    $("#layerhint").textContent = LAYERS.find(l => l.id === S.layer).nm;
+    return;
+  }
+  LAYERS.forEach(l => {
+    const b = el("button", "layer");
+    b.type = "button"; b.dataset.layer = l.id;
+    b.setAttribute("aria-pressed", String(l.id === S.layer));
+    b.innerHTML = '<span class="sw"></span><span><span class="nm">'+esc(l.nm)+'</span><br>'
+      + '<span class="ds">'+esc(l.ds)+'</span></span>';
+    b.addEventListener("click", () => { S.layer = l.id; render(); });
+    host.appendChild(b);
+  });
+  $("#layerhint").textContent = LAYERS.find(l => l.id === S.layer).nm;
+}
+function renderCases(){
+  const host = $("#caselist");
+  if (host.childElementCount){
+    host.querySelectorAll(".casebtn").forEach((b, i) =>
+      b.setAttribute("aria-pressed", String(!S.custom && i === S.caseIdx)));
+    return;
+  }
+  CASES.forEach((c, i) => {
+    const b = el("button", "casebtn", esc(c.label));
+    b.type = "button";
+    b.setAttribute("aria-pressed", String(i === S.caseIdx));
+    b.addEventListener("click", () => {
+      S.caseIdx = i; S.custom = null; S.visitIdx = CASES[i].visits.length - 1;
+      S.organ = null; S.sims.clear(); render();
+    });
+    host.appendChild(b);
+  });
+}
+
+function renderLegend(){
+  const host = $("#legend");
+  if (host.childElementCount) return;
+  host.innerHTML = BANDS.map(b =>
+    '<span style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-2)">'
+    + '<span style="display:inline-flex;gap:2px;align-items:center;flex:none">'
+    + '<span class="dot" style="background:'+b.color+';width:9px;height:9px;border-radius:50%"></span>'
+    + Array.from({length:b.key}, () =>
+        '<span style="width:3px;height:3px;border-radius:50%;background:'+b.color+'"></span>').join("")
+    + '</span>' + esc(b.name) + '</span>').join("");
+}
+
+function renderWho(ctx){
+  const p = ctx.p, v = ctx.shown.v;
+  $("#whoStrip").innerHTML =
+    '<b style="color:var(--ink);font-weight:700">'+esc(p.who)+'</b>'
+    + '<span>'+esc(v.age)+' 歲</span>'
+    + '<span>就診 '+esc(ctx.p.visits[S.visitIdx].date)+'</span>'
+    + '<span>'+esc(p.visits.length)+' 次紀錄</span>'
+    + (ctx.proj ? '<span style="color:var(--chrome)">推演模式 · 顯示的是介入後的推估值</span>' : '');
+}
+
+function render(){
+  const ctx = currentView();
+  renderCases(); renderLayers(); renderLegend(); renderWho(ctx);
+  renderTelemetry(ctx); renderBody(ctx); renderDossier(ctx);
+  renderTimeline(ctx); renderKdigo(ctx); renderSim(ctx);
+}
+
+/* ── 病人輸入 ── */
+const FIELDS = [
+  ["sex","性別","select",["M","F"],["男","女"]],
+  ["age","年齡","number"], ["ht","身高 cm","number"], ["wt","體重 kg","number"],
+  ["wc","腰圍 cm","number"], ["sbp","收縮壓","number"], ["dbp","舒張壓","number"],
+  ["a1c","HbA1c %","number"], ["fpg","空腹血糖","number"], ["cr","肌酸酐 mg/dL","number"],
+  ["uacr","UACR mg/g","number"], ["ldl","LDL-C","number"], ["hdl","HDL-C","number"],
+  ["tg","三酸甘油酯","number"], ["tc","總膽固醇","number"], ["dmYears","糖尿病年數","number"],
+];
+const FLAGS = [["smoker","吸菸"],["ascvd","已確診 ASCVD"],["hf","心衰竭"],
+  ["retinopathy","視網膜病變"],["neuropathy","周邊神經病變"],["familyHx","早發心血管家族史"]];
+
+function buildForm(){
+  const host = $("#formFields"); host.innerHTML = "";
+  const c = CASES[S.caseIdx], v = c.visits[c.visits.length-1];
+  FIELDS.forEach(f => {
+    const w = el("div","f");
+    const cur = f[0] === "ht" ? c.ht : f[0] === "sex" ? c.sex : v[f[0]];
+    if (f[2] === "select"){
+      w.innerHTML = '<label for="fld-'+f[0]+'">'+esc(f[1])+'</label><select id="fld-'+f[0]+'" name="'+f[0]+'">'
+        + f[3].map((o,i) => '<option value="'+o+'"'+(o===cur?" selected":"")+'>'+esc(f[4][i])+'</option>').join("")
+        + '</select>';
+    } else {
+      w.innerHTML = '<label for="fld-'+f[0]+'">'+esc(f[1])+'</label>'
+        + '<input id="fld-'+f[0]+'" name="'+f[0]+'" type="number" step="any" value="'+(cur??"")+'">';
+    }
+    host.appendChild(w);
+  });
+  FLAGS.forEach(f => {
+    const w = el("div","f chk");
+    w.innerHTML = '<input type="checkbox" id="fld-'+f[0]+'" name="'+f[0]+'"'+(c[f[0]]?" checked":"")+'>'
+      + '<label for="fld-'+f[0]+'">'+esc(f[1])+'</label>';
+    host.appendChild(w);
+  });
+  const w = el("div","f"); w.style.gridColumn = "1/-1";
+  w.innerHTML = '<label for="fld-meds">目前用藥（逗號分隔關鍵字：metformin, sglt2, glp1, statinHigh, statinMod, acearb, finerenone, insulin, su, dpp4, eze）</label>'
+    + '<input id="fld-meds" name="meds" type="text" value="'+esc((v.meds||[]).join(", "))+'">';
+  host.appendChild(w);
+}
+
+$("#openForm").addEventListener("click", () => { buildForm(); $("#formDlg").showModal(); });
+$("#closeForm").addEventListener("click", () => $("#formDlg").close());
+$("#patientForm").addEventListener("submit", e => {
+  const fd = new FormData(e.target);
+  const base = JSON.parse(JSON.stringify(CASES[S.caseIdx]));
+  const v = JSON.parse(JSON.stringify(base.visits[base.visits.length-1]));
+  const num = k => { const x = parseFloat(fd.get(k)); return isFinite(x) ? x : null; };
+  ["age","wt","wc","sbp","dbp","a1c","fpg","cr","uacr","ldl","hdl","tg","tc","dmYears"]
+    .forEach(k => { const x = num(k); if (x != null) v[k] = x; });
+  const ht = num("ht"); if (ht) base.ht = ht;
+  base.sex = fd.get("sex") || base.sex;
+  FLAGS.forEach(f => { base[f[0]] = fd.get(f[0]) === "on"; });
+  v.meds = String(fd.get("meds") || "").split(",").map(s => s.trim()).filter(Boolean);
+  v.date = "自訂";
+  base.visits = [v];
+  base.who = "自訂病人 · " + (base.sex === "M" ? "男" : "女") + " · 身高 " + base.ht + " cm";
+  base.label = "自訂";
+  base.story = "手動輸入的數值。資料只存在這個分頁的記憶體中，不上傳也不寫入瀏覽器儲存空間。";
+  S.custom = base; S.visitIdx = 0; S.organ = null;
+  render();
+});
+$("#backAll").addEventListener("click", () => { S.organ = null; render(); });
+$("#simreset").addEventListener("click", () => { S.sims.clear(); render(); });
+
+/* 開場：最新一次就診 */
+S.visitIdx = CASES[0].visits.length - 1;
+render();
+</script>
