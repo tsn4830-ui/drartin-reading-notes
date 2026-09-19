@@ -129,7 +129,7 @@ svg.body{display:block;width:100%;max-width:100%;height:auto}
 .organ:focus-visible{outline:none}
 .organ:focus-visible .ring{stroke:var(--chrome);stroke-width:2}
 .organ .lbl{font-family:var(--cond);font-size:11.5px;letter-spacing:.07em;fill:var(--ink-2)}
-.organ .val{font-family:var(--mono);font-size:10.5px;fill:var(--ink-3)}
+.organ .val{font-family:var(--mono);font-size:10.5px}
 .organ:hover .lbl,.organ.sel .lbl{fill:var(--ink)}
 .organ.dim{opacity:.26}
 .sweep{animation:sweep 7.5s linear infinite}
@@ -283,14 +283,14 @@ svg.mech{display:block;width:100%;max-width:100%;height:auto}
 .mnode rect{transition:.15s}
 .mnode:hover rect{stroke-width:2}
 .mnode:focus-visible rect{stroke:var(--chrome);stroke-width:2.4}
-.mnode text{font-family:var(--body);font-size:11px;fill:var(--ink);pointer-events:none}
-.mnode .sub{font-size:9.5px;fill:var(--ink-3)}
+.mnode text{font-family:var(--body);font-size:11.5px;pointer-events:none}
+.mnode .sub{font-size:9.5px}
 .mnode.off{opacity:.16}
 .medge{cursor:pointer}
-.medge:hover path.hit{stroke:var(--chrome);stroke-opacity:.25}
-.medge.off{opacity:.12}
-.medge text{font-family:var(--cond);font-size:9.5px;letter-spacing:.04em;fill:var(--ink-3);pointer-events:none}
-.medge.cut text{fill:var(--s0)}
+.medge:hover path.hit{stroke:var(--chrome);stroke-opacity:.2}
+.medge:hover text{fill:var(--chrome)}
+.medge.off{opacity:.1}
+.medge text{font-family:var(--cond);font-size:9.5px;letter-spacing:.05em;pointer-events:none;transition:.14s}
 figcaption{font-size:11.5px;color:var(--ink-3);line-height:1.6;padding:9px 3px 0}
 
 @media (max-width:1180px){
@@ -340,7 +340,7 @@ figcaption{font-size:11.5px;color:var(--ink-3);line-height:1.6;padding:9px 3px 0
       <span class="eyebrow">嚴重度</span>
       <div id="legend" style="display:flex;flex-direction:column;gap:6px;margin-top:8px"></div>
       <p style="margin:10px 0 0;font-size:11px;color:var(--ink-3);line-height:1.5">
-        四帶沿用 KDIGO 慣例，並以明度與節點外圈刻點數量重複編碼，紅綠色覺異常者仍可分辨。
+        四帶沿用 KDIGO 慣例，並以明度重複編碼；器官節點的外圈弧長也代表等級，紅綠色覺異常者仍可分辨。
       </p>
     </div>
   </div>
@@ -1054,66 +1054,88 @@ function renderBody(ctx){
   const active = LAYERS.find(l => l.id === S.layer);
 
   let s = '<svg class="body" viewBox="0 0 '+W+' '+H+'" role="img" '
-    + 'aria-label="人體器官風險地圖，依目前檢驗值著色">';
+    + 'aria-label="人體器官風險地圖，依目前檢驗值著色。每個器官的外圈弧長代表風險等級。">';
 
-  /* 背景格線 */
   s += '<defs>'
     + '<linearGradient id="gSil" x1="0" y1="0" x2="0" y2="1">'
-    +   '<stop offset="0" stop-color="#1B2A33"></stop><stop offset="1" stop-color="#141F26"></stop>'
+    +   '<stop offset="0" stop-color="#22343E"></stop>'
+    +   '<stop offset=".55" stop-color="#18262E"></stop>'
+    +   '<stop offset="1" stop-color="#111C22"></stop>'
     + '</linearGradient>'
     + '<linearGradient id="gSweep" x1="0" y1="0" x2="1" y2="0">'
     +   '<stop offset="0" stop-color="#56C2E0" stop-opacity="0"></stop>'
-    +   '<stop offset=".5" stop-color="#56C2E0" stop-opacity=".9"></stop>'
+    +   '<stop offset=".5" stop-color="#56C2E0" stop-opacity=".85"></stop>'
     +   '<stop offset="1" stop-color="#56C2E0" stop-opacity="0"></stop>'
     + '</linearGradient>'
-    + '<filter id="glow" x="-120%" y="-120%" width="340%" height="340%">'
-    +   '<feGaussianBlur stdDeviation="7" result="b"></feGaussianBlur>'
+    + '<radialGradient id="gHalo" cx="50%" cy="46%" r="52%">'
+    +   '<stop offset="0" stop-color="#56C2E0" stop-opacity=".10"></stop>'
+    +   '<stop offset="1" stop-color="#56C2E0" stop-opacity="0"></stop>'
+    + '</radialGradient>'
+    + '<filter id="glow" x="-140%" y="-140%" width="380%" height="380%">'
+    +   '<feGaussianBlur stdDeviation="6" result="b"></feGaussianBlur>'
     +   '<feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>'
-    + '</filter></defs>';
+    + '</filter>'
+    + '<clipPath id="clipBody"><g transform="translate(130,0)">'
+    +   Object.values(BODY_PATHS).map(d => '<path d="'+d+'"></path>').join("")
+    + '</g></clipPath>'
+    + '</defs>';
 
-  for (let gx = 20; gx < W; gx += 40)
-    s += '<line x1="'+gx+'" y1="8" x2="'+gx+'" y2="'+(H-8)+'" stroke="#18242B" stroke-width="1"></line>';
-  for (let gy = 20; gy < H; gy += 40)
-    s += '<line x1="8" y1="'+gy+'" x2="'+(W-8)+'" y2="'+gy+'" stroke="#18242B" stroke-width="1"></line>';
+  /* 柔光底 */
+  s += '<rect x="0" y="0" width="'+W+'" height="'+H+'" fill="url(#gHalo)"></rect>';
 
-  /* 人形（置中於 viewBox） */
+  /* 人形 */
   s += '<g transform="translate(130,0)">';
-  Object.values(BODY_PATHS).forEach(d => {
-    s += '<path d="'+d+'" fill="url(#gSil)" stroke="#2E434F" stroke-width="1.2"></path>';
-  });
-  s += '<g class="sweep"><rect x="-120" y="0" width="540" height="2" fill="url(#gSweep)"></rect></g>';
+  Object.values(BODY_PATHS).forEach(d =>
+    s += '<path d="'+d+'" fill="url(#gSil)"></path>');
   s += '</g>';
 
-  /* 器官節點 */
+  /* 掃描格線只出現在身體內部 — 儀器感來自這裡，而不是整張畫布鋪滿格子 */
+  s += '<g clip-path="url(#clipBody)">';
+  for (let gy = 6; gy < H; gy += 7)
+    s += '<line x1="0" y1="'+gy+'" x2="'+W+'" y2="'+gy+'" stroke="#0A1013" stroke-width="1" opacity=".30"></line>';
+  s += '<g class="sweep"><rect x="0" y="0" width="'+W+'" height="26" fill="url(#gSweep)" opacity=".16"></rect>'
+    + '<rect x="0" y="24" width="'+W+'" height="1.6" fill="url(#gSweep)"></rect></g>';
+  s += '</g>';
+
+  /* 外框描線畫在格線之上，輪廓才不會被切碎 */
+  s += '<g transform="translate(130,0)">';
+  Object.values(BODY_PATHS).forEach(d =>
+    s += '<path d="'+d+'" fill="none" stroke="#354E5C" stroke-width="1.2"></path>');
+  s += '</g>';
+
+  /* 器官節點：外圈弧長 = 風險等級，是顏色之外的第二重編碼 */
   ORGANS.forEach(o => {
     const inLayer = o.layers.includes(S.layer);
     const lvl = o.score(shown.p, shown.v, shown.d);
     const b = band(lvl);
     const cx = o.x + 130, cy = o.y;
     const left = o.side === "L";
-    const lx = left ? cx - 30 : cx + 30;
-    const tx = left ? lx - 8 : lx + 8;
-    const anchor = left ? "end" : "start";
-    const r = 9 + lvl * 2.6;
     const sel = S.organ === o.id;
+    const R = 13 + lvl * 1.4;
+    const C = 2 * Math.PI * R;
+    const frac = lvl === 0 ? 0.05 : lvl / 3;
+    const lx = left ? cx - R - 16 : cx + R + 16;
+    const tx = left ? lx - 7 : lx + 7;
+    const anchor = left ? "end" : "start";
 
     s += '<g class="organ'+(inLayer ? "" : " dim")+(sel ? " sel" : "")+'" data-organ="'+o.id+'" '
       + 'tabindex="0" role="button" aria-label="'+esc(o.nm)+'，'+esc(b.name)+'">';
-    s += '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+b.color+'" opacity=".22" filter="url(#glow)"></circle>';
-    s += '<circle class="ring" cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="'+b.color+'" '
-      + 'stroke-width="'+(sel ? 2.4 : 1.5)+'" opacity="'+(sel ? 1 : .85)+'"></circle>';
-    s += '<circle cx="'+cx+'" cy="'+cy+'" r="3.2" fill="'+b.color+'"></circle>';
-    /* 嚴重度同時用刻度標記編碼，不只靠顏色 */
-    for (let i = 0; i <= lvl; i++){
-      const ang = -Math.PI/2 + i * 0.42 - lvl * 0.21;
-      s += '<circle cx="'+(cx + Math.cos(ang)*(r+6)).toFixed(1)+'" cy="'+(cy + Math.sin(ang)*(r+6)).toFixed(1)
-        + '" r="1.7" fill="'+b.color+'"></circle>';
-    }
-    s += '<line x1="'+(left ? cx-r-2 : cx+r+2)+'" y1="'+cy+'" x2="'+lx+'" y2="'+cy+'" '
-      + 'stroke="'+b.color+'" stroke-width="1" opacity=".5"></line>';
+    if (lvl >= 2)
+      s += '<circle cx="'+cx+'" cy="'+cy+'" r="'+(R-3)+'" fill="'+b.color+'" opacity=".26" '
+        + 'filter="url(#glow)"></circle>';
+    s += '<circle cx="'+cx+'" cy="'+cy+'" r="'+R+'" fill="#0C141896"></circle>';
+    s += '<circle cx="'+cx+'" cy="'+cy+'" r="'+R+'" fill="none" stroke="#2B3F4C" stroke-width="2.6"></circle>';
+    s += '<circle class="ring" cx="'+cx+'" cy="'+cy+'" r="'+R+'" fill="none" stroke="'+b.color+'" '
+      + 'stroke-width="'+(sel ? 3.4 : 2.6)+'" stroke-linecap="round" '
+      + 'stroke-dasharray="'+(C*frac).toFixed(1)+' '+(C*(1-frac)+1).toFixed(1)+'" '
+      + 'transform="rotate(-90 '+cx+' '+cy+')"></circle>';
+    s += '<circle cx="'+cx+'" cy="'+cy+'" r="'+(lvl ? 3.6 : 2.4)+'" fill="'+b.color+'"></circle>';
+    s += '<line x1="'+(left ? cx-R-4 : cx+R+4)+'" y1="'+cy+'" x2="'+lx+'" y2="'+cy+'" '
+      + 'stroke="'+b.color+'" stroke-width="1" opacity=".45"></line>';
     s += '<text class="lbl" x="'+tx+'" y="'+(cy-1)+'" text-anchor="'+anchor+'">'+esc(o.nm)+'</text>';
-    s += '<text class="val" x="'+tx+'" y="'+(cy+13)+'" text-anchor="'+anchor+'">'+esc(b.name)+'</text>';
-    s += '<circle class="hit" cx="'+cx+'" cy="'+cy+'" r="'+(r+12)+'"></circle>';
+    s += '<text class="val" x="'+tx+'" y="'+(cy+13)+'" text-anchor="'+anchor+'" fill="'+b.color+'" '
+      + 'opacity=".85">'+esc(b.name)+'</text>';
+    s += '<circle class="hit" cx="'+cx+'" cy="'+cy+'" r="'+(R+12)+'"></circle>';
     s += '</g>';
   });
 
@@ -1335,11 +1357,14 @@ function renderLegend(){
   if (host.childElementCount) return;
   host.innerHTML = BANDS.map(b =>
     '<span style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-2)">'
-    + '<span style="display:inline-flex;gap:2px;align-items:center;flex:none">'
-    + '<span class="dot" style="background:'+b.color+';width:9px;height:9px;border-radius:50%"></span>'
-    + Array.from({length:b.key}, () =>
-        '<span style="width:3px;height:3px;border-radius:50%;background:'+b.color+'"></span>').join("")
-    + '</span>' + esc(b.name) + '</span>').join("");
+    + '<span style="display:inline-flex;align-items:center;flex:none">'
+    + '<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">'
+    +   '<circle cx="9" cy="9" r="6.4" fill="none" stroke="#2B3F4C" stroke-width="2.4"></circle>'
+    +   '<circle cx="9" cy="9" r="6.4" fill="none" stroke="'+b.color+'" stroke-width="2.4" '
+    +     'stroke-linecap="round" transform="rotate(-90 9 9)" stroke-dasharray="'
+    +     ((b.key ? b.key/3 : 0.05) * 2 * Math.PI * 6.4).toFixed(1) + ' 99"></circle>'
+    +   '<circle cx="9" cy="9" r="2" fill="'+b.color+'"></circle>'
+    + '</svg></span>' + esc(b.name) + '</span>').join("");
 }
 
 function renderWho(ctx){
@@ -1528,49 +1553,49 @@ function renderPop(){
    8. 機轉尺度 — 心腎代謝共病網絡
    ═══════════════════════════════════════════════════════════════ */
 const MN = [
-  { id:"n1",  x:80,   y:300, st:1, t:"熱量過剩 · 久坐", s:"能量失衡",
+  { id:"n1",  x:80,   y:316, st:1, t:"熱量過剩 · 久坐", s:"能量失衡",
     d:"一切的起點。攝入持續大於消耗，多餘能量必須找地方存。存得下就是皮下脂肪，存不下就開始異位堆積。",
     m:["體重", "腰圍", "身體活動量"] },
-  { id:"n2",  x:235,  y:230, st:1, t:"內臟脂肪堆積", s:"異位脂肪",
+  { id:"n2",  x:238,  y:246, st:1, t:"內臟脂肪堆積", s:"異位脂肪",
     d:"皮下脂肪的儲存量有上限。超過之後脂肪往內臟、肝臟、肌肉、心包膜堆積，這是代謝傷害真正開始的地方 — 所以腰圍比體重更會說話。",
     m:["腰圍（男 ≥90、女 ≥80 公分）", "BMI"] },
-  { id:"n3",  x:235,  y:380, st:1, t:"脂肪組織功能失調", s:"游離脂肪酸 · 發炎",
+  { id:"n3",  x:238,  y:396, st:1, t:"脂肪組織功能失調", s:"游離脂肪酸 · 發炎",
     d:"肥大的脂肪細胞開始分泌發炎激素、釋放游離脂肪酸，脂聯素下降。脂肪組織從儲存器官變成內分泌與發炎器官。",
     m:["三酸甘油酯", "HDL-C", "hs-CRP"] },
-  { id:"n4",  x:390,  y:210, st:2, t:"胰島素阻抗", s:"代償性高胰島素血症",
+  { id:"n4",  x:396,  y:226, st:2, t:"胰島素阻抗", s:"代償性高胰島素血症",
     d:"這是整張圖的樞紐。胰島素在肌肉與肝臟失效，胰臟代償性大量分泌。高胰島素血症本身又會促進腎小管鈉再吸收、交感活化與肝臟 VLDL 合成 — 三高從這裡同時長出來。",
     m:["HOMA-IR", "空腹胰島素", "三酸甘油酯／HDL 比值"] },
-  { id:"n5",  x:390,  y:390, st:2, t:"交感與 RAAS 活化", s:"礦皮質素受體活化",
+  { id:"n5",  x:396,  y:406, st:2, t:"交感與 RAAS 活化", s:"礦皮質素受體活化",
     d:"脂肪組織會釋放醛固酮釋放因子，加上交感神經張力上升，使腎素—血管收縮素—醛固酮系統與礦皮質素受體長期過度活化。這條路除了升壓，還獨立造成發炎與纖維化。",
     m:["血壓", "血鉀", "醛固酮／腎素比值"] },
-  { id:"n6",  x:545,  y:100, st:3, t:"高血糖 · 糖尿病", s:"β 細胞失代償",
+  { id:"n6",  x:554,  y:116, st:3, t:"高血糖 · 糖尿病", s:"β 細胞失代償",
     d:"胰島素阻抗本身不會造成高血糖 — 要等 β 細胞代償不住才會。所以血糖往往是最後一個壞掉的指標，體重與腰圍早好幾年就先走了。",
     m:["HbA1c", "空腹血糖", "口服葡萄糖耐受試驗"] },
-  { id:"n7",  x:545,  y:240, st:3, t:"高血壓", s:"鈉滯留 · 血管阻力",
+  { id:"n7",  x:554,  y:256, st:3, t:"高血壓", s:"鈉滯留 · 血管阻力",
     d:"高胰島素血症促進腎小管鈉再吸收，RAAS 與交感活化提高血管阻力，內臟脂肪壓迫腎臟。這是容積與阻力同時上升的高血壓。",
     m:["居家血壓（722 原則）", "24 小時血壓監測"] },
-  { id:"n8",  x:545,  y:380, st:3, t:"致動脈粥狀硬化|血脂異常", s:"高 TG · 低 HDL",
+  { id:"n8",  x:554,  y:396, st:3, t:"致動脈粥狀硬化|血脂異常", s:"高 TG · 低 HDL",
     d:"胰島素阻抗使肝臟過度輸出 VLDL。LDL-C 的數值可能只是中等，但顆粒變小變密、數量變多，穿透內皮的能力大增 — 這就是為什麼只看 LDL-C 會低估風險，要看非-HDL-C。",
     m:["三酸甘油酯", "HDL-C", "非-HDL-C", "ApoB"] },
-  { id:"n9",  x:545,  y:510, st:3, t:"MASLD", s:"代謝功能障礙脂肪肝",
+  { id:"n9",  x:554,  y:526, st:3, t:"MASLD", s:"代謝功能障礙脂肪肝",
     d:"肝臟同時是受害者與加害者：堆積脂肪受損，又持續輸出 VLDL 與促發炎因子回到循環，把血脂異常推得更遠。",
     m:["肝功能", "腹部超音波", "FIB-4"] },
-  { id:"n10", x:700,  y:320, st:4, t:"腎絲球高壓|與高過濾", s:"入球小動脈擴張",
+  { id:"n10", x:712,  y:336, st:4, t:"腎絲球高壓|與高過濾", s:"入球小動脈擴張",
     d:"高血糖使近端小管鈉—葡萄糖共同再吸收增加，送達緻密斑的鈉變少，管球回饋誤判為「血流不足」而擴張入球小動脈；RAAS 又收縮出球小動脈。兩端一擴一縮，腎絲球內壓飆高。早期 eGFR 甚至會「看起來很好」。",
     m:["eGFR", "早期高過濾現象"] },
-  { id:"n11", x:700,  y:150, st:4, t:"內皮功能障礙|與粥狀硬化", s:"發炎 · 氧化壓力",
+  { id:"n11", x:712,  y:166, st:4, t:"內皮功能障礙|與粥狀硬化", s:"發炎 · 氧化壓力",
     d:"高血糖的糖化終產物、小而密 LDL 的穿透、高血壓的剪應力，三股力量同時作用在血管內皮上。斑塊由此形成。",
     m:["頸動脈內中膜厚度", "冠狀動脈鈣化分數"] },
-  { id:"n12", x:855,  y:320, st:5, t:"白蛋白尿", s:"腎絲球屏障受損",
+  { id:"n12", x:870,  y:336, st:5, t:"白蛋白尿", s:"腎絲球屏障受損",
     d:"腎絲球內壓把蛋白擠過濾過屏障。白蛋白尿不只是損傷的標記，濾過的蛋白本身對腎小管有毒性，會回頭加速纖維化 — 所以降 UACR 本身就是治療目標，不只是追蹤指標。",
     m:["UACR", "KDIGO A1／A2／A3 分級"] },
-  { id:"n13", x:855,  y:150, st:5, t:"心血管事件", s:"心肌梗塞 · 中風",
+  { id:"n13", x:870,  y:166, st:5, t:"心血管事件", s:"心肌梗塞 · 中風",
     d:"代謝共病最常見的死因。要注意的是：CKD 病人死於心血管事件的機率，遠高於活到需要透析的機率。",
     m:["ESC 風險分類", "既往事件"] },
-  { id:"n14", x:1010, y:320, st:5, t:"CKD 進展", s:"腎小管間質纖維化",
+  { id:"n14", x:1028, y:336, st:5, t:"CKD 進展", s:"腎小管間質纖維化",
     d:"腎元流失後，剩下的腎元代償性高過濾，於是壞得更快。更麻煩的是它會回頭：腎功能下降再度活化 RAAS，把血壓與腎絲球內壓一起推高。這是自我加速的迴圈，也是為什麼介入要趁早 — 等 eGFR 掉下來才做，能挽回的已經有限。",
     m:["eGFR 斜率", "KDIGO G 分期", "KFRE"] },
-  { id:"n15", x:1165, y:320, st:5, t:"末期腎病", s:"透析 · 移植",
+  { id:"n15", x:1186, y:336, st:5, t:"末期腎病", s:"透析 · 移植",
     d:"終點。台灣的末期腎病發生率是全世界最高的（525 pmp，2020 年），而上游的糖尿病盛行率並非世界第一 — 差距就發生在這張圖中間那幾段路上。",
     m:["透析", "腎臟移植"] },
 ];
@@ -1626,21 +1651,65 @@ const M = { stage:0, drug:null, sel:null };
 const mnode = id => MN.find(n => n.id === id);
 const nt = n => n.t.replace(/\|/g, "");   /* 節點標題去掉折行符號 */
 
+/* 節點依它在路徑上的角色給不同的視覺重量，而不是十五個一樣的方塊 */
+const ROLE_OF = { n1:"up", n2:"up", n3:"up", n4:"hub", n5:"rf", n6:"rf", n7:"rf",
+                  n8:"rf", n9:"rf", n10:"tod", n11:"tod", n12:"end", n13:"end",
+                  n14:"end", n15:"end" };
+const ROLE = {
+  up:  { fill:"#141D23", stroke:"#2B3F4C", ink:"#A9BCC6", sub:"#647985" },
+  hub: { fill:"#162933", stroke:"#56C2E0", ink:"#EAF6FA", sub:"#7FA9BA" },
+  rf:  { fill:"#18232A", stroke:"#385364", ink:"#E6EFF3", sub:"#6C8390" },
+  tod: { fill:"#1A262D", stroke:"#4A6B7C", ink:"#E6EFF3", sub:"#7592A1" },
+  end: { fill:"#23191C", stroke:"#7E434B", ink:"#F2E4E5", sub:"#9C7076" },
+};
+/* 主幹：從樞紐一路走到末期腎病的那條路，畫粗一點 */
+const SPINE = [5, 11, 17, 19, 21];
+/* 頂部階段帶 */
+const COLS = [
+  { x0:6,   x1:317,  nm:"上游 · 能量與脂肪" },
+  { x0:317, x1:475,  nm:"樞紐" },
+  { x0:475, x1:633,  nm:"三高" },
+  { x0:633, x1:791,  nm:"標的器官" },
+  { x0:791, x1:1284, nm:"終點與迴圈" },
+];
+
 function renderMech(){
   const host = $("#mechCanvas");
-  const NW = 140, NH = 54;
+  const NW = 142, NH = 58;
   const vis = n => M.stage === 0 || n.st <= M.stage;
   const cuts = M.drug ? DRUGS.find(d => d.id === M.drug).cuts : [];
 
-  let s = '<figure style="margin:0"><svg class="mech" viewBox="0 0 1260 630" role="img" '
+  let s = '<figure style="margin:0"><svg class="mech" viewBox="0 0 1290 672" role="img" '
     + 'aria-label="心腎代謝共病的因果網絡：從能量失衡經胰島素阻抗分岔為三高，'
     + '再匯聚到腎絲球高壓與血管內皮損傷，終點為末期腎病與心血管事件。">';
   s += '<defs>'
-    + '<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
-    + '<path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path></marker>'
-    + '<marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
-    + '<path d="M0,0 L10,5 L0,10 z" fill="#93F2C8"></path></marker>'
+    + '<marker id="ar" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">'
+    + '<path d="M0,1 L9,5 L0,9 z" fill="currentColor"></path></marker>'
+    + '<marker id="arc" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">'
+    + '<path d="M0,1 L9,5 L0,9 z" fill="#93F2C8"></path></marker>'
+    + '<filter id="ndrop" x="-30%" y="-40%" width="160%" height="190%">'
+    +   '<feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#04080A" flood-opacity=".65"></feDropShadow>'
+    + '</filter>'
+    + '<filter id="eglow" x="-25%" y="-90%" width="150%" height="280%">'
+    +   '<feGaussianBlur stdDeviation="3" result="b"></feGaussianBlur>'
+    +   '<feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>'
+    + '</filter>'
+    + '<radialGradient id="vig" cx="50%" cy="48%" r="62%">'
+    +   '<stop offset="0" stop-color="#56C2E0" stop-opacity=".055"></stop>'
+    +   '<stop offset="1" stop-color="#56C2E0" stop-opacity="0"></stop>'
+    + '</radialGradient>'
     + '</defs>';
+
+  /* 階段帶：讓欄位讀得出來是階段，而不是一堆方塊剛好排成一排 */
+  s += '<rect x="0" y="0" width="1290" height="672" fill="url(#vig)"></rect>';
+  COLS.forEach((c, ci) => {
+    if (ci % 2 === 0)
+      s += '<rect x="'+c.x0+'" y="46" width="'+(c.x1-c.x0)+'" height="618" fill="#56C2E0" opacity=".022"></rect>';
+    if (ci) s += '<line x1="'+c.x0+'" y1="46" x2="'+c.x0+'" y2="664" stroke="#1E2C34" stroke-width="1"></line>';
+    s += '<text x="'+((c.x0+c.x1)/2)+'" y="30" text-anchor="middle" fill="#5B717D" '
+      + 'style="font-family:var(--cond);font-size:11px;letter-spacing:.2em">'+esc(c.nm)+'</text>';
+  });
+  s += '<line x1="6" y1="46" x2="1284" y2="46" stroke="#1E2C34" stroke-width="1"></line>';
 
   /* 邊 */
   ME.forEach((e, i) => {
@@ -1651,13 +1720,13 @@ function renderMech(){
     let path, lx, ly;
     if (back && e[1] === "n13"){
       /* CKD → 心血管事件：從 n14 上緣繞出，切進 n13 右緣 */
-      path = "M"+a.x+","+(a.y-NH/2)+" C"+a.x+","+(a.y-105)+" "+(b.x+108)+","+b.y+" "+(b.x+NW/2+5)+","+b.y;
-      lx = 1002; ly = 218;
+      path = "M"+a.x+","+(a.y-NH/2)+" C"+a.x+","+(a.y-108)+" "+(b.x+112)+","+b.y+" "+(b.x+NW/2+5)+","+b.y;
+      lx = 1022; ly = 240;
     } else if (back){
       /* CKD → RAAS 再活化：沿所有節點下方走一條直角回路，標籤壓在水平段上 */
-      path = "M"+a.x+","+(a.y+NH/2)+" L"+a.x+",565 Q"+a.x+",580 "+(a.x-15)+",580 "
-           + "L"+(b.x+15)+",580 Q"+b.x+",580 "+b.x+",565 L"+b.x+","+(b.y+NH/2+6);
-      lx = (a.x + b.x) / 2; ly = 576;
+      path = "M"+a.x+","+(a.y+NH/2)+" L"+a.x+",600 Q"+a.x+",615 "+(a.x-15)+",615 "
+           + "L"+(b.x+15)+",615 Q"+b.x+",615 "+b.x+",600 L"+b.x+","+(b.y+NH/2+6);
+      lx = (a.x + b.x) / 2; ly = 611;
     } else {
       const sx = a.x + NW/2, sy = a.y, tx = b.x - NW/2 - 5, ty = b.y;
       const dx = Math.max(28, (tx - sx) * 0.45);
@@ -1679,17 +1748,20 @@ function renderMech(){
       }
       if (lx === null){ const [px, py] = at(0.42); lx = px; ly = py + (i % 2 ? -11 : 13); }
     }
-    const col = cut ? "#93F2C8" : "#3C5462";
+    /* 線的粗細帶資訊：主幹比支流重，被切斷的邊最重且發光 */
+    const spine = SPINE.includes(i);
+    const col = cut ? "#93F2C8" : spine ? "#4C7185" : "#334B58";
+    const wd  = cut ? 2.4 : spine ? 2 : 1.1;
     s += '<g class="medge'+(shown ? "" : " off")+(cut ? " cut" : "")+'" data-edge="'+i+'" '
       + 'tabindex="'+(shown ? 0 : -1)+'" role="button" aria-label="'+esc(nt(a)+" 導致 "+nt(b)+"："+e[2])+'" '
       + 'style="color:'+col+'">';
-    s += '<path class="hit" d="'+path+'" fill="none" stroke="transparent" stroke-width="16"></path>';
-    s += '<path d="'+path+'" fill="none" stroke="'+col+'" stroke-width="'+(cut ? 2.2 : 1.3)+'" '
-      + 'marker-end="url(#'+(cut ? "arc" : "ar")+')"'+(cut ? ' stroke-dasharray="5 3"' : '')+'></path>';
-    const tw = e[2].length * 9.6 + 8;
-    s += '<rect x="'+(lx - tw/2)+'" y="'+(ly - 9)+'" width="'+tw+'" height="13" rx="2" '
-      + 'fill="#121A1F" opacity=".82"></rect>';
-    s += '<text x="'+lx+'" y="'+ly+'" text-anchor="middle">'+esc(e[2])+'</text>';
+    s += '<path class="hit" d="'+path+'" fill="none" stroke="transparent" stroke-width="18"></path>';
+    s += '<path d="'+path+'" fill="none" stroke="'+col+'" stroke-width="'+wd+'" stroke-linecap="round" '
+      + 'marker-end="url(#'+(cut ? "arc" : "ar")+')"'
+      + (cut ? ' stroke-dasharray="6 4" filter="url(#eglow)"' : '')+'></path>';
+    /* 標籤不再加底色塊：畫在節點之前，被節點蓋住就乾淨地消失 */
+    s += '<text x="'+lx+'" y="'+ly+'" text-anchor="middle" fill="'+(cut ? "#93F2C8" : "#6C8795")+'">'
+      + esc(e[2])+'</text>';
     s += '</g>';
   });
 
@@ -1698,21 +1770,30 @@ function renderMech(){
     const shown = vis(n);
     const sel = M.sel === n.id;
     const touched = M.drug && cuts.some(i => ME[i][0] === n.id || ME[i][1] === n.id);
-    const stroke = sel ? "#56C2E0" : touched ? "#93F2C8" : "#31485694";
+    const r = ROLE[ROLE_OF[n.id]];
+    const stroke = sel ? "#56C2E0" : touched ? "#93F2C8" : r.stroke;
+    const sw = sel ? 2.2 : touched ? 1.8 : (ROLE_OF[n.id] === "hub" ? 1.6 : 1);
     s += '<g class="mnode'+(shown ? "" : " off")+'" data-node="'+n.id+'" '
       + 'tabindex="'+(shown ? 0 : -1)+'" role="button" aria-label="'+esc(nt(n))+'">';
-    s += '<rect x="'+(n.x - NW/2)+'" y="'+(n.y - NH/2)+'" width="'+NW+'" height="'+NH+'" rx="3" '
-      + 'fill="'+(sel ? "#22303A" : "#18232A")+'" stroke="'+stroke+'" stroke-width="'+(sel || touched ? 1.8 : 1)+'"></rect>';
+    s += '<rect x="'+(n.x - NW/2)+'" y="'+(n.y - NH/2)+'" width="'+NW+'" height="'+NH+'" rx="4" '
+      + 'fill="'+(sel ? "#24333D" : r.fill)+'" stroke="'+stroke+'" stroke-width="'+sw+'" '
+      + 'filter="url(#ndrop)"></rect>';
+    /* 樞紐與終點各給一道左側色條，讓角色在掃視時就分得出來 */
+    if (ROLE_OF[n.id] === "hub" || ROLE_OF[n.id] === "end")
+      s += '<rect x="'+(n.x - NW/2)+'" y="'+(n.y - NH/2 + 1)+'" width="3" height="'+(NH-2)+'" rx="1.5" '
+        + 'fill="'+(ROLE_OF[n.id] === "hub" ? "#56C2E0" : "#BE3B44")+'"></rect>';
     const lines = n.t.split("|");
-    const top = lines.length > 1 ? n.y - 15 : n.y - 5;
+    const top = lines.length > 1 ? n.y - 14 : n.y - 4;
     lines.forEach((ln, li) =>
-      s += '<text x="'+n.x+'" y="'+(top + li*14)+'" text-anchor="middle">'+esc(ln)+'</text>');
-    s += '<text class="sub" x="'+n.x+'" y="'+(top + lines.length*14 + 2)+'" text-anchor="middle">'
-      + esc(n.s)+'</text>';
+      s += '<text x="'+n.x+'" y="'+(top + li*15)+'" text-anchor="middle" fill="'+r.ink+'">'
+        + esc(ln)+'</text>');
+    s += '<text class="sub" x="'+n.x+'" y="'+(top + lines.length*15 + 3)+'" text-anchor="middle" '
+      + 'fill="'+r.sub+'">'+esc(n.s)+'</text>';
     s += '</g>';
   });
 
   s += '</svg><figcaption>'
+    + '線的粗細帶資訊：<b style="color:#7FA9BA">粗線是主幹</b>（從樞紐一路走到末期腎病那條），細線是支流；左側藍條是樞紐節點，紅條是終點事件。'
     + '箭頭方向是因果方向，標籤是機轉本身而不是「有關係」。'
     + '點任何一個節點或一條箭頭看它的機轉；按上方任一種治療，圖上會亮出它<b style="color:var(--s0)">切斷的那幾條路</b>（綠色虛線）。'
     + '這張圖的用法是：治療不是在「控制數字」，是在剪斷特定的箭頭。'
