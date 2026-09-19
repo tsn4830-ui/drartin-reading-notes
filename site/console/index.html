@@ -222,6 +222,77 @@ dialog::backdrop{background:rgba(5,9,11,.78)}
   border:1px solid var(--line);border-radius:2px;padding:1px 6px;white-space:nowrap;margin-top:2px}
 .stage.on .n{color:var(--chrome);border-color:var(--chrome-dim)}
 
+/* ── 尺度切換 ── */
+.modeswitch{display:flex;gap:1px;background:var(--line-soft);border:1px solid var(--line);
+  border-radius:var(--r);overflow:hidden;margin-top:16px}
+.modebtn{flex:1;background:var(--panel);border:0;color:var(--ink-3);cursor:pointer;
+  padding:11px 14px;text-align:left;font:inherit;transition:.14s;min-width:0;
+  display:flex;flex-direction:column;gap:2px}
+.modebtn:hover{background:var(--panel-2);color:var(--ink-2)}
+.modebtn[aria-pressed="true"]{background:var(--panel-3);color:var(--ink);
+  box-shadow:inset 3px 0 0 var(--chrome)}
+.modebtn .mt{font-family:var(--cond);font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.modebtn .md{font-size:11.5px;color:var(--ink-3);line-height:1.4}
+
+/* ── 族群尺度 ── */
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;
+  background:var(--line-soft);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;margin-top:14px}
+.hstat{background:var(--panel);padding:15px 16px;display:flex;flex-direction:column;gap:5px}
+.hstat .hv{font-family:var(--mono);font-size:32px;font-weight:700;line-height:1;letter-spacing:-.03em}
+.hstat .hk{font-family:var(--cond);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.hstat .hn{font-size:11.5px;color:var(--ink-3);line-height:1.5}
+.barlist{display:flex;flex-direction:column;gap:13px}
+.bar{display:flex;flex-direction:column;gap:5px}
+.bar .bl{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:12.5px}
+.bar .bl b{font-weight:500}
+.bar .bv{font-family:var(--mono);font-weight:700;font-variant-numeric:tabular-nums}
+.bar .tr{height:11px;background:var(--panel-3);border-radius:2px;overflow:hidden;display:flex;gap:2px}
+.bar .fl{height:100%;border-radius:2px;min-width:2px}
+.bar .bn{font-size:11px;color:var(--ink-3);line-height:1.45}
+.rank{display:flex;flex-direction:column;gap:7px}
+.rrow{display:grid;grid-template-columns:96px 1fr 58px;gap:9px;align-items:center;font-size:12.5px}
+.rrow .rc{color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rrow .rt{height:13px;background:var(--panel-3);border-radius:2px;overflow:hidden;display:flex}
+.rrow .rf{display:block;height:100%;border-radius:2px;min-width:2px}
+.rrow .rv{font-family:var(--mono);font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.rrow.me .rc,.rrow.me .rv{color:var(--s3);font-weight:700}
+.srclist{display:flex;flex-direction:column;gap:11px}
+.src1{display:grid;grid-template-columns:auto 1fr;gap:10px;font-size:12px;color:var(--ink-3);line-height:1.6}
+.src1 .sn{font-family:var(--cond);font-size:10.5px;letter-spacing:.09em;color:var(--chrome);
+  border:1px solid var(--chrome-dim);border-radius:2px;padding:1px 6px;height:19px;
+  display:inline-flex;align-items:center;white-space:nowrap}
+.src1 b{color:var(--ink-2);font-weight:500}
+
+/* ── 機轉尺度 ── */
+.mechbar{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;
+  margin-top:14px;padding:11px 13px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r)}
+.stepper{display:flex;gap:1px;background:var(--line-soft);border:1px solid var(--line);
+  border-radius:var(--r);overflow:hidden;flex-wrap:wrap}
+.stepbtn{background:var(--panel);border:0;color:var(--ink-3);cursor:pointer;font-family:var(--cond);
+  font-size:12px;letter-spacing:.07em;padding:7px 11px;transition:.14s;white-space:nowrap}
+.stepbtn:hover{background:var(--panel-2);color:var(--ink-2)}
+.stepbtn[aria-pressed="true"]{background:var(--panel-3);color:var(--chrome)}
+.drugbar{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.drugbtn{font-family:var(--cond);font-size:12px;letter-spacing:.05em;background:transparent;
+  color:var(--ink-3);border:1px solid var(--line);border-radius:var(--r);padding:5px 10px;cursor:pointer;transition:.14s}
+.drugbtn:hover{color:var(--ink-2);border-color:var(--chrome-dim)}
+.drugbtn[aria-pressed="true"]{color:var(--ground);background:var(--chrome);border-color:var(--chrome);font-weight:600}
+svg.mech{display:block;width:100%;max-width:100%;height:auto}
+.mnode{cursor:pointer}
+.mnode rect{transition:.15s}
+.mnode:hover rect{stroke-width:2}
+.mnode:focus-visible rect{stroke:var(--chrome);stroke-width:2.4}
+.mnode text{font-family:var(--body);font-size:11px;fill:var(--ink);pointer-events:none}
+.mnode .sub{font-size:9.5px;fill:var(--ink-3)}
+.mnode.off{opacity:.16}
+.medge{cursor:pointer}
+.medge:hover path.hit{stroke:var(--chrome);stroke-opacity:.25}
+.medge.off{opacity:.12}
+.medge text{font-family:var(--cond);font-size:9.5px;letter-spacing:.04em;fill:var(--ink-3);pointer-events:none}
+.medge.cut text{fill:var(--s0)}
+figcaption{font-size:11.5px;color:var(--ink-3);line-height:1.6;padding:9px 3px 0}
+
 @media (max-width:1180px){
   .main{grid-template-columns:minmax(0,1fr) 330px}
   .railcard{grid-column:1/-1}
@@ -241,19 +312,20 @@ dialog::backdrop{background:rgba(5,9,11,.78)}
 
 <header class="top">
   <div>
-    <div class="brandline"><span class="pulse"></span><span class="eyebrow">代謝共病 · 病人層級態勢圖 · 階段一</span></div>
-    <h1>代謝共病態勢儀</h1>
-    <p style="margin:6px 0 0;color:var(--ink-2);font-size:13px;max-width:60ch">
-      一位病人的糖尿病、肥胖、高血壓、高血脂與慢性腎臟病，攤在同一個器官地圖上。
-      點器官鎖定、拉時間軸回放病程、勾選藥物推演未來。
-    </p>
+    <div class="brandline"><span class="pulse"></span><span class="eyebrow" id="pageEyebrow">代謝共病 · 病人層級態勢圖</span></div>
+    <h1 id="pageTitle">代謝共病態勢儀</h1>
+    <p id="pageSub" style="margin:6px 0 0;color:var(--ink-2);font-size:13px;max-width:60ch"></p>
   </div>
-  <div style="display:flex;flex-direction:column;gap:9px;align-items:flex-start">
+  <div style="display:flex;flex-direction:column;gap:9px;align-items:flex-start" id="caseControls">
     <span class="eyebrow">載入案例</span>
     <div class="caselist" id="caselist"></div>
     <button class="ghost" id="openForm">輸入我的病人數值 →</button>
   </div>
 </header>
+
+<nav class="modeswitch" id="modeswitch" aria-label="檢視尺度"></nav>
+
+<div id="mode-patient">
 
 <p id="whoStrip" style="margin:14px 0 0;font-size:12.5px;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:3px 14px"></p>
 
@@ -313,20 +385,72 @@ dialog::backdrop{background:rgba(5,9,11,.78)}
   </section>
 
 </div>
+</div><!-- /mode-patient -->
+
+<div id="mode-pop" hidden>
+
+  <section class="hero" id="popHero"></section>
+
+  <div class="main" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+    <section class="card">
+      <div class="hd"><h2>台灣成人慢性病盛行率</h2><span class="eyebrow">國民營養健康調查</span></div>
+      <div class="bd" id="popPrev"></div>
+    </section>
+    <section class="card">
+      <div class="hd"><h2>知曉率缺口</h2><span class="eyebrow">診斷不出來的那一半</span></div>
+      <div class="bd" id="popAware"></div>
+    </section>
+  </div>
+
+  <section class="card" style="margin-top:14px">
+    <div class="hd"><h2>末期腎病發生率 · 國際比較</h2><span class="eyebrow">USRDS 年度報告 · 2020 年資料</span></div>
+    <div class="bd" id="popEskd"></div>
+  </section>
+
+  <section class="card" style="margin-top:14px">
+    <div class="hd"><h2>資料來源與缺口</h2><span class="eyebrow">每個數字都可回溯</span></div>
+    <div class="bd" id="popSrc"></div>
+  </section>
+
+</div><!-- /mode-pop -->
+
+<div id="mode-mech" hidden>
+
+  <div class="mechbar">
+    <div class="stepper" id="mechSteps"></div>
+    <div class="drugbar" id="mechDrugs"></div>
+  </div>
+
+  <div class="main" style="grid-template-columns:minmax(0,1fr) 352px">
+    <section class="card">
+      <div class="hd"><h2>心腎代謝共病網絡</h2><span class="eyebrow" id="mechStage">—</span></div>
+      <div class="bd" id="mechCanvas" style="padding:10px"></div>
+    </section>
+    <section class="card dossier">
+      <div class="hd"><h2 id="mechTitle">這張圖在講什麼</h2></div>
+      <div class="bd" id="mechPanel"></div>
+    </section>
+  </div>
+
+</div><!-- /mode-mech -->
 
 <section class="notes">
   <div>
-    <h2>路線圖</h2>
+    <h2>三個尺度</h2>
     <div class="roadmap">
-      <div class="stage on"><span class="n">階段一 · 現行</span><div><b style="color:var(--ink)">病人身體儀表板</b>
-        ── 單一病人的器官風險地圖、病程回放、介入推演。就是你現在看的這頁。</div></div>
-      <div class="stage"><span class="n">階段二</span><div><b style="color:var(--ink)">流行病學地球儀</b>
-        ── 同一套圖層引擎換掉資料來源：台灣各縣市與全球的糖尿病、CKD、肥胖、高血壓盛行率與透析發生率，
-        時間軸從「這位病人的六次就診」改成「二十年趨勢」。</div></div>
-      <div class="stage"><span class="n">階段三</span><div><b style="color:var(--ink)">病理機轉教學模型</b>
-        ── 器官節點之間畫上共病網絡的因果邊：胰島素阻抗 → 內臟脂肪 → 高血壓／高血脂 → 腎絲球高壓 → CKD，
-        每條邊掛上可介入藥物與其證據等級，逐步展開當講課動畫。</div></div>
+      <div class="stage on"><span class="n">病人</span><div><b style="color:var(--ink)">身體儀表板</b>
+        ── 單一病人的器官風險地圖、病程回放、介入推演。診間解釋與衛教用。</div></div>
+      <div class="stage on"><span class="n">族群</span><div><b style="color:var(--ink)">疾病負擔</b>
+        ── 台灣三高的盛行率與知曉率缺口、末期腎病發生率的國際比較、全球糖尿病人口。演講開場與公衛簡報用。</div></div>
+      <div class="stage on"><span class="n">機轉</span><div><b style="color:var(--ink)">共病因果網絡</b>
+        ── 十五個節點、二十四條因果邊，可逐步展開，可按治療看它切斷哪幾條路。教學與講課用。</div></div>
     </div>
+    <p style="margin-top:11px">
+      三個尺度共用同一組嚴重度色階與同一套版面語彙，是刻意的：從一位病人拉遠到整個族群、
+      再鑽進機轉，看到的是同一件事的三個放大倍率。切換不會遺失你在其他尺度的選擇。
+    </p>
+    <p><b>還沒做的：</b>縣市層級地圖（開放資料取不到，見族群尺度的缺口說明）、
+      病程時間軸的分享連結、機轉圖的自訂節點。</p>
   </div>
 
   <div>
@@ -1299,7 +1423,475 @@ $("#patientForm").addEventListener("submit", e => {
 $("#backAll").addEventListener("click", () => { S.organ = null; render(); });
 $("#simreset").addEventListener("click", () => { S.sims.clear(); render(); });
 
+/* ═══════════════════════════════════════════════════════════════
+   7. 族群尺度 — 流行病學
+   每個數字都標來源；沒有可引用來源的就不畫，見「資料來源與缺口」。
+   ═══════════════════════════════════════════════════════════════ */
+const TW_PREV = [
+  { k:"過重及肥胖", v:50.3,  lvl:3, n:"18 歲以上成人，BMI ≥24。每兩個成年人就有一個。" },
+  { k:"高血脂",     v:31,    lvl:2, n:"18 歲以上成人。" },
+  { k:"高血壓",     v:26.76, lvl:2, n:"18 歲以上成人。約每四人有一人。" },
+  { k:"糖尿病",     v:12.8,  lvl:2, n:"20 歲以上成人，空腹血糖 ≥126 mg/dL 或正在服用降血糖藥物。" },
+];
+const TW_AWARE = [
+  { k:"高血壓", prev:26.76, aware:68 },
+  { k:"高血糖", prev:12.8,  aware:66 },
+  { k:"高血脂", prev:31,    aware:23 },
+];
+const ESKD = [
+  { c:"台灣",   v:525, me:true }, { c:"美國",   v:396 },
+  { c:"新加坡", v:366 },          { c:"南韓",   v:355 },
+  { c:"泰國",   v:339 },          { c:"日本",   v:307 },
+  { c:"印尼",   v:303 },
+  { c:"各國中位數", v:146, ref:true }, { c:"厄瓜多 · 最低", v:19, ref:true },
+];
+const HERO = [
+  { v:"525", u:"pmp", k:"末期腎病發生率 · 台灣",
+    n:"全球第一。各國中位數 146 pmp，最低的厄瓜多是 19 pmp — 台灣是它的 27 倍。" },
+  { v:"3,429", u:"pmp", k:"透析盛行率 · 台灣",
+    n:"2018 年資料，同年發生率 523 pmp。台灣自 2000 年向 USRDS 提報以來，發生率與盛行率兩項都是世界第一。" },
+  { v:"23", u:"%", k:"高血脂知曉率 · 台灣",
+    n:"31% 的成人有高血脂，其中每四人不到一人知道自己有。這是三高裡最大的診斷缺口。" },
+  { v:"5.89", u:"億人", k:"全球糖尿病人口", col:"var(--ink)",
+    n:"20–79 歲成人的 11.1%。推估 2050 年達 8.53 億人，占該年齡層 13%。" },
+];
+const SOURCES = [
+  ["盛行率", "<b>國民營養健康狀況變遷調查 2017–2020</b>（衛生福利部國民健康署）── 過重及肥胖 50.3%、高血壓 26.76%、高血脂 31%，以及三高的自我知曉率。"],
+  ["糖尿病", "<b>國民營養健康調查 2019–2023</b>（國民健康署）── 20 歲以上糖尿病盛行率 12.8%，定義為空腹 8 小時以上血糖 ≥126 mg/dL 或近一個月服用降血糖藥物。"],
+  ["末期腎病", "<b>USRDS Annual Data Report</b>（美國腎臟資料登錄系統）── 2020 年各國接受治療的末期腎病發生率；台灣 525 pmp 居首。台灣 2018 年發生率 523 pmp、盛行率 3,429 pmp。"],
+  ["全球糖尿病", "<b>IDF Diabetes Atlas 第 11 版（2025）</b>── 全球 20–79 歲成人 5.89 億人（11.1%），2050 年推估 8.53 億人（13%）。"],
+  ["缺口", "<b>沒有縣市別地圖。</b> 政府資料開放平臺在這個執行環境被出口代理擋住，我拿不到縣市別的分項資料。與其畫一張看起來很厲害但數字是我編的台灣地圖，不如不畫。你把 CSV 給我，我就把縣市層級補上。"],
+  ["缺口", "<b>沒有慢性腎臟病盛行率數字。</b> 搜尋沒有找到我有把握引用的成人 CKD 盛行率，所以這格留白，改用末期腎病的透析數字呈現腎臟疾病負擔 — 那部分的來源是可靠的。"],
+];
+
+function renderPop(){
+  $("#popHero").innerHTML = HERO.map(h =>
+    '<div class="hstat"><span class="hk">'+esc(h.k)+'</span>'
+    + '<span class="hv" style="color:'+(h.col || "var(--s3)")+'">'+esc(h.v)
+    + '<span style="font-size:14px;font-weight:400;color:var(--ink-3);margin-left:4px;font-family:var(--body)">'
+    + esc(h.u)+'</span></span>'
+    + '<span class="hn">'+esc(h.n)+'</span></div>').join("");
+
+  const mx = 55;
+  $("#popPrev").innerHTML =
+    '<div class="barlist">' + TW_PREV.map(d => {
+      const b = band(d.lvl);
+      return '<div class="bar"><span class="bl"><b>'+esc(d.k)+'</b>'
+        + '<span class="bv" style="color:'+b.color+'">'+fx(d.v,1)+'%</span></span>'
+        + '<span class="tr"><span class="fl" style="width:'+(d.v/mx*100)+'%;background:'+b.color+'"></span></span>'
+        + '<span class="bn">'+esc(d.n)+'</span></div>';
+    }).join("") + '</div>'
+    + '<p style="margin:14px 0 0;font-size:11.5px;color:var(--ink-3);line-height:1.6">'
+    + '軸長以 55% 為滿格。四項當中只有糖尿病是以檢驗值定義的硬指標，其餘為調查定義；'
+    + '慢性腎臟病沒有列入，原因見下方資料來源與缺口。</p>';
+
+  $("#popAware").innerHTML =
+    '<div class="barlist">' + TW_AWARE.map(d => {
+      const known = d.prev * d.aware / 100, unknown = d.prev - known;
+      return '<div class="bar"><span class="bl"><b>'+esc(d.k)+'</b>'
+        + '<span class="bv">盛行率 '+fx(d.prev,1)+'%</span></span>'
+        + '<span class="tr">'
+        +   '<span class="fl" style="width:'+(known/mx*100)+'%;background:var(--s0)"></span>'
+        +   '<span class="fl" style="width:'+(unknown/mx*100)+'%;background:var(--s3)"></span>'
+        + '</span>'
+        + '<span class="bn"><span style="color:var(--s0)">▮ 知道自己有 '+fx(d.aware,0)+'%'
+        + '（'+fx(known,1)+' 個百分點）</span>　'
+        + '<span style="color:var(--s3)">▮ 不知道 '+fx(100-d.aware,0)+'%'
+        + '（'+fx(unknown,1)+' 個百分點）</span></span></div>';
+    }).join("") + '</div>'
+    + '<p style="margin:14px 0 0;font-size:11.5px;color:var(--ink-3);line-height:1.6">'
+    + '條長是盛行率，切分是知曉率，兩張圖用同一把尺（滿格 55%）所以可以直接比。'
+    + '<b style="color:var(--s3)">高血脂是三高裡缺口最大的一項</b>：盛行率最高，知曉率卻只有 23%。'
+    + '換句話說，全台成人約有 24 個百分點的人帶著未被發現的高血脂在走路。</p>';
+
+  const top = ESKD[0].v;
+  $("#popEskd").innerHTML =
+    '<div class="rank">' + ESKD.map(d =>
+      '<div class="rrow'+(d.me ? " me" : "")+'">'
+      + '<span class="rc"'+(d.ref ? ' style="color:var(--ink-3)"' : '')+'>'+esc(d.c)+'</span>'
+      + '<span class="rt"><span class="rf" style="width:'+(d.v/top*100)+'%;background:'
+      + (d.me ? "var(--s3)" : d.ref ? "var(--line)" : "var(--chrome-dim)")+'"></span></span>'
+      + '<span class="rv">'+d.v+'</span></div>').join("") + '</div>'
+    + '<p style="margin:14px 0 0;font-size:11.5px;color:var(--ink-3);line-height:1.6">'
+    + '每百萬人口新發生、接受治療的末期腎病人數（pmp），2020 年。'
+    + '台灣的糖尿病盛行率 12.8% 並不是全球最高，末期腎病發生率卻是 — '
+    + '<b style="color:var(--ink-2)">缺口不在得病的人多，而在從糖尿病走到透析這一段路上。'
+    + '這正好是第三個尺度那張機轉圖要處理的問題。</b></p>';
+
+  $("#popSrc").innerHTML = '<div class="srclist">' + SOURCES.map(s =>
+    '<div class="src1"><span class="sn"'
+    + (s[0] === "缺口" ? ' style="color:var(--s2);border-color:var(--s2)"' : '')
+    + '>'+esc(s[0])+'</span><span>'+s[1]+'</span></div>').join("") + '</div>';
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   8. 機轉尺度 — 心腎代謝共病網絡
+   ═══════════════════════════════════════════════════════════════ */
+const MN = [
+  { id:"n1",  x:80,   y:300, st:1, t:"熱量過剩 · 久坐", s:"能量失衡",
+    d:"一切的起點。攝入持續大於消耗，多餘能量必須找地方存。存得下就是皮下脂肪，存不下就開始異位堆積。",
+    m:["體重", "腰圍", "身體活動量"] },
+  { id:"n2",  x:235,  y:230, st:1, t:"內臟脂肪堆積", s:"異位脂肪",
+    d:"皮下脂肪的儲存量有上限。超過之後脂肪往內臟、肝臟、肌肉、心包膜堆積，這是代謝傷害真正開始的地方 — 所以腰圍比體重更會說話。",
+    m:["腰圍（男 ≥90、女 ≥80 公分）", "BMI"] },
+  { id:"n3",  x:235,  y:380, st:1, t:"脂肪組織功能失調", s:"游離脂肪酸 · 發炎",
+    d:"肥大的脂肪細胞開始分泌發炎激素、釋放游離脂肪酸，脂聯素下降。脂肪組織從儲存器官變成內分泌與發炎器官。",
+    m:["三酸甘油酯", "HDL-C", "hs-CRP"] },
+  { id:"n4",  x:390,  y:210, st:2, t:"胰島素阻抗", s:"代償性高胰島素血症",
+    d:"這是整張圖的樞紐。胰島素在肌肉與肝臟失效，胰臟代償性大量分泌。高胰島素血症本身又會促進腎小管鈉再吸收、交感活化與肝臟 VLDL 合成 — 三高從這裡同時長出來。",
+    m:["HOMA-IR", "空腹胰島素", "三酸甘油酯／HDL 比值"] },
+  { id:"n5",  x:390,  y:390, st:2, t:"交感與 RAAS 活化", s:"礦皮質素受體活化",
+    d:"脂肪組織會釋放醛固酮釋放因子，加上交感神經張力上升，使腎素—血管收縮素—醛固酮系統與礦皮質素受體長期過度活化。這條路除了升壓，還獨立造成發炎與纖維化。",
+    m:["血壓", "血鉀", "醛固酮／腎素比值"] },
+  { id:"n6",  x:545,  y:100, st:3, t:"高血糖 · 糖尿病", s:"β 細胞失代償",
+    d:"胰島素阻抗本身不會造成高血糖 — 要等 β 細胞代償不住才會。所以血糖往往是最後一個壞掉的指標，體重與腰圍早好幾年就先走了。",
+    m:["HbA1c", "空腹血糖", "口服葡萄糖耐受試驗"] },
+  { id:"n7",  x:545,  y:240, st:3, t:"高血壓", s:"鈉滯留 · 血管阻力",
+    d:"高胰島素血症促進腎小管鈉再吸收，RAAS 與交感活化提高血管阻力，內臟脂肪壓迫腎臟。這是容積與阻力同時上升的高血壓。",
+    m:["居家血壓（722 原則）", "24 小時血壓監測"] },
+  { id:"n8",  x:545,  y:380, st:3, t:"致動脈粥狀硬化|血脂異常", s:"高 TG · 低 HDL",
+    d:"胰島素阻抗使肝臟過度輸出 VLDL。LDL-C 的數值可能只是中等，但顆粒變小變密、數量變多，穿透內皮的能力大增 — 這就是為什麼只看 LDL-C 會低估風險，要看非-HDL-C。",
+    m:["三酸甘油酯", "HDL-C", "非-HDL-C", "ApoB"] },
+  { id:"n9",  x:545,  y:510, st:3, t:"MASLD", s:"代謝功能障礙脂肪肝",
+    d:"肝臟同時是受害者與加害者：堆積脂肪受損，又持續輸出 VLDL 與促發炎因子回到循環，把血脂異常推得更遠。",
+    m:["肝功能", "腹部超音波", "FIB-4"] },
+  { id:"n10", x:700,  y:320, st:4, t:"腎絲球高壓|與高過濾", s:"入球小動脈擴張",
+    d:"高血糖使近端小管鈉—葡萄糖共同再吸收增加，送達緻密斑的鈉變少，管球回饋誤判為「血流不足」而擴張入球小動脈；RAAS 又收縮出球小動脈。兩端一擴一縮，腎絲球內壓飆高。早期 eGFR 甚至會「看起來很好」。",
+    m:["eGFR", "早期高過濾現象"] },
+  { id:"n11", x:700,  y:150, st:4, t:"內皮功能障礙|與粥狀硬化", s:"發炎 · 氧化壓力",
+    d:"高血糖的糖化終產物、小而密 LDL 的穿透、高血壓的剪應力，三股力量同時作用在血管內皮上。斑塊由此形成。",
+    m:["頸動脈內中膜厚度", "冠狀動脈鈣化分數"] },
+  { id:"n12", x:855,  y:320, st:5, t:"白蛋白尿", s:"腎絲球屏障受損",
+    d:"腎絲球內壓把蛋白擠過濾過屏障。白蛋白尿不只是損傷的標記，濾過的蛋白本身對腎小管有毒性，會回頭加速纖維化 — 所以降 UACR 本身就是治療目標，不只是追蹤指標。",
+    m:["UACR", "KDIGO A1／A2／A3 分級"] },
+  { id:"n13", x:855,  y:150, st:5, t:"心血管事件", s:"心肌梗塞 · 中風",
+    d:"代謝共病最常見的死因。要注意的是：CKD 病人死於心血管事件的機率，遠高於活到需要透析的機率。",
+    m:["ESC 風險分類", "既往事件"] },
+  { id:"n14", x:1010, y:320, st:5, t:"CKD 進展", s:"腎小管間質纖維化",
+    d:"腎元流失後，剩下的腎元代償性高過濾，於是壞得更快。更麻煩的是它會回頭：腎功能下降再度活化 RAAS，把血壓與腎絲球內壓一起推高。這是自我加速的迴圈，也是為什麼介入要趁早 — 等 eGFR 掉下來才做，能挽回的已經有限。",
+    m:["eGFR 斜率", "KDIGO G 分期", "KFRE"] },
+  { id:"n15", x:1165, y:320, st:5, t:"末期腎病", s:"透析 · 移植",
+    d:"終點。台灣的末期腎病發生率是全世界最高的（525 pmp，2020 年），而上游的糖尿病盛行率並非世界第一 — 差距就發生在這張圖中間那幾段路上。",
+    m:["透析", "腎臟移植"] },
+];
+
+const ME = [
+  ["n1","n2",  "能量儲存",           "攝入超過消耗，皮下脂肪儲存達上限後開始異位堆積。"],
+  ["n2","n3",  "脂肪細胞肥大",       "脂肪細胞體積增大到缺氧，啟動發炎與細胞激素分泌。"],
+  ["n2","n4",  "游離脂肪酸",         "內臟脂肪經門靜脈直接把游離脂肪酸送進肝臟，干擾胰島素訊號。"],
+  ["n3","n4",  "發炎激素",           "TNF-α、IL-6 上升與脂聯素下降，共同破壞胰島素受質訊號傳遞。"],
+  ["n3","n5",  "醛固酮釋放因子",     "脂肪組織分泌的因子直接刺激腎上腺分泌醛固酮，與血壓無關地活化礦皮質素受體。"],
+  ["n4","n6",  "β 細胞失代償",       "代償性高胰島素血症維持數年後 β 細胞功能耗竭，血糖才開始上升。"],
+  ["n4","n7",  "鈉再吸收",           "高胰島素血症促進腎小管鈉再吸收，使體液容積上升。"],
+  ["n4","n8",  "VLDL 過度分泌",      "肝臟脂質合成上升、ApoB 分解減少，輸出大量富含三酸甘油酯的 VLDL。"],
+  ["n4","n9",  "肝臟脂質堆積",       "肝臟新生脂質合成增加，脂肪堆積形成 MASLD。"],
+  ["n5","n7",  "血管收縮 · 鈉滯留",  "血管收縮素 II 升壓，醛固酮促鈉滯留，交感張力提高心輸出與阻力。"],
+  ["n5","n10", "出球小動脈收縮",     "血管收縮素 II 優先收縮出球小動脈，直接推高腎絲球內壓。"],
+  ["n6","n10", "管球回饋失調",       "近端小管鈉—葡萄糖再吸收增加，送到緻密斑的鈉變少，回饋機制誤判而擴張入球小動脈。"],
+  ["n6","n11", "糖化終產物",         "長期高血糖產生糖化終產物，交聯血管基質並促進氧化壓力。"],
+  ["n7","n10", "壓力直接傳遞",       "全身高血壓在入球小動脈自我調節失效時直接傳入腎絲球。"],
+  ["n7","n11", "剪應力",             "搏動性剪應力反覆傷害血管內皮。"],
+  ["n8","n11", "小而密 LDL 穿透",    "小而密 LDL 顆粒更易穿過內皮並被氧化，被巨噬細胞吞噬形成泡沫細胞。"],
+  ["n9","n8",  "VLDL 輸出",          "脂肪肝持續向循環輸出 VLDL，強化血脂異常。"],
+  ["n10","n12","屏障通透性上升",     "腎絲球內壓與足細胞損傷使白蛋白漏出。"],
+  ["n11","n13","斑塊破裂",           "不穩定斑塊破裂形成血栓，造成急性事件。"],
+  ["n12","n14","腎小管毒性",         "濾過的蛋白對腎小管有直接毒性，促發間質發炎與纖維化。"],
+  ["n12","n13","血管風險放大",       "白蛋白尿是全身內皮功能障礙的標記，獨立預測心血管事件。"],
+  ["n14","n15","腎功能耗竭",         "殘餘腎元代償性高過濾，加速最後的功能流失。"],
+  ["n14","n13","心腎症候群", "CKD 使心血管風險倍增：容積負荷、尿毒素、貧血、礦物質骨病變共同作用。", "back"],
+  ["n14","n5", "RAAS 再活化", "腎功能下降造成鈉水滯留與 RAAS 再度活化，沿著既有的路徑回頭把血壓與腎絲球內壓都推得更高 — 這是整張圖唯一一條回到上游的邊，也是這個網絡會自我加速的原因。", "back"],
+];
+
+const DRUGS = [
+  { id:"life", nm:"減重 5–10% · 運動",    cuts:[0,1,2],            note:"對整張圖最上游的介入，一次影響下游全部分支。" },
+  { id:"bari", nm:"代謝手術",              cuts:[0,1,2,5],          note:"BMI ≥35 合併共病可討論；減重幅度最大，糖尿病緩解率最高。" },
+  { id:"glp1", nm:"GLP-1 受體促效劑",      cuts:[1,2,5,12,17],      note:"減重、降糖，並有獨立於降糖之外的抗動脈粥狀硬化與腎臟保護效果。" },
+  { id:"tzp",  nm:"GIP／GLP-1 雙重促效劑", cuts:[0,1,2,5],          note:"減重幅度接近手術等級，把上游能量失衡這一段壓得最低。" },
+  { id:"sglt2",nm:"SGLT2 抑制劑",          cuts:[11,13,17,19,21],   note:"關鍵在恢復管球回饋：讓鈉重新送達緻密斑，入球小動脈回縮，腎絲球內壓下降。這也是它一開始會讓 eGFR 掉一點的原因 — 那是壓力正常化，不是腎傷害。" },
+  { id:"ras",  nm:"ACEi／ARB",             cuts:[9,10,13,17],       note:"從出球小動脈端降壓，是白蛋白尿性 CKD 的基礎用藥。" },
+  { id:"fine", nm:"Finerenone",            cuts:[4,9,17,19],        note:"非類固醇型礦皮質素受體拮抗劑，切的是發炎與纖維化那條路，與 RAS 阻斷劑的作用點不同，可疊加。需監測血鉀。" },
+  { id:"lip",  nm:"Statin · Ezetimibe · PCSK9i", cuts:[15,18],      note:"只切血脂到血管這一段，對腎臟那條主線沒有作用 — 這正是為什麼降脂做得再好，腎病照樣進展。" },
+];
+
+const STAGES = [
+  { k:0, nm:"全圖",                 d:"十五個節點、二十四條因果邊的完整網絡。" },
+  { k:1, nm:"① 能量失衡",           d:"起點只有一件事：存不下的能量開始往內臟跑。" },
+  { k:2, nm:"② 胰島素阻抗成形",     d:"樞紐節點就位。這裡是整張圖的收束點，也是所有下游分支的共同源頭。" },
+  { k:3, nm:"③ 三高同時長出來",     d:"糖尿病、高血壓、高血脂不是三個病，是同一個上游機轉的三個表現面。注意血糖是最後才壞的。" },
+  { k:4, nm:"④ 標的器官",           d:"腎絲球與血管內皮開始承受壓力。腎臟這端的早期表現是「高過濾」，eGFR 看起來甚至是好的。" },
+  { k:5, nm:"⑤ 終點與惡性循環",     d:"白蛋白尿、心血管事件、CKD 進展、末期腎病。注意最下方那兩條回頭的箭頭 — 終點會回來加重起點。" },
+];
+
+const M = { stage:0, drug:null, sel:null };
+const mnode = id => MN.find(n => n.id === id);
+const nt = n => n.t.replace(/\|/g, "");   /* 節點標題去掉折行符號 */
+
+function renderMech(){
+  const host = $("#mechCanvas");
+  const NW = 140, NH = 54;
+  const vis = n => M.stage === 0 || n.st <= M.stage;
+  const cuts = M.drug ? DRUGS.find(d => d.id === M.drug).cuts : [];
+
+  let s = '<figure style="margin:0"><svg class="mech" viewBox="0 0 1260 630" role="img" '
+    + 'aria-label="心腎代謝共病的因果網絡：從能量失衡經胰島素阻抗分岔為三高，'
+    + '再匯聚到腎絲球高壓與血管內皮損傷，終點為末期腎病與心血管事件。">';
+  s += '<defs>'
+    + '<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+    + '<path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path></marker>'
+    + '<marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+    + '<path d="M0,0 L10,5 L0,10 z" fill="#93F2C8"></path></marker>'
+    + '</defs>';
+
+  /* 邊 */
+  ME.forEach((e, i) => {
+    const a = mnode(e[0]), b = mnode(e[1]);
+    const shown = vis(a) && vis(b);
+    const cut = cuts.includes(i);
+    const back = e[4] === "back";
+    let path, lx, ly;
+    if (back && e[1] === "n13"){
+      /* CKD → 心血管事件：從 n14 上緣繞出，切進 n13 右緣 */
+      path = "M"+a.x+","+(a.y-NH/2)+" C"+a.x+","+(a.y-105)+" "+(b.x+108)+","+b.y+" "+(b.x+NW/2+5)+","+b.y;
+      lx = 1002; ly = 218;
+    } else if (back){
+      /* CKD → RAAS 再活化：沿所有節點下方走一條直角回路，標籤壓在水平段上 */
+      path = "M"+a.x+","+(a.y+NH/2)+" L"+a.x+",565 Q"+a.x+",580 "+(a.x-15)+",580 "
+           + "L"+(b.x+15)+",580 Q"+b.x+",580 "+b.x+",565 L"+b.x+","+(b.y+NH/2+6);
+      lx = (a.x + b.x) / 2; ly = 576;
+    } else {
+      const sx = a.x + NW/2, sy = a.y, tx = b.x - NW/2 - 5, ty = b.y;
+      const dx = Math.max(28, (tx - sx) * 0.45);
+      path = "M"+sx+","+sy+" C"+(sx+dx)+","+sy+" "+(tx-dx)+","+ty+" "+tx+","+ty;
+      /* 標籤沿曲線找一個不壓到任何節點的位置；找不到就用預設點 */
+      const w = e[2].length * 9.6 + 8;
+      const at = t => { const u = 1 - t; return [
+        u*u*u*sx + 3*u*u*t*(sx+dx) + 3*u*t*t*(tx-dx) + t*t*t*tx,
+        u*u*u*sy + 3*u*u*t*sy      + 3*u*t*t*ty      + t*t*t*ty ]; };
+      const clear = (px, py) => !MN.some(n =>
+        Math.abs(px - n.x) < NW/2 + w/2 - 4 && Math.abs(py - n.y) < NH/2 + 9);
+      lx = null;
+      for (const t of [0.42, 0.28, 0.58, 0.16, 0.72]){
+        for (const dy of [13, -11, 24, -22]){
+          const [px, py] = at(t);
+          if (clear(px, py + dy)){ lx = px; ly = py + dy; break; }
+        }
+        if (lx !== null) break;
+      }
+      if (lx === null){ const [px, py] = at(0.42); lx = px; ly = py + (i % 2 ? -11 : 13); }
+    }
+    const col = cut ? "#93F2C8" : "#3C5462";
+    s += '<g class="medge'+(shown ? "" : " off")+(cut ? " cut" : "")+'" data-edge="'+i+'" '
+      + 'tabindex="'+(shown ? 0 : -1)+'" role="button" aria-label="'+esc(nt(a)+" 導致 "+nt(b)+"："+e[2])+'" '
+      + 'style="color:'+col+'">';
+    s += '<path class="hit" d="'+path+'" fill="none" stroke="transparent" stroke-width="16"></path>';
+    s += '<path d="'+path+'" fill="none" stroke="'+col+'" stroke-width="'+(cut ? 2.2 : 1.3)+'" '
+      + 'marker-end="url(#'+(cut ? "arc" : "ar")+')"'+(cut ? ' stroke-dasharray="5 3"' : '')+'></path>';
+    const tw = e[2].length * 9.6 + 8;
+    s += '<rect x="'+(lx - tw/2)+'" y="'+(ly - 9)+'" width="'+tw+'" height="13" rx="2" '
+      + 'fill="#121A1F" opacity=".82"></rect>';
+    s += '<text x="'+lx+'" y="'+ly+'" text-anchor="middle">'+esc(e[2])+'</text>';
+    s += '</g>';
+  });
+
+  /* 節點 */
+  MN.forEach(n => {
+    const shown = vis(n);
+    const sel = M.sel === n.id;
+    const touched = M.drug && cuts.some(i => ME[i][0] === n.id || ME[i][1] === n.id);
+    const stroke = sel ? "#56C2E0" : touched ? "#93F2C8" : "#31485694";
+    s += '<g class="mnode'+(shown ? "" : " off")+'" data-node="'+n.id+'" '
+      + 'tabindex="'+(shown ? 0 : -1)+'" role="button" aria-label="'+esc(nt(n))+'">';
+    s += '<rect x="'+(n.x - NW/2)+'" y="'+(n.y - NH/2)+'" width="'+NW+'" height="'+NH+'" rx="3" '
+      + 'fill="'+(sel ? "#22303A" : "#18232A")+'" stroke="'+stroke+'" stroke-width="'+(sel || touched ? 1.8 : 1)+'"></rect>';
+    const lines = n.t.split("|");
+    const top = lines.length > 1 ? n.y - 15 : n.y - 5;
+    lines.forEach((ln, li) =>
+      s += '<text x="'+n.x+'" y="'+(top + li*14)+'" text-anchor="middle">'+esc(ln)+'</text>');
+    s += '<text class="sub" x="'+n.x+'" y="'+(top + lines.length*14 + 2)+'" text-anchor="middle">'
+      + esc(n.s)+'</text>';
+    s += '</g>';
+  });
+
+  s += '</svg><figcaption>'
+    + '箭頭方向是因果方向，標籤是機轉本身而不是「有關係」。'
+    + '點任何一個節點或一條箭頭看它的機轉；按上方任一種治療，圖上會亮出它<b style="color:var(--s0)">切斷的那幾條路</b>（綠色虛線）。'
+    + '這張圖的用法是：治療不是在「控制數字」，是在剪斷特定的箭頭。'
+    + '</figcaption></figure>';
+  host.innerHTML = s;
+
+  host.querySelectorAll("[data-node]").forEach(g => {
+    const pick = () => { M.sel = g.dataset.node; renderMech(); };
+    g.addEventListener("click", pick);
+    g.addEventListener("keydown", ev => { if (ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); pick(); }});
+  });
+  host.querySelectorAll("[data-edge]").forEach(g => {
+    const pick = () => { M.sel = "e" + g.dataset.edge; renderMech(); };
+    g.addEventListener("click", pick);
+    g.addEventListener("keydown", ev => { if (ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); pick(); }});
+  });
+
+  $("#mechStage").textContent = STAGES.find(x => x.k === M.stage).nm;
+  renderMechBars();
+  renderMechPanel();
+}
+
+function renderMechBars(){
+  const st = $("#mechSteps");
+  if (!st.childElementCount){
+    STAGES.forEach(x => {
+      const b = el("button", "stepbtn", esc(x.nm));
+      b.type = "button"; b.dataset.stage = x.k;
+      b.addEventListener("click", () => { M.stage = x.k; M.sel = null; renderMech(); });
+      st.appendChild(b);
+    });
+    const dg = $("#mechDrugs");
+    DRUGS.forEach(d => {
+      const b = el("button", "drugbtn", esc(d.nm));
+      b.type = "button"; b.dataset.drug = d.id;
+      b.addEventListener("click", () => {
+        M.drug = M.drug === d.id ? null : d.id;
+        M.sel = M.drug ? "d" + d.id : null;
+        renderMech();
+      });
+      dg.appendChild(b);
+    });
+  }
+  st.querySelectorAll(".stepbtn").forEach(b =>
+    b.setAttribute("aria-pressed", String(+b.dataset.stage === M.stage)));
+  $("#mechDrugs").querySelectorAll(".drugbtn").forEach(b =>
+    b.setAttribute("aria-pressed", String(b.dataset.drug === M.drug)));
+}
+
+function renderMechPanel(){
+  const host = $("#mechPanel"), ttl = $("#mechTitle");
+  const sel = M.sel;
+
+  if (sel && sel[0] === "d"){
+    const d = DRUGS.find(x => x.id === sel.slice(1));
+    ttl.textContent = d.nm;
+    host.innerHTML =
+      '<div class="verdict" style="border-color:var(--s0)">'
+      + '<span class="q">切斷的因果邊</span>'
+      + '<span class="a" style="color:var(--s0)">' + d.cuts.length + ' 條</span>'
+      + '<span class="n">' + esc(d.note) + '</span></div>'
+      + '<div class="rows">' + d.cuts.map(i => {
+          const e = ME[i];
+          return '<div class="row" style="grid-template-columns:1fr"><span class="lab">'
+            + '<b style="color:var(--ink)">' + esc(nt(mnode(e[0]))) + ' → ' + esc(nt(mnode(e[1]))) + '</b><br>'
+            + '<span style="color:var(--ink-3);font-size:11.5px">' + esc(e[3]) + '</span></span></div>';
+        }).join("") + '</div>';
+    return;
+  }
+
+  if (sel && sel[0] === "e"){
+    const e = ME[+sel.slice(1)];
+    const a = mnode(e[0]), b = mnode(e[1]);
+    const actOn = DRUGS.filter(d => d.cuts.includes(+sel.slice(1)));
+    ttl.textContent = nt(a) + " → " + nt(b);
+    host.innerHTML =
+      '<div class="verdict" style="border-color:var(--chrome)">'
+      + '<span class="q">機轉</span><span class="a" style="font-size:13px;color:var(--ink)">'+esc(e[2])+'</span>'
+      + '<span class="n">'+esc(e[3])+'</span></div>'
+      + (actOn.length
+        ? actsHTML(actOn.map(d => [d.nm, d.note, "切斷"]))
+        : '<p style="font-size:12.5px;color:var(--ink-3);line-height:1.6">'
+          + '這條邊沒有對應的藥物介入 — 它屬於上游的生活型態或生理機轉本身。</p>');
+    return;
+  }
+
+  if (sel){
+    const n = mnode(sel);
+    const inE = ME.map((e,i) => [e,i]).filter(x => x[0][1] === n.id);
+    const outE = ME.map((e,i) => [e,i]).filter(x => x[0][0] === n.id);
+    const actOn = DRUGS.filter(d => d.cuts.some(i => ME[i][0] === n.id || ME[i][1] === n.id));
+    ttl.textContent = nt(n);
+    host.innerHTML =
+      '<div class="verdict" style="border-color:var(--chrome)">'
+      + '<span class="q">'+esc(n.s)+'</span>'
+      + '<span class="a" style="font-size:13px;line-height:1.55;color:var(--ink)">'+esc(n.d)+'</span></div>'
+      + '<div><span class="eyebrow">臨床上怎麼看它</span>'
+      + '<div class="rows" style="margin-top:7px">' + n.m.map(x =>
+          '<div class="row" style="grid-template-columns:1fr"><span class="lab">'+esc(x)+'</span></div>').join("")
+      + '</div></div>'
+      + '<div><span class="eyebrow">流入 '+inE.length+' 條 · 流出 '+outE.length+' 條</span>'
+      + '<div class="rows" style="margin-top:7px">'
+      + inE.concat(outE).map(x =>
+          '<div class="row" style="grid-template-columns:1fr"><span class="lab">'
+          + esc(nt(mnode(x[0][0]))) + ' <span style="color:var(--chrome)">→</span> ' + esc(nt(mnode(x[0][1])))
+          + '　<span style="color:var(--ink-3);font-size:11px">'+esc(x[0][2])+'</span></span></div>').join("")
+      + '</div></div>'
+      + (actOn.length ? '<div><span class="eyebrow">經過這裡的治療</span>'
+          + actsHTML(actOn.map(d => [d.nm, d.note, "作用"])) + '</div>' : "");
+    return;
+  }
+
+  const stg = STAGES.find(x => x.k === M.stage);
+  ttl.textContent = "這張圖在講什麼";
+  host.innerHTML =
+    '<div class="verdict" style="border-color:var(--chrome)">'
+    + '<span class="q">目前階段 · '+esc(stg.nm)+'</span>'
+    + '<span class="a" style="font-size:13px;line-height:1.55;color:var(--ink)">'+esc(stg.d)+'</span></div>'
+    + '<p style="font-size:12.5px;color:var(--ink-2);line-height:1.7;margin:0">'
+    + '糖尿病、肥胖、高血壓、高血脂、慢性腎臟病在門診是五張不同的診斷卡，'
+    + '在病理上卻是<b style="color:var(--ink)">同一條路徑的不同路段</b>。'
+    + '這張圖畫的就是那條路徑：哪裡分岔、哪裡匯流、哪裡有回頭的箭頭。</p>'
+    + '<p style="font-size:12.5px;color:var(--ink-2);line-height:1.7;margin:0">'
+    + '按上方任何一種治療，它切斷的邊會亮成綠色虛線。'
+    + '把 <b style="color:var(--ink)">SGLT2 抑制劑</b> 和 '
+    + '<b style="color:var(--ink)">Statin · Ezetimibe · PCSK9i</b> 輪流按一次，'
+    + '你會看到兩者切的是完全不同的路段 — 這是「為什麼血脂控制得再好，腎病照樣進展」'
+    + '最快的一種講法。</p>'
+    + '<p style="font-size:12.5px;color:var(--ink-2);line-height:1.7;margin:0">'
+    + '上方的 ①–⑤ 是講課用的逐步展開：一次只放一段，講完再放下一段。</p>'
+    + '<p style="font-size:11.5px;color:var(--ink-3);line-height:1.6;margin:0">'
+    + '這是教學用的機轉示意圖，不是完整的病理生理學。真實的網絡還有尿酸、'
+    + '腸道菌相、睡眠呼吸中止、慢性發炎等許多條邊，這裡只保留門診說得完、'
+    + '而且有對應治療可以指的那些。</p>';
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   9. 尺度切換
+   ═══════════════════════════════════════════════════════════════ */
+const MODES = [
+  { id:"patient", mt:"病人", md:"一位病人的器官風險地圖、病程回放與介入推演",
+    eb:"代謝共病 · 病人層級態勢圖",
+    sub:"一位病人的糖尿病、肥胖、高血壓、高血脂與慢性腎臟病，攤在同一個器官地圖上。點器官鎖定、拉時間軸回放病程、勾選藥物推演未來。" },
+  { id:"pop", mt:"族群", md:"台灣與全球的疾病負擔、知曉率缺口、末期腎病國際比較",
+    eb:"代謝共病 · 族群層級疾病負擔",
+    sub:"同一批疾病，尺度從一個人拉到整個族群。台灣三高的盛行率與知曉率缺口，以及末期腎病發生率世界第一這件事。" },
+  { id:"mech", mt:"機轉", md:"共病網絡的因果邊，以及每種治療切斷哪幾條",
+    eb:"代謝共病 · 病理機轉網絡",
+    sub:"五個診斷其實是同一條路徑的不同路段。逐步展開因果網絡，按下任一種治療看它切斷哪幾條邊。" },
+];
+
+function setMode(id){
+  S.mode = id;
+  const m = MODES.find(x => x.id === id);
+  ["patient","pop","mech"].forEach(k =>
+    document.getElementById("mode-" + k).hidden = (k !== id));
+  $("#caseControls").hidden = (id !== "patient");
+  $("#pageEyebrow").textContent = m.eb;
+  $("#pageSub").textContent = m.sub;
+  $("#modeswitch").querySelectorAll(".modebtn").forEach(b =>
+    b.setAttribute("aria-pressed", String(b.dataset.mode === id)));
+  if (id === "patient") render();
+  if (id === "pop") renderPop();
+  if (id === "mech") renderMech();
+  try { localStorage.setItem("mcx-mode", id); } catch (err) { /* 無痕視窗等情況下略過 */ }
+}
+
+MODES.forEach(m => {
+  const b = el("button", "modebtn",
+    '<span class="mt">'+esc(m.mt)+'</span><span class="md">'+esc(m.md)+'</span>');
+  b.type = "button"; b.dataset.mode = m.id;
+  b.addEventListener("click", () => setMode(m.id));
+  $("#modeswitch").appendChild(b);
+});
+
 /* 開場：最新一次就診 */
 S.visitIdx = CASES[0].visits.length - 1;
-render();
+let boot = "patient";
+try { const saved = localStorage.getItem("mcx-mode");
+      if (MODES.some(m => m.id === saved)) boot = saved; } catch (err) { /* 略過 */ }
+setMode(boot);
 </script>
