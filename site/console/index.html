@@ -1725,6 +1725,7 @@ function comparisonScope(patient){return S.caseIdx===-1?'custom':'case:'+patient
 function comparisonVisitKey(v){return v.id?'id:'+v.id:'date:'+v.date;}
 function comparisonSelection(patient=basePatient()){
  const scope=comparisonScope(patient),ref=S.comparisonBases?.[scope];
+ if(patient.visits.length<2){if(S.comparisonBases)delete S.comparisonBases[scope];return {index:null,automatic:true};}
  const found=ref===undefined?-1:patient.visits.findIndex(v=>comparisonVisitKey(v)===ref);
  if(ref!==undefined&&found<0)delete S.comparisonBases[scope];
  return {index:found>=0?found:(S.visitIdx>0?S.visitIdx-1:null),automatic:found<0};
