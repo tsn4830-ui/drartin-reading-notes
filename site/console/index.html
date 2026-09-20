@@ -550,6 +550,7 @@ svg.mech{min-width:1290px}.mnode>rect:first-child{fill:#EFF5F8;filter:none}.mnod
 @media(max-width:860px){.main.pop-pair{grid-template-columns:minmax(0,1fr)}}
 /* Upright brand portrait: preserve the original artwork and only correct its display angle. */
 .ating-logo-mark img{transform:rotate(-24deg);transform-origin:52% 45%}
+.tw-guideline-panel{margin-top:22px}.tw-guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px;align-items:start}.tw-guide-grid summary{font-size:17px;font-weight:600;line-height:1.8}.tw-guide-grid p{font-size:16px;line-height:1.9}.tw-grade{padding:8px 12px;background:#EAF2F5;border-radius:6px;font-size:14px!important}.tw-organ-note{margin-top:20px;padding:18px;border:1px solid var(--line);border-radius:12px;background:#F2F7F9}.tw-organ-note h3{font-size:17px}.tw-organ-note p{font-size:15px;line-height:1.9}.tw-organ-note a{font-size:14px;overflow-wrap:anywhere}@media(max-width:760px){.tw-guide-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -657,6 +658,7 @@ svg.mech{min-width:1290px}.mnode>rect:first-child{fill:#EFF5F8;filter:none}.mnod
  </div>
 </section>
 
+<section class="card tw-guideline-panel" id="twGuidelinePanel" aria-labelledby="twGuidelineTitle"><div class="hd"><h2 id="twGuidelineTitle">台灣肥胖與共病照護 · 2026 指引</h2><span class="eyebrow">診斷 · 目標 · 治療 · 來源頁碼</span></div><div class="bd" id="twGuidelineContent"></div></section>
 <div class="main patient-lower">
 
   <section class="card">
@@ -1108,11 +1110,11 @@ const ORGANS = [
     ],
     acts:(p,v,d) => {
       const a = [];
-      if (d.metS.met || d.bmi >= 27)
-        a.push(["代謝功能障礙相關脂肪肝（MASLD）","符合心代謝危險因子且體位超標，屬 MASLD 高度可能族群；建議肝功能、腹部超音波與纖維化風險分層（FIB-4）。","篩檢"]);
-      if (v.tg >= 500) a.push(["三酸甘油酯 ≥500","急性胰臟炎風險，優先降 TG 而非降 LDL。","急"]);
+      if (d.dm || d.metS.met || d.bmi >= 27)
+        a.push(["MASLD 篩檢與纖維化評估","第 2 型糖尿病、肥胖或多重代謝異常需要留意脂肪肝；先確認脂肪肝及臨床條件，再評估纖維化。此頁未收集 AST、ALT 與血小板，不計算 FIB-4，也不由器官色帶確診。","台灣 2026"]);
+      if (v.tg >= 500) a.push(["三酸甘油酯 ≥500","需及時評估胰臟炎風險、次發原因及降 TG 策略；LDL-C 與整體心血管風險仍需處理。","急"]);
       else if (v.tg >= 150) a.push(["三酸甘油酯升高","減重、限酒、控糖是第一線；TG " + v.tg + " mg/dL。","生活"]);
-      a.push(["體重每降 5–10%","對脂肪肝、血糖、血壓、三酸甘油酯同時有效，是本圖上少數一次影響多個器官的介入。","槓桿"]);
+      if (d.bmi >= 24) a.push(["個人化減重目標","依營養、功能與共病訂目標；約 5% 可作代謝改善起點，部分肝臟及其他器官效益需要更大幅度。不可保證每個人或每個器官同步改善。","台灣 2026"]);
       return a;
     },
   },
@@ -1142,7 +1144,7 @@ const ORGANS = [
       if (d.dm && !d.onMed("sglt2") && !d.onMed("glp1") && (d.ckdConfirmed || p.ascvd))
         a.push(["心腎適應症未涵蓋","已有 CKD 或 ASCVD 但未使用 SGLT2 抑制劑或 GLP-1 受體促效劑，可與醫師討論適應症、禁忌與既有治療。","缺口"]);
       if (d.dm && d.bmi >= 27)
-        a.push(["以體重為導向選藥","BMI " + fx(d.bmi,1) + "。優先選擇具減重效果的降糖藥（GLP-1 受體促效劑、GIP／GLP-1 雙重促效劑、SGLT2 抑制劑），避免加重體重的藥物。","策略"]);
+        a.push(["以體重為導向選藥","BMI " + fx(d.bmi,1) + "。依減重需求、心腎共病與禁忌個別選藥；GLP-1 或 GIP／GLP-1 類可列入討論。SGLT2 抑制劑的減重效果較小，主要依心腎適應症評估。","台灣 2026"]);
       if (!a.length) a.push(["血糖本頁未觸發提示","維持現有控制，依指引頻率追蹤 HbA1c。","維持"]);
       return a;
     },
@@ -1182,7 +1184,8 @@ const ORGANS = [
     },
     rows:(p,v,d) => [
       ["BMI", fx(d.bmi,1) + " kg/m²", "18.5–23.9"],
-      ["體位分級（台灣）", d.bmiCat.k, "健康體位"],
+      ["BMI 體位分級（非 ORCD 分期）", d.bmiCat.k, "台灣切點"],
+      ["腰圍身高比", fx(v.wc/p.ht,2), "參考 <0.5"],
       ["腰圍", v.wc + " cm", (p.sex === "M" ? "<90" : "<80")],
       ["體重", fx(v.wt,1) + " kg", "—"],
       ["代謝症候群", d.metS.n + " / 5 項" + (d.metS.met ? "（符合）" : ""), "<3 項"],
@@ -1195,9 +1198,12 @@ const ORGANS = [
       if (d.metS.met)
         a.push(["符合代謝症候群","五項中符合 " + d.metS.n + " 項：" +
           d.metS.items.filter(i => i.hit).map(i => i.k).join("、") + "。", "國健署"]);
-      if (d.bmi >= 27)
-        a.push(["減重目標","初期以減去現體重 5–10%（" + fx(v.wt*0.05,1) + "–" + fx(v.wt*0.10,1) +
-          " 公斤）為目標即可帶來明確代謝改善；BMI ≥27 合併共病者可討論藥物治療，≥35 合併共病可討論代謝手術。","台灣"]);
+      a.push(["2026 臨床肥胖評估","BMI 分類不等於臨床肥胖分期。需結合脂肪堆積、肥胖相關併發症與疾病（ORCD）及嚴重度；本頁資料不足以自動分為第一、二或三期。","台灣 2026"]);
+      if (d.bmi >= 24) {
+        a.push(["個人化減重目標","減去現體重 5% 約為 " + fx(v.wt*0.05,1) + " 公斤，僅作討論起點；依年齡、肌肉量、營養、功能與共病調整，部分目標需要 ≥10%。","台灣 2026"]);
+        a.push(["生活型態與藥物評估","用藥需並行生活型態介入；依共病、禁忌、核准適應症與可近性選擇。達治療劑量後 3–6 個月再評估，不以任意兩筆體重差判定藥效。","台灣 2026"]);
+      }
+      if (d.bmi >= 27.5) a.push(["代謝手術：團隊評估條件","亞裔 BMI ≥35 不論有無共病，或 ≥30 且有 ORCD，可討論手術評估；≥27.5 合併 T2DM 須另確認非手術治療後仍未達目標。這不是自動手術或健保資格。","台灣 2026"]);
       if (!a.length) a.push(["體位在健康範圍","維持目前體重與腰圍。","維持"]);
       return a;
     },
@@ -1574,7 +1580,7 @@ function renderDossier(ctx){
       + (ctx.proj ? '，手動假設值，並非療效預測' : '') + '</span></div>'
       + rowsHTML(o.rows(p, v, d))
       + (ctx.proj ? '<p class="data-note">以下照護提示仍依原始資料；不以假設值建議改藥。</p>' : '')
-      + actsHTML(o.acts(ctx.real.p, ctx.real.v, ctx.real.d));
+      + actsHTML(o.acts(ctx.real.p, ctx.real.v, ctx.real.d)) + taiwanOrganGuide(o.id,ctx);
     return;
   }
 
@@ -1582,7 +1588,7 @@ function renderDossier(ctx){
   backBtn.hidden = true;
   const ver = [];
 
-  ver.push(["體位（台灣指引）", d.bmiCat.k,
+  ver.push(["BMI 體位分類（非臨床肥胖分期）", d.bmiCat.k,
     "BMI " + fx(d.bmi,1) + " · 腰圍 " + v.wc + " cm" + (d.abdo ? "（達腹部肥胖）" : ""), d.bmiCat.lvl]);
 
   ver.push(["血糖狀態",
@@ -2071,9 +2077,9 @@ $("#simreset").addEventListener("click", () => { S.sims.clear(); render(); });
 
 /* 7. 族群尺度。數據為靜態快照；來源連結不傳送病人資料。查核：2026-09-19。 */
 const REF = {
-  body:{id:'P01',title:'國健署：成人過重與肥胖',year:'2017–2020',url:'https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4560&pid=16716&sid=16718',note:'19 歲以上、BMI ≥24：50.3%。注意各資料的成人年齡下限不同。'},
-  three:{id:'P02',title:'國健署：三高盛行率',year:'2017–2020',url:'https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4306&pid=14646',note:'18 歲以上：高血壓 26.76%、高血脂 25.6%。原版高血脂 31% 未獲所標示來源支持，已更正。'},
-  dm:{id:'P03',title:'國健署：糖尿病盛行率',year:'2019–2023',url:'https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4809&pid=18522',note:'20 歲以上：12.8%。定義為空腹血糖 ≥126 mg/dL 或近一個月服用降血糖藥；資料集另見政府資料開放平臺。'},
+  body:{id:'P01',title:'國健署：114 年健康促進統計年報 · 成人體位',year:'調查 2020–2024；出版 2025',url:'https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=268&pid=19632',note:'18 歲以上加權比例：過重 25.1%、肥胖 26.2%，合計 51.3%。過重 24≤BMI<27；肥胖 BMI≥27。表 2-5-6，印刷頁 99（PDF 130）；圖 27–28，印刷頁 14（PDF 38）。有效樣本 3,655 人。'},
+  three:{id:'P02',title:'國健署：114 年健康促進統計年報 · 三高',year:'調查 2020–2024；出版 2025',url:'https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=268&pid=19632',note:'18 歲以上加權盛行率：高血壓 29.9%、高血糖／糖尿病 12.9%、高血脂 30.5%。表 1-2-3，印刷頁 24（PDF 52）；統計定義見印刷頁 161（PDF 200）。使用未做年齡標準化的加權值，各項有效樣本不同。'},
+  dm:{id:'P03',title:'國健署：114 年健康促進統計年報 · 高血糖／糖尿病定義',year:'調查 2020–2024；出版 2025',url:'https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=268&pid=19632',note:'18 歲以上，空腹至少 8 小時血糖 ≥126 mg/dL 或服用降血糖藥物；12.9%，有效樣本 3,551 人。這是年報調查定義，不以 HbA1c 定義，也不代表網站能以單次檢驗確診。表 1-2-3 印刷頁 24（PDF 52），定義頁 161（PDF 200）。'},
   aware:{id:'P04',title:'國健署：三高自知率',year:'2017–2020',url:'https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4809&pid=18298',note:'20 歲以上患有該項三高異常者，自知率依序為高血壓 68%、高血糖 66%、高血脂 23%。不與別年齡層、別調查期的盛行率相乘。'},
   ckd:{id:'P05',title:'Ang et al. · 台灣 CKD 全國研究',year:'調查 2017–2020；期刊 2026',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC13065207/',note:'CJASN 21(4):703–715；2025 年先行上線。20 歲以上 4,298 人，抽樣加權 CKD 盛行率 10.0%（95% CI 8.7–11.2）。研究定義：eGFR <60 或 UACR ≥30。DOI: 10.2215/CJN.0000000892。'},
   twrds:{id:'P06',title:'台灣腎臟醫學會：2024 台灣腎病年報',year:'資料 2022；年報 2024',url:'https://www.tsn.org.tw/twrds/20251111/caef4008-de06-4278-b986-7ce31c56f461/caef4008-de06-4278-b986-7ce31c56f461.pdf',note:'第一章，頁 24–25、表 1：新發透析 12,459 人（536 pmp）；盛行透析 88,555 人（3,806 pmp）。透析人數與 CKD 盛行率是不同指標。'},
@@ -2081,10 +2087,10 @@ const REF = {
 };
 const cite = key => '<a class="source-link" href="'+REF[key].url+'" target="_blank" rel="noopener noreferrer">'+REF[key].id+' · 查看來源 ↗</a>';
 const TW_PREV = [
-  {k:'過重及肥胖',v:50.3,ref:'body',n:'19 歲以上 · BMI ≥24 · 2017–2020'},
-  {k:'高血壓',v:26.76,ref:'three',n:'18 歲以上 · 2017–2020'},
-  {k:'高血脂',v:25.6,ref:'three',n:'18 歲以上 · 2017–2020'},
-  {k:'糖尿病',v:12.8,ref:'dm',n:'20 歲以上 · 2019–2023'},
+  {k:'過重及肥胖',v:51.3,ref:'body',n:'18 歲以上 · BMI ≥24 · 2020–2024'},
+  {k:'高血壓',v:29.9,ref:'three',n:'18 歲以上 · 2020–2024 · 有效樣本 5,422 人'},
+  {k:'高血脂',v:30.5,ref:'three',n:'18 歲以上 · 2020–2024 · 有效樣本 3,760 人'},
+  {k:'高血糖／糖尿病',v:12.9,ref:'dm',n:'18 歲以上 · 2020–2024 · 有效樣本 3,551 人'},
 ];
 const TW_AWARE = [{k:'高血壓',aware:68},{k:'高血糖',aware:66},{k:'高血脂',aware:23}];
 const CKD_REGIONS = [
@@ -2094,18 +2100,19 @@ const CKD_REGIONS = [
 const HERO = [
   {v:'10.0',u:'%',k:'台灣成人 CKD',n:'20 歲以上 · 2017–2020 調查\n95% CI 8.7–11.2%',ref:'ckd'},
   {v:'536',u:'pmp',k:'台灣透析發生率',n:'2022 年 · 每百萬人口\n新發透析 12,459 人',ref:'twrds'},
-  {v:'23',u:'%',k:'高血脂自知率',n:'20 歲以上 · 2017–2020\n患有高血脂者中，知道自己異常的比例',ref:'aware'},
+  {v:'26.2',u:'%',k:'台灣成人肥胖',n:'18 歲以上 · 2020–2024\nBMI ≥27；另有 25.1% 為過重',ref:'body'},
   {v:'5.89',u:'億人',k:'全球糖尿病人口',n:'20–79 歲 · 2024 年估計\n2050 年推估 8.53 億人',ref:'idf'},
 ];
 function renderPop(){
   $('#popHero').innerHTML = HERO.map(h => '<div class="hstat"><span class="hk">'+esc(h.k)+'</span><span class="hv">'+h.v+'<span class="u" style="font-size:13px;font-weight:400;color:var(--ink-3);letter-spacing:0;margin-left:7px">'+h.u+'</span></span><span class="hn">'+esc(h.n).replace(/\n/g,'<br>')+'</span>'+cite(h.ref)+'</div>').join('');
-  $('#popPrev').innerHTML = '<div class="barlist">'+TW_PREV.map(d => '<div class="bar"><span class="bl"><b>'+d.k+'</b><span class="bv">'+fx(d.v,d.k==='高血壓'?2:1)+'%</span></span><span class="tr"><span class="fl" style="width:'+(d.v/60*100)+'%;background:var(--chrome)"></span></span><span class="bn">'+d.n+' · '+cite(d.ref)+'</span></div>').join('')+'</div><p class="data-note">長條共用 0–60% 刻度。<strong>調查期間與年齡下限不同，僅供疾病負擔概覽</strong>，不可解讀為同一群人的風險比較。</p>';
-  $('#popAware').innerHTML = '<div class="barlist">'+TW_AWARE.map(d => '<div class="bar"><span class="bl"><b>'+d.k+'</b><span class="bv">'+d.aware+'<span style="font-size:11px">% 自知</span></span></span><span class="tr aware-tr"><span class="fl" style="width:'+d.aware+'%;background:var(--chrome)"></span><span class="fl unknown-fill" style="width:'+(100-d.aware)+'%"></span></span><span class="bn">已自知 '+d.aware+'%　／　未自知 '+(100-d.aware)+'%</span></div>').join('')+'</div><p class="data-note">每條代表<strong>患有該項三高異常者的 100%</strong>。20 歲以上，2017–2020 年；斜線區為未自知比例。未自知 = 100% − 自知率。</p>'+cite('aware');
+  $('#popPrev').innerHTML = '<div class="barlist">'+TW_PREV.map(d => '<div class="bar"><span class="bl"><b>'+d.k+'</b><span class="bv">'+fx(d.v,1)+'%</span></span><span class="tr"><span class="fl" style="width:'+(d.v/60*100)+'%;background:var(--chrome)"></span></span><span class="bn">'+d.n+' · '+cite(d.ref)+'</span></div>').join('')+'</div><p class="data-note">長條共用 0–60% 刻度。<strong>114 年年報的 2020–2024 年調查、18 歲以上加權盛行率</strong>，各項有效樣本不同，不是個人風險。COVID-19 使調查中斷，該期採五年滾動分析；不能直接與舊版不同年齡或調查期間比較。</p>';
+  $('#popPrev').insertAdjacentHTML('beforeend','<details class="source-card" style="margin-top:16px"><summary>年報怎麼定義三高？</summary><p>高血壓：收縮壓 ≥140 或舒張壓 ≥90 mmHg，或使用降壓藥。高血糖／糖尿病：空腹至少 8 小時血糖 ≥126 mg/dL，或使用降血糖藥。高血脂：總膽固醇 ≥240 或三酸甘油酯 ≥200 mg/dL，或使用降血脂藥。</p><p>這些是族群統計定義，與個人治療目標、糖尿病確認性檢驗及 LDL-C 風險目標不同。來源：114 年年報印刷頁 161（PDF 200）。</p></details>');
+  $('#popAware').innerHTML = '<div class="barlist">'+TW_AWARE.map(d => '<div class="bar"><span class="bl"><b>'+d.k+'</b><span class="bv">'+d.aware+'<span style="font-size:11px">% 自知</span></span></span><span class="tr aware-tr"><span class="fl" style="width:'+d.aware+'%;background:var(--chrome)"></span><span class="fl unknown-fill" style="width:'+(100-d.aware)+'%"></span></span><span class="bn">已自知 '+d.aware+'%　／　未自知 '+(100-d.aware)+'%</span></div>').join('')+'</div><p class="data-note">每條代表<strong>患有該項三高異常者的 100%</strong>。這是另份資料的歷史數據：20 歲以上、2017–2020 年，並非上方 2020–2024 年報調查；不可相乘推算人數。斜線區為未自知比例，計算為 100% − 自知率。</p>'+cite('aware');
   $('#popCkd').innerHTML = '<p class="data-note" style="margin-top:0">同一研究、同一調查期。點為加權盛行率，線為 95% 信賴區間（CI）。</p>'+CKD_REGIONS.map(d => '<div class="region-row"><b>'+d.k+'</b><div class="region-track" role="img" aria-label="'+d.k+' '+fx(d.v,1)+'%，95% 信賴區間 '+d.lo+' 至 '+d.hi+'%"><span class="ci" style="left:'+d.lo/20*100+'%;width:'+(d.hi-d.lo)/20*100+'%"></span><span class="point" style="left:'+d.v/20*100+'%"></span></div><span class="region-num">'+fx(d.v,1)+'%<small>'+fx(d.lo,1)+'–'+fx(d.hi,1)+'%</small></span></div>').join('')+'<div class="region-axis"><span>0%</span><span>10%</span><span>20%</span></div><p class="data-note">研究採 20 歲以上成人 4,298 人的全國代表性調查。<strong>橫斷資料無法推論因果，也不是 2026 年即時盛行率。</strong>區域依原研究分組，東部含宜蘭；不可將區域值套到個別縣市。</p>'+cite('ckd');
   $('#popDialysis').innerHTML = '<div class="rows">'+[
     ['新發透析人數','12,459 人'],['透析發生率','536 pmp'],['盛行透析人數','88,555 人'],['透析盛行率','3,806 pmp']
   ].map(r=>'<div class="row" style="grid-template-columns:1fr auto"><span class="lab">'+r[0]+'</span><span class="now">'+r[1]+'</span></div>').join('')+'</div><p class="data-note">2024 台灣腎病年報，<strong>資料年份為 2022 年</strong>。pmp = 每百萬人口。發生代表該年新進入透析；盛行代表該年既有透析負擔。</p><p class="data-note">這些數字不能用來取代成人 CKD 盛行率，也不能單憑跨國排名推論照護品質或致病原因。</p>'+cite('twrds');
-  $('#popSrc').innerHTML = '<div class="evidence-head"><p class="data-note">已核對的族群數據來源 · 2026-09-19</p><span class="privacy-note">點擊標題展開適用範圍</span></div><div class="srclist" style="margin-top:14px">'+Object.values(REF).map(r=>'<details class="source-card"><summary><span class="source-tag">'+r.id+'</span>'+r.title+'<span class="source-status">'+r.year+'</span></summary><p>'+esc(r.note)+'</p><p><a href="'+r.url+'" target="_blank" rel="noopener noreferrer">開啟原始來源 ↗</a>'+(r.id==='P03'?' · <a href="https://data.gov.tw/dataset/9337" target="_blank" rel="noopener noreferrer">官方資料集 ↗</a>':'')+'</p></details>').join('')+'</div><p class="data-note"><strong>資料邊界：</strong>縣市圖仍待逐筆擷取原表與不確定性；目前只呈現已核對的四區數據。本輪已修正診斷與 KFRE 等關鍵邏輯；機轉圖已補來源及限制，其餘器官評分／建議仍待逐條查核。族群數字更新不代表整個工具已通過臨床驗證。</p>';
+  $('#popSrc').innerHTML = '<div class="evidence-head"><p class="data-note">已核對的族群數據來源 · 2026-09-20</p><span class="privacy-note">點擊標題展開適用範圍</span></div><div class="srclist" style="margin-top:14px">'+Object.values(REF).map(r=>'<details class="source-card"><summary><span class="source-tag">'+r.id+'</span>'+r.title+'<span class="source-status">'+r.year+'</span></summary><p>'+esc(r.note)+'</p><p><a href="'+r.url+'" target="_blank" rel="noopener noreferrer">開啟原始來源 ↗</a>'+'</p></details>').join('')+'</div><p class="data-note"><strong>資料邊界：</strong>縣市圖仍待逐筆擷取原表與不確定性；目前只呈現已核對的四區數據。本輪依兩份指定文件更新成人體位／三高統計與肥胖共病教學。CKD、透析、自知率及全球資料仍保留各自來源；未以新年報補猜未涵蓋的項目。器官色帶不是驗證模型。族群數字更新不代表整個工具已通過臨床驗證。</p>';
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -3372,6 +3379,30 @@ document.querySelectorAll('[data-brand-logo]').forEach(img=>{img.src=BRAND_LOGO;
 /* ═══════════════════════════════════════════════════════════════
    9. 尺度切換
    ═══════════════════════════════════════════════════════════════ */
+/* Teaching synthesis of user-supplied DAROC 2026 guideline; original PDF stays with its publisher. */
+const TW_OBESITY_PDF='https://www.endo-dm.org.tw/DB/book/143/11508_%E8%82%A5%E8%83%96_%E7%B8%AE_p353_v3-6.pdf';
+const TW_GUIDE=[
+ {id:'diagnosis',title:'BMI 體位分類與臨床肥胖分期分開看',pages:'42、51',pdf:48,grade:'診斷建議：證據中／中等建議',body:'台灣 BMI 體位分類仍以 24、27、30、35 為切點；它不等於臨床肥胖第一至三期。2026 指引另以 BMI 篩檢：24 至未滿 30 時結合脂肪堆積評估，BMI ≥30 可直接確定肥胖，但仍需注意高肌肉量等特殊情況。',detail:'過度脂肪堆積可參考腰圍（男 ≥90、女 ≥80 cm）或腰圍身高比 ≥0.5。確定肥胖後，再依肥胖相關併發症與疾病（ORCD）及嚴重程度分期：無 ORCD 為第一期、至少一項輕至中度為第二期、至少一項重度為第三期。本工具缺少完整 ORCD 評估，不自動判定這個分期。'},
+ {id:'goals',title:'減重目標看疾病改善，也看功能與生活品質',pages:'171–172、182',pdf:177,grade:'個人化目標：證據中／中等建議',body:'約 5% 的減重可作初步代謝改善的討論起點；部分器官及共病改善需要 ≥10% 或更大幅度。依年齡、營養、肌肉量、功能、共病及個人偏好設定目標，不能保證每個人或每個器官都有相同效果。',detail:'飲食、活動、阻力訓練與行為支持是治療基礎。達到治療劑量後 3–6 個月評估療效與安全性；未達約 5% 減重時，重新檢視並調整計畫。不能把任意兩次就診的體重差直接當成這項療效判定。'},
+ {id:'medication',title:'肥胖藥物是長期照護的一部分',pages:'233–234',pdf:239,grade:'長期治療與定期評估：證據高／強烈建議',body:'藥物需與生活型態介入並行，選擇時同時考量共病、禁忌、副作用、費用與可近性。有效且耐受良好時可討論持續治療；不以體重短期下降作為自行停藥依據。',detail:'指引將 GLP-1 受體促效劑、GIP／GLP-1 雙重促效劑列為具有較多實證的選項；不同藥品、劑量及試驗族群的效益不可混用。藥品適應症、台灣核准與健保給付須分別確認，本頁不自動開立或調整用藥。'},
+ {id:'surgery',title:'代謝減重手術：亞裔成人的評估條件',pages:'264–265',pdf:270,grade:'前兩項：證據高／強烈建議；糖尿病較低 BMI：證據中–高／中等建議',body:'指引列出可考慮手術評估的情境：BMI ≥35，不論是否合併共病；或 BMI ≥30 且至少一項 ORCD。BMI ≥27.5 且有第 2 型糖尿病者，須同時考量非手術與生活型態治療後仍未達控制目標。',detail:'BMI 27.5–30、合併非糖尿病 ORCD 且非手術治療未達目標的建議仍不確定（證據低）。上述是專業團隊評估起點，仍需確認禁忌、營養、心理、手術風險及長期追蹤；不是健保給付或自動手術資格判定。'},
+ {id:'kidney',title:'肥胖合併 CKD：減重與腎臟保護分別評估',pages:'101–102',pdf:107,grade:'體組成與腎功能評估：證據低／中等建議',body:'此章主要適用未透析、未移植的 CKD 成人，以 G1–G4 證據為主。評估肥胖不只看 BMI；快速減重或疑似肌少時，肌酸酐 eGFR 與 UACR 的解讀需更審慎，必要時結合 cystatin C。',detail:'SGLT2 抑制劑主要依腎臟及心血管適應症使用，減重效果較小；本頁保留原 KDIGO 的 eGFR、UACR 與病史條件。GLP-1 類及 tirzepatide 的減重證據不等同每一藥物都已有相同腎衰竭結局證據。透析族群須另看第 9-3 章，不能直接套用此章。'},
+ {id:'liver',title:'MASLD：先確認脂肪肝，再評估纖維化',pages:'111–113',pdf:117,grade:'篩檢與分層：證據高／中等建議',body:'第 2 型糖尿病、肥胖與多重代謝異常是需要留意的族群；BMI、腰圍或器官色帶本身不能確診 MASLD。依臨床評估確認脂肪肝，並進一步分層肝纖維化風險。',detail:'FIB-4 需年齡、AST、ALT 與血小板，並依年齡及臨床情境解讀。本工具未收集完整肝臟資料，因此不計算 FIB-4、不由血糖或體重推定纖維化或 MASH。'},
+ {id:'heart',title:'心血管共病：看適用族群與實際結局',pages:'85–88',pdf:91,grade:'冠心病相關建議：依具體建議與試驗族群判讀',body:'肥胖照護需納入整體心血管風險及既往疾病。SELECT 的 semaglutide 證據來自已有心血管疾病、無糖尿病的過重或肥胖成人，不代表任何 GLP-1 藥物或所有人都具有相同效益。',detail:'心衰竭須區分表型並評估既有標準治療；本頁沒有射出分率與完整症狀資料。PREVENT、SCORE2 Asia-Pacific 與 SCORE2-Diabetes 的排除條件及族群校準限制仍保留，不能拿預測分數當治療效果。'}
+];
+function twGuideSource(g){return '<a class="source-link" href="'+TW_OBESITY_PDF+'#page='+g.pdf+'" target="_blank" rel="noopener noreferrer">2026 台灣指引 · 印刷頁 '+g.pages+'（PDF 第 '+g.pdf+' 頁起）↗</a>';}
+function renderTaiwanGuide(){
+ $('#twGuidelineContent').innerHTML='<p class="data-note" style="margin-top:0">依中華民國糖尿病學會 2026 年 9 月初版整理。以下是與本工具相關章節的教學摘要；證據與建議強度沿用原書，不是本工具自行進行的 GRADE 評分。</p><div class="tw-guide-grid">'+TW_GUIDE.map(g=>'<details class="source-card" id="twguide-'+g.id+'"><summary>'+esc(g.title)+'</summary><p>'+esc(g.body)+'</p><p>'+esc(g.detail)+'</p><p class="tw-grade">'+esc(g.grade)+'</p><p>'+twGuideSource(g)+'</p></details>').join('')+'</div><p class="data-note">藥物、手術及營養目標需個別化。本頁不判定肥胖 ORCD 分期或給付資格；原有 BMI 分類與器官色帶仍是教學呈現。</p>';
+}
+function taiwanOrganGuide(id,ctx){
+ const key={adipose:'diagnosis',pancreas:'goals',kidney:'kidney',liver:'liver',heart:'heart'}[id];
+ if(!key)return '';
+ const g=TW_GUIDE.find(x=>x.id===key),{p,v,d}=ctx.real;
+ let text=g.body;
+ if(id==='adipose')text='原始就診資料：BMI '+fx(d.bmi,1)+'、腰圍 '+fx(v.wc,1)+' cm、腰圍身高比 '+fx(v.wc/p.ht,2)+'。腰圍身高比以未四捨五入數值比較：'+(v.wc/p.ht>=.5?'達':'未達')+' 0.5 參考切點。BMI 體位分類與肥胖 ORCD 分期不同，本工具不自動判定臨床肥胖分期。';
+ return '<section class="tw-organ-note"><h3>2026 台灣肥胖照護重點</h3><p>'+esc(text)+'</p>'+twGuideSource(g)+'<p><a href="#twGuidelinePanel">查看診斷、治療與共病照護摘要 ↓</a></p></section>';
+}
+
 const MODES = [
   { id:"patient", mt:"病人", md:"器官教學地圖、病程回放與研究證據",
     eb:"代謝共病 · 病人層級態勢圖",
@@ -3414,6 +3445,7 @@ S.visitIdx = CASES[0].visits.length - 1;
 let boot = "patient";
 try { const saved = localStorage.getItem("mcx-mode");
       if (MODES.some(m => m.id === saved)) boot = saved; } catch (err) { /* 略過 */ }
+renderTaiwanGuide();
 setMode(boot);
 </script>
 
