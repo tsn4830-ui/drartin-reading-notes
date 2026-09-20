@@ -1,0 +1,35 @@
+name: Publish clinical teaching console
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/console/**'
+      - '.github/workflows/publish-console.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Share the existing radar deployment lock to avoid overlapping Pages updates.
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
