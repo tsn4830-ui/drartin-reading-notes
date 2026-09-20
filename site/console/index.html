@@ -556,6 +556,7 @@ svg.mech{min-width:1290px}.mnode>rect:first-child{fill:#EFF5F8;filter:none}.mnod
 .risk-trend{margin:24px 0;padding:22px;border:1px solid var(--line);border-radius:14px;background:white}.risk-trend h3{font-size:23px;margin:0 0 8px}.risk-trend-controls{display:flex;flex-wrap:wrap;gap:18px;margin:18px 0}.risk-trend-controls label{display:flex;flex-direction:column;gap:7px;font-size:16px;min-width:0;flex:1 1 260px}.risk-trend-controls select{width:100%;min-width:0;max-width:100%;font:inherit;color:var(--ink);background:white;border:1px solid #9BB2BE;border-radius:8px;padding:12px 10px}.risk-trend-controls [hidden]{display:none}.risk-trend-selected{display:flex;align-items:center;gap:28px;flex-wrap:wrap;background:#EDF5F8;border-radius:10px;padding:18px 22px;margin:18px 0}.risk-trend-selected span{display:block;font-size:15px}.risk-trend-selected strong{display:block;font:600 32px var(--mono);line-height:1.6;color:#096781}.risk-trend-selected p{font-size:16px;margin:0;flex:1 1 200px}.risk-trend-axis{font-size:15px;color:var(--ink-2);margin:14px 0 0}.risk-trend-chart-scroll{overflow-x:auto}.risk-trend-chart{display:block;width:100%;max-height:360px}.risk-trend-chart text{font:15px var(--mono);fill:#3E5764}.risk-trend-point{cursor:pointer;stroke-width:3px}.risk-trend-point:focus{outline:none;stroke:#15323E;stroke-width:5px}.risk-trend-empty{padding:26px 20px;border:1px dashed #9BB2BE;border-radius:10px;font-size:17px;background:#F6F8FA}.risk-trend-table{overflow-x:auto;margin-top:18px}.risk-trend-table table{width:100%;border-collapse:collapse;font-size:16px;text-align:left}.risk-trend-table caption{text-align:left;font-weight:700;margin-bottom:12px}.risk-trend-table th,.risk-trend-table td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}.risk-trend-table thead th{background:#F2F7F9}.risk-trend-table tr.current{background:#EDF5F8}.risk-trend-table .ghost{font-size:15px;white-space:nowrap;min-height:42px}.risk-trend-value{white-space:nowrap;font-family:var(--mono)}.risk-trend-table summary{cursor:pointer;color:#096781}.risk-trend-table ul{padding-left:20px;margin:10px 0;min-width:200px}.risk-trend-help{font-size:16px;color:var(--ink-2);line-height:1.85}.risk-trend-link{font-size:16px}.risk-trend-table-hint{font-size:14px;color:var(--ink-3);margin:14px 0 0}
 @media(max-width:600px){.risk-trend{padding:16px 12px}.risk-trend h3{font-size:21px}.risk-trend-selected{padding:14px;gap:8px}.risk-trend-table th,.risk-trend-table td{padding:10px 8px}.risk-trend-table table{min-width:480px}}
 
+.date-comparison{border:1px solid #A5C6D3;background:#F1F7FA;border-radius:12px;margin:24px 0;padding:20px}.date-comparison h3{font-size:22px;margin:0 0 16px}.date-comparison-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}.date-comparison-fields label{font-size:17px;display:flex;flex-direction:column;gap:8px;min-width:0}.date-comparison-fields select{font:inherit;padding:12px;background:white;color:var(--ink);border:1px solid #9BB2BE;border-radius:8px;min-width:0;width:100%}.date-comparison-actions{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}.date-comparison-actions .ghost{font-size:16px;min-height:44px}.comparison-values{font-size:14px!important;color:var(--ink-2);line-height:1.8;overflow-wrap:anywhere}.visit-table .comparison-base,.risk-trend-table .comparison-base{box-shadow:inset 4px 0 #8C5D20}.comparison-marker{display:block;font-size:13px;color:var(--ink-2);font-weight:400}.risk-trend-baseline{flex:1 1 160px}.risk-trend-baseline strong{color:#7C531C}.date-comparison [disabled]{opacity:.5}@media(max-width:600px){.date-comparison{padding:16px}.date-comparison-fields{grid-template-columns:1fr;gap:14px}}
 </style>
 </head>
 <body>
@@ -619,6 +620,12 @@ svg.mech{min-width:1290px}.mnode>rect:first-child{fill:#EFF5F8;filter:none}.mnod
   <div class="hd"><h2 id="timelineTitle">教學案例時間軸</h2><div class="visit-actions"><button class="ghost" id="addVisit" type="button">新增就診紀錄</button><button class="ghost" id="editVisit" type="button" hidden>編輯這次</button><button class="ghost" id="deleteVisit" type="button" hidden>刪除這次</button></div></div>
   <div class="history-body"><p class="data-note" id="timelineSource"></p><div class="tl-track" id="timeline" aria-label="依日期選擇就診紀錄"></div><p id="visitStatus" role="status"></p>
   <div id="deleteVisitPrompt" hidden><p id="deleteVisitText"></p><button class="ghost" type="button" id="cancelDeleteVisit">保留紀錄</button> <button class="ghost" type="button" id="confirmDeleteVisit">確定刪除這次</button></div>
+<section id="dateComparisonControls" class="date-comparison" aria-labelledby="dateComparisonTitle">
+ <h3 id="dateComparisonTitle">自由選取比較日期</h3>
+ <div class="date-comparison-fields"><label for="comparisonBase">A · 基準日期<select id="comparisonBase"></select></label><label for="comparisonTarget">B · 比較日期<select id="comparisonTarget"></select></label></div>
+ <div class="date-comparison-actions"><button type="button" class="ghost" id="swapComparison">交換 A／B</button><button type="button" class="ghost" id="resetComparison">恢復與前一次比較</button></div>
+ <p id="comparisonMode" class="data-note" aria-live="polite"></p><p class="data-note">下方指標差值、風險差值及列印的數值比較都使用這兩個日期。點選時間軸或折線圓點會切換 B；手動選定的 A 保持不變。</p>
+</section>
 <section class="risk-trend" id="riskTrend" aria-labelledby="riskTrendTitle">
  <h3 id="riskTrendTitle">歷次風險百分比折線圖</h3>
  <p class="risk-trend-help">每次就診都是從當時起算的未來風險估計。一次比較同一模型、同一預測年限；圖中呈現全部已輸入紀錄。</p>
@@ -1713,8 +1720,38 @@ $("#whatifForm").addEventListener("submit",e=>{
 $("#whatifReset").addEventListener("click",()=>{S.hypothesis=null;$("#whatifError").textContent="";render();});
 
 
+/* Comparison dates are scoped to this patient and keyed by stable visit id. */
+function comparisonScope(patient){return S.caseIdx===-1?'custom':'case:'+patient.id;}
+function comparisonVisitKey(v){return v.id?'id:'+v.id:'date:'+v.date;}
+function comparisonSelection(patient=basePatient()){
+ const scope=comparisonScope(patient),ref=S.comparisonBases?.[scope];
+ const found=ref===undefined?-1:patient.visits.findIndex(v=>comparisonVisitKey(v)===ref);
+ if(ref!==undefined&&found<0)delete S.comparisonBases[scope];
+ return {index:found>=0?found:(S.visitIdx>0?S.visitIdx-1:null),automatic:found<0};
+}
+function setComparisonBase(patient,index){
+ S.comparisonBases??={};const scope=comparisonScope(patient);
+ if(index===null)delete S.comparisonBases[scope];else S.comparisonBases[scope]=comparisonVisitKey(patient.visits[index]);
+}
+function renderComparisonControls(){
+ const patient=basePatient(),selection=comparisonSelection(patient),visits=patient.visits;
+ $('#dateComparisonControls').hidden=visits.length<2;
+ const options=visits.map((v,i)=>'<option value="'+i+'">'+esc(v.date)+'</option>').join('');
+ $('#comparisonBase').innerHTML='<option value="" disabled>尚無基準日期</option>'+options;
+ $('#comparisonTarget').innerHTML=options;
+ $('#comparisonBase').value=selection.index===null?'':String(selection.index);
+ $('#comparisonTarget').value=String(S.visitIdx);
+ $('#swapComparison').disabled=selection.index===null;
+ $('#comparisonMode').textContent=(selection.automatic?'目前自動比較前一次紀錄。':'已固定您選擇的基準日期。')+' 差值＝B 比較日期 − A 基準日期；可選不相鄰或較早的日期。';
+}
+$('#comparisonBase').addEventListener('change',e=>{const patient=basePatient();setComparisonBase(patient,e.target.value===''?null:Number(e.target.value));render();});
+$('#comparisonTarget').addEventListener('change',e=>{S.visitIdx=Number(e.target.value);S.hypothesis=null;render();});
+$('#swapComparison').addEventListener('click',()=>{const patient=basePatient(),selection=comparisonSelection(patient);if(selection.index===null)return;setComparisonBase(patient,S.visitIdx);S.visitIdx=selection.index;S.hypothesis=null;render();});
+$('#resetComparison').addEventListener('click',()=>{setComparisonBase(basePatient(),null);render();});
+
 /* ── 時間軸 · 圖層 · 案例 ── */
 function renderTimeline(ctx){
+  renderComparisonControls();
   const custom=S.caseIdx===-1;
   $("#timelineTitle").textContent=custom ? "我的就診時間軸" : "教學案例時間軸";
   $("#timelineSource").textContent=custom ? "手動輸入紀錄，依日期排序。點日期切換人體地圖與當次判定；折線按實際日期間隔繪製。資料只留在本分頁，重新整理或關閉後消失。" : "虛構教學案例，非真實病歷或療效預測。新增自己的紀錄會建立獨立資料，不會帶入範例數值。";
@@ -1732,16 +1769,18 @@ function renderTimeline(ctx){
   });
   const panel=$("#visitComparison");
   if(ctx.p.visits.length<2){panel.innerHTML='<p class="data-note">目前 1 次紀錄。再新增一次，就能比較各次數值與提示等級。</p>';return;}
-  const records=ctx.p.visits.map(v=>{const p={...ctx.p,...v.clinical};return {p,v,d:derive(p,v)};});
-  const prev=records[S.visitIdx-1],now=records[S.visitIdx];
-  let comparison='<p class="data-note">目前選取 '+esc(now.v.date)+'。'+(prev ? '下列差值與 '+esc(prev.v.date)+' 比較；正負僅表示數值變化。' : '這是最早一筆；選擇後續日期可查看與前次的差值。')+'</p>';
+  const patient=basePatient(),selection=comparisonSelection(patient);
+  const records=patient.visits.map(v=>{const p={...patient,...v.clinical};return {p,v,d:derive(p,v)};});
+  const prev=selection.index===null?null:records[selection.index],now=records[S.visitIdx];
+  let comparison='<p class="data-note">B 比較日期 '+esc(now.v.date)+'。'+(prev ? 'A 基準日期 '+esc(prev.v.date)+'；下列差值＝B − A，正負僅表示數值變化。'+(prev.v.date===now.v.date?'目前選取相同日期。':'') : '尚無基準日期，請從上方選擇另一筆紀錄。')+' <a href="#dateComparisonControls">更換比較日期 ↑</a></p>';
   if(prev) comparison+='<div class="visit-deltas">'+TILES.map(t=>{
     const change=t.get(now.p,now.v,now.d)-t.get(prev.p,prev.v,prev.d);
     const value=(change>0?'+':'')+fx(change,t.dec);
     const bp=t.k==='居家血壓' ? ' / '+(now.v.dbp-prev.v.dbp>0?'+':'')+fx(now.v.dbp-prev.v.dbp) : '';
-    return '<div><span>'+esc(t.k)+'</span><strong>'+esc(value+bp)+'</strong><small>'+esc(t.k==='HbA1c'?'百分點':t.u)+'</small></div>';
+    const show=r=>t.show?t.show(r.p,r.v):fx(t.get(r.p,r.v,r.d),t.dec);
+    return '<div><span>'+esc(t.k)+'</span><strong>'+esc(value+bp)+'</strong><small>'+esc(t.k==='HbA1c'?'百分點':t.u)+'</small><small class="comparison-values">A '+esc(show(prev))+' → B '+esc(show(now))+'</small></div>';
   }).join('')+'</div>';
-  panel.innerHTML='<h3>歷次指標與提示等級</h3>'+comparison+'<div class="visit-table-scroll" tabindex="0" role="region" aria-label="歷次數值比較，可左右捲動"><table class="visit-table"><caption>依日期排列；點日期可查看該次器官判定</caption><thead><tr><th scope="col">日期</th>'+TILES.map(t=>'<th scope="col">'+esc(t.k)+'<small>'+esc(t.u)+'</small></th>').join('')+'</tr></thead><tbody>'+records.map((r,i)=>'<tr'+(i===S.visitIdx?' class="current"':'')+'><th scope="row"><button class="ghost" type="button" data-visit-index="'+i+'" aria-pressed="'+(i===S.visitIdx)+'">'+esc(r.v.date)+'</button></th>'+TILES.map(t=>{
+  panel.innerHTML='<h3>歷次指標與提示等級</h3>'+comparison+'<div class="visit-table-scroll" tabindex="0" role="region" aria-label="歷次數值比較，可左右捲動"><table class="visit-table"><caption>依日期排列；點日期可查看該次器官判定</caption><thead><tr><th scope="col">日期</th>'+TILES.map(t=>'<th scope="col">'+esc(t.k)+'<small>'+esc(t.u)+'</small></th>').join('')+'</tr></thead><tbody>'+records.map((r,i)=>'<tr class="'+(i===S.visitIdx?'current ':'')+(i===selection.index?'comparison-base':'')+'"><th scope="row"><button class="ghost" type="button" data-visit-index="'+i+'" aria-pressed="'+(i===S.visitIdx)+'">'+esc(r.v.date)+'</button>'+(i===selection.index?'<small class="comparison-marker">A 基準</small>':'')+(i===S.visitIdx?'<small class="comparison-marker">B 比較</small>':'')+'</th>'+TILES.map(t=>{
     const b=band(t.lvl(r.p,r.v,r.d));const value=t.show?t.show(r.p,r.v):fx(t.get(r.p,r.v,r.d),t.dec);
     return '<td style="color:'+b.color+'"><b>'+esc(value)+'</b><small>'+esc(b.name)+'</small></td>';
   }).join('')+'</tr>').join('')+'</tbody></table></div><p class="data-note">色帶是原工具的教學提示等級，不是個人事件機率；數值變化不代表已證實的治療效果。每次判定採用當次填寫的病史。</p>';
@@ -2030,13 +2069,13 @@ function riskTrendRecords(patient,model,region){
 }
 function riskTrendPercent(value){return value===null?'不提供估計':(value>0&&value<.1?'<0.1':fx(value,1))+'%';}
 function riskTrendDelta(now,prev){
- if(!prev)return '這是最早一筆，尚無前次紀錄可比較。';
- if(now.value===null||prev.value===null)return '與前一次 '+prev.date+' 無法計算差值：其中一次不提供估計。';
+ if(!prev)return '尚無基準日期，請在上方選取比較日期。';
+ if(now.value===null||prev.value===null)return '與基準日期 '+prev.date+' 無法計算差值：其中一次不提供估計。';
  const delta=now.value-prev.value,amount=Math.abs(delta);
- if(amount<1e-10)return '與前一次 '+prev.date+' 相同。';
- return '比前一次 '+prev.date+' '+(delta>0?'增加':'減少')+' '+(amount<.1?'小於 0.1':fx(amount,1))+' 個百分點。';
+ if(amount<1e-10)return '與基準日期 '+prev.date+' 相同。';
+ return '比基準日期 '+prev.date+' '+(delta>0?'增加':'減少')+' '+(amount<.1?'小於 0.1':fx(amount,1))+' 個百分點。';
 }
-function riskTrendSVG(records,selected){
+function riskTrendSVG(records,selected,baseline=null){
  const valid=records.filter(r=>r.value!==null);
  if(!valid.length)return '<div class="risk-trend-empty">目前沒有可繪製的估計值。請查看下方各次原因；SCORE2 模型也需先選擇校準情境。</div>';
  const w=Math.max(300,Math.min(1100,$('#riskTrendChart').clientWidth||760)),h=300,left=60,right=20,top=24,bottom=56,plotW=w-left-right,plotH=h-top-bottom;
@@ -2047,8 +2086,9 @@ function riskTrendSVG(records,selected){
  let segment=[],segments=[];records.forEach(r=>{if(r.value===null){if(segment.length)segments.push(segment);segment=[];}else segment.push(r);});if(segment.length)segments.push(segment);
  const lines=segments.filter(s=>s.length>1).map(s=>'<polyline class="risk-trend-line" points="'+s.map(r=>px(r.index).toFixed(2)+','+py(r.value).toFixed(2)).join(' ')+'" fill="none" stroke="#096781" stroke-width="3"/>').join('');
  const points=valid.map(r=>'<circle class="risk-trend-point" data-risk-visit="'+r.index+'" tabindex="0" role="button" aria-label="'+esc(r.date+'，'+riskTrendPercent(r.value)+'；查看這次紀錄')+'" aria-pressed="'+(r.index===selected)+'" cx="'+px(r.index)+'" cy="'+py(r.value)+'" r="'+(r.index===selected?8:5)+'" fill="'+(r.index===selected?'#096781':'white')+'" stroke="#096781" stroke-width="3"><title>'+esc(r.date+' · '+riskTrendPercent(r.value))+'</title></circle>').join('');
+ const baseRing=baseline!==null&&records[baseline]?.value!==null?'<circle class="risk-trend-baseline-ring" cx="'+px(baseline)+'" cy="'+py(records[baseline].value)+'" r="12" fill="none" stroke="#8C5D20" stroke-width="2" pointer-events="none"><title>A 基準日期</title></circle>':'';
  const ticks=first===last?'<text x="'+px(0)+'" y="'+(h-15)+'" text-anchor="middle">'+esc(records[0].date)+'</text>':'<text x="'+left+'" y="'+(h-15)+'">'+esc(records[0].date)+'</text><text x="'+(w-right)+'" y="'+(h-15)+'" text-anchor="end">'+esc(records[records.length-1].date)+'</text>';
- return '<p class="risk-trend-axis">估計風險（%）· 縱軸 0–'+cap+'%，依目前所選模型資料調整</p><div class="risk-trend-chart-scroll"><svg class="risk-trend-chart" viewBox="0 0 '+w+' '+h+'" role="group" aria-label="歷次風險折線圖；橫軸為實際就診日期，完整數值與原因見下表">'+grid+'<line x1="'+px(selected)+'" x2="'+px(selected)+'" y1="'+top+'" y2="'+(h-bottom)+'" stroke="#8FA9B5" stroke-dasharray="4 5"/>'+lines+points+ticks+'</svg></div><p class="data-note">'+(valid.length===1?'目前只有一筆有效估計，以單點呈現。':'圓點為各次估計，實心點為目前選取日期。')+' 點圓點或下方日期可切換紀錄；不適用日期留空、不中途接線。</p>';
+ return '<p class="risk-trend-axis">估計風險（%）· 縱軸 0–'+cap+'%，依目前所選模型資料調整</p><div class="risk-trend-chart-scroll"><svg class="risk-trend-chart" viewBox="0 0 '+w+' '+h+'" role="group" aria-label="歷次風險折線圖；橫軸為實際就診日期，完整數值與原因見下表">'+grid+'<line x1="'+px(selected)+'" x2="'+px(selected)+'" y1="'+top+'" y2="'+(h-bottom)+'" stroke="#8FA9B5" stroke-dasharray="4 5"/>'+lines+points+baseRing+ticks+'</svg></div><p class="data-note">'+(valid.length===1?'目前只有一筆有效估計，以單點呈現。':'圓點為各次估計，實心點為 B 比較日期；棕色外圈為 A 基準日期。')+' 點圓點或下方日期可切換紀錄；不適用日期留空、不中途接線。</p>';
 }
 function renderRiskTrend(ctx){
  const model=RISK_TREND_MODELS.find(m=>m.id===S.riskTrendModel)||RISK_TREND_MODELS[0];
@@ -2057,14 +2097,14 @@ function renderRiskTrend(ctx){
  const region=model.kind==='ap'?(S.score2Region||''):model.kind==='dm'?(S.score2DMRegion||''):'';
  $('#riskTrendRegionField').hidden=!regions;
  if(regions){$('#riskTrendRegion').innerHTML='<option value="">請選擇校準情境</option>'+Object.entries(regions).map(([key,r])=>'<option value="'+key+'">'+esc(r.label)+'</option>').join('');$('#riskTrendRegion').value=region;}
- const records=riskTrendRecords(basePatient(),model,region),now=records[S.visitIdx],prev=records[S.visitIdx-1];
+ const patient=basePatient(),selection=comparisonSelection(patient),records=riskTrendRecords(patient,model,region),now=records[S.visitIdx],prev=selection.index===null?null:records[selection.index];
  const calibration=regions?' 全部日期使用同一情境：'+(regions[region]?.label||'尚未選擇')+'。更換情境會重新計算整條線，並同步下方完整模型。':'';
  $('#riskTrendContext').textContent=model.label+'。'+model.note+calibration;
  $('#riskTrendSource').href='#'+model.link;
  $('#riskTrendProjection').hidden=!ctx.proj;
- $('#riskTrendSelected').innerHTML='<div><span>'+esc(now.date)+' · 所選紀錄</span><strong>'+esc(riskTrendPercent(now.value))+'</strong></div><p>'+esc(riskTrendDelta(now,prev))+'</p>';
- $('#riskTrendChart').innerHTML=riskTrendSVG(records,S.visitIdx);
- $('#riskTrendTable').innerHTML='<table><caption>'+esc(model.label)+' · 全部已輸入紀錄</caption><thead><tr><th scope="col">就診日期</th><th scope="col">估計風險</th><th scope="col">適用情況</th></tr></thead><tbody>'+records.map(r=>'<tr'+(r.index===S.visitIdx?' class="current"':'')+'><th scope="row"><button type="button" class="ghost" data-risk-visit="'+r.index+'" aria-pressed="'+(r.index===S.visitIdx)+'">'+esc(r.date)+'</button></th><td class="risk-trend-value">'+esc(riskTrendPercent(r.value))+'</td><td>'+(r.value===null?'<details><summary>查看原因（'+r.issues.length+'）</summary><ul>'+r.issues.map(i=>'<li>'+esc(i)+'</li>').join('')+'</ul>':'符合本工具計算條件')+'</td></tr>').join('')+'</tbody></table>';
+ $('#riskTrendSelected').innerHTML=(prev?'<div class="risk-trend-baseline"><span>A 基準 · '+esc(prev.date)+'</span><strong>'+esc(riskTrendPercent(prev.value))+'</strong></div>':'')+'<div><span>B 比較 · '+esc(now.date)+'</span><strong>'+esc(riskTrendPercent(now.value))+'</strong></div><p>'+esc(riskTrendDelta(now,prev))+'</p>';
+ $('#riskTrendChart').innerHTML=riskTrendSVG(records,S.visitIdx,selection.index);
+ $('#riskTrendTable').innerHTML='<table><caption>'+esc(model.label)+' · 全部已輸入紀錄</caption><thead><tr><th scope="col">就診日期</th><th scope="col">估計風險</th><th scope="col">適用情況</th></tr></thead><tbody>'+records.map(r=>'<tr class="'+(r.index===S.visitIdx?'current ':'')+(r.index===selection.index?'comparison-base':'')+'"><th scope="row"><button type="button" class="ghost" data-risk-visit="'+r.index+'" aria-pressed="'+(r.index===S.visitIdx)+'">'+esc(r.date)+'</button>'+(r.index===selection.index?'<small class="comparison-marker">A 基準</small>':'')+(r.index===S.visitIdx?'<small class="comparison-marker">B 比較</small>':'')+'</th><td class="risk-trend-value">'+esc(riskTrendPercent(r.value))+'</td><td>'+(r.value===null?'<details><summary>查看原因（'+r.issues.length+'）</summary><ul>'+r.issues.map(i=>'<li>'+esc(i)+'</li>').join('')+'</ul>':'符合本工具計算條件')+'</td></tr>').join('')+'</tbody></table>';
 }
 $('#riskTrendModel').addEventListener('change',e=>{S.riskTrendModel=e.target.value;renderRiskTrend(currentView());});
 $('#riskTrendRegion').addEventListener('change',e=>{if(S.riskTrendModel==='score2ap')S.score2Region=e.target.value;else if(S.riskTrendModel==='score2dm')S.score2DMRegion=e.target.value;render();});
@@ -2174,9 +2214,11 @@ $('#cancelDeleteVisit').addEventListener('click',()=>{deleteTarget=null;$('#dele
 $('#confirmDeleteVisit').addEventListener('click',()=>{
   if(!deleteTarget||S.caseIdx!==-1||!S.custom)return;
   const i=S.custom.visits.findIndex(v=>v.id===deleteTarget);if(i<0)return;const date=S.custom.visits[i].date;
+  const deletedBaseline=S.comparisonBases?.custom===comparisonVisitKey(S.custom.visits[i]);
+  if(deletedBaseline)delete S.comparisonBases.custom;
   S.custom.visits.splice(i,1);
   if(!S.custom.visits.length){S.custom=null;S.caseIdx=0;S.visitIdx=CASES[0].visits.length-1;}else S.visitIdx=Math.min(i,S.custom.visits.length-1);
-  S.organ=null;S.hypothesis=null;S.sims.clear();render();$('#visitStatus').textContent='已刪除 '+date+' 的紀錄。';$('#addVisit').focus();
+  S.organ=null;S.hypothesis=null;S.sims.clear();render();$('#visitStatus').textContent='已刪除 '+date+' 的紀錄。'+(deletedBaseline?'比較基準已刪除，已恢復與前一次比較。':'');$('#addVisit').focus();
 });
 $("#backAll").addEventListener("click", () => { S.organ = null; render(); });
 $("#simreset").addEventListener("click", () => { S.sims.clear(); render(); });
@@ -3453,7 +3495,8 @@ function buildRiskSummary(ctx){
  const modelCard=(name,result,note)=>'<section class="sheet-model"><h3>'+name+'</h3>'+result+'<p class="sheet-model-note">'+note+'</p></section>';
  const riskValue=(label,val)=>'<div><span>'+label+'</span><b>'+summaryPercent(val)+'</b></div>';
  const blocked=r=>'<p class="sheet-unavailable"><b>未提供百分比</b> · '+summaryRiskReason(r.issues)+'</p>';
- const prev=ctx.p.visits[S.visitIdx-1];
+ const comparisonPatient=basePatient(),comparison=comparisonSelection(comparisonPatient);
+ const prev=comparison.index===null?null:comparisonPatient.visits[comparison.index];
  const historyRow=(pv,pp,label)=>{const pd=derive(pp,pv);return '<tr><th>'+label+' '+esc(pv.date)+'</th><td>'+fx(pv.a1c,1)+'</td><td>'+fx(pv.sbp)+'/'+fx(pv.dbp)+'</td><td>'+fx(pv.ldl)+'</td><td>'+fx(pd.egfr,1)+'</td><td>'+fx(pv.uacr,1)+'</td><td>'+fx(pd.bmi,1)+'</td></tr>';};
  return '<header class="sheet-header"><div class="sheet-brand"><span class="ating-logo-mark"><img src="'+BRAND_LOGO+'" alt="阿婷醫師 Logo"></span><div><p>阿婷醫師的讀書筆記 · 代謝共病教學</p><h1>病人風險摘要</h1></div></div><div class="sheet-date"><b>就診 '+esc(v.date)+'</b><span>製表 '+localToday()+'</span><strong>'+(custom?'自行輸入紀錄':'虛構教學案例')+'</strong></div></header>'
  +'<div class="sheet-identity"><b>'+esc(custom?p.who:p.who.split(' · ')[0])+'</b><span>'+fx(v.age)+' 歲 · '+(p.sex==='M'?'男':'女')+' · 身高 '+fx(p.ht)+' cm · 體重 '+fx(v.wt,1)+' kg</span></div>'
@@ -3466,7 +3509,7 @@ function buildRiskSummary(ctx){
  +modelCard('SCORE2 Asia-Pacific · 10 年',ap.risk!==null?'<p class="sheet-single-risk">'+summaryPercent(ap.risk)+'</p>':blocked(ap),(apRegion?esc(SCORE2_AP_REGIONS[apRegion]?.label||'未識別地區')+'校準情境':'未選地區校準情境')+'；40–69 歲、無 CVD／糖尿病。')
  +modelCard('SCORE2-Diabetes · 10 年',dm.risk!==null?'<p class="sheet-single-risk">'+summaryPercent(dm.risk)+'</p>':blocked(dm),(dmRegion?esc(SCORE2_DM_REGIONS[dmRegion]?.label||'未識別地區')+'情境':'未選原模型校準情境')+'；本版限 40–69 歲 T2DM，須排除 CVD／嚴重 TOD。')
  +'</div><p class="sheet-endpoints">SCORE2 兩模型估計心血管死亡、非致命心肌梗塞或中風；地區名稱是校準組別，不是個人風險等級。</p></section>'
- +'<section><h2>04　就診數值比較 <small>'+(prev?'與所選日期的前一筆比較':'目前沒有更早的紀錄')+'</small></h2><table class="sheet-history"><thead><tr><th>紀錄日期</th><th>HbA1c<br>%</th><th>血壓<br>mmHg</th><th>LDL-C<br>mg/dL</th><th>eGFR<br>mL/min/1.73m²</th><th>UACR<br>mg/g</th><th>BMI<br>kg/m²</th></tr></thead><tbody>'+(prev?historyRow(prev,{...ctx.p,...prev.clinical},'前次'):'')+historyRow(v,p,'本次')+'</tbody></table></section>'
+ +'<section><h2>04　就診數值比較 <small>'+(prev?'B 比較日期與 A 基準日期':'尚未選擇基準日期')+'</small></h2><table class="sheet-history"><thead><tr><th>紀錄日期</th><th>HbA1c<br>%</th><th>血壓<br>mmHg</th><th>LDL-C<br>mg/dL</th><th>eGFR<br>mL/min/1.73m²</th><th>UACR<br>mg/g</th><th>BMI<br>kg/m²</th></tr></thead><tbody>'+(prev?historyRow(prev,{...comparisonPatient,...prev.clinical},'A 基準'):'')+historyRow(v,p,'B 比較')+'</tbody></table></section>'
  +'<section class="sheet-notes"><h2>追蹤／討論事項</h2><div></div><div></div></section>'
  +'<aside class="sheet-caution"><b>僅供教學與討論參考。</b> 本工具未經台灣族群校準；模型族群、適用條件與結局不同。數值或風險的前後差異不代表治療效果。單次異常不等於確診；完整排除原因與來源請見網站。</aside>'
  +'<footer class="sheet-footer"><span>來源：AHA PREVENT 2024 · SCORE2 Asia-Pacific 2025 · SCORE2-Diabetes／ESC 2023 · KDIGO 2024／KFRE</span><span>本機製作 · 使用者自行列印</span></footer>';
