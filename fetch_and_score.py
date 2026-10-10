@@ -93,11 +93,11 @@ def fetch_pubmed(feed):
     limit = feed.get("limit", 0) or 20
     term = urllib.parse.quote(feed["term"])
     js = json.loads(http_get(f"{EUTILS}/esearch.fcgi?db=pubmed&term={term}"
-                             f"&retmax={limit}&retmode=json&sort=date"))
+                             f"&retmax={limit}&retmode=json&sort=pub_date"))
     ids = js.get("esearchresult", {}).get("idlist", [])
     if not ids:
         return []
-    time.sleep(0.34)   # NCBI 禮貌：<3 req/s 無 key
+    time.sleep(0.6)    # NCBI 禮貌：<3 req/s 無 key（0.34 貼著上限，偶爾整批失敗）
     xml = http_get(f"{EUTILS}/efetch.fcgi?db=pubmed&id={','.join(ids)}&retmode=xml")
     return parse_pubmed_xml(xml)
 
