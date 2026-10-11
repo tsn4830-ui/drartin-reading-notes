@@ -31,6 +31,13 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
+      # 用作者投票回訓興趣模型（先跑，讓本次 fetch 就吃到新權重）。
+      # VOTES_CSV_URL 未設 → train_interest.py 乾淨跳過，interest_model.json 不變。
+      - name: Train interest model (作者投票回饋)
+        env:
+          VOTES_CSV_URL: ${{ secrets.VOTES_CSV_URL }}
+        run: python train_interest.py
+
       - name: Fetch + score
         run: python fetch_and_score.py
 
@@ -44,14 +51,23 @@ jobs:
           UNPAYWALL_EMAIL: ${{ secrets.UNPAYWALL_EMAIL }}
         run: python enrich.py --recheck 60 --workers 8 || true
 
+      # 今日新高分文獻推播（enrich 之後 → 帶得到 🟢 OA 狀態）。
+      # NTFY_URL 未設 → notify_digest.py 乾淨跳過。|| true：推播壞掉絕不擋更新。
+      - name: Notify digest (ntfy)
+        env:
+          NTFY_URL: ${{ secrets.NTFY_URL }}
+          NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}
+          SITE_URL: https://tsn4830-ui.github.io/drartin-reading-notes/
+        run: python notify_digest.py || true
+
       - name: Copy data into site
         run: cp papers.json site/papers.json
 
-      - name: Commit DB + data (保留 first_seen 生命週期 → NEW 徽章)
+      - name: Commit DB + data (保留 first_seen 生命週期 → NEW 徽章；model/state/log 一起回寫)
         run: |
           git config user.name  "radar-bot"
           git config user.email "radar-bot@users.noreply.github.com"
-          git add paper_radar.db site/papers.json
+          git add paper_radar.db site/papers.json interest_model.json training_log.jsonl .digest_state.json 2>/dev/null || true
           git commit -m "radar: $(date -u +%F) update" || echo "no changes"
           git push || echo "push skipped"
 

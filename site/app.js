@@ -10,6 +10,7 @@ let topics = load(LS_TOPIC, null);
 let filt = load(LS_FILT, {badge:'all', sort:'score', search:'', showSeen:false});
 let visit = resolveVisit();
 let collectUrl = '';                 // 按讚匯入 Zotero 的中繼網址（來自 collect.config.json）
+let logAllVotes = false;             // true = 連 👎/😐/取消 也送 collector（供興趣模型回訓）；預設只送 👍
 const seenAtLoad = new Set();        // 只隱藏「載入前就已看」的；本 session 新點的留著
 let headCollapsed = false;           // 於 init() 依螢幕寬度 / localStorage 決定
 
@@ -29,7 +30,8 @@ function resolveVisit(){
 async function init(){
   const r = await fetch('papers.json?_=' + Date.now());
   DATA = await r.json();
-  try{ const c = await (await fetch('collect.config.json?_=' + Date.now())).json(); collectUrl = (c.url||'').trim(); }catch{}
+  try{ const c = await (await fetch('collect.config.json?_=' + Date.now())).json();
+       collectUrl = (c.url||'').trim(); logAllVotes = !!c.logAllVotes; }catch{}
   if(topics===null){ // 首次：用 config default_on
     topics = {};
     for(const [k,v] of Object.entries(DATA.topic_groups)) topics[k] = v.default_on;
@@ -220,20 +222,25 @@ function setVote(p, v){
   a.vote = (a.vote===v) ? null : v;
   markSeen(p);
   save(LS_ACT, actions);
-  if(a.vote==='up' && was!=='up') sendToCollector(p);   // 剛按讚 → 送去 Zotero
+  // 👍 一律送（→ Zotero 收藏 + 記票）；其餘票別只有開了 logAllVotes 才送（→ 記票供回訓）。
+  if(a.vote==='up' && was!=='up') sendVote(p, 'up');
+  else if(logAllVotes && a.vote !== was) sendVote(p, a.vote || 'none');
 }
 
-// 送一篇到 Apps Script 中繼（→ Zotero + Sheet）。fire-and-forget，失敗只提示。
-function sendToCollector(p){
-  if(!collectUrl){ toast('👍 已收藏（本機）'); return; }
+// 送一票到 Apps Script 中繼（→ Zotero + Sheet）。fire-and-forget，失敗只提示。
+// vote: 'up'（收藏＋記票）| 'down' | 'neutral' | 'none'(取消，只記票)。
+// ⚠ Zotero 是否收藏由 Apps Script 依 vote==='up' 判斷，前端只負責如實回報。
+function sendVote(p, vote){
+  const isUp = vote==='up';
+  if(!collectUrl){ if(isUp) toast('👍 已收藏（本機）'); return; }
   const payload = { item_id:p.item_id, doi:p.doi||'', title:p.title||'',
     authors:p.authors||'', journal:p.source_name||'', year:p.pub_date||'',
-    url:p.url||('https://doi.org/'+(p.doi||'')), vote:'up' };
+    url:p.url||('https://doi.org/'+(p.doi||'')), vote, tags:p.tags||[] };
   // text/plain 避免 CORS preflight；no-cors fire-and-forget（Apps Script 不回 CORS 標頭）
   fetch(collectUrl, {method:'POST', mode:'no-cors',
     headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload)})
-    .then(()=>toast('👍 已送進 Zotero'))
-    .catch(()=>toast('⚠ 匯入失敗，已存本機'));
+    .then(()=>toast(isUp ? '👍 已送進 Zotero' : '已記錄'))
+    .catch(()=>{ if(isUp) toast('⚠ 匯入失敗，已存本機'); });
 }
 
 let _toastT=null;

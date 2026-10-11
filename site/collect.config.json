@@ -1,4 +1,6 @@
 {
   "_說明": "把 Apps Script 部署後的『網頁應用程式』網址填到 url。留空 = 按讚只存本機、不匯入 Zotero。",
-  "url": ""
+  "_logAllVotes說明": "true = 連 👎/😐/取消 也送 collector（供興趣模型回訓 train_interest.py 用）。開之前務必先部署 docs/apps_script_reference.gs（Zotero 收藏已 gate 在 vote==='up'）。預設 false = 只送 👍，live 行為與原本相同。",
+  "url": "",
+  "logAllVotes": false
 }

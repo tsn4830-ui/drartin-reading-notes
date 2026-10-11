@@ -19,13 +19,17 @@
 
 ```
 GitHub Actions（每天 UTC 22:00 = 台灣 06:00 cron）
+  train_interest.py    (選用) 作者投票 → 微調 interest_model.json 權重
   fetch_and_score.py   19 個 PubMed feed → SQLite 去重 → interest_model 評分 → papers.json
   enrich.py            每篇 DOI → Unpaywall（免費全文判定）
-        │ commit paper_radar.db + site/papers.json（保留 first_seen → NEW 徽章）
+  notify_digest.py     (選用) 今日新高分文獻 → ntfy 手機推播
+        │ commit paper_radar.db + site/papers.json + interest_model.json（保留 first_seen → NEW 徽章）
         ▼
 GitHub Pages（公開靜態站）
   site/index.html + app.js + papers.json   純前端，無後端
 ```
+
+> `train_interest.py` / `notify_digest.py` 都是**選用**：對應的 secret 沒設就自動跳過，主流程照跑。
 
 ## 怎麼部署（一次設定，之後全自動）
 
@@ -39,6 +43,26 @@ GitHub Pages（公開靜態站）
 
 > 之後每天早上自動更新，你什麼都不用做。
 > 沒設 `UNPAYWALL_EMAIL` 也完全能跑，只是少了免費全文徽章。
+
+### （選用）手機每日推播 — ntfy
+
+1. 手機裝 [ntfy](https://ntfy.sh) app，訂閱一個**沒人猜得到**的 topic，例如 `drartin-radar-7x9k2`。
+2. Repo → Secrets 新增 `NTFY_URL` = `https://ntfy.sh/drartin-radar-7x9k2`（就是那個 topic 的網址）。
+3. 之後每天抓完，若有 `score ≥ 3` 的**當日新論文**就推一則「今日新高分文獻 N 篇」，點一下開網站。
+   - 同一天手動重跑不會重複吵你（`.digest_state.json` 記過的會扣掉）。
+   - 自架 ntfy 或 reserved topic 需授權 → 再加 secret `NTFY_TOKEN`（Bearer）。沒有就不用設。
+
+### （選用）投票回訓興趣模型 — 讓你的讚/踩慢慢調權重
+
+> 只有**你自己**的投票會回饋（透過 Apps Script → Google Sheet），訪客投票只存他自己瀏覽器、不影響模型。
+
+1. 依 `docs/apps_script_reference.gs` 部署 Apps Script（它會把每票寫進 `votes` 工作表，且**只有 👍 才收藏 Zotero**）。
+2. 把部署網址填進 `site/collect.config.json` 的 `url`，並把 `logAllVotes` 改成 `true`（這樣 👎/😐 也會送去記票；預設 `false` 只送 👍，行為與原本相同）。
+3. 該 Google Sheet →「檔案 / 共用 / 發布到網路」選 `votes` 工作表、格式 **CSV**，複製網址。
+4. Repo → Secrets 新增 `VOTES_CSV_URL` = 那個 CSV 網址。
+5. 之後每天 CI 會讀你的投票、用 `paper_radar.db` 補 tags、穩定地微調 `interest_model.json` 權重（每 3 票位移一階、單 tag 相對原始錨點最多 ±2、封頂 1–5、達 3 票才動），並把新模型 commit 回來。
+   - 負向 tag 只「報告」不自動改（避免子字串誤命中）。
+   - 沒設 `VOTES_CSV_URL` → 這步自動跳過，模型不變。
 
 ## 怎麼客製
 
@@ -71,9 +95,12 @@ cp papers.json site/papers.json
 |---|---|
 | `fetch_and_score.py` | 抓取 + 去重 + 興趣評分（核心） |
 | `enrich.py` | Unpaywall 免費全文加值 |
+| `train_interest.py` | （選用）作者投票 → 微調評分權重 |
+| `notify_digest.py` | （選用）今日新高分文獻 → ntfy 推播 |
 | `config.yaml` | feed 清單 + 主題分組 + email |
 | `interest_model.json` | 評分模型（關鍵字 / 權重） |
-| `site/` | 靜態前端（index.html / app.js / style.css / papers.json） |
+| `site/` | 靜態前端（index.html / app.js / style.css / papers.json / collect.config.json） |
+| `docs/apps_script_reference.gs` | （選用）投票中繼 Apps Script 參考（Zotero 收藏 gate 在 👍） |
 | `.github/workflows/update.yml` | 每日自動更新 + 部署 |
 
 ---
