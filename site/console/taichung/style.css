@@ -4,3 +4,6 @@
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
 .factor-map{background:#e9edf4;border:1px solid #c8d2e0;border-radius:12px;padding:18px}.resource-table{white-space:normal;margin:0}.resource-table td{font-variant-numeric:tabular-nums}.resource-table th{font-weight:500}.resource-table th:first-child{min-width:110px}#resources label{display:grid;gap:8px;font-size:14px}#factorLegend{margin-bottom:12px}
+
+/* 2025 context */
+.air-dot{cursor:pointer}.air-dot:focus{outline:none;stroke:#111;stroke-width:4}.air-map{border:1px solid #cbd8d0;border-radius:12px;overflow:hidden;margin-bottom:24px;background:#edf1ec}.air-map .map-svg{max-height:560px}.context-sources{margin:20px 0}#contextScatter article{min-width:0}#airStations th button{white-space:nowrap}#airCompare .income-card{border:1px solid #d0dbd3}
