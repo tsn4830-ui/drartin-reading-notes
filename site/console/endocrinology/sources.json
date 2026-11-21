@@ -1,18 +1,11 @@
 {
-  "title": "找新陳代謝科醫師：已核對院所入口",
+  "schemaVersion": 2,
+  "title": "新陳代謝科醫院與診所公開索引",
   "checked": "2026-11-22",
-  "coverage": {
-    "hospitalCount": 10,
-    "countyCount": 7,
-    "nationalComplete": false,
-    "taichungComplete": false,
-    "taichungTrainingHospitalsChecked": 4,
-    "taichungSocietyTrainingHospitalCount": 4,
-    "coverageType": "curated_verified_hospital_links_not_complete_physician_map"
-  },
-  "definition": "可查詢新陳代謝／內分泌醫師或門診的院方公開入口。不是全國完整專科名冊，不能據此計算醫師密度或資源缺口。",
-  "missingRule": "未收錄地區表示尚未完成收錄，不表示沒有醫師或院所。",
-  "hospitals": [
+  "coverage": "部分公開院所與姓名索引，非全國完整專科醫師名冊",
+  "definition": "醫院以公開科別或門診列名核對；診所另核對院方明文專科資格，未獨立查驗證書效期。院所數與姓名列次均不當作現職人力或醫師密度。",
+  "missingRule": "未收錄不代表沒有醫師；不補零，不推算人口密度。",
+  "facilities": [
     {
       "id": "vghtc",
       "hospital": "臺中榮民總醫院",
@@ -35,7 +28,12 @@
       "checked": "2026-11-22",
       "sourceUpdated": null,
       "addressSourceUrl": "https://www.vghtc.gov.tw/CP/1670",
-      "doctorNameSourceUrl": "https://eservicegw.vghtc.gov.tw/GatewaySpring/proxy/WebsiteSpring/outpatient/v2/doctor-unit/META"
+      "doctorNameSourceUrl": "https://eservicegw.vghtc.gov.tw/GatewaySpring/proxy/WebsiteSpring/outpatient/v2/doctor-unit/META",
+      "qualificationStatement": null,
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": null,
+      "addressSourceNote": null,
+      "facilityType": "hospital"
     },
     {
       "id": "cmuh",
@@ -63,7 +61,12 @@
       "checked": "2026-11-22",
       "sourceUpdated": null,
       "addressSourceUrl": "https://cmuh.cmu.edu.tw/Contact/Location",
-      "doctorNameSourceUrl": "https://www.cmuh.cmu.edu.tw/Department/Detail?depid=59"
+      "doctorNameSourceUrl": "https://www.cmuh.cmu.edu.tw/Department/Detail?depid=59",
+      "qualificationStatement": null,
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": null,
+      "addressSourceNote": null,
+      "facilityType": "hospital"
     },
     {
       "id": "csh",
@@ -83,7 +86,12 @@
       "checked": "2026-11-22",
       "sourceUpdated": null,
       "addressSourceUrl": "https://web.csh.org.tw/web/a35000/?page_id=109",
-      "doctorNameSourceUrl": "https://web.csh.org.tw/web/doctor/?page_id=1067"
+      "doctorNameSourceUrl": "https://web.csh.org.tw/web/doctor/?page_id=1067",
+      "qualificationStatement": null,
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": null,
+      "addressSourceNote": null,
+      "facilityType": "hospital"
     },
     {
       "id": "sltung",
@@ -105,7 +113,12 @@
       "checked": "2026-11-22",
       "sourceUpdated": null,
       "addressSourceUrl": "https://rg.sltung.com.tw/fmRgctrlIN.aspx?div_no=109&week_seq=1",
-      "doctorNameSourceUrl": "https://rg.sltung.com.tw/fmRgctrlIN.aspx?div_no=109&week_seq=1"
+      "doctorNameSourceUrl": "https://rg.sltung.com.tw/fmRgctrlIN.aspx?div_no=109&week_seq=1",
+      "qualificationStatement": null,
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": null,
+      "addressSourceNote": null,
+      "facilityType": "hospital"
     },
     {
       "id": "shuanghe",
@@ -128,7 +141,12 @@
       "checked": "2026-11-22",
       "sourceUpdated": null,
       "addressSourceUrl": "https://shh.tmu.edu.tw/page/TeamDoc.aspx?deptCode=AG",
-      "doctorNameSourceUrl": "https://shh.tmu.edu.tw/page/TeamDoc.aspx?deptCode=AG"
+      "doctorNameSourceUrl": "https://shh.tmu.edu.tw/page/TeamDoc.aspx?deptCode=AG",
+      "qualificationStatement": null,
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": null,
+      "addressSourceNote": null,
+      "facilityType": "hospital"
     },
     {
       "id": "wanfang",
@@ -152,7 +170,12 @@
       "checked": "2026-11-22",
       "sourceUpdated": null,
       "addressSourceUrl": "https://www.wanfang.gov.tw/departments/WanfangClass_4/teams",
-      "doctorNameSourceUrl": "https://www.wanfang.gov.tw/departments/WanfangClass_4/teams"
+      "doctorNameSourceUrl": "https://www.wanfang.gov.tw/departments/WanfangClass_4/teams",
+      "qualificationStatement": null,
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": null,
+      "addressSourceNote": null,
+      "facilityType": "hospital"
     },
     {
       "id": "cgmh_linkou",
@@ -190,7 +213,12 @@
       "checked": "2026-11-22",
       "sourceUpdated": null,
       "addressSourceUrl": "https://www.cgmh.org.tw/tw/Systems/AreaInfo/5",
-      "doctorNameSourceUrl": "https://www.cgmh.org.tw/tw/Systems/BranchInfo/3/31000/31600"
+      "doctorNameSourceUrl": "https://www.cgmh.org.tw/tw/Systems/BranchInfo/3/31000/31600",
+      "qualificationStatement": null,
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": null,
+      "addressSourceNote": null,
+      "facilityType": "hospital"
     },
     {
       "id": "ncku",
@@ -213,7 +241,12 @@
       "checked": "2026-11-22",
       "sourceUpdated": null,
       "addressSourceUrl": "https://nckuh.hosp.ncku.edu.tw/p/412-1000-29514.php?Lang=zh-tw",
-      "doctorNameSourceUrl": "https://nckuh.hosp.ncku.edu.tw/p/405-1000-259827,c30356.php"
+      "doctorNameSourceUrl": "https://nckuh.hosp.ncku.edu.tw/p/405-1000-259827,c30356.php",
+      "qualificationStatement": null,
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": null,
+      "addressSourceNote": null,
+      "facilityType": "hospital"
     },
     {
       "id": "vghks",
@@ -232,7 +265,12 @@
       "checked": "2026-11-22",
       "sourceUpdated": "2026-10-16",
       "addressSourceUrl": "https://org.vghks.gov.tw/med/News_DoctorList.aspx?n=C85E690EDA820B24&sms=BE90A9F98B88466F",
-      "doctorNameSourceUrl": "https://org.vghks.gov.tw/med/News_DoctorList.aspx?n=C85E690EDA820B24&sms=BE90A9F98B88466F"
+      "doctorNameSourceUrl": "https://org.vghks.gov.tw/med/News_DoctorList.aspx?n=C85E690EDA820B24&sms=BE90A9F98B88466F",
+      "qualificationStatement": null,
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": null,
+      "addressSourceNote": null,
+      "facilityType": "hospital"
     },
     {
       "id": "hualien_tzuchi",
@@ -250,7 +288,330 @@
       "checked": "2026-11-22",
       "sourceUpdated": null,
       "addressSourceUrl": "https://hlm.tzuchi.com.tw/home/index.php/team-endo",
-      "doctorNameSourceUrl": "https://hlm.tzuchi.com.tw/home/index.php/team-endo"
+      "doctorNameSourceUrl": "https://hlm.tzuchi.com.tw/home/index.php/team-endo",
+      "qualificationStatement": null,
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": null,
+      "addressSourceNote": null,
+      "facilityType": "hospital"
+    },
+    {
+      "id": "clinic-ucomejoin",
+      "hospital": "優康家診所",
+      "county": "臺中市",
+      "district": "南屯區",
+      "address": "臺中市南屯區永春東七路889號",
+      "department": "內分泌暨新陳代謝科",
+      "doctorPage": "https://ucomejoin.com.tw/professional-team/",
+      "doctorNames": [
+        "謝明家",
+        "陳信宏"
+      ],
+      "checked": "2026-11-22",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://ucomejoin.com.tw/professional-team/",
+      "doctorNameSourceUrl": null,
+      "qualificationStatement": "診所醫療團隊頁逐人記載謝明家與陳信宏具內分泌暨新陳代謝科專科醫師資格。",
+      "qualificationSourceUrl": "https://ucomejoin.com.tw/professional-team/",
+      "qualificationEvidence": [
+        {
+          "doctorName": "謝明家",
+          "statement": "醫療團隊頁在謝明家的問答區明載內分泌暨新陳代謝科專科醫師。",
+          "qualificationSourceUrl": "https://ucomejoin.com.tw/professional-team/",
+          "doctorPage": "https://ucomejoin.com.tw/professional-team/",
+          "evidenceFile": "ucome-team.html",
+          "affiliationSourceUrl": "https://ucomejoin.com.tw/",
+          "basis": "explicit_individual_specialty_statement_on_official_provider_page",
+          "certificateValidityIndependentlyVerified": false
+        },
+        {
+          "doctorName": "陳信宏",
+          "statement": "陳信宏的醫師經歷欄明載內分泌暨新陳代謝科專科醫師。",
+          "qualificationSourceUrl": "https://ucomejoin.com.tw/professional-team/",
+          "doctorPage": "https://ucomejoin.com.tw/professional-team/",
+          "evidenceFile": "ucome-team.html",
+          "affiliationSourceUrl": "https://ucomejoin.com.tw/",
+          "basis": "explicit_individual_specialty_statement_on_official_provider_page",
+          "certificateValidityIndependentlyVerified": false
+        }
+      ],
+      "addressSourceNote": null,
+      "facilityType": "clinic"
+    },
+    {
+      "id": "clinic-yijia",
+      "hospital": "益家診所",
+      "county": "臺中市",
+      "district": "東區",
+      "address": "臺中市東區建成路3號",
+      "department": "內分泌暨新陳代謝科",
+      "doctorPage": "https://cmuh.cmu.edu.tw/BrandDoctors/Detail?docId=916",
+      "doctorNames": [
+        "邱依婷"
+      ],
+      "checked": "2026-11-22",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://www.cmuh.cmu.edu.tw/BrandHome/Index?brandId=8",
+      "doctorNameSourceUrl": null,
+      "qualificationStatement": "益家診所的院方醫師頁記載邱依婷具內分泌暨新陳代謝科專科醫師資格；初診及複診名單均列名。",
+      "qualificationSourceUrl": "https://cmuh.cmu.edu.tw/BrandDoctors/Detail?docId=916",
+      "qualificationEvidence": [
+        {
+          "doctorName": "邱依婷",
+          "statement": "院方醫師介紹明載內分泌暨新陳代謝科專科醫師。",
+          "qualificationSourceUrl": "https://cmuh.cmu.edu.tw/BrandDoctors/Detail?docId=916",
+          "doctorPage": "https://cmuh.cmu.edu.tw/BrandDoctors/Detail?docId=916",
+          "evidenceFile": "yijia-916.html",
+          "affiliationSourceUrl": "https://www.cmuh.cmu.edu.tw/BrandHome/PageDetail/213",
+          "basis": "explicit_individual_specialty_statement_on_official_provider_page",
+          "certificateValidityIndependentlyVerified": false
+        }
+      ],
+      "addressSourceNote": null,
+      "facilityType": "clinic"
+    },
+    {
+      "id": "clinic-yinghong",
+      "hospital": "英宏診所",
+      "county": "臺中市",
+      "district": "南屯區",
+      "address": "臺中市南屯區豐富路312號",
+      "department": "內分泌暨新陳代謝科",
+      "doctorPage": "https://www.yinghongclinic.com.tw/dean.html",
+      "doctorNames": [
+        "盧英立"
+      ],
+      "checked": "2026-11-22",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://www.yinghongclinic.com.tw/dean.html",
+      "doctorNameSourceUrl": null,
+      "qualificationStatement": "診所院長介紹頁記載盧英立具內分泌暨新陳代謝科專科醫師資格。",
+      "qualificationSourceUrl": "https://www.yinghongclinic.com.tw/dean.html",
+      "qualificationEvidence": [
+        {
+          "doctorName": "盧英立",
+          "statement": "本人學經歷欄明載內分泌暨新陳代謝科專科醫師。",
+          "qualificationSourceUrl": "https://www.yinghongclinic.com.tw/dean.html",
+          "doctorPage": "https://www.yinghongclinic.com.tw/dean.html",
+          "evidenceFile": "yinghong-doctor.html",
+          "affiliationSourceUrl": "https://www.yinghongclinic.com.tw/dean.html",
+          "basis": "explicit_individual_specialty_statement_on_official_provider_page",
+          "certificateValidityIndependentlyVerified": false
+        }
+      ],
+      "addressSourceNote": null,
+      "facilityType": "clinic"
+    },
+    {
+      "id": "clinic-huiteng",
+      "hospital": "惠騰內科診所",
+      "county": "臺中市",
+      "district": "西區",
+      "address": "臺中市西區三民路一段149號",
+      "department": "內分泌暨新陳代謝科",
+      "doctorPage": "https://www.huihuiclinic.com/products-1.html",
+      "doctorNames": [
+        "徐盛邦",
+        "蔡依靜"
+      ],
+      "checked": "2026-11-22",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://www.huihuiclinic.com/products-1.html",
+      "doctorNameSourceUrl": null,
+      "qualificationStatement": "診所官網分別記載徐盛邦及蔡依靜為內分泌暨新陳代謝專科醫師。",
+      "qualificationSourceUrl": "https://www.huihuiclinic.com/internal_medicine_1.html",
+      "qualificationEvidence": [
+        {
+          "doctorName": "徐盛邦",
+          "statement": "醫師個人頁明載內分泌暨新陳代謝科專科醫師。",
+          "qualificationSourceUrl": "https://www.huihuiclinic.com/product-7.html",
+          "doctorPage": "https://www.huihuiclinic.com/product-7.html",
+          "evidenceFile": "huiteng-hsu.html",
+          "affiliationSourceUrl": "https://www.huihuiclinic.com/products-1.html",
+          "basis": "explicit_individual_specialty_statement_on_official_provider_page",
+          "certificateValidityIndependentlyVerified": false
+        },
+        {
+          "doctorName": "蔡依靜",
+          "statement": "糖尿病整合照護頁在蔡依靜姓名後明載內分泌暨新陳代謝專科醫師；不以共照網認證替代此證據。",
+          "qualificationSourceUrl": "https://www.huihuiclinic.com/internal_medicine_1.html",
+          "doctorPage": "https://www.huihuiclinic.com/product-13.html",
+          "evidenceFile": "huiteng-qualification.html",
+          "affiliationSourceUrl": "https://www.huihuiclinic.com/products-1.html",
+          "basis": "explicit_individual_specialty_statement_on_official_provider_page",
+          "certificateValidityIndependentlyVerified": false
+        }
+      ],
+      "addressSourceNote": null,
+      "facilityType": "clinic"
+    },
+    {
+      "id": "rongyang_clinic",
+      "hospital": "榮陽安心診所",
+      "county": "臺北市",
+      "district": "北投區",
+      "address": "臺北市北投區自強街168號",
+      "department": "內分泌新陳代謝科",
+      "doctorPage": "https://www.vghtpe.gov.tw/Teacher.action?tid=765",
+      "doctorNames": [
+        "林怡君"
+      ],
+      "checked": "2026-11-22",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://wd.vghtpe.gov.tw/fm/files/114%E5%B9%B4%E7%A4%BE%E5%8D%80%E9%86%AB%E7%99%82%E7%BE%A4%E6%B8%85%E5%86%8A.pdf",
+      "doctorNameSourceUrl": "https://www.vghtpe.gov.tw/Teacher.action?tid=765",
+      "qualificationStatement": "臺北榮總醫師頁列明內分泌暨新陳代謝科專科資格，並記載為榮陽安心診所院長。",
+      "qualificationSourceUrl": "https://www.vghtpe.gov.tw/Teacher.action?tid=765",
+      "qualificationEvidence": [
+        {
+          "doctorName": "林怡君",
+          "statement": "臺北榮總醫師頁列明內分泌暨新陳代謝科專科資格，並記載為榮陽安心診所院長。",
+          "sourceUrl": "https://www.vghtpe.gov.tw/Teacher.action?tid=765"
+        }
+      ],
+      "addressSourceNote": "地址依2025年北榮社區醫療群名冊",
+      "facilityType": "clinic"
+    },
+    {
+      "id": "zeren_clinic",
+      "hospital": "澤仁診所",
+      "county": "新竹市",
+      "district": "東區",
+      "address": "新竹市東區光復路二段405號",
+      "department": "內分泌新陳代謝科",
+      "doctorPage": "https://zrclinic.com/team/",
+      "doctorNames": [
+        "許智堯"
+      ],
+      "checked": "2026-11-22",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://zrclinic.com/contact/",
+      "doctorNameSourceUrl": "https://zrclinic.com/team/",
+      "qualificationStatement": "診所醫師團隊頁列明內分泌暨新陳代謝科專科資格。",
+      "qualificationSourceUrl": "https://zrclinic.com/team/",
+      "qualificationEvidence": [
+        {
+          "doctorName": "許智堯",
+          "statement": "診所醫師團隊頁列明內分泌暨新陳代謝科專科資格。",
+          "sourceUrl": "https://zrclinic.com/team/"
+        }
+      ],
+      "addressSourceNote": null,
+      "facilityType": "clinic"
+    },
+    {
+      "id": "sun_changhua_clinic",
+      "hospital": "孫楨文診所",
+      "county": "彰化縣",
+      "district": "彰化市",
+      "address": "彰化縣彰化市華山路142號",
+      "department": "內分泌新陳代謝科",
+      "doctorPage": "https://www.sun-medical.com.tw/index",
+      "doctorNames": [
+        "孫楨文"
+      ],
+      "checked": "2026-11-22",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://www.sun-medical.com.tw/index",
+      "doctorNameSourceUrl": "https://www.sun-medical.com.tw/index",
+      "qualificationStatement": "診所醫師團隊列明內分泌專科資格。",
+      "qualificationSourceUrl": "https://www.sun-medical.com.tw/index",
+      "qualificationEvidence": [
+        {
+          "doctorName": "孫楨文",
+          "statement": "診所醫師團隊列明內分泌專科資格。",
+          "sourceUrl": "https://www.sun-medical.com.tw/index"
+        }
+      ],
+      "addressSourceNote": null,
+      "facilityType": "clinic"
+    },
+    {
+      "id": "jerry_clinic",
+      "hospital": "加睿診所",
+      "county": "臺南市",
+      "district": "北區",
+      "address": "臺南市北區文賢路333號",
+      "department": "內分泌新陳代謝科",
+      "doctorPage": "https://jerryclinic.com/",
+      "doctorNames": [
+        "蔡加睿"
+      ],
+      "checked": "2026-11-22",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://jerryclinic.com/",
+      "doctorNameSourceUrl": "https://jerryclinic.com/",
+      "qualificationStatement": "診所醫師介紹列明內分泌新陳代謝專科醫師資格。",
+      "qualificationSourceUrl": "https://jerryclinic.com/",
+      "qualificationEvidence": [
+        {
+          "doctorName": "蔡加睿",
+          "statement": "診所醫師介紹列明內分泌新陳代謝專科醫師資格。",
+          "sourceUrl": "https://jerryclinic.com/"
+        }
+      ],
+      "addressSourceNote": null,
+      "facilityType": "clinic"
+    },
+    {
+      "id": "shangheng_clinic",
+      "hospital": "尚恆內科診所",
+      "county": "高雄市",
+      "district": "鼓山區",
+      "address": "高雄市鼓山區龍勝路120號",
+      "department": "內分泌新陳代謝科",
+      "doctorPage": "https://www.shanghengclinic.com.tw/doctor.html",
+      "doctorNames": [
+        "黃書恆",
+        "柯冠廷"
+      ],
+      "checked": "2026-11-22",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://www.shanghengclinic.com.tw/doctor.html",
+      "doctorNameSourceUrl": "https://www.shanghengclinic.com.tw/doctor.html",
+      "qualificationStatement": "診所醫師團隊頁為兩位醫師分別列明內分泌暨新陳代謝專科資格。",
+      "qualificationSourceUrl": "https://www.shanghengclinic.com.tw/doctor.html",
+      "qualificationEvidence": [
+        {
+          "doctorName": "黃書恆",
+          "statement": "診所醫師團隊頁為兩位醫師分別列明內分泌暨新陳代謝專科資格。",
+          "sourceUrl": "https://www.shanghengclinic.com.tw/doctor.html"
+        },
+        {
+          "doctorName": "柯冠廷",
+          "statement": "診所醫師團隊頁為兩位醫師分別列明內分泌暨新陳代謝專科資格。",
+          "sourceUrl": "https://www.shanghengclinic.com.tw/doctor.html"
+        }
+      ],
+      "addressSourceNote": null,
+      "facilityType": "clinic"
+    },
+    {
+      "id": "kailan_clinic",
+      "hospital": "開蘭安心診所",
+      "county": "宜蘭縣",
+      "district": "宜蘭市",
+      "address": "宜蘭縣宜蘭市神農路一段97號",
+      "department": "內分泌新陳代謝科",
+      "doctorPage": "https://kgpc.com.tw/%E6%96%B0%E9%99%B3%E4%BB%A3%E8%AC%9D%E7%A7%91/",
+      "doctorNames": [
+        "劉孝慈"
+      ],
+      "checked": "2026-11-22",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://kgpc.com.tw/%E6%96%B0%E9%99%B3%E4%BB%A3%E8%AC%9D%E7%A7%91/",
+      "doctorNameSourceUrl": "https://kgpc.com.tw/%E6%96%B0%E9%99%B3%E4%BB%A3%E8%AC%9D%E7%A7%91/",
+      "qualificationStatement": "診所新陳代謝科醫師頁列明內分泌暨糖尿病專科資格。",
+      "qualificationSourceUrl": "https://kgpc.com.tw/%E6%96%B0%E9%99%B3%E4%BB%A3%E8%AC%9D%E7%A7%91/",
+      "qualificationEvidence": [
+        {
+          "doctorName": "劉孝慈",
+          "statement": "診所新陳代謝科醫師頁列明內分泌暨糖尿病專科資格。",
+          "sourceUrl": "https://kgpc.com.tw/%E6%96%B0%E9%99%B3%E4%BB%A3%E8%AC%9D%E7%A7%91/"
+        }
+      ],
+      "addressSourceNote": null,
+      "facilityType": "clinic"
     }
   ]
 }
