@@ -1,9 +1,10 @@
 {
-  "schemaVersion": 2,
-  "title": "新陳代謝科醫院與診所公開索引",
-  "checked": "2026-11-22",
+  "schemaVersion": 3,
+  "title": "新陳代謝科與糖尿病照護院所公開索引",
+  "checked": "2026-11-24",
+  "checkedMeaning": "最近補查日期；各院所核對日另列，非全體重新查驗日期。",
   "coverage": "部分公開院所與姓名索引，非全國完整專科醫師名冊",
-  "definition": "醫院以公開科別或門診列名核對；診所另核對院方明文專科資格，未獨立查驗證書效期。院所數與姓名列次均不當作現職人力或醫師密度。",
+  "definition": "醫院依公開科別或門診列名；診所個人專科依院方明文。care_network_only僅核對官方糖尿病照護網院所，不代表個人專科已確認，未填現職醫師姓名。所有類別均未獨立查驗證書效期，不當作人力或密度。",
   "missingRule": "未收錄不代表沒有醫師；不補零，不推算人口密度。",
   "facilities": [
     {
@@ -33,7 +34,13 @@
       "qualificationSourceUrl": null,
       "qualificationEvidence": null,
       "addressSourceNote": null,
-      "facilityType": "hospital"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "hospital",
+      "specialtyStatus": "department_roster"
     },
     {
       "id": "cmuh",
@@ -66,7 +73,13 @@
       "qualificationSourceUrl": null,
       "qualificationEvidence": null,
       "addressSourceNote": null,
-      "facilityType": "hospital"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "hospital",
+      "specialtyStatus": "department_roster"
     },
     {
       "id": "csh",
@@ -91,7 +104,13 @@
       "qualificationSourceUrl": null,
       "qualificationEvidence": null,
       "addressSourceNote": null,
-      "facilityType": "hospital"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "hospital",
+      "specialtyStatus": "department_roster"
     },
     {
       "id": "sltung",
@@ -118,7 +137,13 @@
       "qualificationSourceUrl": null,
       "qualificationEvidence": null,
       "addressSourceNote": null,
-      "facilityType": "hospital"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "hospital",
+      "specialtyStatus": "department_roster"
     },
     {
       "id": "shuanghe",
@@ -146,7 +171,13 @@
       "qualificationSourceUrl": null,
       "qualificationEvidence": null,
       "addressSourceNote": null,
-      "facilityType": "hospital"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "hospital",
+      "specialtyStatus": "department_roster"
     },
     {
       "id": "wanfang",
@@ -175,7 +206,13 @@
       "qualificationSourceUrl": null,
       "qualificationEvidence": null,
       "addressSourceNote": null,
-      "facilityType": "hospital"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "hospital",
+      "specialtyStatus": "department_roster"
     },
     {
       "id": "cgmh_linkou",
@@ -218,7 +255,13 @@
       "qualificationSourceUrl": null,
       "qualificationEvidence": null,
       "addressSourceNote": null,
-      "facilityType": "hospital"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "hospital",
+      "specialtyStatus": "department_roster"
     },
     {
       "id": "ncku",
@@ -246,7 +289,13 @@
       "qualificationSourceUrl": null,
       "qualificationEvidence": null,
       "addressSourceNote": null,
-      "facilityType": "hospital"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "hospital",
+      "specialtyStatus": "department_roster"
     },
     {
       "id": "vghks",
@@ -270,7 +319,13 @@
       "qualificationSourceUrl": null,
       "qualificationEvidence": null,
       "addressSourceNote": null,
-      "facilityType": "hospital"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "hospital",
+      "specialtyStatus": "department_roster"
     },
     {
       "id": "hualien_tzuchi",
@@ -293,7 +348,13 @@
       "qualificationSourceUrl": null,
       "qualificationEvidence": null,
       "addressSourceNote": null,
-      "facilityType": "hospital"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "hospital",
+      "specialtyStatus": "department_roster"
     },
     {
       "id": "clinic-ucomejoin",
@@ -336,7 +397,13 @@
         }
       ],
       "addressSourceNote": null,
-      "facilityType": "clinic"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "provider_specialty_statement"
     },
     {
       "id": "clinic-yijia",
@@ -368,7 +435,13 @@
         }
       ],
       "addressSourceNote": null,
-      "facilityType": "clinic"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "provider_specialty_statement"
     },
     {
       "id": "clinic-yinghong",
@@ -400,7 +473,13 @@
         }
       ],
       "addressSourceNote": null,
-      "facilityType": "clinic"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "provider_specialty_statement"
     },
     {
       "id": "clinic-huiteng",
@@ -443,7 +522,13 @@
         }
       ],
       "addressSourceNote": null,
-      "facilityType": "clinic"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "provider_specialty_statement"
     },
     {
       "id": "rongyang_clinic",
@@ -470,7 +555,13 @@
         }
       ],
       "addressSourceNote": "地址依2025年北榮社區醫療群名冊",
-      "facilityType": "clinic"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "provider_specialty_statement"
     },
     {
       "id": "zeren_clinic",
@@ -497,7 +588,13 @@
         }
       ],
       "addressSourceNote": null,
-      "facilityType": "clinic"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "provider_specialty_statement"
     },
     {
       "id": "sun_changhua_clinic",
@@ -524,7 +621,13 @@
         }
       ],
       "addressSourceNote": null,
-      "facilityType": "clinic"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "provider_specialty_statement"
     },
     {
       "id": "jerry_clinic",
@@ -551,7 +654,13 @@
         }
       ],
       "addressSourceNote": null,
-      "facilityType": "clinic"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "provider_specialty_statement"
     },
     {
       "id": "shangheng_clinic",
@@ -584,7 +693,13 @@
         }
       ],
       "addressSourceNote": null,
-      "facilityType": "clinic"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "provider_specialty_statement"
     },
     {
       "id": "kailan_clinic",
@@ -611,7 +726,63 @@
         }
       ],
       "addressSourceNote": null,
-      "facilityType": "clinic"
+      "doctorPageLabel": null,
+      "careNetworkYear": null,
+      "careNetworkSourceUrl": null,
+      "doctorNamesNote": null,
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "provider_specialty_statement"
+    },
+    {
+      "id": "clinic-hsu-wencheng",
+      "hospital": "許紋誠診所",
+      "county": "臺中市",
+      "district": "沙鹿區",
+      "address": "臺中市沙鹿區中山路539-2號",
+      "department": "糖尿病共同照護網院所",
+      "doctorPage": "https://www.health.taichung.gov.tw/media/1368289/115%E5%B9%B4%E8%87%BA%E4%B8%AD%E5%B8%82%E7%B3%96%E5%B0%BF%E7%97%85%E5%85%B1%E7%85%A7%E7%B6%B2%E9%99%A2%E6%89%80%E5%90%8D%E5%96%AE_0126%E6%9B%B4%E6%96%B0.pdf#page=4",
+      "doctorNames": [],
+      "checked": "2026-11-24",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://www.health.taichung.gov.tw/media/1368289/115%E5%B9%B4%E8%87%BA%E4%B8%AD%E5%B8%82%E7%B3%96%E5%B0%BF%E7%97%85%E5%85%B1%E7%85%A7%E7%B6%B2%E9%99%A2%E6%89%80%E5%90%8D%E5%96%AE_0126%E6%9B%B4%E6%96%B0.pdf#page=4",
+      "doctorNameSourceUrl": null,
+      "qualificationStatement": "2026年臺中市衛生局糖尿病共同照護網收錄院所；共照網資格不等於個人新陳代謝專科資格。",
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": [],
+      "addressSourceNote": "地址依2026年衛生局共照網名單第4頁。",
+      "doctorPageLabel": "衛生局照護網名單",
+      "careNetworkYear": 2026,
+      "careNetworkSourceUrl": "https://www.health.taichung.gov.tw/media/1368289/115%E5%B9%B4%E8%87%BA%E4%B8%AD%E5%B8%82%E7%B3%96%E5%B0%BF%E7%97%85%E5%85%B1%E7%85%A7%E7%B6%B2%E9%99%A2%E6%89%80%E5%90%8D%E5%96%AE_0126%E6%9B%B4%E6%96%B0.pdf",
+      "doctorNamesNote": "醫師名單待補核；請向診所確認目前看診醫師。",
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "care_network_only"
+    },
+    {
+      "id": "clinic-chen-ruiming",
+      "hospital": "陳瑞明診所",
+      "county": "臺中市",
+      "district": "東勢區",
+      "address": "臺中市東勢區豐勢路548號",
+      "department": "糖尿病共同照護網院所",
+      "doctorPage": "https://www.health.taichung.gov.tw/media/1368289/115%E5%B9%B4%E8%87%BA%E4%B8%AD%E5%B8%82%E7%B3%96%E5%B0%BF%E7%97%85%E5%85%B1%E7%85%A7%E7%B6%B2%E9%99%A2%E6%89%80%E5%90%8D%E5%96%AE_0126%E6%9B%B4%E6%96%B0.pdf#page=4",
+      "doctorNames": [],
+      "checked": "2026-11-24",
+      "sourceUpdated": null,
+      "addressSourceUrl": "https://www.health.taichung.gov.tw/media/1368289/115%E5%B9%B4%E8%87%BA%E4%B8%AD%E5%B8%82%E7%B3%96%E5%B0%BF%E7%97%85%E5%85%B1%E7%85%A7%E7%B6%B2%E9%99%A2%E6%89%80%E5%90%8D%E5%96%AE_0126%E6%9B%B4%E6%96%B0.pdf#page=4",
+      "doctorNameSourceUrl": null,
+      "qualificationStatement": "2026年臺中市衛生局糖尿病共同照護網收錄院所；共照網資格不等於個人新陳代謝專科資格。",
+      "qualificationSourceUrl": null,
+      "qualificationEvidence": [],
+      "addressSourceNote": "地址依2026年衛生局共照網名單第4頁。",
+      "doctorPageLabel": "衛生局照護網名單",
+      "careNetworkYear": 2026,
+      "careNetworkSourceUrl": "https://www.health.taichung.gov.tw/media/1368289/115%E5%B9%B4%E8%87%BA%E4%B8%AD%E5%B8%82%E7%B3%96%E5%B0%BF%E7%97%85%E5%85%B1%E7%85%A7%E7%B6%B2%E9%99%A2%E6%89%80%E5%90%8D%E5%96%AE_0126%E6%9B%B4%E6%96%B0.pdf",
+      "doctorNamesNote": "醫師名單待補核；請向診所確認目前看診醫師。",
+      "sourceUpdatedLabel": null,
+      "facilityType": "clinic",
+      "specialtyStatus": "care_network_only"
     }
   ]
 }
