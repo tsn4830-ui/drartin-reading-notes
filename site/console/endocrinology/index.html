@@ -1,1 +1,65 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173f3e"><title>新陳代謝科與糖尿病照護院所｜台灣健康圖譜</title><meta name="description" content="從全國縣市與台中29區地圖，查找新陳代謝科院所與糖尿病照護入口，包含醫院及診所。個人專科來源與官方共照網院所分開標示；部分公開索引，非完整專科名冊。"><link rel="stylesheet" href="style.css?v=care-network-20261124"></head><body><a class="skip" href="#finder">跳到醫師查詢</a><header class="hero"><nav><a href="../taiwan/">台灣健康圖譜</a><a href="../taichung/">台中29區</a></nav><div class="hero-content"><div><p class="eyebrow">ENDOCRINOLOGY / FIND CARE</p><h1>找到身邊的<br>新陳代謝照護。</h1><p class="intro">從醫院到診所，查找新陳代謝科與糖尿病照護入口。<br>專科資料、院所來源與待補資訊，分開標示。</p></div><div class="edition"><strong id="total">—</strong><span>已收錄院所</span><p id="editionCounts"></p><p>醫院與診所公開索引<br>非全國完整專科醫師名冊<br>最近補查 2026-11-24</p></div></div></header><main id="finder"><section class="controls"><div class="finder-controls"><fieldset><legend>地圖範圍</legend><div class="segments"><button data-scope="taiwan" aria-pressed="true">全國縣市</button><button data-scope="taichung" aria-pressed="false">台中29區</button></div></fieldset><label id="placeLabel">縣市<select id="place"></select></label><label>院所類型<select id="facilityType"><option value="all">醫院＋診所</option><option value="hospital">醫院／院區</option><option value="clinic">診所</option></select></label><label>照護範圍<select id="careType"><option value="all">全部照護入口</option><option value="diabetes">糖尿病共同照護網</option><option value="specialty">新陳代謝科公開資料</option></select></label><label>院所／醫師姓名<input id="search" type="search" placeholder="例如：診所名稱、醫師姓名" autocomplete="off"></label><button id="reset">清除篩選</button></div><div class="network-callout"><div><p class="eyebrow">TAICHUNG / DIABETES CARE NETWORK</p><h2>台中糖尿病照護網醫院</h2><p>依衛生局2026年名單，完整收錄37家醫院／院區，涵蓋19區。不同院區分開列示，已存在的醫院合併標記。</p><p class="fine">公告日期2026-01-29；診所目前僅補2家照護網入口。未標示不等於未參與；照護網院所也不等同個人專科資格。</p></div><div class="network-actions"><button id="showNetworkHospitals">查看台中照護網醫院</button><a href="https://www.health.taichung.gov.tw/3201376/post" target="_blank" rel="noopener">衛生局原始名單</a></div></div><p class="fine">醫院與診所均可查詢。標示「專科現況待補核」者僅確認官方糖尿病照護網收錄，不代表個人專科已確認。這是部分公開索引，尚不足以計算醫師人口密度；未收錄地區不代表沒有醫師。</p></section><div class="finder-layout"><section class="finder-map" aria-labelledby="mapTitle"><div class="section-heading"><div><h2 id="mapTitle">點選地區</h2><p id="mapNote"></p></div></div><div id="map"></div><p class="fine">著色＝目前篩選有收錄院所；淺灰＝目前條件無收錄。地圖按縣市／行政區篩選，非院址精確點位。離島以獨立框示意。</p><div id="placeButtons" class="place-buttons"></div></section><section aria-labelledby="resultTitle"><div class="section-heading"><div><p class="eyebrow">PUBLIC CARE DIRECTORY</p><h2 id="resultTitle">已收錄院所</h2><p id="resultCount" role="status"></p></div></div><div id="cards"></div></section></div><div class="actions"><button id="share">複製目前查詢連結</button><button id="csv">下載已收錄院所CSV</button><span id="status" role="status"></span></div><details class="care-evidence" id="careEvidence"><summary>醫師密度和慢性病照護，有什麼關係？</summary><p>醫療人力供給可能影響看診、定期檢查與追蹤。現有研究以糖尿病較多；增加新陳代謝科醫師是否能降低當地住院或死亡，不能只靠這張院所地圖判定。</p><div class="evidence-grid"><article><h3>人力與定期檢查</h3><p>加拿大2016年研究納入712,681名糖尿病病人：基層醫師供給較高的照護網絡，完成建議檢查的比例較高；急診或併發症住院則未見明確差異。這是基層醫師供給研究，並非新陳代謝專科密度的直接證據。</p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4866922/" target="_blank" rel="noopener">閱讀原始研究 · CMAJ Open</a></article><article><h3>科別、連續照護與病人差異</h3><p>台灣2022年研究納入206,819名新診斷第二型糖尿病病人，發現不同科別的檢查頻率與急性併發症結果有差異。研究未直接分析地區醫師密度，也缺乏起始HbA1c等資料；不能用來判定某科別或地區的照護優劣。</p><a href="https://www.mdpi.com/2075-4426/12/3/461" target="_blank" rel="noopener">閱讀原始研究 · Journal of Personalized Medicine</a></article></div><p><strong>完整密度需要醫院與診所一起計算。</strong>須取得同年度完整執業名冊、確認專科資格、處理跨院重複與服務量，再與同地區人口或糖尿病病人數對照。院所家數、網頁姓名列次與醫師人數是不同指標。</p><p>分析照護時，應另看HbA1c／腎臟／眼底檢查、持續追蹤及可避免住院，並考慮高齡人口、所得、病情嚴重度、跨區就醫與基層團隊。地區死亡率只能作探索，無法單獨代表照護品質。</p><p class="fine">本頁目前呈現已核對的公開照護入口；尚未計算新陳代謝科醫師密度或與死亡率的相關係數。研究核對：2026-11-22。</p></details><details><summary>收錄範圍與資料來源</summary><p>本版收錄公開的新陳代謝科醫師／門診入口，另依2026年臺中市衛生局糖尿病共同照護網名單收錄第1至37列全部醫院／院區；診所僅部分。各院區依原表分開，原表第37列「待評鑑」保留，不另推定現行評鑑結果。兩種依據分開標示：已有個人專科來源的診所依院方明文記載；僅確認官方共照網收錄者標示「專科現況待補核」，不填入推定的現職醫師姓名。院方記載不等於獨立查驗證書及效期；歷史專科名單不能當作現職名冊。官方名單是公告版本，並非即時開業或門診資訊；電話、服務及看診時間仍以院方確認為準。沒有擷取會員登入後的專科名冊，未把內科、糖尿病照護認證或訓練名額當作專科資格或現職醫師人數。</p><p>醫師可能跨院執業，公開頁面也可能更新；各卡片附上核對來源。醫師完整名單、門診時間、院區與掛號方式請以院方最新公告為準。本頁沒有收錄順序排名或推薦排序。</p><p>每一筆只使用已核對的公開專業姓名、機構名稱、地址及院方或政府來源連結；不複製醫師照片、簡介或私人聯絡方式。縣市／區界沿用圖譜的內政部國土測繪中心官方開放資料。</p><p>院址地圖按鈕會將院所名稱與公開地址帶到外部地圖搜尋；不讀取訪客位置或病人資料。</p><p><a href="sources.json" download>下載來源與查核紀錄</a></p></details><footer><a href="../taiwan/">2025全國健康、所得與空污</a><a href="../taichung/">台中29區健康與照護</a><a href="https://tsn4830-ui.github.io/reading-notes-hub/">讀書筆記Hub</a></footer><div class="sr" id="announcement" aria-live="polite"></div><noscript>此互動查詢需要JavaScript。可下載來源紀錄查看已收錄院所網址。</noscript></main><script src="app.js?v=care-network-20261124"></script></body></html>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173f3e">
+  <title>糖尿病照護網醫院與診所｜台灣健康圖譜</title>
+  <meta name="description" content="台中糖尿病照護網醫院與診所同頁並列。依2026年衛生局名單查找37筆醫院／院區、177筆診所，支援行政區地圖、電話、搜尋與下載；保留原表異常註記及個人專科資料的區別。">
+  <link rel="stylesheet" href="style.css?v=care-combined-20261126">
+</head>
+<body>
+<a class="skip" href="#finder">跳到院所查詢</a>
+<header class="hero">
+  <nav><a href="../taiwan/">台灣健康圖譜</a><a href="../taichung/">台中29區健康比較</a></nav>
+  <div class="hero-content">
+    <div><p class="eyebrow">TAIWAN HEALTH ATLAS / FIND CARE</p><h1>糖尿病照護網<br>醫院與診所，一起找。</h1><p class="intro">選一個行政區，同時看見醫院與診所。<br>從日常追蹤到醫院照護，找到可聯繫的入口。</p></div>
+    <div class="edition"><strong id="total">214</strong><span>台中名單照護入口</span><p id="editionCounts">醫院／院區 37 筆 · 診所 177 筆</p><p>衛生局2026年公告版本<br>最近補查 2026-11-26<br>原表列數，非去重現況統計</p></div>
+  </div>
+</header>
+<main id="finder">
+  <section class="controls" aria-label="照護院所查詢條件">
+    <div class="finder-controls">
+      <fieldset><legend>地圖範圍</legend><div class="segments"><button data-scope="taichung" aria-pressed="true">台中29區</button><button data-scope="taiwan" aria-pressed="false">全國地圖</button></div></fieldset>
+      <label id="placeLabel">行政區<select id="place"></select></label>
+      <label>顯示院所<select id="facilityType"><option value="all">醫院＋診所並列</option><option value="hospital">只看醫院／院區</option><option value="clinic">只看診所</option></select></label>
+      <label>名單範圍<select id="careType"><option value="diabetes">糖尿病共同照護網</option><option value="specialty">新陳代謝科公開資料</option><option value="all">全部已收錄院所</option></select></label>
+      <label>名稱、地址或電話<input id="search" type="search" placeholder="例如：許紋誠、沙鹿、電話" autocomplete="off"></label>
+      <button id="reset">清除篩選</button>
+    </div>
+    <div class="network-callout">
+      <div><p class="eyebrow">HOSPITALS + CLINICS</p><h2>同一區，兩種照護入口</h2><p>完整列入本份官方名單的醫院與診所章節，共 214 筆、涵蓋 25 區。兩欄共用地圖與搜尋條件，可一起分享、一起下載。</p></div>
+      <div class="network-actions"><button id="showNetworkAll">一起看台中醫院與診所</button><a href="https://www.health.taichung.gov.tw/3201376/post" target="_blank" rel="noopener">衛生局原始名單</a></div>
+    </div>
+    <p class="fine">名單公告2026-01-29，並非即時營業或門診資訊。同址不同名稱依原表分列；地址差異、整修及格式異常另註明。照護網資料目前限台中，參與照護網不等同個人新陳代謝專科資格。</p>
+  </section>
+  <div class="finder-layout">
+    <aside class="finder-map" aria-labelledby="mapTitle">
+      <h2 id="mapTitle">選一區，一起看兩種院所</h2><p id="mapNote" class="fine"></p>
+      <div id="map"></div>
+      <p class="fine map-caption">綠色：目前條件有收錄；淺灰：無收錄。地圖用來篩選行政區，非院址精確點位；離島以獨立框示意。</p>
+      <div id="placeButtons" class="place-buttons"></div>
+    </aside>
+    <section class="results" aria-labelledby="resultTitle">
+      <div class="section-heading"><div><p class="eyebrow">ONE AREA / BOTH TYPES OF CARE</p><h2 id="resultTitle">台中糖尿病照護網</h2><p id="resultCount" role="status"></p></div></div>
+      <div class="actions"><button id="share">分享目前查詢</button><button id="csv">下載全部符合名單 CSV</button><span id="status" role="status"></span></div>
+      <p class="fine" id="coverageNote"></p>
+      <nav id="groupJump" class="group-jump" aria-label="跳到醫院或診所"></nav>
+      <div id="cards" class="care-columns"></div>
+      <button id="clearEmpty" hidden>清除篩選，顯示全部院所</button>
+    </section>
+  </div>
+<details class="care-evidence" id="careEvidence"><summary>醫師密度和慢性病照護，有什麼關係？</summary><p>醫療人力供給可能影響看診、定期檢查與追蹤。現有研究以糖尿病較多；增加新陳代謝科醫師是否能降低當地住院或死亡，不能只靠這張院所地圖判定。</p><div class="evidence-grid"><article><h3>人力與定期檢查</h3><p>加拿大2016年研究納入712,681名糖尿病病人：基層醫師供給較高的照護網絡，完成建議檢查的比例較高；急診或併發症住院則未見明確差異。這是基層醫師供給研究，並非新陳代謝專科密度的直接證據。</p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4866922/" target="_blank" rel="noopener">閱讀原始研究 · CMAJ Open</a></article><article><h3>科別、連續照護與病人差異</h3><p>台灣2022年研究納入206,819名新診斷第二型糖尿病病人，發現不同科別的檢查頻率與急性併發症結果有差異。研究未直接分析地區醫師密度，也缺乏起始HbA1c等資料；不能用來判定某科別或地區的照護優劣。</p><a href="https://www.mdpi.com/2075-4426/12/3/461" target="_blank" rel="noopener">閱讀原始研究 · Journal of Personalized Medicine</a></article></div><p><strong>完整密度需要醫院與診所一起計算。</strong>須取得同年度完整執業名冊、確認專科資格、處理跨院重複與服務量，再與同地區人口或糖尿病病人數對照。院所家數、網頁姓名列次與醫師人數是不同指標。</p><p>分析照護時，應另看HbA1c／腎臟／眼底檢查、持續追蹤及可避免住院，並考慮高齡人口、所得、病情嚴重度、跨區就醫與基層團隊。地區死亡率只能作探索，無法單獨代表照護品質。</p><p class="fine">本頁目前呈現已核對的公開照護入口；尚未計算新陳代謝科醫師密度或與死亡率的相關係數。研究核對：2026-11-22。</p></details>
+  <details class="source-details"><summary>名單範圍、地址差異與原始資料</summary>
+    <p>依2026年臺中市衛生局糖尿病共同照護網名單，完整列入第1–37列醫院／院區及第38–214列診所。第215–235列為21筆衛生所，維持原分類，本頁未混入診所。數字代表原表列數，不是經去重後的現行開業院所數，也不是醫師人數。</p>
+    <p>原表4組診所同址同電話但名稱不同，逐列保留並互相標示；未自行判定更名或合併。中英診所保留原表「整修中」註記。英宏診所的院方地址與衛生局原表地址並列說明，其他郵遞號、門牌與電話格式異常保留原文，未擅自改值。</p>
+    <p>院區分開列示。醫院第37列原表「待評鑑」保留，不推定現行評鑑結果。名單是公告版本；到訪前請向院所確認服務、營業及看診時間。</p>
+    <p>新陳代謝科個人資料保留為另一查詢範圍。診所專科依院方明文、醫院姓名依科別／門診頁，未獨立查驗證書效期；沒有從照護網院所名稱推定現職醫師，亦未讀取會員名冊或計算醫師密度。</p>
+    <p>縣市與區界沿用內政部國土測繪中心開放資料。院址按鈕由訪客主動開啟外部地圖搜尋，不讀取位置或病人資料。</p>
+    <p><a href="sources.json" download>下載完整來源與查核紀錄</a></p>
+  </details>
+  <footer><a href="../taiwan/">全國健康、所得與空污</a><a href="../taichung/">台中29區健康與照護</a><a href="https://tsn4830-ui.github.io/reading-notes-hub/">讀書筆記 Hub</a></footer>
+  <div id="announcement" class="sr" aria-live="polite"></div>
+  <noscript>此查詢需要JavaScript。可下載來源與查核紀錄查看院所名單。</noscript>
+</main>
+<script src="app.js?v=care-combined-20261126"></script>
+</body></html>
